@@ -1,6 +1,7 @@
 ---
-import introVideo from '../assets/intro.mov';
+// import introVideo from '../assets/intro.mov';
 import Layout from '../layouts/Layout.astro';
+import burgerMenu from '../assets/burgermenu.svg?raw';
 ---
 
 <script>
@@ -10,9 +11,12 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Welcome to Astro.">
   <main>
     <video height="240" autoplay muted>
-      <source src={introVideo} type="video/mp4" />
+      <!-- <source src={introVideo} type="video/mp4" /> -->
       Your browser does not support the video tag.
     </video>
+    <div class="w-2">
+      <Fragment set:html={burgerMenu} />
+    </div>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dolor
       earum, unde fugit aut nisi necessitatibus. Perferendis maiores excepturi,
