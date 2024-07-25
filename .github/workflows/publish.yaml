@@ -1,0 +1,37 @@
+name: Build and Deploy Astro Project
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the project
+        run: npm run build
+
+      - name: Deploy to VPS
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.VPS_SSH_KEY }}
+          VPS_USER: ${{ secrets.SSH_USER }} # Change this to your VPS username
+          VPS_HOST: ${{ secrets.SSH_HOST }} # Change this to your VPS IP or domain
+          VPS_DEPLOY_PATH: ${{ secrets.WORK_DIR }} # Change this to the path where you want to deploy on your VPS
+        run: |
+          echo "$SSH_PRIVATE_KEY" > private_key
+          chmod 600 private_key
+          rsync -avz -e "ssh -i private_key -o StrictHostKeyChecking=no" ./dist/ $VPS_USER@$VPS_HOST:$VPS_DEPLOY_PATH
+          rm private_key
