@@ -1,5 +1,7 @@
 ---
-// import introVideo from '../assets/intro.mov';
+import introVideo100 from '../assets/webtrailer.webm';
+import introVideoLowq from '../assets/webtrailer_lowq.webm';
+import introVideoMidq from '../assets/webtrailer_midq.webm';
 import Layout from '../layouts/Layout.astro';
 import burgerMenu from '../assets/burgermenu.svg?raw';
 ---
@@ -10,10 +12,19 @@ import burgerMenu from '../assets/burgermenu.svg?raw';
 
 <Layout title="Welcome to Astro.">
   <main>
-    <video height="240" autoplay muted>
-      <!-- <source src={introVideo} type="video/mp4" /> -->
+    <video height="240" autoplay muted preload="none">
+      <source src={introVideo100} type="video/mp4" />
       Your browser does not support the video tag.
     </video>
+    <video height="240" autoplay muted preload="none">
+      <source src={introVideoMidq} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <video height="240" autoplay muted preload="none">
+      <source src={introVideoLowq} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
     <div class="w-2">
       <Fragment set:html={burgerMenu} />
     </div>
