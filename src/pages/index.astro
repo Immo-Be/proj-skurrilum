@@ -2,6 +2,7 @@
 import introVideo100 from '../assets/webtrailer.webm';
 import introVideoLowq from '../assets/webtrailer_lowq.webm';
 import introVideoMidq from '../assets/webtrailer_midq.webm';
+import introVideoMp4 from '../assets/webtrailer.mp4';
 import Layout from '../layouts/Layout.astro';
 import burgerMenu from '../assets/burgermenu.svg?raw';
 ---
@@ -12,6 +13,10 @@ import burgerMenu from '../assets/burgermenu.svg?raw';
 
 <Layout title="Welcome to Astro.">
   <main>
+    <video height="240" autoplay muted>
+      <source src={introVideoMp4} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
     <video height="240" autoplay muted>
       <source src={introVideo100} type="video/mp4" />
       Your browser does not support the video tag.
