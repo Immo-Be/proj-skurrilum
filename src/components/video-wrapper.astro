@@ -1,0 +1,17 @@
+---
+import {Image} from 'astro:assets';
+import introVideo from '../assets/webtrailer.mp4';
+// import introPoster from '../assets/intro-fb.png';
+import overlayText from '../assets/overlay-text.png';
+import overlayLogo from '../assets/overlay-logo.png';
+---
+
+<!-- <Image src={introPoster} alt="intro" /> --><!-- <div class="relative"> -->
+<video class="w-full" autoplay muted>
+  <source src={introVideo} type="video/mp4" />
+</video>
+<div class="relative">
+  <!-- <Image src={overlayText} alt="intro" class="absolute h-[200px]" />
+  <Image src={overlayLogo} alt="intro" class="absolute h-[200px]" /> -->
+  <!-- <button class="absolute">Jetzt buchen</button> -->
+</div>
