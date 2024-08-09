@@ -1,10 +1,7 @@
 ---
-import introVideo100 from '../assets/webtrailer.webm';
-import introVideoLowq from '../assets/webtrailer_lowq.webm';
-import introVideoMidq from '../assets/webtrailer_midq.webm';
-import introVideoMp4 from '../assets/webtrailer.mp4';
 import Layout from '../layouts/Layout.astro';
-import burgerMenu from '../assets/burgermenu.svg?raw';
+// import burgerMenu from '../assets/burgermenu.svg?raw';
+import VideoWrapper from '../components/video-wrapper.astro';
 ---
 
 <script>
@@ -12,27 +9,13 @@ import burgerMenu from '../assets/burgermenu.svg?raw';
 </script>
 
 <Layout title="Welcome to Astro.">
+  <VideoWrapper />
   <main>
-    <video id="myVideo" muted autoplay preload="none">
-      <source src={introVideoMp4} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <video height="240" autoplay muted preload="none">
-      <source src={introVideo100} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <video height="240" autoplay muted preload="none">
-      <source src={introVideoMidq} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <video height="240" autoplay muted preload="none">
-      <source src={introVideoLowq} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-
     <div class="w-2">
-      <Fragment set:html={burgerMenu} />
+      <!-- <Fragment set:html={burgerMenu} /> -->
     </div>
+    <h2 id="“buchungskalender“">Buchungskalender</h2>
+    <div class="buchung"></div>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dolor
       earum, unde fugit aut nisi necessitatibus. Perferendis maiores excepturi,
