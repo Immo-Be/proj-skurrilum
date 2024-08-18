@@ -7,11 +7,15 @@ import overlayLogo from '../assets/overlay-logo.png';
 ---
 
 <!-- <Image src={introPoster} alt="intro" /> --><!-- <div class="relative"> -->
-<video class="w-full" autoplay muted>
-  <source src={introVideo} type="video/mp4" />
-</video>
 <div class="relative">
-  <!-- <Image src={overlayText} alt="intro" class="absolute h-[200px]" />
-  <Image src={overlayLogo} alt="intro" class="absolute h-[200px]" /> -->
-  <!-- <button class="absolute">Jetzt buchen</button> -->
+  <video class="" autoplay muted>
+    <source src={introVideo} type="video/mp4" />
+  </video>
+  <div
+    class="absolute top-1/2 left-1/2 transform text-white -translate-x-1/2 -translate-y-1/2 flex justify-end items-center flex-d"
+  >
+    <Image src={overlayText} alt="intro" class="h-[200px]" />
+    <Image src={overlayLogo} alt="intro" class="h-[200px]" />
+    <button class="absolute">Jetzt&nbsp;buchen</button>
+  </div>
 </div>
