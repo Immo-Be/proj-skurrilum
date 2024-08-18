@@ -12,10 +12,12 @@ import overlayLogo from '../assets/overlay-logo.png';
     <source src={introVideo} type="video/mp4" />
   </video>
   <div
-    class="absolute top-1/2 left-1/2 transform text-white -translate-x-1/2 -translate-y-1/2 flex justify-end items-center flex-d"
+    class="absolute top-1/2 left-1/2 transform text-white -translate-x-1/2 -translate-y-1/2 flex justify-end items-center flex-col"
   >
-    <Image src={overlayText} alt="intro" class="h-[200px]" />
-    <Image src={overlayLogo} alt="intro" class="h-[200px]" />
+    <div class="flex flex-col items-center">
+      <Image src={overlayLogo} alt="intro" class="h-[200px]" />
+      <Image src={overlayText} alt="intro" class="h-[200px]" />
+    </div>
     <button class="absolute">Jetzt&nbsp;buchen</button>
   </div>
 </div>
