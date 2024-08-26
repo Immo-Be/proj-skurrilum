@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import burgerMenu from '../assets/burgermenu.svg?raw';
 import VideoWrapper from '../components/video-wrapper.astro';
+import Navbar from '../components/navbar';
+
+import '../styles/utilities.css';
 ---
 
 <script>
@@ -9,7 +12,9 @@ import VideoWrapper from '../components/video-wrapper.astro';
 </script>
 
 <Layout title="Welcome to Astro.">
+  <Navbar client:visible />
   <VideoWrapper />
+  <!-- <ThemeToggle client:only={true} /> -->
   <main>
     <div class="w-2">
       <Fragment set:html={burgerMenu} />
