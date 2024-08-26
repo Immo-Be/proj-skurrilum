@@ -1,5 +1,4 @@
 import type {FunctionalComponent} from 'preact';
-import React from 'preact/compat';
 
 const NavbarToggle: FunctionalComponent = () => {
   return (
@@ -8,10 +7,19 @@ const NavbarToggle: FunctionalComponent = () => {
       onClick={e => {
         e.currentTarget.classList.toggle('open');
       }}>
-      <span className="nav-icon-span top-0 group-[.open]:left-1/2 group-[.open]:top-[9px] group-[.open]:w-0"></span>
-      <span className="nav-icon-span top-[9px] group-[.open]:rotate-45"></span>
-      <span className="nav-icon-span top-[9px] group-[.open]:rotate-[-45deg]"></span>
-      <span className="nav-icon-span top-[18px] group-[.open]:left-1/2 group-[.open]:top-[9px] group-[.open]:w-0"></span>
+      <span class="sr-only">Open main menu</span>
+      <span
+        aria-hidden="true"
+        className="nav-icon-span top-0 group-[.open]:left-1/2 group-[.open]:top-[9px] group-[.open]:w-0"></span>
+      <span
+        aria-hidden="true"
+        className="nav-icon-span top-[9px] group-[.open]:rotate-45"></span>
+      <span
+        aria-hidden="true"
+        className="nav-icon-span top-[9px] group-[.open]:rotate-[-45deg]"></span>
+      <span
+        aria-hidden="true"
+        className="nav-icon-span top-[18px] group-[.open]:left-1/2 group-[.open]:top-[9px] group-[.open]:w-0"></span>
       ;
     </button>
   );

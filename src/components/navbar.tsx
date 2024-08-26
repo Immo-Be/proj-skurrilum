@@ -1,6 +1,5 @@
 // Make sure to import the CSS file
 import type {FunctionalComponent} from 'preact';
-import React from 'preact/compat';
 import NavbarToggle from './navbar-toggle';
 
 const Navbar: FunctionalComponent = () => {
