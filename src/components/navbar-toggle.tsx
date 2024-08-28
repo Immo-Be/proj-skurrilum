@@ -1,12 +1,15 @@
 import type {FunctionalComponent} from 'preact';
 
-const NavbarToggle: FunctionalComponent = () => {
+interface Props {
+  onClick: () => void;
+  isOpen: boolean;
+}
+
+const NavbarToggle: FunctionalComponent<Props> = ({onClick, isOpen}) => {
   return (
     <button
-      className="group relative h-[18px] w-[30px]"
-      onClick={e => {
-        e.currentTarget.classList.toggle('open');
-      }}>
+      className={`${isOpen ? 'open' : ''} group relative ml-auto h-[24px] w-[30px]`}
+      onClick={onClick}>
       <span class="sr-only">Open main menu</span>
       <span
         aria-hidden="true"
@@ -20,7 +23,6 @@ const NavbarToggle: FunctionalComponent = () => {
       <span
         aria-hidden="true"
         className="nav-icon-span top-[18px] group-[.open]:left-1/2 group-[.open]:top-[9px] group-[.open]:w-0"></span>
-      ;
     </button>
   );
 };
