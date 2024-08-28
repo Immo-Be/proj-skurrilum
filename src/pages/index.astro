@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import burgerMenu from '../assets/burgermenu.svg?raw';
 import VideoWrapper from '../components/video-wrapper.astro';
 import Navbar from '../components/navbar';
+import ThemeToggle from '../components/toggle-switch';
 
 import '../styles/utilities.css';
 ---
@@ -12,14 +12,14 @@ import '../styles/utilities.css';
 </script>
 
 <Layout title="Welcome to Astro.">
-  <Navbar client:visible />
+  <Navbar client:only="preact" />
   <VideoWrapper />
-  <!-- <ThemeToggle client:only={true} /> -->
+  <ThemeToggle client:only="preact" />
   <main>
     <div class="w-2">
-      <Fragment set:html={burgerMenu} />
+      <!-- <Fragment set:html={burgerMenu} /> -->
     </div>
-    <h2 id="“buchungskalender“">Buchungskalender</h2>
+    <h2 id="buchungskalender">Buchungskalender</h2>
     <div class="buchung"></div>
     <p>
       TEST TEST EST Neuer Eintrag Lorem ipsum dolor sit amet, consectetur
