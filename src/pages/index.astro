@@ -1,10 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import VideoWrapper from '../components/video-wrapper.astro';
-import Navbar from '../components/navbar';
-import ThemeToggle from '../components/toggle-switch';
+// import Navbar from '../components/navbar';
+import ThemeToggle from '../components/toggle-switch.tsx';
+// import Navbar from '@immobe/lit-navbar';
+
+// console.log('🚀 ~ Navbar:', Navbar);
+// import '@immobe/webcomponent-navbar';
 
 import '../styles/utilities.css';
+
+new window.AbortController();
 ---
 
 <script>
@@ -12,7 +18,18 @@ import '../styles/utilities.css';
 </script>
 
 <Layout title="Welcome to Astro.">
-  <Navbar client:only="preact" />
+  <navbar-element>
+    <span slot="brand">My Brand</span>
+    <!-- Slot for the navbar items -->
+    <a slot="nav-items" href="/">Home</a>
+    <a slot="nav-items" href="/about">About</a>
+    <a slot="nav-items" href="/contact">Contact</a>
+    <a slot="nav-items" href="/">Home</a>
+    <a slot="nav-items" href="/about">About</a>
+    <a slot="nav-items" href="/contact">Contact</a>
+  </navbar-element>
+
+  <!-- <Navbar client:only="preact" /> -->
   <VideoWrapper />
   <ThemeToggle client:only="preact" />
   <main>
