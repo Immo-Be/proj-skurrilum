@@ -1,4 +1,5 @@
 import type {FunctionComponent} from 'preact';
+import React from 'preact/compat';
 
 interface Props extends React.HTMLAttributes<HTMLLIElement> {
   href: string;

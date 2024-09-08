@@ -1,4 +1,5 @@
 import type {FunctionalComponent} from 'preact';
+import React from 'preact/compat';
 
 interface Props {
   onClick: () => void;
