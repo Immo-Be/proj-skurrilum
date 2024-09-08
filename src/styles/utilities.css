@@ -6,11 +6,12 @@
   @apply absolute left-0 block h-[2.5px] w-full origin-center rotate-0 rounded-full bg-white opacity-100 transition-all duration-300 ease-in-out;
 }
 /**
-* Define custom colors in the base layer
+* Define custom styles in the base layer
 * When adding a new color, make sure to add it to the dark mode as well
 * CAREFEUL: The colors have to be in this format: --color-name: red green blue;
- */
+*/
 
+/* Custom reset or global styles */
 @layer base {
   :root {
     --color-primary: 241 234 229;
@@ -20,5 +21,20 @@
   :root[class~='dark'] {
     --color-primary: 51 51 51;
     --color-text: 241 234 229;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-balance;
+  }
+
+  p,
+  li,
+  figcaption {
+    @apply max-w-[65ch] text-pretty;
   }
 }
