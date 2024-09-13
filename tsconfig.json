@@ -3,16 +3,6 @@
   "include": ["src/**/*.astro", "src/**/*.tsx", "src/types/custom.d.ts"],
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "preact",
-
-    /* Base Options: */
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "target": "es2022",
-    "allowJs": true,
-    "resolveJsonModule": true,
-    "moduleDetection": "force",
-    "isolatedModules": true,
-    "verbatimModuleSyntax": true
+    "jsxImportSource": "preact"
   }
 }
