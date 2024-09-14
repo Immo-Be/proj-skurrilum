@@ -13,15 +13,13 @@ const Navbar: FunctionalComponent = () => {
     <>
       <div className="absolute z-20 flex w-full items-center justify-between bg-transparent p-4">
         <img src={Logo.src} class={`h-8 ${isOpen && 'hidden'}`} />
-        {
-          <NavbarToggle
-            onClick={() => setIsOpen(prev => !prev)}
-            isOpen={isOpen}
-          />
-        }
+        <NavbarToggle
+          onClick={() => setIsOpen(prev => !prev)}
+          isOpen={isOpen}
+        />
       </div>
       <nav
-        className={`bg-primary pointer-events-none fixed bottom-0 left-0 right-0 top-0 z-10 text-center opacity-0 transition-opacity duration-500 ease-in ${
+        className={`pointer-events-none fixed bottom-0 left-0 right-0 top-0 z-10 bg-primary text-center opacity-0 transition-opacity duration-500 ease-in ${
           isOpen ? 'opacity-[0.98]' : ''
         }`}>
         <ul className="pointer-events-auto flex h-full items-center justify-center md:flex-row md:flex-nowrap">

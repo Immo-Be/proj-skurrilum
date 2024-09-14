@@ -2,10 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.nav-icon-span {
-  @apply absolute left-0 block h-[2.5px] w-full origin-center rotate-0 rounded-full bg-white opacity-100 transition-all duration-300 ease-in-out;
-}
-/**
+/*
 * Define custom styles in the base layer
 * When adding a new color, make sure to add it to the dark mode as well
 * CAREFEUL: The colors have to be in this format: --color-name: red green blue;
