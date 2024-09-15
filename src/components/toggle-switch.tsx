@@ -1,5 +1,4 @@
 import type {FunctionalComponent} from 'preact';
-import React from 'preact/compat';
 import {useEffect, useState} from 'preact/hooks';
 
 const ThemeToggle: FunctionalComponent = () => {
