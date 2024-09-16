@@ -6,7 +6,7 @@ const MOBILE_BREAKPOINT = 768;
  * Custom hook to determine if the current device is a mobile device based on the window width.
  * @returns {boolean} Returns true if the current device is a mobile device, otherwise false.
  */
-export const useIsMobile = () => {
+export function useIsMobile() {
   const [isMobile, setIsMobile] = useState(
     window.innerWidth < MOBILE_BREAKPOINT
   );
@@ -27,4 +27,4 @@ export const useIsMobile = () => {
   }, []);
 
   return isMobile;
-};
+}
