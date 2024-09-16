@@ -1,7 +1,6 @@
 import type {FunctionalComponent} from 'preact';
 import {useState} from 'preact/hooks';
 import {twMerge} from 'tailwind-merge';
-import {useIsMobile} from '../hooks/use-is-mobile';
 import {useIsScrolled} from '../hooks/use-is-scrolled';
 import NavbarListItem from './navbar-list-item';
 import NavbarToggle from './navbar-toggle';
