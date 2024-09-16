@@ -12,8 +12,8 @@ const NavbarListItem: FunctionComponent<Props> = ({
   ...listItemProps
 }) => {
   return (
-    <li {...listItemProps}>
-      <a class="block px-4 py-6 text-start text-2xl font-bold" href={href}>
+    <li {...listItemProps} class="sm:mix-blend-difference">
+      <a class="block text-start text-2xl font-bold sm:text-base" href={href}>
         {text}
       </a>
     </li>
