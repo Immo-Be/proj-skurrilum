@@ -16,8 +16,7 @@
     "@immobe/webcomponent-navbar": "^0.0.3",
     "astro": "^4.15.6",
     "preact": "^10.23.2",
-    "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.5"
+    "tailwindcss": "^3.4.3"
   },
   "devDependencies": {
     "@eslint/compat": "^1.0.3",
@@ -32,6 +31,7 @@
     "prettier": "^3.3.0",
     "prettier-plugin-tailwindcss": "^0.6.1",
     "tailwind-merge": "^2.5.2",
+    "typescript": "^5.6.2",
     "typescript-eslint": "^7.11.0"
   }
 }
