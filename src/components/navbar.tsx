@@ -13,16 +13,13 @@ const Navbar: FunctionalComponent = () => {
   // We use the mix-blend-mode CSS property to make sure the hamburger icon is visible on the video background.
   // We don't want it to effect the hamburger menu, so we render it at different positions based on the screen size.
   const Logo = ({customClass}: {customClass?: string}) => (
-    <a
-      href="/"
-      aria-label="Skurrilum - Homepage"
-      class={twMerge('pointer-events-auto', customClass)}>
-      <h1 className="before:logo relative h-[32px] w-[64px] before:absolute before:inset-0 before:isolate">
-        <span className="hidden">
-          Skurrilum - Escape Room Hamburg Reeperbahn
-        </span>
-      </h1>
-    </a>
+    <h1
+      className={twMerge(
+        'before:logo relative h-[32px] w-[64px] before:absolute before:inset-0 before:isolate',
+        customClass
+      )}>
+      <span className="hidden">Skurrilum - Escape Room Hamburg Reeperbahn</span>
+    </h1>
   );
 
   return (
@@ -49,7 +46,15 @@ const Navbar: FunctionalComponent = () => {
           hasScrolled ? 'sm:bg-primary' : ''
         )}>
         <ul className="pointer-events-auto flex h-full flex-col items-center justify-center gap-16 sm:flex-row sm:flex-nowrap sm:gap-4 sm:p-4 sm:text-white">
-          {<Logo customClass="hidden-on-mobile mr-auto" />}
+          <NavbarListItem
+            href="/"
+            aria-label="Skurrilum - Homepage"
+            customClass={
+              'hidden-on-mobile pointer-events-auto mr-auto mix-blend-difference'
+            }>
+            {<Logo />}
+          </NavbarListItem>
+
           <NavbarListItem href="/" text="Home" />
           <NavbarListItem href="/" text="Unsere Räume" />
           <NavbarListItem href="/" text="Gruppen & Firmen" />
