@@ -10,33 +10,6 @@ import '../styles/utilities.css';
 import Navbar from '../components/navbar';
 ---
 
-<script>
-  import {THEME} from '../types/app';
-  const theme = (): THEME => {
-    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-      return localStorage.getItem('theme') as THEME;
-    }
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return THEME.DARK;
-    }
-    return THEME.LIGHT;
-  };
-
-  const setTheme = () => {
-    if (theme() === THEME.LIGHT) {
-      document.documentElement.classList.remove(THEME.DARK);
-    } else {
-      document.documentElement.classList.add(THEME.DARK);
-    }
-    window.localStorage.setItem('theme', theme());
-  };
-
-  setTheme();
-  document.addEventListener('astro:after-swap', () => {
-    setTheme();
-  });
-</script>
-
 <html lang="de">
   <head>
     <title>{title}</title>
