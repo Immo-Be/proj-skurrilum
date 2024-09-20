@@ -20,7 +20,7 @@ export default [
         },
       ],
       quotes: [2, 'single', 'avoid-escape'],
-      'no-unused-vars': [
+      '@typescript-eslint/no-unused-vars': [
         2,
         {vars: 'all', args: 'after-used', ignoreRestSiblings: false},
       ],
