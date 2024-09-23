@@ -5,7 +5,7 @@ import intro_video from '../assets/webtrailer.mp4';
 const VideoWrapper = () => (
   <div className="relative">
     <img
-      className="hidden-on-desktop size-full object-cover"
+      className="hidden-on-desktop size-full min-h-[200px] object-cover"
       src={intro_image.src}
       alt="Three people discovering the mysteries of an escape room at the Skurrilum"
     />
