@@ -3,7 +3,7 @@ import intro_image from '../assets/start_2min2.png';
 import intro_video from '../assets/webtrailer.mp4';
 
 const VideoWrapper = () => (
-  <div className="relative">
+  <section className="relative">
     <img
       className="hidden-on-desktop size-full min-h-[200px] object-cover"
       src={intro_image.src}
@@ -24,7 +24,7 @@ const VideoWrapper = () => (
         className="h-[200px] object-contain"
       />
     </div>
-  </div>
+  </section>
 );
 
 export default VideoWrapper;

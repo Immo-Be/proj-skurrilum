@@ -1,0 +1,17 @@
+---
+type Props = {
+  customClass?: string;
+};
+
+const {customClass} = Astro.props;
+import {twMerge} from 'tailwind-merge';
+---
+
+<h1
+  class={twMerge(
+    'before:logo relative h-[32px] w-[64px] before:absolute before:inset-0 before:isolate',
+    customClass
+  )}
+>
+  <span class="hidden">Skurrilum - Escape Room Hamburg Reeperbahn</span>
+</h1>
