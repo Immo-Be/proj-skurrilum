@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 .main-grid {
-  display: grid;
-  grid-template-rows: minmax(auto, 400px) minmax(min-content, 1fr);
+  /* display: grid;
+  grid-template-rows: minmax(auto, 400px) minmax(min-content, 1fr); */
 }
 
 /* Custom reset or global styles */
@@ -19,11 +19,11 @@
   box-sizing: border-box;
 }
 
-html,
+/* html,
 body,
 #root {
   height: 100dvh;
-}
+} */
 /* Register your custom font family and tell the browser where to find it. */
 @font-face {
   font-family: 'Nunito-Regular';
@@ -39,6 +39,21 @@ body,
     --transition-speed: 0.3s;
     --logo-width: 4rem;
     --logo-height: 2rem;
+
+    --aw-color-primary: rgb(241 234 229);
+    --aw-color-secondary: rgb(1 84 207);
+    --aw-color-accent: rgb(109 40 217);
+
+    --aw-color-text-heading: rgb(0 0 0);
+    --aw-color-text-default: rgb(16 16 16);
+    --aw-color-text-muted: rgb(16 16 16 / 66%);
+    --aw-color-bg-page: rgb(255 255 255);
+
+    --aw-color-bg-page-dark: rgb(3 6 32);
+
+    ::selection {
+      background-color: lavender;
+    }
   }
 
   /* When adding a new color, make sure to add it to the dark mode as well
@@ -52,6 +67,20 @@ body,
     :root {
       --color-primary: 33 33 33;
       --color-text: 241 234 229;
+
+      --aw-color-primary: rgb(33 33 33);
+      --aw-color-secondary: rgb(1 84 207);
+      --aw-color-accent: rgb(109 40 217);
+
+      --aw-color-text-heading: rgb(247, 248, 248);
+      --aw-color-text-default: rgb(229 236 246);
+      --aw-color-text-muted: rgb(229 236 246 / 66%);
+      --aw-color-bg-page: rgb(3 6 32);
+
+      ::selection {
+        background-color: black;
+        color: snow;
+      }
     }
   }
 
