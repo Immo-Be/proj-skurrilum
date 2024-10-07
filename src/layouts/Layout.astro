@@ -1,9 +1,13 @@
 ---
 export interface Props {
-  metadata?: MetaDataType;
+  title: string;
+  metadata?: {
+    title: string;
+  };
 }
 
-const {metadata = {}} = Astro.props;
+const {metadata = {}, title} = Astro.props;
+console.log('🚀 ~ metadata:', metadata);
 import {ViewTransitions} from 'astro:transitions';
 
 import '../styles/utilities.css';
@@ -14,7 +18,7 @@ import BasicScripts from '../utils/BasicScripts.astro';
 
 <html lang="de">
   <head>
-    <title>{metadata.title}</title>
+    <title>{title}</title>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />

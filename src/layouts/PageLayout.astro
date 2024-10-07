@@ -11,6 +11,7 @@ export interface Props {
 }
 
 const {metadata} = Astro.props;
+console.log('🚀 ~ metadata:', metadata);
 
 const footerData = {
   links: [
@@ -81,7 +82,12 @@ const footerData = {
 };
 ---
 
-<Layout metadata={metadata}>
+<Layout
+  title="AstroWind"
+  metadata={{
+    title: 'string',
+  }}
+>
   <!-- <slot name="announcement">
     <Announcement />
   </slot> -->

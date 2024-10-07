@@ -8,12 +8,11 @@ interface Props {
 }
 
 // Accepting props via Astro syntax
-const {onClick, isOpen, customClass, ...props} = Astro.props;
+const {isOpen, customClass, ...props} = Astro.props;
 ---
 
 <button
   class={twMerge(customClass, 'focus:outline-none')}
-  onclick={onClick}
   aria-expanded={isOpen}
   aria-label={isOpen ? 'Close menu' : 'Open menu'}
   {...props}
