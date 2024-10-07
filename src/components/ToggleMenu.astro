@@ -1,0 +1,86 @@
+---
+export interface Props {
+  label?: string;
+  class?: string;
+  onClick?: () => void;
+  isOpen?: boolean;
+}
+
+const {
+  isOpen = false,
+  label = 'Toggle menu',
+  class:
+    className = 'flex flex-col h-12 w-12 rounded justify-center items-center cursor-pointer group',
+} = Astro.props;
+---
+
+<button
+  class:list={[{className}, 'focus:outline-none, mix-blend-difference']}
+  aria-expanded={isOpen}
+  aria-label={isOpen ? 'Close menu' : 'Open menu'}
+  data-aw-toggle-menu
+>
+  <span class="sr-only">{label}</span>
+
+  <svg
+    class="mx-auto block w-10 transition-colors duration-200 ease-in-out"
+    aria-hidden="true"
+    viewBox="0 0 10 10"
+    stroke="white"
+    stroke-width=".6"
+    fill="rgba(0,0,0,0)"
+    stroke-linecap="round"
+  >
+    <path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7">
+      <animate
+        dur="0.2s"
+        attributeName="d"
+        values="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7;M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7"
+        fill="freeze"
+        begin="start.begin"></animate>
+      <animate
+        dur="0.2s"
+        attributeName="d"
+        values="M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7;M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7"
+        fill="freeze"
+        begin="reverse.begin"></animate>
+    </path>
+    <rect width="10" height="10" stroke="none">
+      <animate dur="2s" id="reverse" attributeName="width" begin="click"
+      ></animate>
+    </rect>
+    <rect width="10" height="10" stroke="none">
+      <animate
+        dur="0.001s"
+        id="start"
+        attributeName="width"
+        values="10;0"
+        fill="freeze"
+        begin="click"></animate>
+      <animate
+        dur="0.001s"
+        attributeName="width"
+        values="0;10"
+        fill="freeze"
+        begin="reverse.begin"></animate>
+    </rect>
+  </svg>
+</button>
+
+<!-- <button type="button" class={className} aria-label={label} data-aw-toggle-menu>
+  <span class="sr-only">{label}</span>
+  <slot>
+    <span
+      aria-hidden="true"
+      class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:rotate-45 group-[.expanded]:translate-y-2.5"
+    ></span>
+    <span
+      aria-hidden="true"
+      class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:opacity-0"
+    ></span>
+    <span
+      aria-hidden="true"
+      class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:-rotate-45 group-[.expanded]:-translate-y-2.5"
+    ></span>
+  </slot>
+</button> -->
