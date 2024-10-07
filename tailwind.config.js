@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+// import typographyPlugin from '@tailwindcss/typography';
 import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
@@ -12,6 +13,12 @@ export default {
       colors: {
         primary: 'rgb(var(--color-primary) / <alpha-value>)',
         text: 'rgb(var(--color-text) / <alpha-value>)',
+        primary: 'var(--aw-color-primary)',
+        secondary: 'var(--aw-color-secondary)',
+        accent: 'var(--aw-color-accent)',
+        default: 'var(--aw-color-text-default)',
+        muted: 'var(--aw-color-text-muted)',
+
         // success: 'rgb(var(--color-success) / <alpha-value>)',
         // info: 'rgb(var(--color-info) / <alpha-value>)',
         // warn: 'rgb(var(--color-warn) / <alpha-value>)',
@@ -21,5 +28,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  //   plugins: [typographyPlugin],
 };
