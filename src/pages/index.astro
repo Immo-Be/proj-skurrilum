@@ -4,19 +4,12 @@ import VideoWrapper from '../components/video-wrapper.astro';
 
 import {getLocale} from 'astro-i18n-aut';
 
-const locale = getLocale(Astro.url);
+import {useTranslations} from '../i18n/ui.ts';
+
+const locale = getLocale(Astro.url) as 'en' | 'de';
+const t = useTranslations(locale);
 
 let title: string;
-switch (locale) {
-  case 'en':
-    title = 'Hello World!';
-    break;
-  case 'de':
-    title = 'Hallo Welt!';
-    break;
-  default:
-    title = 'Default Title';
-}
 ---
 
 <script>
@@ -30,7 +23,7 @@ switch (locale) {
 
   <h2 id="buchungskalender">Buchungskalender</h2>
   <div class="buchung"></div>
-  <h1>Title: {title}</h1>
+  <h1>Title: {t('title')}</h1>
 
   TEST TEST EST Neuer Eintrag Lorem ipsum dolor sit amet, consectetur
   adipisicing elit. Possimus dolor earum, unde fugit aut nisi necessitatibus.

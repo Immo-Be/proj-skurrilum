@@ -52,7 +52,7 @@
 }
 
 /*Make sure that the text is visible on the header*/
-#header:not(.scroll) :is(button, a) {
+#header:not(.scroll) nav > ul > li > :is(button, a) {
   color: white;
 }
 /* #header.scroll > div:last-child {
