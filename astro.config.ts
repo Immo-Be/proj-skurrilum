@@ -1,5 +1,6 @@
+import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
-import {i18n} from 'astro-i18n-aut/integration';
+import {i18n, filterSitemapByDefaultLocale} from 'astro-i18n-aut/integration';
 import icon from 'astro-icon';
 import {defineConfig} from 'astro/config';
 
@@ -22,6 +23,13 @@ export default defineConfig({
     i18n({
       defaultLocale, // the default locale
       locales, // the locales you want to support
+    }),
+    sitemap({
+      i18n: {
+        locales,
+        defaultLocale,
+      },
+      filter: filterSitemapByDefaultLocale({defaultLocale}),
     }),
     tailwind(),
     icon({
