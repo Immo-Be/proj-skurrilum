@@ -8,8 +8,6 @@ import {useTranslations} from '../i18n/ui.ts';
 
 const locale = getLocale(Astro.url) as 'en' | 'de';
 const t = useTranslations(locale);
-
-let title: string;
 ---
 
 <script>
@@ -25,5 +23,4 @@ let title: string;
   <div class="buchung"></div>
   <h1>{t('title')}</h1>
   <h1>{t('description')}</h1>
-  <h1>Ideal: {t('ideal')}</h1>
 </Layout>
