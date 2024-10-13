@@ -2,10 +2,10 @@
 // import {Icon} from 'astro-icon/components';
 import {getHomePermalink, trimSlash} from '../utils/permalinks';
 
-import ToggleMenu from './ToggleMenu.astro';
 import type {CallToAction} from '../types/types';
 import {Icon} from 'astro-icon/components';
 import Logo from './Logo.astro';
+import ToggleIcon from './ToggleMenu.astro';
 
 interface Link {
   text?: string;
@@ -84,7 +84,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         <Logo />
       </a>
       <div class="flex items-center md:hidden">
-        <ToggleMenu />
+        <ToggleIcon />
       </div>
     </div>
     <nav
