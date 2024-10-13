@@ -91,7 +91,7 @@ const footerData = {
     <Announcement />
   </slot> -->
   <slot name="header">
-    <Header {...headerData} isFixed />
+    <Header {...headerData} isFixed transition:persist />
   </slot>
   <main>
     <slot />
