@@ -137,7 +137,10 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
             </li>
           ))
         }
-        <li>
+        <li
+          class="transition-transform duration-500 translate-x-full"
+          id="cta-element-header"
+        >
           <Cta class="px-4 py-3 flex items-center cursor-pointer" />
         </li>
       </ul>
