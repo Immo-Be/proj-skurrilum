@@ -1,6 +1,8 @@
 ---
 // import { UI } from 'astrowind:config';
-const UI = {
+const UI: {
+  theme: string;
+} = {
   theme: 'light',
 };
 ---
@@ -168,7 +170,37 @@ const UI = {
         ticking = true;
       }
     });
+
+    // Function to handle intersection changes
+    function handleIntersection(entry) {
+      const cta = document.getElementById('cta-element-header');
+      entry.forEach(entry => {
+        if (!entry.isIntersecting) {
+          console.log('Element has left the viewport');
+          cta.classList.add('translate-x-full');
+          // Add your custom logic here
+        } else {
+          cta.classList.remove('translate-x-full');
+          console.log('Element is in the viewport');
+          // Add your custom logic here
+        }
+      });
+    }
+
+    // Create an Intersection Observer
+    const observer = new IntersectionObserver(handleIntersection, {
+      root: null, // Use the viewport as the root
+      //   rootMargin: '0px -200px 0px 0px',
+      threshold: '1', // Trigger when the element is fully out of view
+    });
+
+    // Observe the target element
+    const target = document.getElementById('cta-element-video');
+    if (target) {
+      observer.observe(target);
+    }
   };
+
   const onPageShow = function () {
     document.documentElement.classList.add('motion-safe:scroll-smooth');
     const elem = document.querySelector('[data-aw-toggle-menu]');
