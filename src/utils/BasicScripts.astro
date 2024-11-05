@@ -177,10 +177,10 @@ const UI: {
       entry.forEach(entry => {
         if (!entry.isIntersecting) {
           console.log('Element has left the viewport');
-          cta.classList.add('translate-x-full');
+          cta.classList.add('translate-x-0');
           // Add your custom logic here
         } else {
-          cta.classList.remove('translate-x-full');
+          cta.classList.remove('translate-x-0');
           console.log('Element is in the viewport');
           // Add your custom logic here
         }
@@ -190,8 +190,8 @@ const UI: {
     // Create an Intersection Observer
     const observer = new IntersectionObserver(handleIntersection, {
       root: null, // Use the viewport as the root
-      //   rootMargin: '0px -200px 0px 0px',
-      threshold: '1', // Trigger when the element is fully out of view
+      rootMargin: '-78px 0px 0px 0px',
+      threshold: '0', // Trigger when the element is fully out of view
     });
 
     // Observe the target element
