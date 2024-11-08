@@ -174,13 +174,14 @@ const UI: {
     // Function to handle intersection changes
     function handleIntersection(entry) {
       const cta = document.getElementById('cta-element-header');
+      console.log('🚀 ~ handleIntersection ~ cta:', cta);
       entry.forEach(entry => {
         if (!entry.isIntersecting) {
           console.log('Element has left the viewport');
-          cta.classList.add('translate-x-0');
+          cta.classList.remove('translate-x-[200px]');
           // Add your custom logic here
         } else {
-          cta.classList.remove('translate-x-0');
+          cta.classList.add('translate-x-[200px]');
           console.log('Element is in the viewport');
           // Add your custom logic here
         }
