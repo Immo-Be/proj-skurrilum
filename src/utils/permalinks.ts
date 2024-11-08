@@ -1,8 +1,6 @@
 import slugify from 'limax';
 import {trim} from '../utils/utils';
 
-// import { SITE, APP_BLOG } from 'astrowind:config';
-
 const APP_BLOG = {
   list: {
     pathname: 'blog',
@@ -21,7 +19,7 @@ const APP_BLOG = {
 const SITE = {
   name: 'Skurrilum',
   site: 'https://staging.seefalke.de',
-  base: '/',
+  base: '/en',
   trailingSlash: true,
 };
 
