@@ -1,16 +1,17 @@
+import type {Translation} from './i18n/i18n';
 import {getPermalink, getBlogPermalink, getAsset} from './utils/permalinks';
 
-export const headerData = {
+export const headerData = (t: Translation) => ({
   links: [
     {
-      text: 'Unsere\u00A0Räume',
+      text: t('nav.rooms'),
       links: [
         {
-          text: 'Die weinende Frau',
+          text: t('zoo-of-death.titleShort'),
           href: getPermalink('/die-weinende-frau'),
         },
         {
-          text: 'Der Zoo des Todes',
+          text: t('zoo-of-death.titleShort'),
           href: getPermalink('/der-zoo-des-todes'),
         },
         {
@@ -28,20 +29,20 @@ export const headerData = {
       ],
     },
     {
-      text: 'Gruppen\u00A0&\u00A0Firmen',
+      text: t('nav.groups'),
       href: getPermalink('/firmen'),
     },
     {
-      text: 'Kontakt',
+      text: t('nav.contact'),
       href: getPermalink('/kontakt'),
     },
     {
-      text: 'FAQ',
+      text: t('nav.faqs'),
       href: getPermalink('/faq'),
     },
 
     {
-      text: 'Die\u00A0Macher',
+      text: t('nav.makers'),
       href: getPermalink('/die-macher'),
     },
   ],
@@ -49,10 +50,10 @@ export const headerData = {
     {
       text: 'Download',
       href: 'https://github.com/onwidget/astrowind',
-      target: '_blank',
+      target: '-blank',
     },
   ],
-};
+});
 
 export const footerData = {
   links: [
