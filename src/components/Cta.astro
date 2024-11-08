@@ -1,11 +1,11 @@
 ---
 interface Props {
   id?: string;
-  label?: string;
+  label: string;
   class?: string;
 }
 
-const {label = 'Jetzt\u00A0buchen', class: className = '', id} = Astro.props;
+const {label = '', class: className = '', id} = Astro.props;
 ---
 
 <a
