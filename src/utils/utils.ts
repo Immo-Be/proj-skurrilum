@@ -1,5 +1,3 @@
-// import { I18N } from 'astrowind:config';
-
 const I18N = {
   language: 'de',
   textDirection: 'ltr',
