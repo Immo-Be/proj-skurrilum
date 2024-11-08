@@ -4,7 +4,7 @@ import VideoWrapper from '../components/video-wrapper.astro';
 
 import {getLocale} from 'astro-i18n-aut';
 
-import {useTranslations} from '../i18n/ui.ts';
+import {useTranslations} from '../i18n/i18n.ts';
 
 const locale = getLocale(Astro.url) as 'en' | 'de';
 const t = useTranslations(locale);
@@ -19,18 +19,27 @@ const t = useTranslations(locale);
   <VideoWrapper />
   <!-- </Fragment> -->
 
-  <h2 id="buchungskalender">Buchungskalender</h2>
-  <div class="buchung"></div>
-  <h1>{t('title')}</h1>
-  <h1>{t('description')}</h1>
-  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed facilis sit necessitatibus
-  quisquam sunt, beatae tenetur adipisci reiciendis. Eum rem consectetur, illo aut
-  magni assumenda soluta sapiente laudantium recusandae molestiae repudiandae aliquid
-  voluptate incidunt, est tenetur fugiat perspiciatis dolor. Necessitatibus, numquam
-  esse! Deserunt est nesciunt maiores modi aliquam debitis eos doloremque veritatis
-  accusamus magnam architecto quo delectus molestiae voluptatum magni corporis, sunt
-  culpa facilis quia ipsam, tenetur provident aut. Optio minima odit ea distinctio
-  fugit asperiores expedita eum quod laboriosam totam quisquam vero aperiam, labore
-  impedit voluptas voluptates. Veniam debitis quasi hic, et incidunt reiciendis.
-  Expedita vitae distinctio quam voluptas.
+  <h1 class="text-3xl font-bold m-auto" id="buchungskalender">
+    {t('general.skurrilum')}
+  </h1>
+  <span>{t('general.descriptionShort')}</span>
+  <div>
+    {t('general.description')}
+  </div>
+  <!--   <script
+    src="https://cdn.quinbook.com/shop.js"
+    data-shopid="01161aaa0b6d1345dd8fe4e481144d84"></script>
+ -->
+  <h2>{t('seo.title1')}</h2>
+  <p>
+    {t('seo.description1')}
+  </p>
+  <h2>{t('seo.title2')}</h2>
+  <p>
+    {t('seo.description2')}
+  </p>
+  <h2>{t('seo.title3')}</h2>
+  <p>
+    {t('seo.description3')}
+  </p>
 </Layout>
