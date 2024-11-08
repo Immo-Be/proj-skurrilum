@@ -1,6 +1,8 @@
 ---
+import {getLocale} from 'astro-i18n-aut';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import {useTranslations} from '../i18n/i18n';
 import {headerData} from '../navigation';
 import type {MetaData} from '../types/types';
 import {getPermalink, getAsset} from '../utils/permalinks';
@@ -11,7 +13,12 @@ export interface Props {
 }
 
 const {metadata} = Astro.props;
-console.log('🚀 ~ metadata:', metadata);
+
+const locale = getLocale(Astro.url) as 'en' | 'de';
+console.log('🚀 ~ locale:', locale);
+const t = useTranslations(locale);
+
+// console.log('🚀 ~ metadata:', metadata);
 
 const footerData = {
   links: [
@@ -83,7 +90,7 @@ const footerData = {
 ---
 
 <Layout
-  title="AstroWind"
+  title="Skurrilum"
   metadata={{
     title: 'string',
   }}
@@ -92,7 +99,7 @@ const footerData = {
     <Announcement />
   </slot> -->
   <slot name="header">
-    <Header {...headerData} isFixed transition:persist />
+    <Header {...headerData(t)} isFixed transition:persist />
   </slot>
   <main>
     <slot />
