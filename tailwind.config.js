@@ -13,6 +13,7 @@ export default {
       colors: {
         primary: 'rgb(var(--color-primary) / <alpha-value>)',
         text: 'rgb(var(--color-text) / <alpha-value>)',
+        text_difference: 'rgb(var(--color-text-difference) / <alpha-value>)',
         primary: 'var(--aw-color-primary)',
         secondary: 'var(--aw-color-secondary)',
         accent: 'var(--aw-color-accent)',

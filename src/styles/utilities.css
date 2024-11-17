@@ -84,8 +84,11 @@ body,
   /* When adding a new color, make sure to add it to the dark mode as well
   CAREFEUL: The colors have to be in this format: --color-name: red green blue; */
   :root {
+    --color-light: 241 234 229;
+    --color-dark: 33 33 33;
     --color-primary: 241 234 229;
-    --color-text: 33 33 33;
+    --color-text: var(--color-dark);
+    --color-text-difference: var(--color-light);
 
     /* This is the variable which is used by quinbook */
     --VD_TXT_COLOR: var(--color-text) !important;
@@ -94,7 +97,9 @@ body,
   @media (prefers-color-scheme: dark) {
     :root {
       --color-primary: 33 33 33;
-      --color-text: 241 234 229;
+      --color-text: var(--color-light);
+      /* This doesn't make sense but works for now. Fix later */
+      --color-text-difference: var(--color-light);
 
       --aw-color-primary: rgb(33 33 33);
       --aw-color-secondary: rgb(1 84 207);

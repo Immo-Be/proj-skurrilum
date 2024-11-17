@@ -149,6 +149,19 @@
   .bg-muted {
     background-color: var(--aw-color-accent);
   }
+
+  .parallax-container {
+    perspective: 1px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+  }
+
+  .parallax {
+    transform: translateZ(-1px) scale(2);
+    position: relative;
+    z-index: -1;
+  }
 }
 
 @layer components {
