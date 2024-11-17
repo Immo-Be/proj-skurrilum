@@ -5,7 +5,7 @@ import intro_video from '../assets/webtrailer.mp4';
 import Cta from './Cta.astro';
 ---
 
-<section class="relative">
+<section class="relative parallax max-h-[1057px]">
   <img
     class="hidden-on-desktop size-full min-h-[200px] object-cover"
     src={intro_image.src}
@@ -16,7 +16,7 @@ import Cta from './Cta.astro';
       autoplay
       muted
       loop
-      class="hidden-on-mobile size-full object-cover object-top"
+      class="hidden-on-mobile size-full object-cover object-top max-h-[600px]"
       aria-label="Introductory video showing the escape room experience at Skurrilum"
     >
       <source src={intro_video} type="video/mp4" />
