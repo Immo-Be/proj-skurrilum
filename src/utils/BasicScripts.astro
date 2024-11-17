@@ -217,9 +217,26 @@ const UI: {
   window.onload = onLoad;
   window.onpageshow = onPageShow;
 
+  // Function to handle the parallax effect
+  function parallaxEffect() {
+    const parallaxElements = document.querySelectorAll('.parallax');
+    console.log('🚀 ~ parallaxEffect ~ parallaxElements:', parallaxElements);
+    parallaxElements.forEach(element => {
+      const speed = element.getAttribute('data-speed') || 0.5;
+      const yPos = window.scrollY * speed;
+      element.style.transform = `translateY(${yPos}px)`;
+    });
+  }
+  // Initial call to set the position
+  parallaxEffect();
+
+  // Add event listener for scroll
+  window.addEventListener('scroll', parallaxEffect);
+
   document.addEventListener('astro:after-swap', () => {
     initTheme();
     onLoad();
     onPageShow();
+    parallaxEffect();
   });
 </script>
