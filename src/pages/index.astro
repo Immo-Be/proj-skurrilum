@@ -18,9 +18,9 @@ const t = useTranslations(locale);
   <VideoWrapper slot="video-area" />
 
   <Fragment slot="main">
-    <div class="flex flex-wrap md:flex-nowrap mx-4">
+    <div class="flex flex-wrap md:flex-nowrap mx-4 items-center">
       <h1
-        class="font-extrabold leading-none text-center tracking-tight text-step-5 sm:text-step-6 md:text-step-8 lg:text-step-10 md:border-r-2 w-fit"
+        class="leading-none text-center tracking-tight text-step-5 sm:text-step-6 md:text-step-8 lg:text-step-10 md:border-r-2 w-fit"
         id="buchungskalender"
       >
         {t('general.skurrilum')}
@@ -31,7 +31,7 @@ const t = useTranslations(locale);
       />
     </div>
     <p
-      class="my-6 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 text-justify"
+      class="my-6 text-lg font-normal lg:text-xl dark:text-gray-400 text-justify"
     >
       {t('general.description')}
     </p>
