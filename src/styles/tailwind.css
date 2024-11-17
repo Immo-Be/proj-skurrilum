@@ -2,7 +2,135 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Check if can be merged with the tailwindcss */
+
+@property --cur-viewport-width {
+  syntax: '<length>';
+  initial-value: 0px;
+  inherits: false;
+}
+
+@property --min-viewport-width {
+  syntax: '<length>';
+  initial-value: 0px;
+  inherits: false;
+}
+
+@property --max-viewport-width {
+  syntax: '<length>';
+  initial-value: 0px;
+  inherits: false;
+}
+
+:root {
+  --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+  --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+  --step-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
+  --step-4: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
+  --step-5: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
+  --step-6: clamp(3.3592rem, 2.8691rem + 2.4507vw, 4.7684rem);
+  --step-7: clamp(4.0311rem, 3.36rem + 3.3555vw, 5.9605rem);
+  --step-8: clamp(4.8373rem, 3.9283rem + 4.5448vw, 7.4506rem);
+  --step-9: clamp(5.8048rem, 4.5844rem + 6.1017vw, 9.3132rem);
+  --step-10: clamp(6.9657rem, 5.3393rem + 10.1319vw, 11.6415rem);
+
+  --cur-viewport-width: 100vw;
+  --min-viewport-width: 25rem;
+  --max-viewport-width: 80rem;
+  --cur-width: calc(100vw / 1vw);
+  --cur-width: tan(atan2(var(--cur-viewport-width), 1px));
+  --min-width: tan(atan2(var(--min-viewport-width), 1px));
+  --max-width: tan(atan2(var(--max-viewport-width), 1px));
+  --x: clamp(
+    0,
+    (var(--cur-width) - var(--min-width)) /
+      (var(--max-width) - var(--min-width)),
+    1
+  );
+  --ease-out-sine: sin((var(--x) * pi) / 2);
+  --scale: calc((sqrt(5) + 1) / 2);
+  --px-to-rem: 0.0625;
+  --xxx-small: round(pow(var(--scale), -4), var(--px-to-rem));
+  --xx-small: round(pow(var(--scale), -3), var(--px-to-rem));
+  --x-small: round(pow(var(--scale), -2), var(--px-to-rem));
+  --small: round(pow(var(--scale), -1), var(--px-to-rem));
+  --medium: round(pow(var(--scale), 0), var(--px-to-rem));
+  --large: round(pow(var(--scale), 1), var(--px-to-rem));
+  --x-large: round(pow(var(--scale), 2), var(--px-to-rem));
+  --xx-large: round(pow(var(--scale), 3), var(--px-to-rem));
+  --xxx-large: round(pow(var(--scale), 4), var(--px-to-rem));
+  --xxxx-large: round(pow(var(--scale), 5), var(--px-to-rem));
+  --page-margin: calc(
+    clamp(
+        min(var(--x-large), var(--xxx-large)),
+        var(--x-large) + var(--ease-out-sine) *
+          (var(--xxx-large) - var(--x-large)),
+        max(var(--x-large), var(--xxx-large))
+      ) * 1rem
+  );
+  --page-margin-inline: calc(
+    clamp(
+        min(var(--large), var(--xxx-large)),
+        var(--large) + var(--ease-out-sine) * (var(--xxx-large) - var(--large)),
+        max(var(--large), var(--xxx-large))
+      ) * 1rem
+  );
+  --column-width: calc(40rem + (var(--page-margin) * 2));
+  --column-gutter: var(--page-margin);
+  --nav-size: calc(var(--medium) * 1rem);
+  --fg-color: #333333;
+  --bg-color: #eeeeee;
+  --secondary-fg-color: #bbbbbb;
+  --tertiary-fg-color: #999999;
+  --secondary-bg-color: #e0e0e0;
+  --random-fg-color: #333333;
+  --random-bg-color: #ffffff;
+}
+
 @layer utilities {
+  .text-step-0 {
+    font-size: var(--step-0);
+  }
+  .text-step-1 {
+    font-size: var(--step-1);
+  }
+  .text-step-2 {
+    font-size: var(--step-2);
+  }
+  .text-step-3 {
+    font-size: var(--step-3);
+  }
+  .text-step-4 {
+    font-size: var(--step-4);
+  }
+  .text-step-5 {
+    font-size: var(--step-5);
+  }
+  .text-step-6 {
+    font-size: var(--step-6);
+  }
+  .text-step-7 {
+    font-size: var(--step-7);
+  }
+  .text-step-8 {
+    font-size: var(--step-8);
+  }
+  .text-step-9 {
+    font-size: var(--step-9);
+  }
+  .text-step-10 {
+    font-size: var(--step-10);
+  }
+
+  .main-margin {
+    --inline-padding: var(--page-margin-inline);
+    padding: 0 var(--inline-padding);
+    max-width: 65ch;
+    overflow-x: visible;
+    min-width: 0;
+  }
+
   .bg-page {
     background-color: var(--aw-color-bg-page);
   }

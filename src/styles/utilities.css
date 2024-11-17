@@ -34,6 +34,31 @@ body,
 }
 
 @layer base {
+  body {
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    --size: var(--small);
+    --ascender: 1.01;
+    --cap-height: 0.718;
+    --x-height: 0.523;
+    --descender: -0.24;
+    font-weight: 400;
+    --left-bearing: 0.081;
+    --stem-width: 0.077;
+    --char-height: var(--x-height);
+    --font-size-adjust: var(--char-height);
+    --font-size: calc(var(--size) / var(--font-size-adjust));
+    --line-height: calc(var(--x-large) * var(--font-size-adjust));
+    font-size: calc(var(--font-size) * 1rem);
+    line-height: var(--line-height);
+    color: var(--fg-color);
+    /* min-height: 100vh;
+    min-height: 100dvh;
+    position: relative; */
+    gap: var(--page-margin);
+    /* overflow-y: hidden; */
+  }
+
   /* Define custom variables */
   :root {
     --transition-speed: 0.3s;
