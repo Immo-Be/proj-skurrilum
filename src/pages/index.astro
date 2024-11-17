@@ -15,31 +15,42 @@ const t = useTranslations(locale);
 </script>
 
 <Layout>
-  <!-- <Fragment slot="after-header"> -->
-  <VideoWrapper />
-  <!-- </Fragment> -->
+  <VideoWrapper slot="video-area" />
 
-  <h1 class="text-3xl font-bold m-auto" id="buchungskalender">
-    {t('general.skurrilum')}
-  </h1>
-  <span>{t('general.descriptionShort')}</span>
-  <div>
-    {t('general.description')}
-  </div>
-  <!--   <script
+  <Fragment slot="main">
+    <div class="flex flex-wrap md:flex-nowrap mx-4">
+      <h1
+        class="font-extrabold leading-none text-center tracking-tight text-step-5 sm:text-step-6 md:text-step-8 lg:text-step-10 md:border-r-2 w-fit"
+        id="buchungskalender"
+      >
+        {t('general.skurrilum')}
+      </h1>
+      <span
+        class="text-step-0 text-center"
+        set:text={t('general.descriptionShort')}
+      />
+    </div>
+    <p
+      class="my-6 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 text-justify"
+    >
+      {t('general.description')}
+    </p>
+    <h2>{t('bookingCalender')}</h2>
+    <!-- <script
     src="https://cdn.quinbook.com/shop.js"
-    data-shopid="01161aaa0b6d1345dd8fe4e481144d84"></script>
- -->
-  <h2>{t('seo.title1')}</h2>
-  <p>
-    {t('seo.description1')}
-  </p>
-  <h2>{t('seo.title2')}</h2>
-  <p>
-    {t('seo.description2')}
-  </p>
-  <h2>{t('seo.title3')}</h2>
-  <p>
-    {t('seo.description3')}
-  </p>
+    data-shopid="01161aaa0b6d1345dd8fe4e481144d84"></script> -->
+
+    <h2>{t('seo.title1')}</h2>
+    <p>
+      {t('seo.description1')}
+    </p>
+    <h2>{t('seo.title2')}</h2>
+    <p>
+      {t('seo.description2')}
+    </p>
+    <h2>{t('seo.title3')}</h2>
+    <p>
+      {t('seo.description3')}
+    </p>
+  </Fragment>
 </Layout>
