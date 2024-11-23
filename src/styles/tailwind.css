@@ -23,6 +23,14 @@
 }
 
 :root {
+  /* Style the selection to match your needs
+  This is need when using the mix-blend-mode property
+  */
+  ::selection {
+    background: rgba(255, 255, 255, 0.5); /* Light semi-transparent highlight */
+    color: black; /* Text color on selection */
+  }
+
   --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
   --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
   --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
@@ -71,9 +79,10 @@
   );
   --page-margin-inline: calc(
     clamp(
-        min(var(--large), var(--xxx-large)),
-        var(--large) + var(--ease-out-sine) * (var(--xxx-large) - var(--large)),
-        max(var(--large), var(--xxx-large))
+        min(var(--medium), var(--xxx-large)),
+        var(--medium) + var(--ease-out-sine) *
+          (var(--xxx-large) - var(--medium)),
+        max(var(--medium), var(--xxx-large))
       ) * 1rem
   );
   --column-width: calc(40rem + (var(--page-margin) * 2));
@@ -160,7 +169,6 @@
   .parallax {
     transform: translateZ(-1px) scale(2);
     position: relative;
-    z-index: -1;
   }
 }
 
@@ -196,6 +204,11 @@
 #header:not(.scroll) nav.hidden > ul > li > :is(button, a) {
   color: white;
 }
+
+#header:not(.scroll) h1:before {
+  display: none;
+}
+
 /* #header.scroll > div:last-child {
   @apply py-3;
 } */
