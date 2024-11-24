@@ -1,8 +1,10 @@
 {
   "de": {
+    "cta.bookNow": "Jetzt buchen",
+    "cta.bookNowHere": "Tickets buchen",
     "nav.rooms": "Unsere\u00A0Räume",
     "nav.groups": "Gruppen\u00A0&\u00A0Firmen",
-    "nav.contact": "Kontakt",
+    "nav.contact": "Kontakt\u00A0&\u00A0Anfahrt",
     "nav.faqs": "FAQ",
     "nav.makers": "Die\u00A0Macher",
     "general.skurrilum": "Das Skurrilum",
@@ -18,9 +20,11 @@
     "seo.description3": "Ganz egal, ob ihr schon öfter einen Escape Room gespielt hast, oder euch euer erstes Escape Room Erlebnis noch bevorsteht, das Skurrilum Hamburg wird euch sicherlich nicht enttäuschen. Nicht umsonst wurde unser Escape Room in Hamburg in 2019 zu einem der besten gekrönt. Unsere Räume erzählen einzigartige Geschichten, die mit vielen Details geschmückt sind. Das wird euch garantiert auch auffallen, wenn ihr euren gebuchten Escape Room im Skurrilum St. Pauli betretet, denn alle Räume sind aufwendig gestaltet und besitzen neben einer atemberaubenden Kulisse auch realitätsgetreue Technik- und Geräuscheffekte. Auf unserer Website findet ihr eine Übersicht unserer Escape Rooms, die unterschiedlicher nicht sein könnten. Welchen Escape Room in Hamburg findet ihr am besten?"
   },
   "en": {
+    "cta.bookNow": "Book now",
+    "cta.bookNowHere": "Book here",
     "nav.rooms": "Our\u00A0rooms",
     "nav.groups": "Groups\u00A0&\u00A0Companies",
-    "nav.contact": "Contact",
+    "nav.contact": "Contact\u00A0&\u00A0Directions",
     "nav.faqs": "FAQ",
     "nav.makers": "The\u00A0Makers",
     "general.skurrilum": "The Skurrilum",
