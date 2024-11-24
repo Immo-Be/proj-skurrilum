@@ -172,33 +172,38 @@ const UI: {
     });
 
     // Function to handle intersection changes
-    function handleIntersection(entry) {
+    {
       const cta = document.getElementById('cta-element-header-desktop');
-      entry.forEach(entry => {
-        if (!entry.isIntersecting) {
-          cta.classList.remove('translate-x-[200px]');
-          // Add your custom logic here
-        } else {
-          cta.classList.add('translate-x-[200px]');
-          // Add your custom logic here
-        }
+      if (window.innerWidth < 768) {
+        cta.classList.remove('translate-x-[200px]');
+        return;
+      }
+      function handleIntersection(entry) {
+        entry.forEach(entry => {
+          if (!entry.isIntersecting) {
+            cta.classList.remove('translate-x-[200px]');
+            // Add your custom logic here
+          } else {
+            cta.classList.add('translate-x-[200px]');
+            // Add your custom logic here
+          }
+        });
+      }
+
+      // Create an Intersection Observer
+      const observer = new IntersectionObserver(handleIntersection, {
+        root: null, // Use the viewport as the root
+        rootMargin: '-78px 0px 0px 0px',
+        threshold: '0', // Trigger when the element is fully out of view
       });
-    }
 
-    // Create an Intersection Observer
-    const observer = new IntersectionObserver(handleIntersection, {
-      root: null, // Use the viewport as the root
-      rootMargin: '-78px 0px 0px 0px',
-      threshold: '0', // Trigger when the element is fully out of view
-    });
-
-    // Observe the target element
-    const target = document.getElementById('cta-element-video');
-    if (target) {
-      observer.observe(target);
+      // Observe the target element
+      const target = document.getElementById('cta-element-video');
+      if (target) {
+        observer.observe(target);
+      }
     }
   };
-
   const onPageShow = function () {
     document.documentElement.classList.add('motion-safe:scroll-smooth');
     const elem = document.querySelector('[data-aw-toggle-menu]');
@@ -224,6 +229,53 @@ const UI: {
       element.style.transform = `translateY(${yPos}px)`;
     });
   }
+
+  function adjustCtaPosition() {
+    const cta = document.querySelector('.cta-bubble');
+    const footer = document.querySelector('.footer');
+    const footerRect = footer.getBoundingClientRect();
+
+    // Check if the shop element is
+
+    if (footerRect.top < window.innerHeight) {
+      cta.style.bottom = `${window.innerHeight - footerRect.top + 60}px`;
+    } else {
+      cta.style.bottom = '60px';
+    }
+
+    // Make the CTA disappear when the shop element is in the viewport
+    const shop = document.querySelector('#venuedoo');
+    // Function to handle intersection changes
+    function handleIntersection(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          cta.style.right = '-100%';
+          // Add your custom logic here
+        } else {
+          cta.style.right = '0';
+          // Add your custom logic here
+        }
+      });
+    }
+
+    // Create an Intersection Observer
+    const observer = new IntersectionObserver(handleIntersection, {
+      root: null, // Use the viewport as the root
+      threshold: [0], // Trigger when 10% of the element is visible
+    });
+
+    // Observe the target element
+    const target = shop;
+    if (target) {
+      observer.observe(target);
+    }
+  }
+
+  window.addEventListener('scroll', adjustCtaPosition);
+  window.addEventListener('resize', adjustCtaPosition);
+
+  // Initial call to set the position
+  adjustCtaPosition();
   // Initial call to set the position
   parallaxEffect();
 
