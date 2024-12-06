@@ -172,6 +172,7 @@ const UI: {
     });
 
     // Function to handle intersection changes
+    // Does not re-execute on resize
     {
       const cta = document.getElementById('cta-element-header-desktop');
       if (window.innerWidth < 768) {
@@ -182,6 +183,7 @@ const UI: {
         entry.forEach(entry => {
           if (!entry.isIntersecting) {
             cta.classList.remove('translate-x-[200px]');
+
             // Add your custom logic here
           } else {
             cta.classList.add('translate-x-[200px]');
