@@ -1,5 +1,5 @@
 ---
-import {getLocale} from 'astro-i18n-aut';
+// import {getLocale} from 'astro-i18n-aut';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import {useTranslations} from '../i18n/i18n';
@@ -14,7 +14,8 @@ export interface Props {
 
 const {metadata} = Astro.props;
 
-const locale = getLocale(Astro.url) as 'en' | 'de';
+// const locale = getLocale(Astro.url) as 'en' | 'de';
+const locale = 'en';
 console.log('🚀 ~ locale:', metadata);
 const t = useTranslations(locale);
 

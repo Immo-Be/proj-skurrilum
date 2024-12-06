@@ -32,8 +32,6 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",
-    "@inlang/paraglide-astro": "^0.2.2",
-    "astro-i18n-aut": "^0.7.0",
     "limax": "^4.1.0"
   }
 }

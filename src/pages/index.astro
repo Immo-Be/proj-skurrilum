@@ -2,11 +2,12 @@
 import Layout from '../layouts/PageLayout.astro';
 import VideoWrapper from '../components/video-wrapper.astro';
 
-import {getLocale} from 'astro-i18n-aut';
+// import {getLocale} from 'astro-i18n-aut';
 
 import {useTranslations} from '../i18n/i18n.ts';
 
-const locale = getLocale(Astro.url) as 'en' | 'de';
+// const locale = getLocale(Astro.url) as 'en' | 'de';
+const locale = 'de';
 const t = useTranslations(locale);
 ---
 
