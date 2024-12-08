@@ -1,4 +1,4 @@
-import sitemap from '@astrojs/sitemap';
+// import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 // import {i18n, filterSitemapByDefaultLocale} from 'astro-i18n-aut/integration';
 import {defineConfig} from 'astro/config';
@@ -15,8 +15,13 @@ const locales = {
 export default defineConfig({
   site: 'https://example.com/',
   trailingSlash: 'always',
-  build: {
-    format: 'directory',
+  //   build: {
+  //     format: 'directory',
+  //   },
+  i18n: {
+    locales: ['de', 'en'],
+    defaultLocale: 'de',
+    routing: 'manual',
   },
   integrations: [
     // i18n({
