@@ -6,14 +6,15 @@ export interface Props {
   };
 }
 
-const {metadata = {}, title} = Astro.props;
-console.log('🚀 ~ metadata:', metadata);
-import {ViewTransitions} from 'astro:transitions';
+const {title} = Astro.props;
+
+// console.log('🚀 ~ metadata:', metadata);
 
 import '../styles/utilities.css';
 import '../styles/tailwind.css';
 
 import BasicScripts from '../utils/BasicScripts.astro';
+import {ClientRouter} from 'astro:transitions';
 ---
 
 <html lang="de">
@@ -26,7 +27,7 @@ import BasicScripts from '../utils/BasicScripts.astro';
     <meta name="generator" content={Astro.generator} />
     <!-- <CustomStyles /> -->
 
-    <ViewTransitions fallback="swap" />
+    <ClientRouter fallback="swap" />
   </head>
   <body class="bg-page text-text">
     <slot />
@@ -35,9 +36,7 @@ import BasicScripts from '../utils/BasicScripts.astro';
     <main>
       <slot name="main-content" />
     </main> -->
-    <a href="">
-        
-    </a>
+    <a href=""> </a>
     <BasicScripts />
   </body>
 </html>

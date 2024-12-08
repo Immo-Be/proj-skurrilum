@@ -14,6 +14,21 @@ const UI: {
 
   window.basic_script = true;
 
+  // Not ideal, but it works
+  // We cannot use the middleware because we don't have access to window
+  // as long as the routes are generated statically
+  function redirect() {
+    const url = new URL(window.location.href);
+
+    // if the url contains ?lang=en, redirect to /en
+
+    if (url.searchParams.get('lang') === 'en') {
+      url.searchParams.delete('lang');
+
+      window.location.href = url.href;
+    }
+  }
+
   function applyTheme(theme) {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
@@ -284,10 +299,13 @@ const UI: {
   // Add event listener for scroll
   window.addEventListener('scroll', parallaxEffect);
 
+  redirect();
+
   document.addEventListener('astro:after-swap', () => {
     initTheme();
     onLoad();
     onPageShow();
     parallaxEffect();
+    redirect();
   });
 </script>

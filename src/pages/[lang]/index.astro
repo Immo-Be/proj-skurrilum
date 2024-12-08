@@ -1,0 +1,11 @@
+---
+import Layout from '../../layouts/PageLayout.astro';
+
+export function getStaticPaths() {
+  return [{params: {lang: 'en'}}, {params: {lang: 'de'}}];
+}
+---
+
+<Layout>
+  <h1>Startseite</h1>
+</Layout>

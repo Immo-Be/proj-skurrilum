@@ -40,7 +40,7 @@ const {
   //   position = 'center',
 } = Astro.props;
 
-console.log('isFullWidth', isFullWidth);
+// console.log('isFullWidth', isFullWidth);
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 ---
@@ -61,7 +61,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
   <!-- <div class="absolute inset-0"></div> -->
   <div
     class:list={[
-      'relative text-default md:flex md:items-center md:justify-center px-[var(--page-margin-inline)] ',
+      'relative text-default md:flex md:items-center md:justify-center px-[var(--page-margin-inline)] md:p-4',
     ]}
   >
     <div
@@ -83,11 +83,11 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       </div>
     </div>
     <nav
-      class="items-center w-full md:w-auto hidden md:flex md:mx-5 text-default overflow-y-auto md:overflow-y-visible md:overflow-x-auto md:justify-self-center"
+      class="items-center w-full md:w-auto hidden md:flex ml-12 md:mx-5 text-default overflow-y-auto md:overflow-y-visible md:overflow-x-auto md:justify-self-center"
       aria-label="Main navigation"
     >
       <ul
-        class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium md:justify-center overflow-x-hidden"
+        class="flex gap-2 md:gap-4 flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium md:justify-center overflow-x-hidden"
       >
         {
           links.map(({text, href, links}) => (

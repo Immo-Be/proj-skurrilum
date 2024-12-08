@@ -12,11 +12,11 @@ export interface Props {
   metadata?: MetaData;
 }
 
-const {metadata} = Astro.props;
+// const {metadata} = Astro.props;
 
 // const locale = getLocale(Astro.url) as 'en' | 'de';
-const locale = 'en';
-console.log('🚀 ~ locale:', metadata);
+const locale = 'de';
+// console.log('🚀 ~ locale:', metadata);
 const t = useTranslations(locale);
 
 // console.log('🚀 ~ metadata:', metadata);

@@ -20,10 +20,10 @@ const t = useTranslations(locale);
 
   <Fragment slot="main">
     <div
-      class="flex flex-wrap md:flex-nowrap items-center text-text_difference mix-blend-difference"
+      class="flex gap-2 flex-wrap md:flex-nowrap justify-center items-center text-text_difference mix-blend-difference"
     >
       <h1
-        class="leading-none text-center tracking-tight text-step-5 sm:text-step-6 md:text-step-8 lg:text-step-10 md:border-r-2 w-fit"
+        class="mt-4 leading-none tracking-tight text-step-5 sm:text-step-6 md:text-step-8 lg:text-step-10 md:border-r-2 w-fit"
         id="buchungskalender"
       >
         {t('general.skurrilum')}
@@ -34,7 +34,7 @@ const t = useTranslations(locale);
       />
     </div>
     <p
-      class="my-6 text-lg font-normal lg:text-xl dark:text-gray-400 text-justify"
+      class="my-6 text-lg font-normal lg:text-xl dark:text-gray-400 text-justify bg-[#f7f8f9] mx-[calc((-1)*var(--page-margin-inline))] px-[var(--page-margin-inline)] py-4"
     >
       {t('general.description')}
     </p>
