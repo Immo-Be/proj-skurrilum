@@ -87,14 +87,16 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       aria-label="Main navigation"
     >
       <ul
-        class="flex gap-2 md:gap-4 flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium md:justify-center overflow-x-hidden"
+        class="flex gap-4 md:gap-4 flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium md:justify-center overflow-x-hidden"
       >
         {
           links.map(({text, href, links}) => (
             <li class={links?.length ? 'dropdown' : ''}>
               {links?.length ? (
                 <>
-                  <button type="button" class="hover:text-link">
+                  <button
+                    type="button"
+                    class="hover:text-link text-3xl md:text-base">
                     {text}
                     {/* Replace Icon */}
                     {/* <Icon
@@ -121,6 +123,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                 <a
                   class:list={[
                     'cursor-pointer',
+                    'text-3xl md:text-base',
                     {'aw-link-active': href === currentPath},
                   ]}
                   href={href}>

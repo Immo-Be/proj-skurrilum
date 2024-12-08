@@ -10,6 +10,11 @@ export default {
       fontFamily: {
         sans: ['Nunito-Regular', ...defaultTheme.fontFamily.sans],
       },
+
+      fontSize: {
+        lg: 'var(--step-0)',
+      },
+
       colors: {
         primary: 'rgb(var(--color-primary) / <alpha-value>)',
         text: 'rgb(var(--color-text) / <alpha-value>)',
