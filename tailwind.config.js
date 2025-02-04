@@ -12,7 +12,17 @@ export default {
       },
 
       fontSize: {
-        lg: 'var(--step-0)',
+        sm: 'var(--step-0)',
+        base: 'var(--step-1)',
+        xl: 'var(--step-2)',
+        '2xl': 'var(--step-3)',
+        '3xl': 'var(--step-4)',
+        '4xl': 'var(--step-5)',
+        '5xl': 'var(--step-6)',
+        '6xl': 'var(--step-7)',
+        '7xl': 'var(--step-8)',
+        '8xl': 'var(--step-9)',
+        '9xl': 'var(--step-10)',
       },
 
       colors: {
