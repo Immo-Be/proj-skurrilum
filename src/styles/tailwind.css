@@ -1,3 +1,5 @@
+@config "../../tailwind.config.js";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -75,7 +77,8 @@
         var(--x-large) + var(--ease-out-sine) *
           (var(--xxx-large) - var(--x-large)),
         max(var(--x-large), var(--xxx-large))
-      ) * 1rem
+      ) *
+      1rem
   );
   --page-margin-inline: calc(
     clamp(
@@ -83,7 +86,8 @@
         var(--medium) + var(--ease-out-sine) *
           (var(--xxx-large) - var(--medium)),
         max(var(--medium), var(--xxx-large))
-      ) * 1rem
+      ) *
+      1rem
   );
   --column-width: calc(40rem + (var(--page-margin) * 2));
   --column-gutter: var(--page-margin);
