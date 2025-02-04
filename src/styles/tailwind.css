@@ -1,196 +1,255 @@
-@config "../../tailwind.config.js";
+@import 'tailwindcss';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@custom-variant dark (&:is(.dark *));
 
-/* Check if can be merged with the tailwindcss */
+@theme {
+  --font-sans: Nunito-Regular, ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
-@property --cur-viewport-width {
-  syntax: '<length>';
-  initial-value: 0px;
-  inherits: false;
+  --text-sm: var(--step-0);
+  --text-base: var(--step-1);
+  --text-xl: var(--step-2);
+  --text-2xl: var(--step-3);
+  --text-3xl: var(--step-4);
+  --text-4xl: var(--step-5);
+  --text-5xl: var(--step-6);
+  --text-6xl: var(--step-7);
+  --text-7xl: var(--step-8);
+  --text-8xl: var(--step-9);
+  --text-9xl: var(--step-10);
+
+  --color-primary: var(--aw-color-primary);
+  --color-text: rgb(var(--color-text));
+  --color-text_difference: rgb(var(--color-text-difference));
+  --color-secondary: var(--aw-color-secondary);
+  --color-accent: var(--aw-color-accent);
+  --color-default: var(--aw-color-text-default);
+  --color-muted: var(--aw-color-text-muted);
 }
 
-@property --min-viewport-width {
-  syntax: '<length>';
-  initial-value: 0px;
-  inherits: false;
-}
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
 
-@property --max-viewport-width {
-  syntax: '<length>';
-  initial-value: 0px;
-  inherits: false;
-}
-
-:root {
-  /* Style the selection to match your needs
-  This is need when using the mix-blend-mode property
-  */
-  ::selection {
-    background: rgba(255, 255, 255, 0.5); /* Light semi-transparent highlight */
-    color: black; /* Text color on selection */
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
   }
+}
 
-  --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
-  --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
-  --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
-  --step-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
-  --step-4: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
-  --step-5: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
-  --step-6: clamp(3.3592rem, 2.8691rem + 2.4507vw, 4.7684rem);
-  --step-7: clamp(4.0311rem, 3.36rem + 3.3555vw, 5.9605rem);
-  --step-8: clamp(4.8373rem, 3.9283rem + 4.5448vw, 7.4506rem);
-  --step-9: clamp(5.8048rem, 4.5844rem + 6.1017vw, 9.3132rem);
-  --step-10: clamp(6.9657rem, 5.3393rem + 10.1319vw, 11.6415rem);
+@utility text-step-0 {
+  font-size: var(--step-0);
+}
 
-  --cur-viewport-width: 100vw;
-  --min-viewport-width: 25rem;
-  --max-viewport-width: 80rem;
-  --cur-width: calc(100vw / 1vw);
-  --cur-width: tan(atan2(var(--cur-viewport-width), 1px));
-  --min-width: tan(atan2(var(--min-viewport-width), 1px));
-  --max-width: tan(atan2(var(--max-viewport-width), 1px));
-  --x: clamp(
-    0,
-    (var(--cur-width) - var(--min-width)) /
-      (var(--max-width) - var(--min-width)),
-    1
-  );
-  --ease-out-sine: sin((var(--x) * pi) / 2);
-  --scale: calc((sqrt(5) + 1) / 2);
-  --px-to-rem: 0.0625;
-  --xxx-small: round(pow(var(--scale), -4), var(--px-to-rem));
-  --xx-small: round(pow(var(--scale), -3), var(--px-to-rem));
-  --x-small: round(pow(var(--scale), -2), var(--px-to-rem));
-  --small: round(pow(var(--scale), -1), var(--px-to-rem));
-  --medium: round(pow(var(--scale), 0), var(--px-to-rem));
-  --large: round(pow(var(--scale), 1), var(--px-to-rem));
-  --x-large: round(pow(var(--scale), 2), var(--px-to-rem));
-  --xx-large: round(pow(var(--scale), 3), var(--px-to-rem));
-  --xxx-large: round(pow(var(--scale), 4), var(--px-to-rem));
-  --xxxx-large: round(pow(var(--scale), 5), var(--px-to-rem));
-  --page-margin: calc(
-    clamp(
-        min(var(--x-large), var(--xxx-large)),
-        var(--x-large) + var(--ease-out-sine) *
-          (var(--xxx-large) - var(--x-large)),
-        max(var(--x-large), var(--xxx-large))
-      ) *
-      1rem
-  );
-  --page-margin-inline: calc(
-    clamp(
-        min(var(--medium), var(--xxx-large)),
-        var(--medium) + var(--ease-out-sine) *
-          (var(--xxx-large) - var(--medium)),
-        max(var(--medium), var(--xxx-large))
-      ) *
-      1rem
-  );
-  --column-width: calc(40rem + (var(--page-margin) * 2));
-  --column-gutter: var(--page-margin);
-  --nav-size: calc(var(--medium) * 1rem);
-  --fg-color: #333333;
-  --bg-color: #eeeeee;
-  --secondary-fg-color: #bbbbbb;
-  --tertiary-fg-color: #999999;
-  --secondary-bg-color: #e0e0e0;
-  --random-fg-color: #333333;
-  --random-bg-color: #ffffff;
+@utility text-step-1 {
+  font-size: var(--step-1);
+}
+
+@utility text-step-2 {
+  font-size: var(--step-2);
+}
+
+@utility text-step-3 {
+  font-size: var(--step-3);
+}
+
+@utility text-step-4 {
+  font-size: var(--step-4);
+}
+
+@utility text-step-5 {
+  font-size: var(--step-5);
+}
+
+@utility text-step-6 {
+  font-size: var(--step-6);
+}
+
+@utility text-step-7 {
+  font-size: var(--step-7);
+}
+
+@utility text-step-8 {
+  font-size: var(--step-8);
+}
+
+@utility text-step-9 {
+  font-size: var(--step-9);
+}
+
+@utility text-step-10 {
+  font-size: var(--step-10);
+}
+
+@utility main-margin {
+  --inline-padding: var(--page-margin-inline);
+  padding: 0 var(--inline-padding);
+  max-width: 65ch;
+  overflow-x: visible;
+  min-width: 0;
+}
+
+@utility bg-page {
+  background-color: var(--aw-color-bg-page);
+}
+
+@utility bg-dark {
+  background-color: var(--aw-color-bg-page-dark);
+}
+
+@utility bg-light {
+  background-color: var(--aw-color-bg-page);
+}
+
+@utility text-page {
+  color: var(--aw-color-text-page);
+}
+
+@utility text-muted {
+  color: var(--aw-color-text-muted);
+}
+
+@utility bg-muted {
+  background-color: var(--aw-color-accent);
+}
+
+@utility parallax-container {
+  perspective: 1px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+@utility parallax {
+  transform: translateZ(-1px) scale(2);
+  position: relative;
+}
+
+@utility btn {
+  @apply text-page inline-flex cursor-pointer items-center justify-center rounded-full border border-gray-400 bg-transparent px-6 py-3.5 text-center text-base font-medium leading-snug transition duration-200 ease-in hover:border-gray-600 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-blue-200 dark:border-slate-500 dark:text-slate-300 dark:hover:border-slate-800 dark:hover:bg-slate-800 md:px-8;
+}
+
+@utility btn-primary {
+  @apply btn border-primary bg-primary font-semibold text-white hover:border-secondary hover:bg-secondary hover:text-white dark:border-primary dark:bg-primary dark:text-white dark:hover:border-secondary dark:hover:bg-secondary;
+}
+
+@utility btn-secondary {
+  @apply btn;
+}
+
+@utility btn-tertiary {
+  @apply btn border-none text-muted shadow-none hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
 }
 
 @layer utilities {
-  .text-step-0 {
-    font-size: var(--step-0);
-  }
-  .text-step-1 {
-    font-size: var(--step-1);
-  }
-  .text-step-2 {
-    font-size: var(--step-2);
-  }
-  .text-step-3 {
-    font-size: var(--step-3);
-  }
-  .text-step-4 {
-    font-size: var(--step-4);
-  }
-  .text-step-5 {
-    font-size: var(--step-5);
-  }
-  .text-step-6 {
-    font-size: var(--step-6);
-  }
-  .text-step-7 {
-    font-size: var(--step-7);
-  }
-  .text-step-8 {
-    font-size: var(--step-8);
-  }
-  .text-step-9 {
-    font-size: var(--step-9);
-  }
-  .text-step-10 {
-    font-size: var(--step-10);
+  /* Check if can be merged with the tailwindcss */
+
+  @property --cur-viewport-width {
+    syntax: '<length>';
+    initial-value: 0px;
+    inherits: false;
   }
 
-  .main-margin {
-    --inline-padding: var(--page-margin-inline);
-    padding: 0 var(--inline-padding);
-    max-width: 65ch;
-    overflow-x: visible;
-    min-width: 0;
+  @property --min-viewport-width {
+    syntax: '<length>';
+    initial-value: 0px;
+    inherits: false;
   }
 
-  .bg-page {
-    background-color: var(--aw-color-bg-page);
-  }
-  .bg-dark {
-    background-color: var(--aw-color-bg-page-dark);
-  }
-  .bg-light {
-    background-color: var(--aw-color-bg-page);
-  }
-  .text-page {
-    color: var(--aw-color-text-page);
-  }
-  .text-muted {
-    color: var(--aw-color-text-muted);
-  }
-  .bg-muted {
-    background-color: var(--aw-color-accent);
+  @property --max-viewport-width {
+    syntax: '<length>';
+    initial-value: 0px;
+    inherits: false;
   }
 
-  .parallax-container {
-    perspective: 1px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    height: 100vh;
-  }
+  :root {
+    /* Style the selection to match your needs
+  This is need when using the mix-blend-mode property
+  */
+    ::selection {
+      background: rgba(
+        255,
+        255,
+        255,
+        0.5
+      ); /* Light semi-transparent highlight */
+      color: black; /* Text color on selection */
+    }
 
-  .parallax {
-    transform: translateZ(-1px) scale(2);
-    position: relative;
-  }
-}
+    --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+    --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+    --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+    --step-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
+    --step-4: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
+    --step-5: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
+    --step-6: clamp(3.3592rem, 2.8691rem + 2.4507vw, 4.7684rem);
+    --step-7: clamp(4.0311rem, 3.36rem + 3.3555vw, 5.9605rem);
+    --step-8: clamp(4.8373rem, 3.9283rem + 4.5448vw, 7.4506rem);
+    --step-9: clamp(5.8048rem, 4.5844rem + 6.1017vw, 9.3132rem);
+    --step-10: clamp(6.9657rem, 5.3393rem + 10.1319vw, 11.6415rem);
 
-@layer components {
-  .btn {
-    @apply text-page inline-flex cursor-pointer items-center justify-center rounded-full border border-gray-400 bg-transparent px-6 py-3.5 text-center text-base font-medium leading-snug transition duration-200 ease-in hover:border-gray-600 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-blue-200 dark:border-slate-500 dark:text-slate-300 dark:hover:border-slate-800 dark:hover:bg-slate-800 md:px-8;
-  }
-
-  .btn-primary {
-    @apply btn border-primary bg-primary font-semibold text-white hover:border-secondary hover:bg-secondary hover:text-white dark:border-primary dark:bg-primary dark:text-white dark:hover:border-secondary dark:hover:bg-secondary;
-  }
-
-  .btn-secondary {
-    @apply btn;
-  }
-
-  .btn-tertiary {
-    @apply btn border-none text-muted shadow-none hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
+    --cur-viewport-width: 100vw;
+    --min-viewport-width: 25rem;
+    --max-viewport-width: 80rem;
+    --cur-width: calc(100vw / 1vw);
+    --cur-width: tan(atan2(var(--cur-viewport-width), 1px));
+    --min-width: tan(atan2(var(--min-viewport-width), 1px));
+    --max-width: tan(atan2(var(--max-viewport-width), 1px));
+    --x: clamp(
+      0,
+      (var(--cur-width) - var(--min-width)) /
+        (var(--max-width) - var(--min-width)),
+      1
+    );
+    --ease-out-sine: sin((var(--x) * pi) / 2);
+    --scale: calc((sqrt(5) + 1) / 2);
+    --px-to-rem: 0.0625;
+    --xxx-small: round(pow(var(--scale), -4), var(--px-to-rem));
+    --xx-small: round(pow(var(--scale), -3), var(--px-to-rem));
+    --x-small: round(pow(var(--scale), -2), var(--px-to-rem));
+    --small: round(pow(var(--scale), -1), var(--px-to-rem));
+    --medium: round(pow(var(--scale), 0), var(--px-to-rem));
+    --large: round(pow(var(--scale), 1), var(--px-to-rem));
+    --x-large: round(pow(var(--scale), 2), var(--px-to-rem));
+    --xx-large: round(pow(var(--scale), 3), var(--px-to-rem));
+    --xxx-large: round(pow(var(--scale), 4), var(--px-to-rem));
+    --xxxx-large: round(pow(var(--scale), 5), var(--px-to-rem));
+    --page-margin: calc(
+      clamp(
+          min(var(--x-large), var(--xxx-large)),
+          var(--x-large) + var(--ease-out-sine) *
+            (var(--xxx-large) - var(--x-large)),
+          max(var(--x-large), var(--xxx-large))
+        ) *
+        1rem
+    );
+    --page-margin-inline: calc(
+      clamp(
+          min(var(--medium), var(--xxx-large)),
+          var(--medium) + var(--ease-out-sine) *
+            (var(--xxx-large) - var(--medium)),
+          max(var(--medium), var(--xxx-large))
+        ) *
+        1rem
+    );
+    --column-width: calc(40rem + (var(--page-margin) * 2));
+    --column-gutter: var(--page-margin);
+    --nav-size: calc(var(--medium) * 1rem);
+    --fg-color: #333333;
+    --bg-color: #eeeeee;
+    --secondary-fg-color: #bbbbbb;
+    --tertiary-fg-color: #999999;
+    --secondary-bg-color: #e0e0e0;
+    --random-fg-color: #333333;
+    --random-bg-color: #ffffff;
   }
 }
 

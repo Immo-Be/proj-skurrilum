@@ -12,7 +12,7 @@ const {isOpen, customClass, ...props} = Astro.props;
 ---
 
 <button
-  class={twMerge(customClass, 'focus:outline-none')}
+  class={twMerge(customClass, 'focus:outline-hidden')}
   aria-expanded={isOpen}
   aria-label={isOpen ? 'Close menu' : 'Open menu'}
   {...props}
