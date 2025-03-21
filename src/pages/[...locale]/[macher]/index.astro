@@ -1,0 +1,30 @@
+---
+import Layout from '../../../layouts/PageLayout.astro';
+import {useTranslations} from '../../../i18n/i18n';
+import { getLocaleFromUrl } from '../../../utils/i18n';
+
+const locale = getLocaleFromUrl(Astro.url)
+
+const t = useTranslations(locale);
+
+export async function getStaticPaths() {
+  return [
+    {
+      params: {
+        locale: undefined,
+        'macher': 'die-macher',
+      },
+    },
+    {
+      params: {
+        locale: 'en',
+        'macher': 'the-makers',
+      },
+    },
+  ];
+}
+---
+
+<Layout>
+  <h1 slot="main">Die Macher</h1>
+</Layout>

@@ -1,0 +1,63 @@
+---
+import Layout from '../../layouts/PageLayout.astro';
+import VideoWrapper from '../../components/video-wrapper.astro';
+import { indexPaths } from '../_paths';
+
+export const getStaticPaths = indexPaths();
+console.log('getStaticPaths', await getStaticPaths());
+// import {getLocale} from 'astro-i18n-aut';
+
+import {useTranslations} from '../../i18n/i18n.ts';
+
+// const locale = getLocale(Astro.url) as 'en' | 'de';
+const locale = 'de';
+const t = useTranslations(locale);
+---
+
+<script>
+  // import globals from 'globals';
+</script>
+
+<Layout>
+  <VideoWrapper slot="video-area" />
+
+  <Fragment slot="main">
+    <div
+      class="flex gap-2 flex-wrap md:flex-nowrap justify-center items-center text-text_difference mix-blend-difference"
+    >
+      <h1
+        class="mt-4 leading-none tracking-tight text-step-5 sm:text-step-6 md:text-step-8 md:border-r-2 w-fit"
+        id="buchungskalender"
+      >
+        {t('general.skurrilum')}
+      </h1>
+      <span
+        class="text-step-0 text-center"
+        set:text={t('general.descriptionShort')}
+      />
+    </div>
+    <p
+      class="my-6 text-lg font-normal dark:text-gray-400 text-justify bg-[#f7f8f9] mx-[calc((-1)*var(--page-margin-inline))] px-[var(--page-margin-inline)] py-4"
+    >
+      {t('general.description')}
+    </p>
+    <h2>{t('bookingCalender')}</h2>
+    <!-- <script
+      src="https://cdn.quinbook.com/shop.js"
+      data-shopid="01161aaa0b6d1345dd8fe4e481144d84"></script> -->
+
+    <h2>{t('seo.title1')}</h2>
+    <p>
+      {t('seo.description1')}
+    </p>
+    <h2>{t('seo.title2')}</h2>
+    <p>
+      {t('seo.description2')}
+    </p>
+    <h2>{t('seo.title3')}</h2>
+    <p>
+      {t('seo.description3')}
+    </p>
+    <div class="cta-bubble" data-content={t('cta.bookNowHere')}></div>
+  </Fragment>
+</Layout>

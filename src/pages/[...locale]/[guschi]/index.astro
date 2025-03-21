@@ -1,0 +1,24 @@
+---
+import Layout from '../../../layouts/PageLayout.astro';
+export async function getStaticPaths() {
+  return [
+    {
+      params: {
+      locale: undefined,
+      guschi: 'guschis-geile-grotte',
+      },
+    },
+    {
+      params: {
+      locale: 'en',
+            guschi: 'guschis-great-grotto',
+                  },
+    },
+  ];
+}
+
+---
+
+<Layout>
+  <h1>Guschi</h1>
+</Layout>

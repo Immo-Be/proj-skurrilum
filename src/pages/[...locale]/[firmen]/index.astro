@@ -1,0 +1,26 @@
+---
+import Layout from '../../../layouts/PageLayout.astro';
+// import { indexPaths } from '../../_paths';
+
+//export const getStaticPaths = indexPaths('gallery');
+export async function getStaticPaths() {
+  return [
+    {
+      params: {
+        locale: undefined,
+        firmen: 'firmen',
+      },
+    },
+    {
+      params: {
+        locale: 'en',
+        firmen: 'companies',
+      },
+    },
+  ];
+}
+---
+
+<Layout>
+  <h1>Firmen</h1>
+</Layout>

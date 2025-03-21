@@ -1,0 +1,25 @@
+---
+import Layout from '../../../layouts/PageLayout.astro';
+import {useTranslations} from '../i18n/i18n';
+export async function getStaticPaths() {
+  return [
+    {
+      params: {
+      locale: undefined,
+      phantominsel: 'die-phantominsel',
+      },
+    },
+    {
+      params: {
+      locale: 'en',
+            phantominsel: 'the-phantom-island',
+                  },
+    },
+  ];
+}
+
+---
+
+<Layout>
+  <h1>Die Phantominsel</h1>
+</Layout>
