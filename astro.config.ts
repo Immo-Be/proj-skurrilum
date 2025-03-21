@@ -5,7 +5,6 @@ import {defineConfig} from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 // Todo: Add sitemap filter to i18n integration
-
 const defaultLocale = 'de';
 const locales = {
   de: 'de', // the `defaultLocale` value must present in `locales` keys
@@ -15,7 +14,11 @@ const locales = {
 // https://astro.build/config
 export default defineConfig({
   site: 'https://example.com/',
-  trailingSlash: 'always',
+  //trailingSlash: 'always',
+  //prefetch: true,
+  //build: {
+  //  format: 'file'
+  //},
 
   //   build: {
   //     format: 'directory',
@@ -23,7 +26,7 @@ export default defineConfig({
   i18n: {
     locales: ['de', 'en'],
     defaultLocale: 'de',
-    routing: 'manual',
+    //routing: 'manual',
   },
 
   integrations: [
