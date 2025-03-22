@@ -6,6 +6,7 @@ import { getLocaleFromUrl } from '../../../utils/i18n';
 const locale = getLocaleFromUrl(Astro.url)
 
 const t = useTranslations(locale);
+console.log(t);
 
 export async function getStaticPaths() {
   return [
