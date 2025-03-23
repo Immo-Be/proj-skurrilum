@@ -29,32 +29,32 @@ const UI: {
     }
   }
 
-  function applyTheme(theme) {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }
+  //function applyTheme(theme) {
+  //  if (theme === 'dark') {
+  //    document.documentElement.classList.add('dark');
+  //  } else {
+  //    document.documentElement.classList.remove('dark');
+  //  }
+  //}
 
-  const initTheme = function () {
-    if (
-      (defaultTheme && defaultTheme.endsWith(':only')) ||
-      (!localStorage.theme && defaultTheme !== 'system')
-    ) {
-      applyTheme(defaultTheme.replace(':only', ''));
-    } else if (
-      localStorage.theme === 'dark' ||
-      (!('theme' in localStorage) &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
-      applyTheme('dark');
-    } else {
-      applyTheme('light');
-    }
-  };
-  initTheme();
-
+  //const initTheme = function () {
+  //  if (
+  //    (defaultTheme && defaultTheme.endsWith(':only')) ||
+  //    (!localStorage.theme && defaultTheme !== 'system')
+  //  ) {
+  //    applyTheme(defaultTheme.replace(':only', ''));
+  //  } else if (
+  //    localStorage.theme === 'dark' ||
+  //    (!('theme' in localStorage) &&
+  //      window.matchMedia('(prefers-color-scheme: dark)').matches)
+  //  ) {
+  //    applyTheme('dark');
+  //  } else {
+  //    applyTheme('light');
+  //  }
+  //};
+  //initTheme();
+  //
   function attachEvent(selector, event, fn) {
     const matches =
       typeof selector === 'string'
@@ -97,15 +97,15 @@ const UI: {
         ?.classList.toggle('hidden');
     });
 
-    attachEvent('[data-aw-toggle-color-scheme]', 'click', function () {
-      if (defaultTheme.endsWith(':only')) {
-        return;
-      }
-      document.documentElement.classList.toggle('dark');
-      localStorage.theme = document.documentElement.classList.contains('dark')
-        ? 'dark'
-        : 'light';
-    });
+    //attachEvent('[data-aw-toggle-color-scheme]', 'click', function () {
+    //  if (defaultTheme.endsWith(':only')) {
+    //    return;
+    //  }
+    //  document.documentElement.classList.toggle('dark');
+    //  localStorage.theme = document.documentElement.classList.contains('dark')
+    //    ? 'dark'
+    //    : 'light';
+    //});
 
     attachEvent('[data-aw-social-share]', 'click', function (_, elem) {
       const network = elem.getAttribute('data-aw-social-share');
@@ -140,24 +140,24 @@ const UI: {
       newlink.click();
     });
 
-    const screenSize = window.matchMedia('(max-width: 767px)');
-    screenSize.addEventListener('change', function () {
-      document
-        .querySelector('[data-aw-toggle-menu]')
-        ?.classList.remove('expanded');
-      document.body.classList.remove('overflow-hidden');
-      document.getElementById('header')?.classList.remove('h-screen');
-      document.getElementById('header')?.classList.remove('expanded');
-      document.getElementById('header')?.classList.remove('bg-page');
-      document.querySelector('#header nav')?.classList.add('hidden');
-      document
-        .querySelector('#header > div > div:last-child')
-        ?.classList.add('hidden');
-    });
+    //const screenSize = window.matchMedia('(max-width: 767px)');
+    //screenSize.addEventListener('change', function () {
+    //  document
+    //    .querySelector('[data-aw-toggle-menu]')
+    //    ?.classList.remove('expanded');
+    //  document.body.classList.remove('overflow-hidden');
+    //  document.getElementById('header')?.classList.remove('h-screen');
+    //  document.getElementById('header')?.classList.remove('expanded');
+    //  document.getElementById('header')?.classList.remove('bg-page');
+    //  document.querySelector('#header nav')?.classList.add('hidden');
+    //  document
+    //    .querySelector('#header > div > div:last-child')
+    //    ?.classList.add('hidden');
+    //});
 
     function applyHeaderStylesOnScroll() {
       const header = document.querySelector(
-        '#header[data-aw-sticky-or-fixed-header]'
+        '#header[data-sticky-or-fixed-header]'
       );
       if (!header) return;
       if (
@@ -189,12 +189,13 @@ const UI: {
     // Function to handle intersection changes
     // Does not re-execute on resize
     {
+      function handleIntersection(entry) {
       const cta = document.getElementById('cta-element-header-desktop');
+
       if (window.innerWidth < 768) {
         cta.classList.remove('translate-x-[200px]');
         return;
       }
-      function handleIntersection(entry) {
         entry.forEach(entry => {
           if (!entry.isIntersecting) {
             cta.classList.remove('translate-x-[200px]');
@@ -239,7 +240,6 @@ const UI: {
   // Function to handle the parallax effect
   function parallaxEffect() {
     const parallaxElements = document.querySelectorAll('.parallax');
-    console.log('🚀 ~ parallaxEffect ~ parallaxElements:', parallaxElements);
     parallaxElements.forEach(element => {
       const speed = element.getAttribute('data-speed') || 0.5;
       const yPos = window.scrollY * speed;
@@ -248,7 +248,8 @@ const UI: {
   }
 
   function adjustCtaPosition() {
-    const cta = document.querySelector('.cta-bubble');
+    const cta = document.getElementById('cta-bubble');
+    console.log(cta, "cta");
     const footer = document.querySelector('.footer');
     const footerRect = footer.getBoundingClientRect();
 

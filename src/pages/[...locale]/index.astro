@@ -4,7 +4,6 @@ import VideoWrapper from '../../components/video-wrapper.astro';
 import { indexPaths } from '../_paths';
 
 export const getStaticPaths = indexPaths();
-console.log('getStaticPaths', await getStaticPaths());
 // import {getLocale} from 'astro-i18n-aut';
 
 import {useTranslations} from '../../i18n/i18n.ts';
@@ -23,7 +22,7 @@ const t = useTranslations(locale);
 
   <Fragment slot="main">
     <div
-      class="flex gap-2 flex-wrap md:flex-nowrap justify-center items-center text-text_difference mix-blend-difference"
+      class="flex gap-2 flex-wrap md:flex-nowrap justify-center items-center text-text_difference g"
     >
       <h1
         class="mt-4 leading-none tracking-tight text-step-5 sm:text-step-6 md:text-step-8 md:border-r-2 w-fit"
@@ -37,7 +36,7 @@ const t = useTranslations(locale);
       />
     </div>
     <p
-      class="my-6 text-lg font-normal dark:text-gray-400 text-justify bg-[#f7f8f9] mx-[calc((-1)*var(--page-margin-inline))] px-[var(--page-margin-inline)] py-4"
+      class="my-6 text-lg font-normal text-justify mx-[calc((-1)*var(--page-margin-inline))] px-[var(--page-margin-inline)] py-4"
     >
       {t('general.description')}
     </p>
@@ -58,6 +57,6 @@ const t = useTranslations(locale);
     <p>
       {t('seo.description3')}
     </p>
-    <div class="cta-bubble" data-content={t('cta.bookNowHere')}></div>
+    <!--<div class="cta-bubble" data-content={t('cta.bookNowHere')}></div>-->
   </Fragment>
 </Layout>

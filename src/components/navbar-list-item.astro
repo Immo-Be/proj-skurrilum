@@ -23,7 +23,7 @@ import {twMerge} from 'tailwind-merge';
 const {href, text, children, customClass, ...listItemProps} = Astro.props;
 ---
 
-<li {...listItemProps} class={twMerge('sm:mix-blend-difference', customClass)}>
+<li {...listItemProps} class={twMerge('sm:g', customClass)}>
   <a class="block text-start text-2xl font-bold sm:text-base" href={href}>
     {text || children}
   </a>

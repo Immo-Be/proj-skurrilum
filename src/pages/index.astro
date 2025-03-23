@@ -2,8 +2,6 @@
 import Layout from '../layouts/PageLayout.astro';
 import VideoWrapper from '../components/video-wrapper.astro';
 
-// import {getLocale} from 'astro-i18n-aut';
-
 import {useTranslations} from '../i18n/i18n.ts';
 
 // const locale = getLocale(Astro.url) as 'en' | 'de';
@@ -11,19 +9,15 @@ const locale = 'de';
 const t = useTranslations(locale);
 ---
 
-<script>
-  // import globals from 'globals';
-</script>
-
 <Layout>
   <VideoWrapper slot="video-area" />
 
   <Fragment slot="main">
     <div
-      class="flex gap-2 flex-wrap md:flex-nowrap justify-center items-center text-text_difference mix-blend-difference"
+      class="flex flex-wrap items-center justify-center gap-2 g md:flex-nowrap"
     >
       <h1
-        class="mt-4 leading-none tracking-tight text-step-5 sm:text-step-6 md:text-step-8 md:border-r-2 w-fit"
+        class="text-step-5 sm:text-step-6 md:text-step-8 mt-4 w-fit leading-none tracking-tight md:border-r-2"
         id="buchungskalender"
       >
         {t('general.skurrilum')}
@@ -34,7 +28,7 @@ const t = useTranslations(locale);
       />
     </div>
     <p
-      class="my-6 text-lg font-normal dark:text-gray-400 text-justify bg-[#f7f8f9] mx-[calc((-1)*var(--page-margin-inline))] px-[var(--page-margin-inline)] py-4"
+      class=""
     >
       {t('general.description')}
     </p>
@@ -55,6 +49,11 @@ const t = useTranslations(locale);
     <p>
       {t('seo.description3')}
     </p>
-    <div class="cta-bubble" data-content={t('cta.bookNowHere')}></div>
+    <div
+      id="cta-bubble"
+      class="cta-bg fixed right-0 bottom-[60px] z-10 h-[120px] w-[120px] bg-cover bg-[50%] text-[rgb(var(--color-dark))] transition-[right] duration-300 before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:text-center before:text-base before:leading-none before:font-bold before:content-[attr(data-content)]"
+      data-content={t('cta.bookNowHere')}
+    >
+    </div>
   </Fragment>
 </Layout>

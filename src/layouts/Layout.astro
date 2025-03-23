@@ -8,11 +8,10 @@ export interface Props {
 
 const {title} = Astro.props;
 
-// console.log('🚀 ~ metadata:', metadata);
 
-import '../styles/utilities.css';
-import '../styles/tailwind.css';
 import '../styles/global.css';
+import '../styles/icons.css';
+import '../styles/utilities.css';
 
 import BasicScripts from '../utils/BasicScripts.astro';
 import {ClientRouter} from 'astro:transitions';
@@ -30,14 +29,13 @@ import {ClientRouter} from 'astro:transitions';
 
     <ClientRouter fallback="swap" />
   </head>
-  <body class="bg-page text-text">
+  <body class="bg-primary-bg text-primary-fg">
     <slot />
     <!-- <Header {...headerData} isSticky />
     <slot name="after-header" />
     <main>
       <slot name="main-content" />
     </main> -->
-    <a href=""> </a>
     <BasicScripts />
   </body>
 </html>

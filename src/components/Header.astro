@@ -4,6 +4,7 @@ import {getHomePermalink, trimSlash} from '../utils/permalinks';
 import type {CallToAction} from '../types/types';
 import Logo from './Logo.astro';
 import ToggleIcon from './ToggleMenu.astro';
+import ToggleTheme from './ToggleTheme.astro';
 import Cta from './Cta.astro';
 
 interface Link {
@@ -40,8 +41,6 @@ const {
   //   position = 'center',
 } = Astro.props;
 
-console.log('isFullWidth', isFullWidth);
-
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 ---
 
@@ -51,27 +50,24 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       sticky: isSticky,
       fixed: isFixed,
       relative: !isSticky && !isFixed,
-      dark: isDark,
     },
-    'top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out',
+    'group top-0 w-full z-40 mx-auto w-full flex-none border-b border-gray-50/0 transition-[opacity] ease-in-out',
   ]}
-  {...isSticky || isFixed ? {'data-aw-sticky-or-fixed-header': true} : {}}
+  {...isSticky || isFixed ? {'data-sticky-or-fixed-header': true} : {}}
   {...id ? {id} : {}}
 >
-  <!-- <div class="absolute inset-0"></div> -->
   <div
     class:list={[
-      'relative text-default md:flex md:items-center md:justify-center px-[var(--page-margin-inline)] md:p-4',
+      'text-default text-primary-fg-light h-full group-[.expanded]:text-primary-fg group-[.expanded]:bg-primary-bg group-[.scroll]:bg-primary-bg group-[.scroll]:text-primary-fg md:p-4 relative px-[var(--page-margin-inline)] md:flex md:items-center md:justify-center',
     ]}
   >
     <div
       class:list={[
-        // {'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right'},
-        'flex md:justify-center justify-between items-center w-full md:w-auto',
+        'flex w-full items-center justify-between md:w-auto md:justify-center',
       ]}
     >
-      <a class="flex md:inline-block items-center" href={getHomePermalink()}>
-        <Logo />
+      <a class="flex items-center md:inline-block" href={getHomePermalink()}>
+        <Logo customClass="hidden group-[.scroll]:block" />
       </a>
       <!-- <Cta
         class="px-2 py-0.5 flex items-center cursor-pointer cta-element-header-desktop"
@@ -83,11 +79,11 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       </div>
     </div>
     <nav
-      class="items-center w-full md:w-auto hidden md:flex ml-12 md:mx-5 text-default overflow-y-auto md:overflow-y-visible md:overflow-x-auto md:justify-self-center"
+      class="text-default ml-12 hidden w-full items-center overflow-y-auto md:mx-5 md:flex md:w-auto md:justify-self-center md:overflow-x-auto md:overflow-y-visible"
       aria-label="Main navigation"
     >
       <ul
-        class="flex gap-4 md:gap-4 flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium md:justify-center overflow-x-hidden"
+        class="flex w-full flex-col gap-4 overflow-x-hidden text-xl font-medium tracking-[0.01rem] md:w-auto md:flex-row md:justify-center md:gap-4 md:self-center md:text-[0.9375rem]"
       >
         {
           links.map(({text, href, links}) => (
@@ -104,12 +100,12 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                       class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline"
                     /> */}
                   </button>
-                  <ul class="dropdown-menu md:backdrop-blur-md rounded-xs md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-page opacity-90 md:min-w-[200px] drop-shadow-xl">
+                  <ul class="dropdown-menu md:bg-page rounded-xs pl-4 font-medium opacity-90 drop-shadow-xl md:absolute md:hidden md:min-w-[200px] md:pl-0 md:backdrop-blur-md">
                     {links.map(({text: text2, href: href2}) => (
                       <li class="md:hover:bg-muted">
                         <a
                           class:list={[
-                            'first:rounded-t last:rounded-b py-2 px-5 block whitespace-no-wrap',
+                            'whitespace-no-wrap block px-5 py-2 first:rounded-t last:rounded-b',
                             {'aw-link-active': href2 === currentPath},
                           ]}
                           href={href2}>
@@ -135,7 +131,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         }
 
         <li
-          class="transition-translate duration-500 translate-x-[200px]"
+          class="transition-translate translate-x-[200px] duration-500"
           id="cta-element-header-desktop"
         >
           <Cta class="cursor-pointer" label=`Jetzt\u00A0buchen` />

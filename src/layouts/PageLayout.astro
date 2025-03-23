@@ -48,11 +48,7 @@ const footerData = {
     {text: 'Impressum', href: getPermalink('/impressum')},
     {text: 'Datenschutz', href: getPermalink('/datenschutz')},
   ],
-  //   socialLinks: [
-  //     {ariaLabel: 'Instagram', icon: '', href: '#'},
-  //     {ariaLabel: 'Facebook', icon: '', href: '#'},
-  //   ],
-  footNote: `© ${new Date().getFullYear()} Skurrilum`,
+ footNote: `© ${new Date().getFullYear()} Skurrilum`,
 };
 ---
 
@@ -64,7 +60,7 @@ const footerData = {
 >
   <Header {...headerData(t)} isFixed transition:persist />
   <slot name="video-area" />
-  <main class="main-margin">
+  <main class="main-margin bg-primary-bg">
     <slot name="main" />
   </main>
   <slot name="footer">

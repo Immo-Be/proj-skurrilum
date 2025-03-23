@@ -1,1 +1,116 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@layer base {
+
+  /* CSS Reset */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  html,
+  body {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+    text-wrap: balance;
+  }
+
+  #root,
+  #__next {
+    isolation: isolate;
+  }
+}
+
+@layer theme {
+  :root {
+    @font-face {
+      font-family: 'Nunito-Regular';
+      src: url('/fonts/Nunito-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    --page-margin: calc(clamp(min(var(--x-large), var(--xxx-large)),
+        var(--x-large) + var(--ease-out-sine) * (var(--xxx-large) - var(--x-large)),
+        max(var(--x-large), var(--xxx-large))) * 1rem);
+    --page-margin-inline: calc(clamp(min(var(--medium), var(--xxx-large)),
+        var(--medium) + var(--ease-out-sine) * (var(--xxx-large) - var(--medium)),
+        max(var(--medium), var(--xxx-large))) * 1rem);
+
+    /*--column-width: calc(40rem + (var(--page-margin) * 2));*/
+    /*--column-gutter: var(--page-margin);*/
+    /*--nav-size: calc(var(--medium) * 1rem);*/
+    /*--fg-color: #333;*/
+    --bg-color-light: white;
+    --bg-color-dark: gray;
+
+    --font-color-light: white;
+    --font-color-dark: gray;
+
+    --accent-color: #0070f3;
+
+    --page-bg: var(--bg-color-light);
+    --page-fg: var(--font-color-dark);
+
+    @media (prefers-color-scheme: dark) {
+      --page-bg: var(--bg-color-dark);
+      --page-fg: var(--font-color-light);
+    }
+
+    /*--secondary-fg-color: #bbb;*/
+    /*--tertiary-fg-color: #999;*/
+    /*--secondary-bg-color: #e0e0e0;*/
+    /*--random-fg-color: #333;*/
+    /*--random-bg-color: #fff;*/
+  }
+}
+
+/*Use @theme to add custom colors to your project under the --color-* theme namespace:*/
+@theme {
+  --color-primary-bg-light: var(--bg-color-light);
+  --color-primary-bg-dark: var(--bg-color-dark);
+
+  --color-primary-fg-light: var(--font-color-light);
+  --color-primary-fg-dark: var(--font-color-dark);
+
+  --color-primary-bg: var(--page-bg);
+  --color-primary-fg: var(--page-fg);
+}
