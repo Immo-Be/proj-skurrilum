@@ -58,22 +58,21 @@
   }
 }
 
+.jost-font {
+  font-family: 'Jost', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 @layer theme {
   :root {
-    @font-face {
-      font-family: 'Nunito-Regular';
-      src: url('/fonts/Nunito-Regular.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
-
     --page-margin: calc(clamp(min(var(--x-large), var(--xxx-large)),
-        var(--x-large) + var(--ease-out-sine) * (var(--xxx-large) - var(--x-large)),
-        max(var(--x-large), var(--xxx-large))) * 1rem);
+          var(--x-large) + var(--ease-out-sine) * (var(--xxx-large) - var(--x-large)),
+          max(var(--x-large), var(--xxx-large))) * 1rem);
     --page-margin-inline: calc(clamp(min(var(--medium), var(--xxx-large)),
-        var(--medium) + var(--ease-out-sine) * (var(--xxx-large) - var(--medium)),
-        max(var(--medium), var(--xxx-large))) * 1rem);
+          var(--medium) + var(--ease-out-sine) * (var(--xxx-large) - var(--medium)),
+          max(var(--medium), var(--xxx-large))) * 1rem);
 
     /*--column-width: calc(40rem + (var(--page-margin) * 2));*/
     /*--column-gutter: var(--page-margin);*/
@@ -113,4 +112,6 @@
 
   --color-primary-bg: var(--page-bg);
   --color-primary-fg: var(--page-fg);
+
+  --color-accent: var(--accent-color);
 }

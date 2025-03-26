@@ -20,6 +20,7 @@ import Cta from './Cta.astro';
       aria-label="Introductory video showing the escape room experience at Skurrilum"
     >
       <source src={intro_video} type="video/mp4" />
+
     </video>
   </div>
   <div class="absolute-center flex flex-col">
@@ -28,10 +29,11 @@ import Cta from './Cta.astro';
       alt="Introductory text overlay"
       class="max-h-[200px] object-contain"
     />
+  <span class="play-icon block text-white py-2 px-4 text-white mx-auto"></span>
     <Cta
       id="cta-element-video"
       label="Jetzt\u00A0buchen"
-      class="text-white py-2 px-4"
+      class="text-white py-2 px-4 hidden md:block"
     />
   </div>
 </section>

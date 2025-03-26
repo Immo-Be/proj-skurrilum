@@ -1,13 +1,7 @@
 ---
-// import { UI } from 'astrowind:config';
-const UI: {
-  theme: string;
-} = {
-  theme: 'light',
-};
 ---
 
-<script is:inline define:vars={{defaultTheme: UI.theme}}>
+<script is:inline define:vars={{}}>
   if (window.basic_script) {
     return;
   }
@@ -249,7 +243,6 @@ const UI: {
 
   function adjustCtaPosition() {
     const cta = document.getElementById('cta-bubble');
-    console.log(cta, "cta");
     const footer = document.querySelector('.footer');
     const footerRect = footer.getBoundingClientRect();
 
@@ -295,10 +288,10 @@ const UI: {
   // Initial call to set the position
   adjustCtaPosition();
   // Initial call to set the position
-  parallaxEffect();
+  //parallaxEffect();
 
   // Add event listener for scroll
-  window.addEventListener('scroll', parallaxEffect);
+  //window.addEventListener('scroll', parallaxEffect);
 
   redirect();
 
@@ -306,7 +299,7 @@ const UI: {
     initTheme();
     onLoad();
     onPageShow();
-    parallaxEffect();
+    //parallaxEffect();
     redirect();
   });
 </script>

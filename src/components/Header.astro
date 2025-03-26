@@ -4,7 +4,6 @@ import {getHomePermalink, trimSlash} from '../utils/permalinks';
 import type {CallToAction} from '../types/types';
 import Logo from './Logo.astro';
 import ToggleIcon from './ToggleMenu.astro';
-import ToggleTheme from './ToggleTheme.astro';
 import Cta from './Cta.astro';
 
 interface Link {
@@ -36,8 +35,6 @@ const {
   links = [],
   isSticky = false,
   isFixed = false,
-  isDark = false,
-  isFullWidth = false,
   //   position = 'center',
 } = Astro.props;
 
@@ -51,14 +48,14 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       fixed: isFixed,
       relative: !isSticky && !isFixed,
     },
-    'group top-0 w-full z-40 mx-auto w-full flex-none border-b border-gray-50/0 transition-[opacity] ease-in-out',
+    'group top-0 z-40 mx-auto w-full flex-none border-b border-gray-50/0 transition-[opacity] ease-in-out',
   ]}
   {...isSticky || isFixed ? {'data-sticky-or-fixed-header': true} : {}}
   {...id ? {id} : {}}
 >
   <div
     class:list={[
-      'text-default text-primary-fg-light h-full group-[.expanded]:text-primary-fg group-[.expanded]:bg-primary-bg group-[.scroll]:bg-primary-bg group-[.scroll]:text-primary-fg md:p-4 relative px-[var(--page-margin-inline)] md:flex md:items-center md:justify-center',
+      'text-default text-primary-fg-light group-[.expanded]:text-primary-fg group-[.expanded]:bg-primary-bg group-[.scroll]:bg-primary-bg group-[.scroll]:text-primary-fg relative h-full px-[var(--page-margin-inline)] md:flex md:items-center md:justify-center md:p-4',
     ]}
   >
     <div
