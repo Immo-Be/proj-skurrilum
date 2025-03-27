@@ -8,12 +8,17 @@ export interface Props {
 
 const {title} = Astro.props;
 
+import { getLocaleFromUrl } from '../i18n/i18n';
 import '../styles/global.css';
 import '../styles/icons.css';
 import '../styles/utilities.css';
 
 import BasicScripts from '../utils/BasicScripts.astro';
 import {ClientRouter} from 'astro:transitions';
+
+//const url = Astro.url;
+
+//console.log("locake", getLocaleFromUrl(url));
 ---
 
 <html lang="de">

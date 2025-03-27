@@ -1,0 +1,19 @@
+
+<<<<<<< HEAD
+=======
+---
+// Access middleware data in any .astro component
+const { customData } = Astro.locals;
+---
+
+<p>This page was requested at: {customData.requestTime}</p>
+>>>>>>> Snippet
+<<<<<<< HEAD
+=======
+---
+// Access middleware data in any .astro component
+const { customData } = Astro.locals;
+---
+
+<p>This page was requested at: {customData.requestTime}</p>
+>>>>>>> Snippet

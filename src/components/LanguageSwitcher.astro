@@ -1,0 +1,165 @@
+---
+import {getPermalink} from '../utils/permalinks'; import {localeSlugs} from '../configuration';
+import { getLocaleFromUrl } from '../i18n/i18n';
+
+import { getLocalizedGamePath } from '../utils/game-localization';
+
+export interface Props {
+  currentLocale?: string;
+  currentPath?: string;
+}
+
+//const {currentLocale = 'de'} = Astro.props;
+const currentLocale = getLocaleFromUrl(Astro.url);
+
+function getLocalePath(locale: string) {
+  // Handle current path
+  const url = new URL(Astro.url);
+  const pathSegments = url.pathname.split('/').filter(Boolean);
+  
+  // Check if this is a game path that needs special handling
+  const gamePathResult = getLocalizedGamePath(url.pathname, locale);
+  if (gamePathResult) {
+    return gamePathResult;
+  }
+  
+  // Standard path handling for non-game routes
+  // If we have locale in the path, replace it
+  if (localeSlugs.includes(pathSegments[0] as any)) {
+    pathSegments[0] = locale;
+  } else {
+    // Otherwise add it to the beginning
+    pathSegments.unshift(locale);
+  }
+
+  return '/' + pathSegments.join('/') + (url.pathname.endsWith('/') ? '/' : '');
+}
+
+// Map locales to their full names
+const localeNames = {
+  de: 'Deutsch',
+  en: 'English',
+};
+---
+
+<div class="language-switcher relative ml-4 w-24" style="position: relative;" id="language-switcher-container">
+  <div
+    id="language-dropdown-button"
+    class="flex items-center text-base font-medium cursor-pointer"
+    aria-expanded="false"
+  >
+    <span class="uppercase">{currentLocale}</span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      class="ml-1 h-4 w-4 transition-transform duration-150"
+      id="dropdown-arrow"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+        clip-rule="evenodd"></path>
+    </svg>
+  </div>
+
+<div
+    id="language-dropdown-menu"
+    class="absolute right-0 z-50 mt-2 w-32 rounded bg-primary-bg text-primary-fg py-2 shadow-md hidden opacity-0 transition-opacity duration-150"
+    style="transition: opacity 150ms ease-in-out;"
+  >
+    {
+      localeSlugs
+        .filter(locale => locale !== currentLocale) // Only show languages that are not currently selected
+        .map(locale => (
+          <a
+            href={getLocalePath(locale)}
+            class="block px-4 py-2 text-sm hover:bg-accent">
+            {localeNames[locale]}
+          </a>
+        ))
+    }
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener('astro:page-load', function() {
+
+    setupLanguageSwitcher();
+  });
+  
+  // Also run immediately for initial page load
+  (function() {
+
+    setupLanguageSwitcher();
+  })();
+  
+  function setupLanguageSwitcher() {
+    const container = document.getElementById('language-switcher-container');
+    const button = document.getElementById('language-dropdown-button');
+    const menu = document.getElementById('language-dropdown-menu');
+    
+    if (!container || !button || !menu) {
+
+      return;
+    }
+    
+
+    // Check if we've already set up this element to avoid duplicate listeners
+    if (container.dataset.initialized === 'true') {
+
+      return;
+    }
+    
+    container.dataset.initialized = 'true';
+    
+    const arrow = document.getElementById('dropdown-arrow');
+    
+    // Show menu on hover
+    container.addEventListener('mouseenter', function() {
+
+      button.setAttribute('aria-expanded', 'true');
+      if (arrow) arrow.style.transform = 'rotate(180deg)';
+      showMenu();
+    });
+    
+    // Hide menu when mouse leaves the container
+    container.addEventListener('mouseleave', function() {
+
+      button.setAttribute('aria-expanded', 'false');
+      if (arrow) arrow.style.transform = 'rotate(0deg)';
+      hideMenu();
+    });
+    
+
+    function showMenu() {
+      menu.style.cssText = 'display: block !important; opacity: 1 !important; visibility: visible !important; pointer-events: auto !important;';
+      
+      // Ensure visibility with a small delay to allow CSS transitions
+      setTimeout(() => {
+
+        // If still not visible, try alternative approach
+        if (window.getComputedStyle(menu).display === 'none' || 
+            window.getComputedStyle(menu).visibility === 'hidden' || 
+            menu.getBoundingClientRect().height === 0) {
+          const buttonRect = button.getBoundingClientRect();
+          menu.style.position = 'absolute';
+          menu.style.top = buttonRect.bottom + 'px';
+          menu.style.right = '0';
+          menu.style.cssText += 'display: block !important; z-index: 9999 !important;';
+        }
+      }, 50);
+    }
+    
+    function hideMenu() {
+      menu.style.opacity = '0';
+      // Use timeout to allow fade-out animation
+      setTimeout(() => {
+        if (button.getAttribute('aria-expanded') === 'false') {
+          menu.style.display = 'none';
+        }
+      }, 150);
+    }
+
+  }
+</script>

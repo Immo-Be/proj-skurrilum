@@ -2,7 +2,7 @@
 // import {getLocale} from 'astro-i18n-aut';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import {useTranslations} from '../i18n/i18n';
+import {getLocaleFromUrl, useTranslations} from '../i18n/i18n';
 import {headerData} from '../navigation';
 import type {MetaData} from '../types/types';
 import {getPermalink} from '../utils/permalinks';
@@ -15,8 +15,8 @@ export interface Props {
 // const {metadata} = Astro.props;
 
 // const locale = getLocale(Astro.url) as 'en' | 'de';
-const locale = 'de';
 // console.log('🚀 ~ locale:', metadata);
+const locale = getLocaleFromUrl(Astro.url)
 const t = useTranslations(locale);
 
 // console.log('🚀 ~ metadata:', metadata);
@@ -50,6 +50,7 @@ const footerData = {
   ],
  footNote: `© ${new Date().getFullYear()} Skurrilum`,
 };
+
 ---
 
 <Layout
@@ -58,7 +59,7 @@ const footerData = {
     title: 'string',
   }}
 >
-  <Header {...headerData(t)} isFixed transition:persist />
+  <Header {...headerData(t, locale)} isFixed transition:persist />
   <slot name="video-area" />
   <main class="main-margin bg-primary-bg">
     <slot name="main" />

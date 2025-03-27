@@ -26,15 +26,15 @@ export function getNameFromLocale(locale?: string) {
   return C.MESSAGES[l].language;
 }
 
-export function getLocaleFromUrl(url: URL) {
-  let path = url.pathname;
-
-  if (url.pathname.startsWith(import.meta.env.BASE_URL)) path = url.pathname.slice(import.meta.env.BASE_URL.length);
-
-  const locale = parseLocaleTagFromPath(path);
-
-  return parseLocale(locale);
-}
+//export function getLocaleFromUrl(url: URL) {
+//  let path = url.pathname;
+//
+//  if (url.pathname.startsWith(import.meta.env.BASE_URL)) path = url.pathname.slice(import.meta.env.BASE_URL.length);
+//
+//  const locale = parseLocaleTagFromPath(path);
+//
+//  return parseLocale(locale);
+//}
 
 export function parseLocale(locale?: string) {
   return locale && locale in C.LOCALES ? locale as keyof typeof C.LOCALES : C.DEFAULT_LOCALE;

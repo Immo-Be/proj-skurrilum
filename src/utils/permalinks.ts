@@ -1,5 +1,8 @@
 import slugify from 'limax';
 import {trim} from '../utils/utils';
+import { Locale } from '../configuration';
+import astroConfig from '../../astro.config';
+
 
 const APP_BLOG = {
   list: {
@@ -19,13 +22,21 @@ const APP_BLOG = {
 const SITE = {
   name: 'Skurrilum',
   site: 'https://staging.seefalke.de',
-  base: '/en',
+  base: '/',
   trailingSlash: true,
 };
 
 export const trimSlash = (s: string) => trim(trim(s, '/'));
+
+const {defaultLocale, prefixedLocales } = astroConfig.i18n;
+
 const createPath = (...params: string[]) => {
-  const paths = params
+  // Filter out default locale from path if prefixedLocales is false
+  const filteredParams = !prefixedLocales && params.length > 0 && params[0] === defaultLocale
+    ? params.slice(1)
+    : params;
+    
+  const paths = filteredParams
     .map(el => trimSlash(el))
     .filter(el => !!el)
     .join('/');
@@ -59,8 +70,10 @@ export const getCanonical = (path = ''): string | URL => {
   return url;
 };
 
-/** */
-export const getPermalink = (slug = '', type = 'page'): string => {
+/** 
+ * Make sure these are identical to the old links
+ */
+export const getPermalink = (locale: Locale, slug = '', type = 'page'): string => {
   let permalink: string;
 
   if (
@@ -78,27 +91,29 @@ export const getPermalink = (slug = '', type = 'page'): string => {
       permalink = getHomePermalink();
       break;
 
-    case 'blog':
-      permalink = getBlogPermalink();
-      break;
-
-    case 'asset':
-      permalink = getAsset(slug);
-      break;
-
-    case 'category':
-      permalink = createPath(CATEGORY_BASE, trimSlash(slug));
-      break;
-
-    case 'tag':
-      permalink = createPath(TAG_BASE, trimSlash(slug));
-      break;
-
-    case 'post':
-      permalink = createPath(trimSlash(slug));
-      break;
-
     case 'page':
+      permalink = createPath(locale, trimSlash(slug));
+      break;
+
+    case 'game':
+      permalink = createPath(locale);
+      break;
+    //case 'asset':
+    //  permalink = getAsset(slug);
+    //  break;
+    //
+    //case 'category':
+    //  permalink = createPath(CATEGORY_BASE, trimSlash(slug));
+    //  break;
+    //
+    //case 'tag':
+    //  permalink = createPath(TAG_BASE, trimSlash(slug));
+    //  break;
+    //
+    //case 'post': permalink = createPath(trimSlash(slug));
+    //  break;
+    //
+    //case 'page':
     default:
       permalink = createPath(slug);
       break;

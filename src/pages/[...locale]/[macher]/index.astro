@@ -1,12 +1,10 @@
 ---
 import Layout from '../../../layouts/PageLayout.astro';
-import {useTranslations} from '../../../i18n/i18n';
-import { getLocaleFromUrl } from '../../../utils/i18n';
+import {getLocaleFromUrl, useTranslations} from '../../../i18n/i18n';
 
 const locale = getLocaleFromUrl(Astro.url)
 
 const t = useTranslations(locale);
-console.log(t);
 
 export async function getStaticPaths() {
   return [

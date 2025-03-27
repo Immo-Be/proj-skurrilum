@@ -30,7 +30,6 @@ export const indexPaths = (kind?: string) => {
 export const entryPaths = <C extends keyof ContentEntryMap>(collection: C, slugName?: string) => {
   return (async () => {
     const entries = await getCollection(collection);
-    console.log('🚀 ~ file: _paths.ts ~ line 116 ~ entries', entries);
     return entries.map((entry) => {
       const split = splitLocaleAndPath(entry.slug);
       if (!split) throw new Error(`Invalid entry slug: ${entry.slug}`);

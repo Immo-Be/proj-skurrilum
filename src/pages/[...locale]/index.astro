@@ -11,6 +11,7 @@ import {useTranslations} from '../../i18n/i18n.ts';
 // const locale = getLocale(Astro.url) as 'en' | 'de';
 const locale = 'de';
 const t = useTranslations(locale);
+const data = Astro.locals;
 ---
 
 <script>
@@ -21,6 +22,7 @@ const t = useTranslations(locale);
   <VideoWrapper slot="video-area" />
 
   <Fragment slot="main">
+    <p>This {data && Object.entries(data).map(([key, value]) => `${key}: ${value}`).join(', ')} is from middleware.</p> 
     <div
       class="flex gap-2 flex-wrap md:flex-nowrap justify-center items-center text-text_difference g"
     >

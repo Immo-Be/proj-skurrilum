@@ -1,6 +1,6 @@
 // import sitemap from '@astrojs/sitemap';
 // import {i18n, filterSitemapByDefaultLocale} from 'astro-i18n-aut/integration';
-import {defineConfig} from 'astro/config';
+import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -29,6 +29,10 @@ export default defineConfig({
     //routing: 'manual',
   },
 
+  routing: {
+    // this is the default, but should be set expliclity here to make sure permaLinks are generated correctly
+    prefixDefaultLocale: false
+  },
   integrations: [
     // i18n({
     //   defaultLocale, // the default locale
