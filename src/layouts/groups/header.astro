@@ -1,22 +1,21 @@
-
 ---
-import { getHomePermalink, trimSlash } from '../../utils/permalinks';
-import { headerData } from '../../navigation';
+import {getHomePermalink, trimSlash} from '../../utils/permalinks';
+import {headerData} from '../../navigation';
 import Logo from '../../components/ui/logo.astro';
 import ToggleButton from '../../components/nav/toggle-icon.astro';
 import Cta from '../../components/ui/cta.astro';
 import LanguageSwitcher from '../../components/nav/language-switcher.astro';
-import { getLocaleFromUrl } from '../../i18n/i18n';
+import {getLocaleFromUrl} from '../../i18n/i18n';
 
 export interface Props {
   isSticky?: boolean;
   isFixed?: boolean;
 }
 
-const { isSticky = false, isFixed = false } = Astro.props;
+const {isSticky = false, isFixed = false} = Astro.props;
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 const locale = getLocaleFromUrl(Astro.url);
-const { links } = headerData(locale);
+const {links} = headerData(locale);
 
 const navId = 'nav';
 const toggleButtonId = 'toggleButton';
@@ -33,13 +32,19 @@ const fixedHeaderId = 'fixed';
     },
     'group top-0 z-40 mx-auto w-full flex-none border-b border-gray-50/0 transition-[opacity] ease-in-out',
   ]}
-  {...(isSticky || isFixed ? { [`data-${fixedHeaderId}`]: true } : {})}
+  {...isSticky || isFixed ? {[`data-${fixedHeaderId}`]: true} : {}}
   id={headerId}
 >
-  <div class:list={[
-    'text-default text-primary-fg-light group-[.expanded]:text-primary-fg group-[.expanded]:bg-primary-bg group-[.scroll]:bg-primary-bg group-[.scroll]:text-primary-fg relative h-full px-[var(--page-margin-inline)] md:flex md:items-center md:justify-center md:p-4',
-  ]}>
-    <div class:list={['flex w-full items-center justify-between md:w-auto md:justify-center']}>
+  <div
+    class:list={[
+      'text-default text-primary-fg-light group-[.expanded]:text-primary-fg group-[.expanded]:bg-primary-bg group-[.scroll]:bg-primary-bg group-[.scroll]:text-primary-fg relative h-full px-[var(--page-margin-inline)] md:flex md:items-center md:justify-center md:p-4',
+    ]}
+  >
+    <div
+      class:list={[
+        'flex w-full items-center justify-between md:w-auto md:justify-center',
+      ]}
+    >
       <a class="flex items-center md:inline-block" href={getHomePermalink()}>
         <Logo customClass="hidden group-[.scroll]:block" />
       </a>
@@ -52,26 +57,52 @@ const fixedHeaderId = 'fixed';
       class="text-default ml-12 hidden w-full items-center overflow-y-auto md:mx-5 md:flex md:w-auto md:justify-self-center md:overflow-visible"
       aria-label="Main navigation"
     >
-      <ul class="flex w-full flex-col gap-4 overflow-x-hidden text-xl font-medium tracking-[0.01rem] md:w-auto md:flex-row md:justify-center md:gap-4 md:self-center md:text-[0.9375rem]">
-        {links.map(({ text, href, links }) => (
-          <li class={links?.length ? 'dropdown' : ''}>
-            {links?.length ? (
-              <>
-                <button type="button" class="hover:text-link text-3xl md:text-base">{text}</button>
-                <ul class="dropdown-menu md:bg-page rounded-xs pl-4 font-medium opacity-90 drop-shadow-xl md:absolute md:hidden md:min-w-[200px] md:pl-0 md:backdrop-blur-md">
-                  {links.map(({ text: text2, href: href2 }) => (
-                    <li class="md:hover:bg-muted">
-                      <a class:list={[ 'whitespace-no-wrap block px-5 py-2 first:rounded-t last:rounded-b', { 'aw-link-active': href2 === currentPath } ]} href={href2}>{text2}</a>
-                    </li>
-                  ))}
-                </ul>
-              </>
-            ) : (
-              <a class:list={[ 'cursor-pointer', 'text-3xl md:text-base', { 'aw-link-active': href === currentPath } ]} href={href}>{text}</a>
-            )}
-          </li>
-        ))}
-        <li class="transition-translate translate-x-[200px] duration-500" id="cta-element-header-desktop">
+      <ul
+        class="flex w-full flex-col gap-4 overflow-x-hidden text-xl font-medium tracking-[0.01rem] md:w-auto md:flex-row md:justify-center md:gap-4 md:self-center md:text-[0.9375rem]"
+      >
+        {
+          links.map(({text, href, links}) => (
+            <li class={links?.length ? 'dropdown' : ''}>
+              {links?.length ? (
+                <>
+                  <button
+                    type="button"
+                    class="hover:text-link text-3xl md:text-base">
+                    {text}
+                  </button>
+                  <ul class="dropdown-menu md:bg-page rounded-xs pl-4 font-medium opacity-90 drop-shadow-xl md:absolute md:hidden md:min-w-[200px] md:pl-0 md:backdrop-blur-md">
+                    {links.map(({text: text2, href: href2}) => (
+                      <li class="md:hover:bg-muted">
+                        <a
+                          class:list={[
+                            'whitespace-no-wrap block px-5 py-2 first:rounded-t last:rounded-b',
+                            {'aw-link-active': href2 === currentPath},
+                          ]}
+                          href={href2}>
+                          {text2}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : (
+                <a
+                  class:list={[
+                    'cursor-pointer',
+                    'text-3xl md:text-base',
+                    {'aw-link-active': href === currentPath},
+                  ]}
+                  href={href}>
+                  {text}
+                </a>
+              )}
+            </li>
+          ))
+        }
+        <li
+          class="transition-translate translate-x-[200px] duration-500"
+          id="cta-element-header-desktop"
+        >
           <Cta class="cursor-pointer" label={`Jetzt\u00A0buchen`} />
         </li>
       </ul>
@@ -80,20 +111,17 @@ const fixedHeaderId = 'fixed';
   </div>
 </header>
 
-<script is:inline define:vars={{ navId, toggleButtonId, headerId, fixedHeaderId }}>
+<script is:inline define:vars={{navId, toggleButtonId, headerId, fixedHeaderId}}
+>
   document.addEventListener('astro:after-swap', setupHeader);
   document.addEventListener('astro:before-swap', cleanupHeader);
-
-  (function() {
-    setupHeader();
-  })()
+  window.addEventListener('load', setupHeader);
 
   function setupHeader() {
     const nav = document.getElementById(navId);
     const toggle = document.getElementById(toggleButtonId);
     const header = document.getElementById(headerId);
-    const headerElement = document.querySelector(`#header[data-${fixedHeaderId}]`);
-    
+
     if (!nav || !toggle || !header) {
       console.warn('Nav elements not found. Please check');
       return;
@@ -108,12 +136,17 @@ const fixedHeaderId = 'fixed';
     });
 
     function applyHeaderStylesOnScroll() {
+      const headerElement = document.querySelector(
+        `#header[data-${fixedHeaderId}]`
+      );
       if (!headerElement) return;
       const shouldBeScrolled = window.scrollY > 60;
       headerElement.classList.toggle('scroll', shouldBeScrolled);
     }
 
-    window.addEventListener('scroll', applyHeaderStylesOnScroll, { passive: true });
+    window.addEventListener('scroll', applyHeaderStylesOnScroll, {
+      passive: true,
+    });
     applyHeaderStylesOnScroll();
   }
 
