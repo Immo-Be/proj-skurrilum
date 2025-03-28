@@ -1,34 +1,58 @@
 ---
 // import {Icon} from 'astro-icon/components';
-import {getHomePermalink} from '../utils/permalinks';
+import {getHomePermalink, getPermalink} from '../../utils/permalinks';
 
-interface Link {
-  text?: string;
-  href?: string;
-  ariaLabel?: string;
-  icon?: string;
-}
+//interface Link {
+//  text?: string;
+//  href?: string;
+//  ariaLabel?: string;
+//  icon?: string;
+//}
 
-interface Links {
-  title?: string;
-  href?: string;
-  links: Array<Link>;
-}
+//interface Links {
+//  title?: string;
+//  href?: string;
+//  links: Array<Link>;
+//}
 
-export interface Props {
-  links: Array<Links>;
-  secondaryLinks: Array<Link>;
-  socialLinks?: Array<Link>;
-  footNote?: string;
-  theme?: string;
-}
+//export interface Props {
+//  links: Array<Links>;
+//  secondaryLinks: Array<Link>;
+//  socialLinks?: Array<Link>;
+//  footNote?: string;
+//  theme?: string;
+//}
 
-const {
-  socialLinks = [],
-  secondaryLinks = [],
-  links = [],
-  footNote = '',
-} = Astro.props;
+const links = [
+  {
+    title: 'Über uns',
+    href: getPermalink('/ueber-uns'),
+    links: [],
+  },
+  {
+    title: 'AGB',
+    href: getPermalink('/agb'),
+    links: [],
+  },
+  {
+    title: 'FAQ',
+    href: getPermalink('/faq'),
+    links: [],
+  },
+  {
+    title: 'Kontakt',
+    href: getPermalink('/kontakt'),
+    links: [],
+  },
+];
+
+const secondaryLinks = [
+  {text: 'Impressum', href: getPermalink('/impressum')},
+  {text: 'Datenschutz', href: getPermalink('/datenschutz')},
+];
+
+const footNote = `© ${new Date().getFullYear()} Skurrilum`;
+const socialLinks =[]
 ---
 
 <footer class="not-prose footer relative border-t border-gray-200">
@@ -74,7 +98,7 @@ const {
                   {links.map(({text, href, ariaLabel}) => (
                     <li class="mb-2">
                       <a
-                        class="text-muted transition  ease-in-out "
+                        class="text-muted transition ease-in-out"
                         href={href}
                         aria-label={ariaLabel}>
                         <Fragment set:html={text} />

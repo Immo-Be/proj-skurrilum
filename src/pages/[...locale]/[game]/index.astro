@@ -1,17 +1,19 @@
 ---
-import type { InferGetStaticPropsType } from 'astro';
-import Layout from '../../../layouts/PageLayout.astro';
-import { generateRouteParams } from './path';
+import type {InferGetStaticPropsType} from 'astro';
+import {generateRouteParams} from '../../path';
+import DefaultLayout from '../../../layouts/DefaultLayout.astro';
 
-import  LanugageSwitcher  from '../../../components/LanguageSwitcher.astro';
 export const getStaticPaths = generateRouteParams;
+
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const props = Astro.props as Props;
 ---
 
-<Layout>
+<DefaultLayout>
+  <h1 class="mt-50 text-black" class="mt-10">
+    {props.game}
+    {props.locale}
+  </h1>
+</DefaultLayout>
 
-  <h1 slot="main" class="text-black mt-50" class="mt-10">Die Weinende Frau {
-    }</h1>
-</Layout>

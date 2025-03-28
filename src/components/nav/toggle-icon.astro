@@ -1,0 +1,31 @@
+---
+export interface Props {
+  id: string;
+  label?: string;
+}
+
+const {label = 'Toggle Button', id} = Astro.props;
+---
+
+<button
+  id={id}
+  type="button"
+  class="flex h-12 cursor-pointer flex-col items-center justify-center rounded-xs focus:outline-hidden"
+  aria-label={label}
+>
+  <span class="sr-only">{label}</span>
+  <slot>
+    <span
+      aria-hidden="true"
+      class="bg-primary-bg-light group-[.scroll]:bg-primary-fg group-[.expanded]:bg-primary-fg ease my-1 h-0.5 w-6 transform rounded-full opacity-80 transition duration-200 group-[.expanded]:translate-y-2.5 group-[.expanded]:rotate-45"
+    ></span>
+    <span
+      aria-hidden="true"
+      class="bg-primary-bg-light group-[.scroll]:bg-primary-fg ease my-1 h-0.5 w-6 transform rounded-full opacity-80 transition duration-200 group-[.expanded]:opacity-0"
+    ></span>
+    <span
+      aria-hidden="true"
+      class="bg-primary-bg-light group-[.scroll]:bg-primary-fg group-[.expanded]:bg-primary-fg ease my-1 h-0.5 w-6 transform rounded-full opacity-80 transition duration-200 group-[.expanded]:-translate-y-2.5 group-[.expanded]:-rotate-45"
+    ></span>
+  </slot>
+</button>

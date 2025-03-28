@@ -2,7 +2,7 @@
 import intro_text from '../assets/overlay-text.png';
 import intro_image from '../assets/start_2min2.png';
 import intro_video from '../assets/webtrailer.mp4';
-import Cta from './Cta.astro';
+import CtaLink from '../components/ui/cta.astro';
 ---
 
 <section class="relative parallax max-h-[1057px]">
@@ -30,7 +30,7 @@ import Cta from './Cta.astro';
       class="max-h-[200px] object-contain"
     />
   <span class="play-icon block text-white py-2 px-4 text-white mx-auto"></span>
-    <Cta
+    <CtaLink
       id="cta-element-video"
       label="Jetzt\u00A0buchen"
       class="text-white py-2 px-4 hidden md:block"

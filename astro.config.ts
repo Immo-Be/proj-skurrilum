@@ -15,14 +15,10 @@ const locales = {
 export default defineConfig({
   site: 'https://example.com/',
   //trailingSlash: 'always',
-  //prefetch: true,
-  //build: {
-  //  format: 'file'
-  //},
-
-  //   build: {
-  //     format: 'directory',
-  //   },
+  prefetch: true,
+  build: {
+    format: 'directory',
+  },
   i18n: {
     locales: ['de', 'en'],
     defaultLocale: 'de',

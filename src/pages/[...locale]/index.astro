@@ -1,5 +1,4 @@
 ---
-import Layout from '../../layouts/PageLayout.astro';
 import VideoWrapper from '../../components/video-wrapper.astro';
 import { indexPaths } from '../_paths';
 
@@ -7,6 +6,7 @@ export const getStaticPaths = indexPaths();
 // import {getLocale} from 'astro-i18n-aut';
 
 import {useTranslations} from '../../i18n/i18n.ts';
+import DefaultLayout from '../../layouts/DefaultLayout.astro';
 
 // const locale = getLocale(Astro.url) as 'en' | 'de';
 const locale = 'de';
@@ -18,10 +18,10 @@ const data = Astro.locals;
   // import globals from 'globals';
 </script>
 
-<Layout>
-  <VideoWrapper slot="video-area" />
+<DefaultLayout>
+  <VideoWrapper />
 
-  <Fragment slot="main">
+  <Fragment>
     <p>This {data && Object.entries(data).map(([key, value]) => `${key}: ${value}`).join(', ')} is from middleware.</p> 
     <div
       class="flex gap-2 flex-wrap md:flex-nowrap justify-center items-center text-text_difference g"

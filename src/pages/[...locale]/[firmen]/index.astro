@@ -1,8 +1,6 @@
 ---
-import Layout from '../../../layouts/PageLayout.astro';
-// import { indexPaths } from '../../_paths';
+import DefaultLayout from '../../../layouts/DefaultLayout.astro';
 
-//export const getStaticPaths = indexPaths('gallery');
 export async function getStaticPaths() {
   return [
     {
@@ -21,6 +19,6 @@ export async function getStaticPaths() {
 }
 ---
 
-<Layout>
+<DefaultLayout>
   <h1>Firmen</h1>
-</Layout>
+</DefaultLayout>

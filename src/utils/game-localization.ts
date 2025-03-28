@@ -1,7 +1,5 @@
-
-import { GamePaths } from '../pages/[...locale]/[game]/path';
-import { GAME_KEY } from '../configuration';
 import { getLocaleFromUrl } from '../i18n/i18n';
+import { GamePaths } from '../pages/path';
 
 /**
  * Checks if the current path is a game path and returns the appropriate localized version
@@ -25,7 +23,7 @@ export function getLocalizedGamePath(currentPath: string, targetLocale: string):
     : pathSegments[0];
   
   // Look through all game paths to find a match
-  for (const [gameKey, translations] of Object.entries(GamePaths)) {
+  for (const [_, translations] of Object.entries(GamePaths)) {
     // Check if this game slug matches any of our known games in the current locale
     if (translations[currentLocale]?.game === gameSlug) {
       // We found a match! Get the target locale's path for this game

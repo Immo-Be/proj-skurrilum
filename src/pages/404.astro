@@ -1,5 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import DefaultLayout from "../layouts/DefaultLayout.astro";
 ---
 
 <script>
@@ -23,12 +23,9 @@ import Layout from "../layouts/Layout.astro";
 	}
 </style>
 
-<Layout title="test">
-	<div data-translation="en">
+<DefaultLayout >
+	<div >
 		<h1>404 Page not found</h1>
 	</div>
-	<div data-translation="de">
-		<h1>404 Seite nicht gefunden</h1>
-	</div>
-</Layout>
+</DefaultLayout>
 

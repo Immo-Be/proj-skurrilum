@@ -1,6 +1,5 @@
 import type { GetStaticPaths } from 'astro';
-import { GAME_KEY } from '../../../configuration';
-
+import { GAME_KEY } from '../configuration';
 
 export const GamePaths = {
   [GAME_KEY.Guschi]: {
@@ -20,7 +19,7 @@ export const GamePaths = {
     },
     en: {
       locale: 'en',
-      game: 'zoo-of-death',
+      game: 'the-zoo-of-death',
     },
   },
   [GAME_KEY.Phantominsel]: {
@@ -40,7 +39,7 @@ export const GamePaths = {
     },
     en: {
       locale: 'en',
-      game: 'the-weeping-willow',
+      game: 'the-wailing-woman',
     },
   },
   [GAME_KEY.Malvini]: {
@@ -53,11 +52,10 @@ export const GamePaths = {
       game: 'malvinis-legacy',
     },
   },
-} as const
+} as const;
 
-
-export const generateRouteParams: GetStaticPaths = async () =>
-  Object.entries(GamePaths).flatMap(([key, translations]) =>
+export const generateRouteParams = (async () => {
+  return Object.entries(GamePaths).flatMap(([key, translations]) =>
     // For default locale (German), we have to pass undefined as the locale
     // This will generate URLs like /game-name instead of /de/game-name
     // For the props, we want to pass the actual locale
@@ -66,6 +64,7 @@ export const generateRouteParams: GetStaticPaths = async () =>
         locale,
         game,
       },
-      props: { key, locale: localekey },
+      props: { game: key, locale: localekey },
     }))
   );
+}) satisfies GetStaticPaths;

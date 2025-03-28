@@ -1,5 +1,6 @@
 ---
-import Layout from '../../../layouts/PageLayout.astro';
+import DefaultLayout from '../../../layouts/DefaultLayout.astro';
+
 
 const data = Astro.locals;
 
@@ -11,8 +12,6 @@ export function getStaticPaths() {
 }
 ---
 
-<Layout>
-  <!-- <h1>FAQ</h1> -->
-  test
+<DefaultLayout>
   {data}
-</Layout>
+</DefaultLayout>

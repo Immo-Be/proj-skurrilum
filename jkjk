@@ -42,8 +42,8 @@ import {GamePaths} from '../pages/path';
   const onLoad = function () {
     // Using allowed console method instead of console.log
     console.log('onLoad');
-    //let lastKnownScrollPosition = window.scrollY;
-    //let ticking = true;
+    let lastKnownScrollPosition = window.scrollY;
+    let ticking = true;
 
     //attachEvent('#header nav', 'click', function () {
     //  document
@@ -71,36 +71,36 @@ import {GamePaths} from '../pages/path';
     //    ?.classList.toggle('hidden');
     //});
 
-    //function applyHeaderStylesOnScroll() {
-    //  const header = document.querySelector(
-    //    '#header[data-sticky-or-fixed-header]'
-    //  );
-    //  if (!header) return;
-    //  if (
-    //    lastKnownScrollPosition > 60 &&
-    //    !header.classList.contains('scroll')
-    //  ) {
-    //    header.classList.add('scroll');
-    //  } else if (
-    //    lastKnownScrollPosition <= 60 &&
-    //    header.classList.contains('scroll')
-    //  ) {
-    //    header.classList.remove('scroll');
-    //  }
-    //  ticking = false;
-    //}
-    //applyHeaderStylesOnScroll();
+    function applyHeaderStylesOnScroll() {
+      const header = document.querySelector(
+        '#header[data-sticky-or-fixed-header]'
+      );
+      if (!header) return;
+      if (
+        lastKnownScrollPosition > 60 &&
+        !header.classList.contains('scroll')
+      ) {
+        header.classList.add('scroll');
+      } else if (
+        lastKnownScrollPosition <= 60 &&
+        header.classList.contains('scroll')
+      ) {
+        header.classList.remove('scroll');
+      }
+      ticking = false;
+    }
+    applyHeaderStylesOnScroll();
 
-    //document.addEventListener( 'scroll', function () {
-    //  lastKnownScrollPosition = window.scrollY;
-    //
-    //  if (!ticking) {
-    //    window.requestAnimationFrame(() => {
-    //      applyHeaderStylesOnScroll();
-    //    });
-    //    ticking = true;
-    //  }
-    //});
+    attachEvent([document], 'scroll', function () {
+      lastKnownScrollPosition = window.scrollY;
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          applyHeaderStylesOnScroll();
+        });
+        ticking = true;
+      }
+    });
 
     // Function to handle intersection changes
     // Does not re-execute on resize
@@ -213,14 +213,14 @@ import {GamePaths} from '../pages/path';
   adjustCtaPosition();
   // Initial call to set the position
   //parallaxEffect();
-onLoad()
+
   // Add event listener for scroll
   window.addEventListener('scroll', parallaxEffect);
 
   document.addEventListener('astro:after-swap', () => {
     onLoad();
-    //onPageShow();
-    //parallaxEffect();
-    //redirect();
+    onPageShow();
+    parallaxEffect();
+    redirect();
   });
 </script>

@@ -8,7 +8,9 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "check": "astro check"
+    "check": "astro check",
+    "clean": "rm -rf dist",
+    "build:watch": "npm run clean && astro build --watch"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",

@@ -1,0 +1,41 @@
+---
+import {getLocaleFromUrl} from '../i18n/i18n';
+import type {MetaData} from '../types/types';
+import '../styles/global.css';
+import '../styles/icons.css';
+import '../styles/utilities.css';
+import BasicScripts from '../utils/BasicScripts.astro';
+import Header from '../layouts/groups/header.astro';
+import Head from '../layouts/groups/head.astro';
+import Footer from '../layouts/groups/footer.astro';
+
+export interface Props {
+  metadata?: MetaData;
+}
+
+// const {metadata} = Astro.props;
+
+// const locale = getLocale(Astro.url) as 'en' | 'de';
+// console.log('🚀 ~ locale:', metadata);
+//const locale = getLocaleFromUrl(Astro.url);
+//const t = useTranslations(locale);
+
+// console.log('🚀 ~ metadata:', metadata);
+
+const locale = getLocaleFromUrl(Astro.url);
+---
+
+<html lang={locale}>
+  <Head />
+  <body class="bg-primary-bg text-primary-fg jost-font">
+    <Header isFixed transition:persist="header" />
+    <!--<main >-->
+
+    <!-- Deactivated as long as the transition persit on header is not working-->
+    <main transition:animate="fade">
+      <slot />
+    </main>
+    <Footer />
+    <BasicScripts />
+  </body>
+</html>
