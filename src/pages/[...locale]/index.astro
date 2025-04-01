@@ -1,15 +1,17 @@
 ---
 import VideoWrapper from '../../components/video-wrapper.astro';
-import { indexPaths } from '../_paths';
+import {indexPaths} from '../_paths';
 
 export const getStaticPaths = indexPaths();
 // import {getLocale} from 'astro-i18n-aut';
 
-import {useTranslations} from '../../i18n/i18n.ts';
+import {getLocaleFromUrl, useTranslations} from '../../i18n/i18n.ts';
 import DefaultLayout from '../../layouts/DefaultLayout.astro';
+import CtaBubble from '../../components/ui/cta-bubble.astro';
 
 // const locale = getLocale(Astro.url) as 'en' | 'de';
-const locale = 'de';
+const locale = getLocaleFromUrl(Astro.url);
+//const locale = 'de';
 const t = useTranslations(locale);
 const data = Astro.locals;
 ---
@@ -22,12 +24,11 @@ const data = Astro.locals;
   <VideoWrapper />
 
   <Fragment>
-    <p>This {data && Object.entries(data).map(([key, value]) => `${key}: ${value}`).join(', ')} is from middleware.</p> 
     <div
-      class="flex gap-2 flex-wrap md:flex-nowrap justify-center items-center text-text_difference g"
+      class="text-text_difference g flex flex-wrap items-center justify-center gap-2 md:flex-nowrap"
     >
       <h1
-        class="mt-4 leading-none tracking-tight text-step-5 sm:text-step-6 md:text-step-8 md:border-r-2 w-fit"
+        class="text-step-5 sm:text-step-6 md:text-step-8 mt-4 w-fit leading-none tracking-tight md:border-r-2"
         id="buchungskalender"
       >
         {t('general.skurrilum')}
@@ -38,7 +39,7 @@ const data = Astro.locals;
       />
     </div>
     <p
-      class="my-6 text-lg font-normal text-justify mx-[calc((-1)*var(--page-margin-inline))] px-[var(--page-margin-inline)] py-4"
+      class=" my-6  py-4 text-justify text-lg font-normal"
     >
       {t('general.description')}
     </p>
@@ -59,6 +60,5 @@ const data = Astro.locals;
     <p>
       {t('seo.description3')}
     </p>
-    <!--<div class="cta-bubble" data-content={t('cta.bookNowHere')}></div>-->
   </Fragment>
-</Layout>
+</DefaultLayout>

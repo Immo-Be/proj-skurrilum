@@ -5,7 +5,8 @@ import Logo from '../../components/ui/logo.astro';
 import ToggleButton from '../../components/nav/toggle-icon.astro';
 import Cta from '../../components/ui/cta.astro';
 import LanguageSwitcher from '../../components/nav/language-switcher.astro';
-import {getLocaleFromUrl} from '../../i18n/i18n';
+import {useTranslations, getLocaleFromUrl} from '../../i18n/i18n';
+import NavbarListItem from '../../components/nav/navbar-list-item.astro';
 
 export interface Props {
   isSticky?: boolean;
@@ -17,6 +18,8 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 const locale = getLocaleFromUrl(Astro.url);
 const {links} = headerData(locale);
 
+const t = useTranslations(locale);
+
 const navId = 'nav';
 const toggleButtonId = 'toggleButton';
 const headerId = 'header';
@@ -24,6 +27,7 @@ const fixedHeaderId = 'fixed';
 ---
 
 <header
+  transition:persist="header"
   class:list={[
     {
       sticky: isSticky,
@@ -37,7 +41,7 @@ const fixedHeaderId = 'fixed';
 >
   <div
     class:list={[
-      'text-default text-primary-fg-light group-[.expanded]:text-primary-fg group-[.expanded]:bg-primary-bg group-[.scroll]:bg-primary-bg group-[.scroll]:text-primary-fg relative h-full px-[var(--page-margin-inline)] md:flex md:items-center md:justify-center md:p-4',
+      'text-default text-primary-fg-light group-[.expanded]:text-primary-fg group-[.expanded]:bg-primary-bg group-[.scroll]:bg-primary-bg group-[.scroll]:text-primary-fg group-[.scroll]:border-border text-[clamp(10rem, 20vw, 20rem)] relative h-full px-[var(--page-margin-inline)] group-[.scroll]:border-b md:flex md:items-center md:justify-between md:py-4',
     ]}
   >
     <div
@@ -46,7 +50,7 @@ const fixedHeaderId = 'fixed';
       ]}
     >
       <a class="flex items-center md:inline-block" href={getHomePermalink()}>
-        <Logo customClass="hidden group-[.scroll]:block" />
+        <Logo customClass="" />
       </a>
       <div class="flex items-center md:hidden">
         <ToggleButton id={toggleButtonId} />
@@ -54,20 +58,19 @@ const fixedHeaderId = 'fixed';
     </div>
     <nav
       id={navId}
-      class="text-default ml-12 hidden w-full items-center overflow-y-auto md:mx-5 md:flex md:w-auto md:justify-self-center md:overflow-visible"
+      class="ml-12 hidden w-full items-center overflow-y-auto md:mx-5 md:flex md:w-auto md:justify-self-center md:overflow-visible"
       aria-label="Main navigation"
     >
       <ul
-        class="flex w-full flex-col gap-4 overflow-x-hidden text-xl font-medium tracking-[0.01rem] md:w-auto md:flex-row md:justify-center md:gap-4 md:self-center md:text-[0.9375rem]"
+        class="flex w-full flex-col gap-4 overflow-x-hiddentracking-[0.01rem] md:w-auto md:flex-row md:justify-center md:gap-4 md:self-center"
       >
         {
           links.map(({text, href, links}) => (
-            <li class={links?.length ? 'dropdown' : ''}>
+            <NavbarListItem customClass={links?.length ? 'dropdown' : ''}>
               {links?.length ? (
                 <>
                   <button
-                    type="button"
-                    class="hover:text-link text-3xl md:text-base">
+                    class="hover:text-link font-normal">
                     {text}
                   </button>
                   <ul class="dropdown-menu md:bg-page rounded-xs pl-4 font-medium opacity-90 drop-shadow-xl md:absolute md:hidden md:min-w-[200px] md:pl-0 md:backdrop-blur-md">
@@ -89,22 +92,21 @@ const fixedHeaderId = 'fixed';
                 <a
                   class:list={[
                     'cursor-pointer',
-                    'text-3xl md:text-base',
                     {'aw-link-active': href === currentPath},
                   ]}
                   href={href}>
                   {text}
                 </a>
               )}
-            </li>
+            </NavbarListItem>
           ))
         }
-        <li
+        <NavbarListItem
           class="transition-translate translate-x-[200px] duration-500"
           id="cta-element-header-desktop"
         >
-          <Cta class="cursor-pointer" label={`Jetzt\u00A0buchen`} />
-        </li>
+          <Cta class="" label={`${t('cta.bookNow')}`} />
+        </NavbarListItem>
       </ul>
       <LanguageSwitcher />
     </nav>
@@ -115,7 +117,10 @@ const fixedHeaderId = 'fixed';
 >
   document.addEventListener('astro:after-swap', setupHeader);
   document.addEventListener('astro:before-swap', cleanupHeader);
-  window.addEventListener('load', setupHeader);
+
+  (function () {
+    setupHeader();
+  })();
 
   function setupHeader() {
     const nav = document.getElementById(navId);

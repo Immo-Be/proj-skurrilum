@@ -1,5 +1,5 @@
 ---
-import {getLocaleFromUrl} from '../i18n/i18n';
+import {getLocaleFromUrl, useTranslations} from '../i18n/i18n';
 import type {MetaData} from '../types/types';
 import '../styles/global.css';
 import '../styles/icons.css';
@@ -8,6 +8,7 @@ import BasicScripts from '../utils/BasicScripts.astro';
 import Header from '../layouts/groups/header.astro';
 import Head from '../layouts/groups/head.astro';
 import Footer from '../layouts/groups/footer.astro';
+import CtaBubble from '../components/ui/cta-bubble.astro';
 
 export interface Props {
   metadata?: MetaData;
@@ -23,19 +24,22 @@ export interface Props {
 // console.log('🚀 ~ metadata:', metadata);
 
 const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
 ---
 
 <html lang={locale}>
   <Head />
   <body class="bg-primary-bg text-primary-fg jost-font">
-    <Header isFixed transition:persist="header" />
+    <Header isFixed />
     <!--<main >-->
 
     <!-- Deactivated as long as the transition persit on header is not working-->
-    <main transition:animate="fade">
+    <main class="mx-[var(--page-margin-inline)]" >
       <slot />
     </main>
     <Footer />
+    
+    <CtaBubble cta={t('cta.bookNowHere')} />
     <BasicScripts />
   </body>
 </html>

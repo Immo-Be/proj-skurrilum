@@ -165,52 +165,6 @@ import {GamePaths} from '../pages/path';
     //});
   }
 
-  function adjustCtaPosition() {
-    const cta = document.getElementById('cta-bubble');
-    const footer = document.querySelector('.footer');
-    const footerRect = footer.getBoundingClientRect();
-
-    // Check if the shop element is
-
-    if (footerRect.top < window.innerHeight) {
-      cta.style.bottom = `${window.innerHeight - footerRect.top + 60}px`;
-    } else {
-      cta.style.bottom = '60px';
-    }
-
-    // Make the CTA disappear when the shop element is in the viewport
-    const shop = document.querySelector('#venuedoo');
-    // Function to handle intersection changes
-    function handleIntersection(entries) {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          cta.style.right = '-100%';
-          // Add your custom logic here
-        } else {
-          cta.style.right = '0';
-          // Add your custom logic here
-        }
-      });
-    }
-
-    // Create an Intersection Observer
-    const observer = new IntersectionObserver(handleIntersection, {
-      root: null, // Use the viewport as the root
-      threshold: [0], // Trigger when 10% of the element is visible
-    });
-
-    // Observe the target element
-    const target = shop;
-    if (target) {
-      observer.observe(target);
-    }
-  }
-
-  //window.addEventListener('scroll', adjustCtaPosition);
-  //window.addEventListener('resize', adjustCtaPosition);
-
-  // Initial call to set the position
-  adjustCtaPosition();
   // Initial call to set the position
   //parallaxEffect();
 onLoad()

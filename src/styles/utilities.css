@@ -74,6 +74,7 @@
     inherits: false;
   }
 
+
   :root {
     --cur-viewport-width: 100vw;
     --min-viewport-width: 25rem;

@@ -73,7 +73,7 @@
     font-style: normal;
     font-weight: 100 900;
     font-display: swap;
-    src: url("../../public/fonts/jost.woff2") format('woff2');
+    src: url('../../public/fonts/jost.woff2') format('woff2');
     unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
   }
 
@@ -83,6 +83,7 @@
     --page-margin: calc(clamp(min(var(--x-large), var(--xxx-large)),
           var(--x-large) + var(--ease-out-sine) * (var(--xxx-large) - var(--x-large)),
           max(var(--x-large), var(--xxx-large))) * 1rem);
+
     --page-margin-inline: calc(clamp(min(var(--medium), var(--xxx-large)),
           var(--medium) + var(--ease-out-sine) * (var(--xxx-large) - var(--medium)),
           max(var(--medium), var(--xxx-large))) * 1rem);
@@ -98,7 +99,7 @@
     --font-color-dark: gray;
 
     --accent-color: #0070f3;
-
+    --border-color: rgba(17, 17, 13, 0.1);
     --page-bg: var(--bg-color-light);
     --page-fg: var(--font-color-dark);
 
@@ -127,4 +128,6 @@
   --color-primary-fg: var(--page-fg);
 
   --color-accent: var(--accent-color);
+
+  --color-border: var(--border-color);
 }
