@@ -66,82 +66,107 @@ const localeNames = {
 ---
 
 <div
-  class="language-switcher relative ml-4 w-24"
-  style="position: relative;"
+  class="language-switcher relative ml-4"
   id="language-switcher-container"
 >
-  <div
-    id="language-dropdown-button"
-    class="flex cursor-pointer items-center text-base font-medium"
-    aria-expanded="false"
-  >
-    <span class="uppercase">{currentLocale}</span>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 20 20"
-      fill="currentColor"
-      class="ml-1 h-4 w-4 transition-transform duration-150"
-      id="dropdown-arrow"
-    >
-      <path
-        fill-rule="evenodd"
-        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-        clip-rule="evenodd"></path>
-    </svg>
+  <!-- Mobile view: always show all options side by side -->
+  <div class="md:hidden flex gap-2 items-center">
+    {
+      localeSlugs.map(locale => (
+        <a
+          href={getLocalePath(locale)}
+          class={`block px-2 py-1 text-sm font-medium uppercase ${locale === currentLocale ? 'text-accent font-bold' : ''}`}>
+          {locale}
+        </a>
+      ))
+    }
   </div>
 
-  <div
-    id="language-dropdown-menu"
-    class="bg-primary-bg text-primary-fg absolute right-0 z-50 mt-2 hidden w-32 rounded py-2 opacity-0 shadow-md transition-opacity duration-150"
-    style="transition: opacity 150ms ease-in-out;"
-  >
-    {
-      localeSlugs
-        .filter(locale => locale !== currentLocale) // Only show languages that are not currently selected
-        .map(locale => (
-          <a
-            href={getLocalePath(locale)}
-            class="hover:bg-accent block px-4 py-2 text-sm">
-            {localeNames[locale]}
-          </a>
-        ))
-    }
+  <!-- Desktop view: dropdown on hover -->
+  <div class="hidden md:block relative w-24" style="position: relative;">
+    <div
+      id="language-dropdown-button"
+      class="flex cursor-pointer items-center text-base font-medium"
+      aria-expanded="false"
+    >
+      <span class="uppercase">{currentLocale}</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        class="ml-1 h-4 w-4 transition-transform duration-150"
+        id="dropdown-arrow"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </div>
+
+    <div
+      id="language-dropdown-menu"
+      class="bg-primary-bg text-primary-fg absolute right-0 z-50 mt-2 hidden w-32 rounded py-2 opacity-0 shadow-md transition-opacity duration-150"
+      style="transition: opacity 150ms ease-in-out;"
+    >
+      {
+        localeSlugs
+          .filter(locale => locale !== currentLocale) // Only show languages that are not currently selected
+          .map(locale => (
+            <a
+              href={getLocalePath(locale)}
+              class="hover:bg-accent block px-4 py-2 text-sm">
+              {localeNames[locale]}
+            </a>
+          ))
+      }
+    </div>
   </div>
 </div>
 
 <script is:inline>
-  document.addEventListener('astro:page-load', () => setupLanguageSwitcher());
+  //document.addEventListener('astro:page-load', () => setupLanguageSwitcher());
+  document.addEventListener('astro:after-swap', () => setupLanguageSwitcher());
 
   // Also run immediately for initial page load
-  setupLanguageSwitcher();
+  (function () {
+    setupLanguageSwitcher();
+  })();
 
   function setupLanguageSwitcher() {
-    const container = document.getElementById('language-switcher-container');
+    // Only set up the dropdown for desktop view
+    const desktopContainer = document.querySelector('#language-switcher-container .hidden.md\\:block');
+    
+    if (!desktopContainer) {
+      return;
+    }
+    
     const button = document.getElementById('language-dropdown-button');
     const menu = document.getElementById('language-dropdown-menu');
+    console.log('Setting up language switcher');
 
-    if (!container || !button || !menu) {
+    if (!button || !menu) {
       return;
     }
 
     // Check if we've already set up this element to avoid duplicate listeners
-    if (container.dataset.initialized === 'true') {
+    if (desktopContainer.dataset.initialized === 'true') {
       return;
     }
 
-    container.dataset.initialized = 'true';
+    desktopContainer.dataset.initialized = 'true';
 
     const arrow = document.getElementById('dropdown-arrow');
 
     // Show menu on hover
-    container.addEventListener('mouseenter', function () {
+    desktopContainer.addEventListener('mouseenter', function () {
       button.setAttribute('aria-expanded', 'true');
       if (arrow) arrow.style.transform = 'rotate(180deg)';
       showMenu();
     });
 
     // Hide menu when mouse leaves the container
-    container.addEventListener('mouseleave', function () {
+    desktopContainer.addEventListener('mouseleave', function () {
       button.setAttribute('aria-expanded', 'false');
       if (arrow) arrow.style.transform = 'rotate(0deg)';
       hideMenu();

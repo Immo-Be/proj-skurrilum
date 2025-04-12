@@ -1,0 +1,80 @@
+---
+import Cta from '../ui/cta.astro';
+import NavbarListItem from './navbar-list-item.astro';
+import {ctaVideoId} from '../video-wrapper.astro';
+
+interface Props {
+  label: string;
+}
+
+const {label = ''} = Astro.props as Props;
+
+const movingCtaId = 'cta-element-header-desktop';
+---
+
+<NavbarListItem
+  class="transition-translate translate-x-[400px] duration-500"
+  id={movingCtaId}
+>
+  <Cta class="" label={label} />
+</NavbarListItem>
+
+<script define:vars={{movingCtaId, ctaVideoId}}>
+  document.addEventListener('astro:page-load', () => {
+    setupMovingCta();
+  });
+
+  
+  // Initial call to set up the functionality
+
+  function setupMovingCta() {
+    const cta = document.getElementById(movingCtaId);
+    if (!cta) return;
+
+
+    // For mobile devices, always show the CTA
+    if (window.innerWidth < 768) {
+      cta.classList.remove('translate-x-[400px]');
+      return;
+    }
+
+    // Handle intersection observer entries
+    function handleIntersection(entries) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          // When video is out of view, show the CTA
+          cta.classList.remove('translate-x-[400px]');
+        } else {
+          // When video is in view, hide the CTA
+          cta.classList.add('translate-x-[400px]');
+        }
+      });
+    }
+
+    // Create an Intersection Observer
+    const observer = new IntersectionObserver(handleIntersection, {
+      root: null, // Use the viewport as the root
+      rootMargin: '-78px 0px 0px 0px',
+      threshold: 0, // Trigger when the element is out of view
+    });
+
+
+    // Observe the target element
+    const target = document.getElementById(ctaVideoId);
+    console.log('Observing target:', target);
+    if (target) {
+      observer.observe(target);
+      
+      // Initial check
+      const rect = target.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+      
+      if (!isVisible) {
+        cta.classList.remove('translate-x-[400px]');
+      }
+    } else {
+      // If video target doesn't exist, always show the CTA
+      cta.classList.remove('translate-x-[400px]');
+    }
+  }
+</script>

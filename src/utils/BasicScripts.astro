@@ -104,39 +104,35 @@ import {GamePaths} from '../pages/path';
 
     // Function to handle intersection changes
     // Does not re-execute on resize
-    {
-      function handleIntersection(entry) {
-        const cta = document.getElementById('cta-element-header-desktop');
-
-        if (window.innerWidth < 768) {
-          cta.classList.remove('translate-x-[200px]');
-          return;
-        }
-        entry.forEach(entry => {
-          if (!entry.isIntersecting) {
-            cta.classList.remove('translate-x-[200px]');
-
-            // Add your custom logic here
-          } else {
-            cta.classList.add('translate-x-[200px]');
-            // Add your custom logic here
-          }
-        });
-      }
-
-      // Create an Intersection Observer
-      const observer = new IntersectionObserver(handleIntersection, {
-        root: null, // Use the viewport as the root
-        rootMargin: '-78px 0px 0px 0px',
-        threshold: '0', // Trigger when the element is fully out of view
-      });
-
-      // Observe the target element
-      const target = document.getElementById('cta-element-video');
-      if (target) {
-        observer.observe(target);
-      }
-    }
+    //{
+    //  function handleIntersection(entry) {
+    //    const cta = document.getElementById('cta-element-header-desktop');
+    //
+    //    if (window.innerWidth < 768) {
+    //      cta.classList.remove('translate-x-[200px]');
+    //      return;
+    //    }
+    //    entry.forEach(entry => {
+    //      if (!entry.isIntersecting) {
+    //        cta.classList.remove('translate-x-[200px]');
+    //        // Add your custom logic here
+    //      }
+    //    });
+    //  }
+    //
+    //  // Create an Intersection Observer
+    //  const observer = new IntersectionObserver(handleIntersection, {
+    //    root: null, // Use the viewport as the root
+    //    rootMargin: '-78px 0px 0px 0px',
+    //    threshold: '0', // Trigger when the element is fully out of view
+    //  });
+    //
+    //  // Observe the target element
+    //  const target = document.getElementById('cta-element-video');
+    //  if (target) {
+    //    observer.observe(target);
+    //  }
+    //}
   };
   //const onPageShow = function () {
   //  console.log("onPageShow")
@@ -152,7 +148,7 @@ import {GamePaths} from '../pages/path';
   //};
 
   window.onload = onLoad;
-  window.onpageshow = onPageShow;
+  //window.onpageshow = onPageShow;
 
   // Function to handle the parallax effect
   function parallaxEffect() {

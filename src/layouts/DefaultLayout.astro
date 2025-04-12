@@ -1,9 +1,11 @@
 ---
 import {getLocaleFromUrl, useTranslations} from '../i18n/i18n';
 import type {MetaData} from '../types/types';
-import '../styles/global.css';
+// the order of the css imports is important
 import '../styles/icons.css';
 import '../styles/utilities.css';
+import '../styles/global.css';
+
 import BasicScripts from '../utils/BasicScripts.astro';
 import Header from '../layouts/groups/header.astro';
 import Head from '../layouts/groups/head.astro';

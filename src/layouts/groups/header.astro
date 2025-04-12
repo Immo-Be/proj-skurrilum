@@ -7,6 +7,7 @@ import Cta from '../../components/ui/cta.astro';
 import LanguageSwitcher from '../../components/nav/language-switcher.astro';
 import {useTranslations, getLocaleFromUrl} from '../../i18n/i18n';
 import NavbarListItem from '../../components/nav/navbar-list-item.astro';
+import MovingCta from '../../components/nav/moving-cta.astro';
 
 export interface Props {
   isSticky?: boolean;
@@ -25,9 +26,8 @@ const toggleButtonId = 'toggleButton';
 const headerId = 'header';
 const fixedHeaderId = 'fixed';
 ---
-
+<!-- I wanted to add transition:persist="header" here, but it won't update language and links correctly. So for now I leave it-->
 <header
-  transition:persist="header"
   class:list={[
     {
       sticky: isSticky,
@@ -41,7 +41,7 @@ const fixedHeaderId = 'fixed';
 >
   <div
     class:list={[
-      'text-default text-primary-fg-light group-[.expanded]:text-primary-fg group-[.expanded]:bg-primary-bg group-[.scroll]:bg-primary-bg group-[.scroll]:text-primary-fg group-[.scroll]:border-border text-[clamp(10rem, 20vw, 20rem)] relative h-full px-[var(--page-margin-inline)] group-[.scroll]:border-b md:flex md:items-center md:justify-between md:py-4',
+      'text-primary-fg-light group-[.expanded]:text-primary-fg group-[.expanded]:bg-primary-bg group-[.scroll]:bg-primary-bg group-[.scroll]:text-primary-fg group-[.scroll]:border-border relative h-full px-[var(--page-margin-inline)] group-[.scroll]:border-b md:flex md:items-center md:justify-between md:py-4',
     ]}
   >
     <div
@@ -58,21 +58,18 @@ const fixedHeaderId = 'fixed';
     </div>
     <nav
       id={navId}
-      class="ml-12 hidden w-full items-center overflow-y-auto md:mx-5 md:flex md:w-auto md:justify-self-center md:overflow-visible"
+      class="hidden w-full items-center overflow-y-auto md:flex md:justify-self-center md:overflow-visible"
       aria-label="Main navigation"
     >
       <ul
-        class="flex w-full flex-col gap-4 overflow-x-hiddentracking-[0.01rem] md:w-auto md:flex-row md:justify-center md:gap-4 md:self-center"
+        class="flex w-full flex-col gap-4 md:ml-auto md:w-auto md:flex-row md:justify-center md:gap-4 md:self-center"
       >
         {
           links.map(({text, href, links}) => (
             <NavbarListItem customClass={links?.length ? 'dropdown' : ''}>
               {links?.length ? (
                 <>
-                  <button
-                    class="hover:text-link font-normal">
-                    {text}
-                  </button>
+                  <button class="font-[var(--font-weight-normal)!important]">{text}</button>
                   <ul class="dropdown-menu md:bg-page rounded-xs pl-4 font-medium opacity-90 drop-shadow-xl md:absolute md:hidden md:min-w-[200px] md:pl-0 md:backdrop-blur-md">
                     {links.map(({text: text2, href: href2}) => (
                       <li class="md:hover:bg-muted">
@@ -101,12 +98,7 @@ const fixedHeaderId = 'fixed';
             </NavbarListItem>
           ))
         }
-        <NavbarListItem
-          class="transition-translate translate-x-[200px] duration-500"
-          id="cta-element-header-desktop"
-        >
-          <Cta class="" label={`${t('cta.bookNow')}`} />
-        </NavbarListItem>
+        <MovingCta label={t('cta.bookNow')}  />
       </ul>
       <LanguageSwitcher />
     </nav>
@@ -122,6 +114,14 @@ const fixedHeaderId = 'fixed';
     setupHeader();
   })();
 
+  function applyHeaderStylesOnScroll() {
+    const headerElement = document.querySelector(
+      `#header[data-${fixedHeaderId}]`
+    );
+    if (!headerElement) return;
+    const shouldBeScrolled = window.scrollY > 60;
+    headerElement.classList.toggle('scroll', shouldBeScrolled);
+  }
   function setupHeader() {
     const nav = document.getElementById(navId);
     const toggle = document.getElementById(toggleButtonId);
@@ -139,15 +139,6 @@ const fixedHeaderId = 'fixed';
       header.classList.toggle('bg-page');
       nav.classList.toggle('hidden');
     });
-
-    function applyHeaderStylesOnScroll() {
-      const headerElement = document.querySelector(
-        `#header[data-${fixedHeaderId}]`
-      );
-      if (!headerElement) return;
-      const shouldBeScrolled = window.scrollY > 60;
-      headerElement.classList.toggle('scroll', shouldBeScrolled);
-    }
 
     window.addEventListener('scroll', applyHeaderStylesOnScroll, {
       passive: true,

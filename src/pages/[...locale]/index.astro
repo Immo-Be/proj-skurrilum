@@ -2,18 +2,75 @@
 import VideoWrapper from '../../components/video-wrapper.astro';
 import {indexPaths} from '../_paths';
 
+import Slider from '../../components/slider.astro';
+
 export const getStaticPaths = indexPaths();
 // import {getLocale} from 'astro-i18n-aut';
 
 import {getLocaleFromUrl, useTranslations} from '../../i18n/i18n.ts';
 import DefaultLayout from '../../layouts/DefaultLayout.astro';
 import CtaBubble from '../../components/ui/cta-bubble.astro';
+import TypewritingHeadline from '../../components/typewriting-headline.astro';
+import {GAME_KEY} from '../../configuration';
+import {getPermalink} from '../../utils/permalinks';
+import {GamePaths} from '../path';
 
 // const locale = getLocale(Astro.url) as 'en' | 'de';
 const locale = getLocaleFromUrl(Astro.url);
 //const locale = 'de';
 const t = useTranslations(locale);
 const data = Astro.locals;
+
+const escapeRooms = [
+  {
+    image: '/games/guschi_plain.jpg',
+    title: t('guschi.title'),
+    description: t('guschi.shortDescription'),
+    players: t('guschi.players'),
+    idealPlayer: t('guschi.idealNumberOfPlayers'),
+    ageRecommendation: t('guschi.minAge'),
+    ctaLink: getPermalink(locale, GamePaths[GAME_KEY.Guschi][locale].game),
+  },
+  {
+    image: '/games/insel_plain.jpg',
+    title: t('phantom-island.title'),
+    description: t('phantom-island.shortDescription'),
+    players: t('phantom-island.players'),
+    idealPlayer: t('phantom-island.idealNumberOfPlayers'),
+    ageRecommendation: t('phantom-island.minAge'),
+    ctaLink: getPermalink(
+      locale,
+      GamePaths[GAME_KEY.Phantominsel][locale].game
+    ),
+  },
+  {
+    image: '/games/malvini_plain.jpg',
+    title: t('malvini.title'),
+    description: t('malvini.shortDescription'),
+    players: t('malvini.players'),
+    idealPlayer: t('malvini.idealNumberOfPlayers'),
+    ageRecommendation: t('malvini.minAge'),
+    ctaLink: getPermalink(locale, GamePaths[GAME_KEY.Malvini][locale].game),
+  },
+  {
+    image: '/games/weindende-frau_plain.jpg',
+    title: t('wailing-woman.title'),
+    description: t('wailing-woman.shortDescription'),
+    players: t('wailing-woman.players'),
+    idealPlayer: t('wailing-woman.idealNumberOfPlayers'),
+    ageRecommendation: t('wailing-woman.minAge'),
+    ctaLink: getPermalink(locale, GamePaths[GAME_KEY.Frau][locale].game),
+  },
+  {
+    image: '/games/zoo-plain.jpg',
+    title: t('zoo-of-death.title'),
+    description: t('zoo-of-death.shortDescription'),
+    players: t('zoo-of-death.players'),
+    idealPlayer: t('zoo-of-death.idealNumberOfPlayers'),
+    ageRecommendation: t('zoo-of-death.minAge'),
+    ctaLink: getPermalink(locale, GamePaths[GAME_KEY.Zoo][locale].game),
+  },
+];
 ---
 
 <script>
@@ -24,41 +81,72 @@ const data = Astro.locals;
   <VideoWrapper />
 
   <Fragment>
-    <div
-      class="text-text_difference g flex flex-wrap items-center justify-center gap-2 md:flex-nowrap"
-    >
-      <h1
-        class="text-step-5 sm:text-step-6 md:text-step-8 mt-4 w-fit leading-none tracking-tight md:border-r-2"
-        id="buchungskalender"
-      >
-        {t('general.skurrilum')}
-      </h1>
-      <span
-        class="text-step-0 text-center"
-        set:text={t('general.descriptionShort')}
-      />
-    </div>
+    <TypewritingHeadline
+      headline={t('general.skurrilum')}
+      subheadline={t('general.descriptionShort')}
+    />
     <p
-      class=" my-6  py-4 text-justify text-lg font-normal"
+      class="bg-secondary-bg mx-[calc(-1*var(--page-margin-inline))] my-6 px-[var(--page-margin-inline)] py-8 text-justify text-lg font-normal"
     >
-      {t('general.description')}
-    </p>
-    <h2>{t('bookingCalender')}</h2>
-    <!-- <script
-      src="https://cdn.quinbook.com/shop.js"
-      data-shopid="01161aaa0b6d1345dd8fe4e481144d84"></script> -->
+      <span class="mx-auto block max-w-[72ch] text-center text-balance">
+        {t('general.description')}
+      </span>
 
-    <h2>{t('seo.title1')}</h2>
-    <p>
-      {t('seo.description1')}
+      <Slider rooms={escapeRooms} id="featured-escape-rooms" />
     </p>
-    <h2>{t('seo.title2')}</h2>
-    <p>
-      {t('seo.description2')}
-    </p>
-    <h2>{t('seo.title3')}</h2>
-    <p>
-      {t('seo.description3')}
-    </p>
+    <h2 class="block py-16 text-center text-4xl">
+      <span class="">{t('bookingCalender')}</span>
+    </h2>
+    <div id="shopPlaceholder"></div>
+    <section
+      class="bg-secondary-bg mx-[calc(-1*var(--page-margin-inline))] my-12 px-[var(--page-margin-inline)] py-8"
+    >
+      <h2 class="mb-4 text-center text-3xl font-bold">{t('seo.title1')}</h2>
+      <p class="mx-auto mb-2 max-w-[72ch] text-center text-lg text-balance">
+        {t('seo.description1')}
+      </p>
+    </section>
+
+    <section class="my-12">
+      <h2 class="mb-4 text-center text-3xl font-bold">{t('seo.title2')}</h2>
+      <p class="mx-auto mb-2 max-w-[72ch] text-center text-lg text-balance">
+        {t('seo.description2')}
+      </p>
+    </section>
+
+    <section
+      class="bg-secondary-bg mx-[calc(-1*var(--page-margin-inline))] my-12 px-[var(--page-margin-inline)] py-8"
+    >
+      <h2 class="mb-4 text-center text-3xl font-bold">{t('seo.title3')}</h2>
+      <p class="mx-auto mb-2 max-w-[72ch] text-center text-lg text-balance">
+        {t('seo.description3')}
+      </p>
+    </section>
   </Fragment>
 </DefaultLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    initShop();
+  });
+
+  function initShop() {
+    const shopPlaceholder = document.getElementById('shopPlaceholder');
+
+    if (shopPlaceholder) {
+      const script = document.createElement('script');
+      // script.src = "https://cdn.quinbook.com/shop.js";
+      script.dataset.shopid = '01161aaa0b6d1345dd8fe4e481144d84';
+      shopPlaceholder.appendChild(script);
+    }
+  }
+
+  initShop();
+</script>
+
+<style is:global>
+  /* Hides the vouchers on the main page */
+  .vd-booking-appointment ~ div {
+    display: none !important;
+  }
+</style>

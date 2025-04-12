@@ -2,6 +2,7 @@
   "de": {
     "cta.bookNow": "Jetzt\u00A0buchen",
     "cta.bookNowHere": "Tickets buchen",
+    "cta.bookGame" : "Spiel\u00A0buchen",
     "nav.rooms": "Unsere\u00A0Räume",
     "nav.groups": "Firmen",
     "nav.contact": "Kontakt",
@@ -22,6 +23,7 @@
   "en": {
     "cta.bookNow": "Book\u00A0now",
     "cta.bookNowHere": "Book here",
+    "cta.bookGame" : "Book\u00A0game",
     "nav.rooms": "Our\u00A0rooms",
     "nav.groups": "Companies",
     "nav.contact": "Contact",

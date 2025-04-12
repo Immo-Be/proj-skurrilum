@@ -2,6 +2,11 @@
 
 @layer base {
 
+  h1 {
+    font-size: clamp(2.25rem, 1.467rem + 3.913vw, 4.5rem);
+    line-height: clamp(2.25rem, 1.467rem + 3.913vw, 4.5rem);
+  }
+
   /* CSS Reset */
   *,
   *::before,
@@ -100,17 +105,20 @@
 
     --accent-color: #0070f3;
     --border-color: rgba(17, 17, 13, 0.1);
+
     --page-bg: var(--bg-color-light);
     --page-fg: var(--font-color-dark);
 
-    @media (prefers-color-scheme: dark) {
-      --page-bg: var(--bg-color-dark);
-      --page-fg: var(--font-color-light);
-    }
+    --secondary-bg-color: #f7f8f9;
+
+    /* @media (prefers-color-scheme: dark) { */
+    /*   --page-bg: var(--bg-color-dark); */
+    /*   --page-fg: var(--font-color-light); */
+    /* --secondary-bg-color: #a8a8a8; */
+    /* } */
 
     /*--secondary-fg-color: #bbb;*/
     /*--tertiary-fg-color: #999;*/
-    /*--secondary-bg-color: #e0e0e0;*/
     /*--random-fg-color: #333;*/
     /*--random-bg-color: #fff;*/
   }
@@ -126,6 +134,9 @@
 
   --color-primary-bg: var(--page-bg);
   --color-primary-fg: var(--page-fg);
+
+  --color-secondary-bg: var(--secondary-bg-color);
+  
 
   --color-accent: var(--accent-color);
 

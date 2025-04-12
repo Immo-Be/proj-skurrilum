@@ -11,8 +11,11 @@ const {label = '', class: className = '', id} = Astro.props;
 <a
   id={id}
   href="#"
-  class:list={[
-    '',
-    className,
-  ]}>{label}</a
+  class:list={['inline-block font-semibold md:block mx-auto transition-colors hover:opacity-80']}
+  ><span
+    class:list={[
+      'hover:bg-accent block rounded-md border px-2',
+      className,
+    ]}>{label}</span
+  ></a
 >
