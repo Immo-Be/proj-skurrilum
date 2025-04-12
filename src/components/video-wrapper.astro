@@ -64,22 +64,22 @@ const t = useTranslations(locale);
   function setupVideo() {
     const videoElement = document.querySelector('video');
     const playButton = document.getElementById('video-play-button');
-    const introImage = document.querySelector('.intro-image');
-    const videoCta = document.querySelector('#cta-element-video');
+    const introImage = document.querySelector('.intro-image') as HTMLImageElement;
+    const videoCta = document.querySelector('#cta-element-video') as HTMLElement;
 
     // I update the text here because we use the direcive persists on the video element
     const locale = getLocaleFromUrl(window.location.href);
 
     const t = useTranslations(locale);
 
-    const ctaElement = document.querySelector(`#${ctaVideoId} > span`);
+    const ctaElement = document.querySelector(`#${ctaVideoId} > span`) as HTMLElement;
     if (ctaElement) {
       ctaElement.innerText = t('cta.bookGame');
     }
 
     const isDesktop = window.matchMedia('(min-width: 728px)').matches;
 
-    if (playButton && videoElement && introImage) {
+    if (playButton && videoElement && introImage && videoCta) {
       videoElement.autoplay = isDesktop;
       playButton.addEventListener('click', () => {
         // Enable controls and unmute when user plays the video
@@ -89,7 +89,6 @@ const t = useTranslations(locale);
         videoElement.play();
         //playButton.style.display = 'none';
       });
-console.log("videoCta", videoCta);
       videoElement.addEventListener('play', () => {
         playButton.style.display = 'none';
         introImage.style.display = 'none';
@@ -97,7 +96,6 @@ console.log("videoCta", videoCta);
         videoElement.controls = true;
       });
       videoElement.addEventListener('pause', () => {
-        console.log('paused');
         videoCta.style.display = 'block';
         introImage.style.display = 'block';
         // Keep controls visible when paused

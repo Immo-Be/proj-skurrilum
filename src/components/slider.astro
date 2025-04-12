@@ -20,13 +20,13 @@ const { rooms, id = "escape-room-slider" } = Astro.props;
 <div class="slider-container w-full overflow-hidden" id={id}>
   <div class="slider-track flex transition-transform duration-300">
     {rooms.map((room, index) => (
-      <div class="slider-slide w-full flex-shrink-0 p-4">
-        <div class="slide-content bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer transition-transform hover:scale-[1.02]" data-link={room.ctaLink}>
+      <div class="slider-slide w-full flex-shrink-0">
+        <div class="slide-content bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer" data-link={room.ctaLink}>
           <div class="image-container relative pb-[56.25%] overflow-hidden">
             <img 
               src={room.image} 
               alt={`Preview of ${room.title} escape room`} 
-              class="absolute inset-0 w-full h-full object-cover"
+              class="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-[1.05]"
               loading={index === 0 ? "eager" : "lazy"}
             />
           </div>
@@ -57,8 +57,8 @@ const { rooms, id = "escape-room-slider" } = Astro.props;
               {room.ageRecommendation && (
                 <div class="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-4.2 1.4" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 9h.01M15 9h.01M9.5 13.5L12 16l2.5-2.5" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4M12 16h.01" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
                   </svg>
                   <span>{room.ageRecommendation}</span>
                 </div>
@@ -102,8 +102,13 @@ const { rooms, id = "escape-room-slider" } = Astro.props;
   </div>
 </div>
 
-<script define:vars={{ id, rooms }}>
-  document.addEventListener("DOMContentLoaded", () => {
+  <script define:vars={{ id, rooms }}>
+  document.addEventListener('astro:page-load', () => {
+    initSlider();
+  });
+  // Use both DOMContentLoaded and a direct execution path
+  // This ensures the slider works regardless of when the script runs
+  const initSlider = () => {
     const sliderContainer = document.getElementById(id);
     if (!sliderContainer) return;
     
@@ -120,6 +125,8 @@ const { rooms, id = "escape-room-slider" } = Astro.props;
     let isDragging = false;
     let dragStartTime = 0;
     let dragDistance = 0;
+    // clear dotsContainer
+    dotsContainer.innerHTML =null  
     
     // Create indicator dots
     for (let i = 0; i < slideCount; i++) {
@@ -139,16 +146,16 @@ const { rooms, id = "escape-room-slider" } = Astro.props;
     prevButton.addEventListener("click", goToPrevSlide);
     nextButton.addEventListener("click", goToNextSlide);
     
-    // Touch events for swipe functionality
-    sliderTrack.addEventListener("touchstart", handleDragStart);
-    sliderTrack.addEventListener("touchmove", handleDragMove);
-    sliderTrack.addEventListener("touchend", handleDragEnd);
+    // Touch events for swipe functionality - attached to the container for better event capturing
+    sliderContainer.addEventListener("touchstart", handleDragStart, { passive: true }); // Use passive for touchstart to not block scrolling
+    sliderContainer.addEventListener("touchmove", handleDragMove, { passive: false }); // Non-passive to allow preventDefault when needed
+    sliderContainer.addEventListener("touchend", handleDragEnd);
     
-    // Mouse events for desktop swipe
-    sliderTrack.addEventListener("mousedown", handleDragStart);
-    sliderTrack.addEventListener("mousemove", handleDragMove);
-    sliderTrack.addEventListener("mouseup", handleDragEnd);
-    sliderTrack.addEventListener("mouseleave", handleDragEnd);
+    // Mouse events for desktop swipe - attached to the container for better event capturing
+    sliderContainer.addEventListener("mousedown", handleDragStart);
+    window.addEventListener("mousemove", handleDragMove); // Use window to capture moves outside the slider
+    window.addEventListener("mouseup", handleDragEnd);
+    sliderContainer.addEventListener("mouseleave", handleDragEnd);
     
     // Prevent default dragging behavior
     sliderTrack.addEventListener("dragstart", (e) => e.preventDefault());
@@ -158,7 +165,7 @@ const { rooms, id = "escape-room-slider" } = Astro.props;
     slideContents.forEach(content => {
       content.addEventListener("click", (e) => {
         // Don't navigate if we're dragging (swiping)
-        if (isDragging && Date.now() - dragStartTime > 100) return;
+        if (isDragging || dragDistance > 10 || Date.now() - dragStartTime < 300) return;
         
         // Don't navigate if clicking on the CTA button (it has its own link)
         if (e.target.closest('a')) return;
@@ -172,8 +179,19 @@ const { rooms, id = "escape-room-slider" } = Astro.props;
     
     // Helper functions
     function updateSliderState() {
+      // Ensure the transition is applied for slide changes
+      sliderTrack.style.transition = "transform 300ms";
+      
       const offset = -currentSlide * 100;
       sliderTrack.style.transform = `translateX(${offset}%)`;
+      
+      // Reset drag state to ensure next swipe works correctly
+      setTimeout(() => {
+        isDragging = false;
+        dragDistance = 0;
+        startX = 0;
+        startY = 0;
+      }, 50);
       
       // Update dots
       dots.forEach((dot, index) => {
@@ -224,37 +242,66 @@ const { rooms, id = "escape-room-slider" } = Astro.props;
     }
     
     function handleDragStart(e) {
+      // Prevent any ongoing transitions
+      sliderTrack.style.transition = "none";
+      
+      // Reset and initialize drag state
       isDragging = true;
       dragStartTime = Date.now();
       dragDistance = 0;
       
       // Get the starting position
-      startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-      startY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
-      
-      // Remove transition to make dragging feel responsive
-      sliderTrack.style.transition = "none";
+      if (e.type.includes('mouse')) {
+        startX = e.clientX;
+        startY = e.clientY;
+      } else if (e.touches && e.touches[0]) {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        // Don't prevent default on touchstart - allow scrolling to start normally
+      }
     }
     
     function handleDragMove(e) {
       if (!isDragging) return;
       
+      let currentX, currentY;
+      
+      if (e.type.includes('mouse')) {
+        currentX = e.clientX;
+        currentY = e.clientY;
+      } else if (e.touches && e.touches[0]) {
+        currentX = e.touches[0].clientX;
+        currentY = e.touches[0].clientY;
 
-      const currentX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-      const currentY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+      } else {
+        return; // Exit if we can't get coordinates
+      }
+      
       const diffX = currentX - startX;
       const diffY = currentY - startY;
       
       // Calculate absolute drag distance for click detection
       dragDistance = Math.sqrt(diffX * diffX + diffY * diffY);
       
-      // Check if horizontal drag is more significant than vertical scroll
-      // Only prevent default if we're primarily dragging horizontally
-      if (Math.abs(diffX) > Math.abs(diffY)) {
-        e.preventDefault();
+      // Only handle horizontal swipes - if movement is more horizontal than vertical
+      // Use a higher threshold (1.2) to favor vertical scrolling over horizontal swiping
+      const isHorizontalMovement = Math.abs(diffX) > Math.abs(diffY) * 1.2;
+      
+      // Only interfere with default scroll behavior if we're clearly doing a horizontal swipe
+      if (isHorizontalMovement && e.cancelable) {
+        if (dragDistance > 10) {
+          e.preventDefault(); // Only prevent default once we're sure it's a deliberate horizontal swipe
+        }
         
-        // Calculate drag position (limit the drag range)
-        const dragOffset = (diffX / sliderContainer.offsetWidth) * 100;
+        // Calculate drag position with resistance at edges
+        let dragOffset = (diffX / sliderContainer.offsetWidth) * 100;
+        
+        // Add resistance at the edges
+        if ((currentSlide === 0 && diffX > 0) || 
+            (currentSlide === slideCount - 1 && diffX < 0)) {
+          dragOffset *= 0.4; // Add resistance at edges
+        }
+        
         const totalOffset = -currentSlide * 100 + dragOffset;
         
         // Apply the transformation
@@ -269,38 +316,78 @@ const { rooms, id = "escape-room-slider" } = Astro.props;
       sliderTrack.style.transition = "transform 300ms";
       
       const dragTime = Date.now() - dragStartTime;
-      const threshold = 100; // pixels
+      const threshold = 80; // Reduced threshold to make swiping more sensitive
       
       // Calculate final position
       let endX;
-      if (e.type === 'touchend') {
+      if (e.type === 'touchend' && e.changedTouches && e.changedTouches[0]) {
         endX = e.changedTouches[0].clientX;
-      } else {
+      } else if (e.clientX) {
         endX = e.clientX;
+      } else {
+        endX = startX; // Fallback if we can't get valid coordinates
       }
       
       const diff = endX - startX;
       const containerWidth = sliderContainer.offsetWidth;
       
-      // Determine if we should change slides based on drag distance and speed
-      if (
-        Math.abs(diff) > containerWidth * 0.2 || // Dragged more than 20% of slide width
+      // Flag to track if we actually moved to a new slide
+      let slideChanged = false;
+      
+      // Calculate the final Y difference to detect if this was primarily a vertical scroll
+      let endY;
+      if (e.type === 'touchend' && e.changedTouches && e.changedTouches[0]) {
+        endY = e.changedTouches[0].clientY;
+      } else if (e.clientY) {
+        endY = e.clientY;
+      } else {
+        endY = startY;
+      }
+      const diffY = endY - startY;
+      
+      // Only handle as a swipe if horizontal movement is more significant than vertical
+      const isHorizontalMovement = Math.abs(diff) > Math.abs(diffY) * 1.2;
+      
+      if (isHorizontalMovement && (
+        Math.abs(diff) > containerWidth * 0.15 || // Reduced from 20% to 15% of slide width
         (Math.abs(diff) > threshold && dragTime < 300) // Fast swipe
-      ) {
+      )) {
         if (diff > 0 && currentSlide > 0) {
           goToPrevSlide();
+          slideChanged = true;
         } else if (diff < 0 && currentSlide < slideCount - 1) {
           goToNextSlide();
+          slideChanged = true;
         } else {
           // Snap back if at the edges
           updateSliderState();
         }
       } else {
-        // Snap back to current slide if the drag wasn't significant
+        // Snap back to current slide if the drag wasn't significant or was more vertical
         updateSliderState();
       }
       
+      // Reset dragging state
       isDragging = false;
+      
+      // If we changed slides, let the animation complete before allowing another drag
+      if (slideChanged) {
+        setTimeout(() => {
+          dragDistance = 0;
+          startX = 0;
+          startY = 0;
+        }, 300); // Match the transition duration
+      } else {
+        dragDistance = 0;
+        startX = 0;
+        startY = 0;
+      }
+      
+      // Only prevent default if we actually handled this as a horizontal swipe
+      // that resulted in a slide change
+      if (isHorizontalMovement && e.cancelable) {
+        e.preventDefault();
+      }
     }
     
     // Handle keyboard navigation
@@ -323,7 +410,8 @@ const { rooms, id = "escape-room-slider" } = Astro.props;
     
     // Initialize with first slide active
     updateSliderState();
-  });
+  };
+  
 </script>
 
 <style>

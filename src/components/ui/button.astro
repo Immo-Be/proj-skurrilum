@@ -1,6 +1,6 @@
 ---
 import {twMerge} from 'tailwind-merge';
-import type {CallToAction as Props} from '../types/types';
+// import type {CallToAction as Props} from '../types/types';
 
 const {
   variant = 'secondary',
@@ -24,7 +24,7 @@ const variants = {
   type === 'button' || type === 'submit' || type === 'reset' ? (
     <button
       type={type}
-      class={twMerge(variants[variant] || '', className)}
+      class={twMerge(variants[variant as "secondary"] || '', className)}
       {...rest}>
       <Fragment set:html={text} />
       {/* {icon && (
@@ -36,7 +36,7 @@ const variants = {
     </button>
   ) : (
     <a
-      class={twMerge(variants[variant] || '', className)}
+      class={twMerge(variants[variant as "secondary"] || '', className)}
       {...(target ? {target: target, rel: 'noopener noreferrer'} : {})}
       {...rest}>
       <Fragment set:html={text} />

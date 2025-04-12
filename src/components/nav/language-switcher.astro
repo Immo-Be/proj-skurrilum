@@ -1,8 +1,7 @@
 ---
-import {localeSlugs, C} from '../../configuration';
+import {localeSlugs, C, type Locale} from '../../configuration';
 import {getLocaleFromUrl} from '../../i18n/i18n';
 import {getLocalizedGamePath} from '../../utils/game-localization';
-import {GamePaths} from '../../pages/path';
 
 export interface Props {
   currentLocale?: string;
@@ -30,7 +29,7 @@ function getLocalePath(targetLocale: string) {
   // Check if we're switching to the default locale
   if (targetLocale === C.DEFAULT_LOCALE) {
     // For default locale, don't add the locale prefix
-    if (localeSlugs.includes(pathSegments[0] as any)) {
+    if (localeSlugs.includes(pathSegments[0] as Locale)) {
       // Remove the locale segment if it exists
       pathSegments.shift();
       newPath = pathSegments.length > 0 ? '/' + pathSegments.join('/') : '/';
@@ -40,7 +39,7 @@ function getLocalePath(targetLocale: string) {
     }
   } else {
     // For non-default locales, always include the locale prefix
-    if (localeSlugs.includes(pathSegments[0] as any)) {
+    if (localeSlugs.includes(pathSegments[0] as Locale)) {
       // Replace existing locale
       pathSegments[0] = targetLocale;
       newPath = '/' + pathSegments.join('/');
@@ -143,7 +142,6 @@ const localeNames = {
     
     const button = document.getElementById('language-dropdown-button');
     const menu = document.getElementById('language-dropdown-menu');
-    console.log('Setting up language switcher');
 
     if (!button || !menu) {
       return;

@@ -35,10 +35,10 @@ if (subheadlineWords.length <= 3) {
 const sequenceToType = [headline, ...subheadlineParts];
 
 // Final sequence to display without erasing
-const finalDisplay = {
-  heading: headline,
-  subheading: subheadline
-};
+// const finalDisplay = {
+//   heading: headline,
+//   subheading: subheadline
+// };
 ---
 
 <div
@@ -105,7 +105,7 @@ const finalDisplay = {
       let currentText = sequence[currentSequenceIndex];
       
       const contentElement = element.querySelector('.typewriter-content');
-      const cursorElement = element.querySelector('.typewriter-cursor');
+      const cursorElement = element.querySelector('.typewriter-cursor') as HTMLElement;
       const containerElement = element.closest('.typewriter-container');
       const activeContentElement = containerElement?.querySelector('#active-content');
       const finalDisplayElement = containerElement?.querySelector('#final-display');
@@ -170,22 +170,9 @@ const finalDisplay = {
         };
         
         // Keeping this function for compatibility but it won't be called in the new flow
-        const eraseText = () => {
-          // This function is no longer used in the continuous typing effect
-          console.log("Erase text function is obsolete");
-        };
         
         // Show the final display (both heading and subheadline together)
         const showFinalDisplay = () => {
-          // Instead of replacing the content completely, let's maintain the same styling
-          // and just add the line break between heading and subheading
-          
-          // Add a line break between the heading and subheading
-          // We'll maintain the same font size for consistency
-          
-          // First, extract what we've typed so far
-          const currentContent = contentElement.textContent || '';
-          
           // Split the content at the appropriate point
           // The heading is the first part of the sequence
           const headingPart = finalHeading;
@@ -205,7 +192,8 @@ const finalDisplay = {
         containerElement.setAttribute('tabindex', '0');
         containerElement.addEventListener('keydown', (e) => {
           // Allow users to skip to final display with Enter key
-          if (e.key === 'Enter' && !animationComplete) {
+          
+          if ("key" in e &&  e.key === 'Enter' && !animationComplete) {
             e.preventDefault();
             showFinalDisplay();
           }

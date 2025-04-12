@@ -5,11 +5,9 @@ import {indexPaths} from '../_paths';
 import Slider from '../../components/slider.astro';
 
 export const getStaticPaths = indexPaths();
-// import {getLocale} from 'astro-i18n-aut';
 
 import {getLocaleFromUrl, useTranslations} from '../../i18n/i18n.ts';
 import DefaultLayout from '../../layouts/DefaultLayout.astro';
-import CtaBubble from '../../components/ui/cta-bubble.astro';
 import TypewritingHeadline from '../../components/typewriting-headline.astro';
 import {GAME_KEY} from '../../configuration';
 import {getPermalink} from '../../utils/permalinks';
@@ -19,7 +17,7 @@ import {GamePaths} from '../path';
 const locale = getLocaleFromUrl(Astro.url);
 //const locale = 'de';
 const t = useTranslations(locale);
-const data = Astro.locals;
+// const data = Astro.locals;
 
 const escapeRooms = [
   {
@@ -37,7 +35,6 @@ const escapeRooms = [
     description: t('phantom-island.shortDescription'),
     players: t('phantom-island.players'),
     idealPlayer: t('phantom-island.idealNumberOfPlayers'),
-    ageRecommendation: t('phantom-island.minAge'),
     ctaLink: getPermalink(
       locale,
       GamePaths[GAME_KEY.Phantominsel][locale].game
@@ -49,7 +46,6 @@ const escapeRooms = [
     description: t('malvini.shortDescription'),
     players: t('malvini.players'),
     idealPlayer: t('malvini.idealNumberOfPlayers'),
-    ageRecommendation: t('malvini.minAge'),
     ctaLink: getPermalink(locale, GamePaths[GAME_KEY.Malvini][locale].game),
   },
   {
@@ -58,7 +54,6 @@ const escapeRooms = [
     description: t('wailing-woman.shortDescription'),
     players: t('wailing-woman.players'),
     idealPlayer: t('wailing-woman.idealNumberOfPlayers'),
-    ageRecommendation: t('wailing-woman.minAge'),
     ctaLink: getPermalink(locale, GamePaths[GAME_KEY.Frau][locale].game),
   },
   {
@@ -67,15 +62,11 @@ const escapeRooms = [
     description: t('zoo-of-death.shortDescription'),
     players: t('zoo-of-death.players'),
     idealPlayer: t('zoo-of-death.idealNumberOfPlayers'),
-    ageRecommendation: t('zoo-of-death.minAge'),
     ctaLink: getPermalink(locale, GamePaths[GAME_KEY.Zoo][locale].game),
   },
 ];
 ---
 
-<script>
-  // import globals from 'globals';
-</script>
 
 <DefaultLayout>
   <VideoWrapper />

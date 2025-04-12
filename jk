@@ -1,7 +1,7 @@
 ---
 import {getHomePermalink, getPermalink} from '../../utils/permalinks';
 export const footerId = 'footer';
-import {getLocaleFromUrl} from '../../i18n/i18n';
+import {getLocaleFromUrl} from '../../../i18n/i18n';
 
 const locale = getLocaleFromUrl(Astro.url);
 
@@ -225,7 +225,7 @@ const footNote = `© ${new Date().getFullYear()} Skurrilum`;
         </div>
         <div class="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4">
           {
-            links.map(({title, links, href} ) => {
+            links.map(({title, links, href}, index) => {
               const hasSubLinks =
                 links && Array.isArray(links) && links.length > 0;
               return (
@@ -275,7 +275,20 @@ const footNote = `© ${new Date().getFullYear()} Skurrilum`;
     >
       {/* Social Links */}
       {
-       (
+        socialLinks?.length ? (
+          <ul class="mb-6 flex space-x-5 md:order-2 md:mb-0">
+            {socialLinks.map(({ariaLabel, href, text}) => (
+              <li>
+                <a
+                  class="hover:text-primary flex items-center text-gray-500 transition-colors"
+                  aria-label={ariaLabel}
+                  href={href}>
+                  <Fragment set:html={text} />
+                </a>
+              </li>
+            ))}
+          </ul>
+        ) : (
           <div class="mb-6 flex space-x-4 md:order-2 md:mb-0">
             <a
               href="#"
