@@ -12,6 +12,7 @@ import TypewritingHeadline from '../../components/typewriting-headline.astro';
 import {GAME_KEY} from '../../configuration';
 import {getPermalink} from '../../utils/permalinks';
 import {GamePaths} from '../path';
+import DesktopGrid from '../../components/desktop-grid.astro';
 
 // const locale = getLocale(Astro.url) as 'en' | 'de';
 const locale = getLocaleFromUrl(Astro.url);
@@ -82,14 +83,18 @@ const escapeRooms = [
       <span class="mx-auto block max-w-[72ch] text-center text-balance">
         {t('general.description')}
       </span>
-
-      <Slider rooms={escapeRooms} id="featured-escape-rooms" />
+        <Slider rooms={escapeRooms} id="featured-escape-rooms" />
+        <DesktopGrid
+          rooms={escapeRooms}
+          id="featured-escape-rooms"
+        />
     </p>
     <h2 class="block py-16 text-center text-4xl">
       <span class="">{t('bookingCalender')}</span>
     </h2>
     <div id="shopPlaceholder"></div>
     <section
+id="bookingShop"
       class="bg-secondary-bg mx-[calc(-1*var(--page-margin-inline))] my-12 px-[var(--page-margin-inline)] py-8"
     >
       <h2 class="mb-4 text-center text-3xl font-bold">{t('seo.title1')}</h2>
@@ -126,7 +131,7 @@ const escapeRooms = [
 
     if (shopPlaceholder) {
       const script = document.createElement('script');
-      // script.src = "https://cdn.quinbook.com/shop.js";
+      script.src = "https://cdn.quinbook.com/shop.js";
       script.dataset.shopid = '01161aaa0b6d1345dd8fe4e481144d84';
       shopPlaceholder.appendChild(script);
     }

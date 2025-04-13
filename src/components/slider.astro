@@ -4,7 +4,6 @@ interface Props {
     image: string;
     title: string;
     description: string;
-
     players?: string;
     idealPlayer?: string;
     ageRecommendation?: string;
@@ -17,7 +16,7 @@ interface Props {
 const { rooms, id = "escape-room-slider" } = Astro.props;
 ---
 
-<div class="slider-container w-full overflow-hidden" id={id}>
+<div class="slider-container w-full overflow-hidden md:hidden" id={id}>
   <div class="slider-track flex transition-transform duration-300">
     {rooms.map((room, index) => (
       <div class="slider-slide w-full flex-shrink-0">
@@ -65,13 +64,22 @@ const { rooms, id = "escape-room-slider" } = Astro.props;
               )}
             </div>
             
+          {room.ctaLink && (
+            <a 
+              href={room.ctaLink}
+              class="inline-block bg-accent font-bold py-2 px-6 rounded-full transition-colors duration-200"
+            >
+              More Info
+            </a>
+          )}
             {room.ctaLink && (
-              <a 
-                href={room.ctaLink} 
+              <button
+                      onclick="document.getElementById('shopPlaceholder')?.scrollIntoView({ behavior: 'smooth' , margin: '100px'});"
+
             class="inline-block bg-accent font-bold py-2 px-6 rounded-full transition-colors duration-200"
               >
                 Book Now
-              </a>
+              </button>
             )}
           </div>
         </div>

@@ -6,7 +6,6 @@
     line-height: clamp(2.25rem, 1.467rem + 3.913vw, 4.5rem);
   }
 
-
   /* CSS Reset */
   *,
   *::before,
@@ -83,7 +82,7 @@
   }
 
   :root {
-    font-family: Jost, sans-serif !important;
+    font-family: Poppins, sans-serif !important;
     font-weight: 400;
     --page-margin: calc(clamp(min(var(--x-large), var(--xxx-large)),
           var(--x-large) + var(--ease-out-sine) * (var(--xxx-large) - var(--x-large)),
@@ -103,8 +102,8 @@
     --font-color-light: white;
     --font-color-dark: gray;
 
-    --accent-color: #0070f3;
-    --accent-color-hover: #007ff3;
+    --accent-color: Gainsboro;
+    --accent-color-hover: LightGray;
     --border-color: rgba(17, 17, 13, 0.1);
 
     --page-bg: var(--bg-color-light);
@@ -120,6 +119,9 @@
       --page-fg: var(--font-color-light);
       --secondary-bg-color: #a8a8a8;
       --dot-color: oklch(0.446 0.03 256.802);
+
+      --accent-color: DimGray;
+      --accent-color-hover: DarkGray;
     }
 
     /*--secondary-fg-color: #bbb;*/
@@ -145,7 +147,7 @@
   --color-secondary-bg: var(--secondary-bg-color);
 
   --color-accent: var(--accent-color);
-  --color-accent-hover: var(--accent-color-light);
+  --color-accent-hover: var(--accent-color-hover);
 
   --color-border: var(--border-color);
 }
