@@ -6,6 +6,7 @@
     line-height: clamp(2.25rem, 1.467rem + 3.913vw, 4.5rem);
   }
 
+
   /* CSS Reset */
   *,
   *::before,
@@ -99,7 +100,7 @@
     --bg-color-light: white;
     --bg-color-dark: gray;
 
-    --font-color-light: coral;
+    --font-color-light: white;
     --font-color-dark: gray;
 
     --accent-color: #0070f3;
@@ -112,7 +113,7 @@
     --secondary-bg-color: #f7f8f9;
 
     /* Refers to the color in the game slider */
-    --dot-color:  oklch(0.872 0.01 258.338);
+    --dot-color: oklch(0.872 0.01 258.338);
 
     @media (prefers-color-scheme: dark) {
       --page-bg: var(--bg-color-dark);

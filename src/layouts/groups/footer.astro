@@ -5,29 +5,32 @@ import {useTranslations, getLocaleFromUrl} from '../../i18n/i18n';
 
 const locale = getLocaleFromUrl(Astro.url);
 
+const t = useTranslations(locale);
+
 const links = [
   {
-    title: 'Über uns',
+    title: t("footer.aboutUs"),
     href: getPermalink(locale, '/ueber-uns'),
     links: [],
   },
   {
-    title: 'AGB',
+    title: t("footer.terms"),
     href: getPermalink(locale, '/agb'),
     links: [],
   },
   {
-    title: 'FAQ',
+    title: t("footer.faqs"),
     href: getPermalink(locale, '/faq'),
     links: [],
   },
   {
-    title: 'Kontakt',
+    title: t("footer.contact"),
     href: getPermalink(locale, '/kontakt'),
     links: [],
   },
 ];
-const t = useTranslations(locale);
+
+
 const secondaryLinks = [
   {text: t('footer.imprint'), href: getPermalink(locale, '/impressum')},
   {text: t('footer.privacy'), href: getPermalink(locale, '/datenschutz')},
@@ -38,15 +41,15 @@ const footNote = `© ${new Date().getFullYear()} Skurrilum`;
 
 <footer id={footerId} class="flex-center not-prose relative flex pb-10">
   <div class="max-w-7xl px-[var(--page-margin-inline)]">
-    <div class="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-12">
+    <div class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-12">
       <!-- Logo and Description Section -->
-      <div class="md:col-span-12 lg:col-span-5">
+      <div class="md:col-span-12 lg:col-span-5 flex flex-col justify-center">
         <div class="mb-6">
           <a
             class="text-primary relative inline-block text-3xl font-bold"
             href={getHomePermalink()}
           >
-            Skurrilum
+            Skurrilum @ Spielbudenplatz
             <span
               class="bg-primary absolute -bottom-1 left-0 h-1 w-1/3 rounded-full"
             ></span>
@@ -56,23 +59,49 @@ const footNote = `© ${new Date().getFullYear()} Skurrilum`;
           {t('footer.note')}
         </p>
 
-        <!-- Secondary Links with Line Divider -->
-        <div class="mb-6 text-sm">
-          {
-            secondaryLinks.map(({text, href}, index) => (
-              <>
-                {index !== 0 && (
-                  <span class="bg-primary-fg mx-3 inline-block h-[1px] w-1 align-middle" />
-                )}
-                <a
-                  class="inline-block hover:underline"
-                  href={href}
-                  set:html={text}
-                />
-              </>
-            ))
-          }
-        </div>
+        <div class="flex gap-4">
+            {
+              links.map(({title, links, href}) => {
+                const hasSubLinks =
+                  links && Array.isArray(links) && links.length > 0;
+                return (
+                  <div class="relative">
+                    {/* Decorative dot */}
+                    <div class="bg-primary absolute -top-1 -left-2.5 hidden h-2 w-2 rounded-full md:block" />
+
+                    {hasSubLinks ? (
+                      <div class="mb-4 text-base font-semibold ">
+                        {title}
+                      </div>
+                    ) : (
+                      <a
+                        class="hover:text-primary group relative mb-4 inline-block text-base font-semibold  transition-colors"
+                        href={href}>
+                        {title}
+                        <span class="bg-primary absolute -bottom-1 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full" />
+                      </a>
+                    )}
+
+                    {hasSubLinks && (
+                      <ul class="space-y-3 text-sm">
+                        {links.map(({text, href, ariaLabel}) => (
+                          <li>
+                            <a
+                              class="hover:text-primary group relative inline-block  transition-colors"
+                              href={href}
+                              aria-label={ariaLabel}>
+                              <Fragment set:html={text} />
+                              <span class="bg-primary absolute -bottom-1 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full" />
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                );
+              })
+            }
+          </div>
       </div>
 
       <!-- Vertical Divider for larger screens -->
@@ -149,7 +178,7 @@ const footNote = `© ${new Date().getFullYear()} Skurrilum`;
             </div>
             <!-- Opening Hours -->
             <div class="">
-              <h3 class="mb-3 flex items-center text-base font-semibold">
+              <h3 class="mb-3 mt-8 flex items-center text-base font-semibold">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="text-primary mr-2 h-5 w-5"
@@ -166,66 +195,40 @@ const footNote = `© ${new Date().getFullYear()} Skurrilum`;
                 {t('footer.openingHours')}
               </h3>
               <div
-                class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600"
+                class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm "
               >
                 <div>{t('footer.monday')}</div>
                 <div>{t('footer.closed')}</div>
                 <div>{t('footer. tuesday')} - {t('footer.thursday')}</div>
-                <div>3:30 PM - 11:30 PM</div>
-                <div>Fr - So</div>
-                <div>11:00 - 23:30 Uhr</div>
+                <div>{t("footer.openingHours.week")}</div>
+                <div>{t("footer.thursday")} - {t("footer.sunday")}</div>
+                <div>{t("footer.openingHours.weekend")}</div>
               </div>
             </div>
           </div>
-          <div class="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4">
-            {
-              links.map(({title, links, href}) => {
-                const hasSubLinks =
-                  links && Array.isArray(links) && links.length > 0;
-                return (
-                  <div class="relative">
-                    {/* Decorative dot */}
-                    <div class="bg-primary absolute -top-1 -left-2.5 hidden h-2 w-2 rounded-full md:block" />
-
-                    {hasSubLinks ? (
-                      <div class="mb-4 text-base font-semibold text-gray-800">
-                        {title}
-                      </div>
-                    ) : (
-                      <a
-                        class="hover:text-primary group relative mb-4 inline-block text-base font-semibold text-gray-800 transition-colors"
-                        href={href}>
-                        {title}
-                        <span class="bg-primary absolute -bottom-1 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full" />
-                      </a>
-                    )}
-
-                    {hasSubLinks && (
-                      <ul class="space-y-3 text-sm">
-                        {links.map(({text, href, ariaLabel}) => (
-                          <li>
-                            <a
-                              class="hover:text-primary group relative inline-block text-gray-600 transition-colors"
-                              href={href}
-                              aria-label={ariaLabel}>
-                              <Fragment set:html={text} />
-                              <span class="bg-primary absolute -bottom-1 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full" />
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                );
-              })
-            }
-          </div>
+        </div>
+        <!-- Secondary Links with Line Divider -->
+        <div class="mb-6 text-sm">
+          {
+            secondaryLinks.map(({text, href}, index) => (
+              <>
+                {index !== 0 && (
+                  <span class="bg-primary-fg mx-3 inline-block h-[1px] w-1 align-middle" />
+                )}
+                <a
+                  class="inline-block hover:underline"
+                  href={href}
+                  set:html={text}
+                />
+              </>
+            ))
+          }
         </div>
       </div>
 
       <!-- Social Links and Copyright -->
       <div
-        class="mt-14 flex flex-col items-center border-t border-gray-200 pt-8 md:flex-row md:justify-between"
+        class="col-span-full mt-6 flex flex-col items-center border-t border-gray-200 pt-8 md:flex-row md:justify-between"
       >
         {/* Social Links */}
         {
@@ -233,7 +236,7 @@ const footNote = `© ${new Date().getFullYear()} Skurrilum`;
             <div class="mb-6 flex space-x-4 md:order-2 md:mb-0">
               <a
                 href="#"
-                class="hover:bg-primary flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition-colors hover:text-white">
+                class="hover:bg-primary flex h-9 w-9 items-center justify-center rounded-full bg-gray-100  transition-colors hover:text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-4 w-4"
@@ -244,7 +247,7 @@ const footNote = `© ${new Date().getFullYear()} Skurrilum`;
               </a>
               <a
                 href="#"
-                class="hover:bg-primary flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition-colors hover:text-white">
+                class="hover:bg-primary flex h-9 w-9 items-center justify-center rounded-full bg-gray-100  transition-colors hover:text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-4 w-4"
@@ -255,7 +258,7 @@ const footNote = `© ${new Date().getFullYear()} Skurrilum`;
               </a>
               <a
                 href="#"
-                class="hover:bg-primary flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition-colors hover:text-white">
+                class="hover:bg-primary flex h-9 w-9 items-center justify-center rounded-full bg-gray-100  transition-colors hover:text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-4 w-4"
@@ -268,7 +271,7 @@ const footNote = `© ${new Date().getFullYear()} Skurrilum`;
           )
         }
 
-        <div class="flex items-center text-sm text-gray-500 md:order-1">
+        <div class="flex items-center text-sm  md:order-1">
           <Fragment set:html={footNote} />
         </div>
       </div>
@@ -277,7 +280,7 @@ const footNote = `© ${new Date().getFullYear()} Skurrilum`;
     <!-- Back to top button -->
     <button
       id="back-to-top"
-      class="bg-primary invisible fixed bottom-8 left-1/2 flex h-10 w-10 -translate-x-1/2 transform items-center justify-center rounded-full text-white opacity-0 shadow-lg transition-transform duration-300 hover:scale-110"
+      class="bg-primary invisible fixed bottom-8 left-1/2 flex h-10 w-10 -translate-x-1/2 transform items-center justify-center rounded-full  opacity-0 shadow-lg transition-transform duration-300 hover:scale-110"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
