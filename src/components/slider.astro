@@ -21,7 +21,7 @@ const { rooms, id = "escape-room-slider" } = Astro.props;
   <div class="slider-track flex transition-transform duration-300">
     {rooms.map((room, index) => (
       <div class="slider-slide w-full flex-shrink-0">
-        <div class="slide-content bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer" data-link={room.ctaLink}>
+        <div class="slide-content bg-secondary-bg rounded-lg shadow-lg overflow-hidden cursor-pointer" data-link={room.ctaLink}>
           <div class="image-container relative pb-[56.25%] overflow-hidden">
             <img 
               src={room.image} 
@@ -32,7 +32,7 @@ const { rooms, id = "escape-room-slider" } = Astro.props;
           </div>
           <div class="p-5">
             <h3 class="text-2xl font-bold mb-2">{room.title}</h3>
-            <p class="text-gray-700 dark:text-gray-300 mb-4">{room.description}</p>
+            <p class=" mb-4">{room.description}</p>
             
             <div class="flex flex-wrap gap-4 mb-4">
 
@@ -68,7 +68,7 @@ const { rooms, id = "escape-room-slider" } = Astro.props;
             {room.ctaLink && (
               <a 
                 href={room.ctaLink} 
-                class="inline-block bg-primary hover:bg-primary-dark text-white font-bold py-2 px-6 rounded-full transition-colors duration-200"
+            class="inline-block bg-accent font-bold py-2 px-6 rounded-full transition-colors duration-200"
               >
                 Book Now
               </a>
@@ -81,7 +81,7 @@ const { rooms, id = "escape-room-slider" } = Astro.props;
   
   <div class="slider-controls flex justify-center mt-4 gap-2">
     <button 
-      class="slider-prev bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-full w-10 h-10 flex items-center justify-center focus:outline-none" 
+      class="slider-prev bg-accent hover:bg-accent-hover rounded-full w-10 h-10 flex items-center justify-center focus:outline-none" 
       aria-label="Previous room"
     >
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -92,7 +92,7 @@ const { rooms, id = "escape-room-slider" } = Astro.props;
     <div class="slider-dots flex items-center gap-1"></div>
     
     <button 
-      class="slider-next bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-full w-10 h-10 flex items-center justify-center focus:outline-none" 
+      class="slider-next bg-accent hover:bg-accent-hover rounded-full w-10 h-10 flex items-center justify-center focus:outline-none" 
       aria-label="Next room"
     >
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -131,7 +131,7 @@ const { rooms, id = "escape-room-slider" } = Astro.props;
     // Create indicator dots
     for (let i = 0; i < slideCount; i++) {
       const dot = document.createElement("button");
-      dot.classList.add("w-2", "h-2", "rounded-full", "bg-gray-300", "dark:bg-gray-600", "transition-all", "duration-200");
+      dot.classList.add("w-2", "h-2", "rounded-full", "bg-dot", "transition-all", "duration-200");
       dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
       dot.addEventListener("click", () => goToSlide(i));
       dotsContainer.appendChild(dot);
@@ -196,11 +196,11 @@ const { rooms, id = "escape-room-slider" } = Astro.props;
       // Update dots
       dots.forEach((dot, index) => {
         if (index === currentSlide) {
-          dot.classList.remove("bg-gray-300", "dark:bg-gray-600");
-          dot.classList.add("w-4", "bg-primary", "dark:bg-primary");
+          dot.classList.remove("bg-dot");
+          dot.classList.add("w-4", "bg-secondary-bg");
         } else {
-          dot.classList.remove("w-4", "bg-primary", "dark:bg-primary");
-          dot.classList.add("bg-gray-300", "dark:bg-gray-600");
+          dot.classList.remove("w-4", "bg-secondary-bg");
+          dot.classList.add("bg-dot");
         }
       });
       

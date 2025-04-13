@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 
 @layer base {
-
   h1 {
     font-size: clamp(2.25rem, 1.467rem + 3.913vw, 4.5rem);
     line-height: clamp(2.25rem, 1.467rem + 3.913vw, 4.5rem);
@@ -100,10 +99,11 @@
     --bg-color-light: white;
     --bg-color-dark: gray;
 
-    --font-color-light: white;
+    --font-color-light: coral;
     --font-color-dark: gray;
 
     --accent-color: #0070f3;
+    --accent-color-hover: #007ff3;
     --border-color: rgba(17, 17, 13, 0.1);
 
     --page-bg: var(--bg-color-light);
@@ -111,11 +111,15 @@
 
     --secondary-bg-color: #f7f8f9;
 
-    /* @media (prefers-color-scheme: dark) { */
-    /*   --page-bg: var(--bg-color-dark); */
-    /*   --page-fg: var(--font-color-light); */
-    /* --secondary-bg-color: #a8a8a8; */
-    /* } */
+    /* Refers to the color in the game slider */
+    --dot-color:  oklch(0.872 0.01 258.338);
+
+    @media (prefers-color-scheme: dark) {
+      --page-bg: var(--bg-color-dark);
+      --page-fg: var(--font-color-light);
+      --secondary-bg-color: #a8a8a8;
+      --dot-color: oklch(0.446 0.03 256.802);
+    }
 
     /*--secondary-fg-color: #bbb;*/
     /*--tertiary-fg-color: #999;*/
@@ -135,10 +139,12 @@
   --color-primary-bg: var(--page-bg);
   --color-primary-fg: var(--page-fg);
 
+  --color-dot: var(--dot-color);
+
   --color-secondary-bg: var(--secondary-bg-color);
-  
 
   --color-accent: var(--accent-color);
+  --color-accent-hover: var(--accent-color-light);
 
   --color-border: var(--border-color);
 }
