@@ -1,5 +1,6 @@
 {
   "de": {
+    "players": "Personen",
     "cta.bookNow": "Jetzt\u00A0buchen",
     "cta.bookNowHere": "Tickets buchen",
     "cta.bookGame": "Spiel\u00A0buchen",
@@ -37,6 +38,7 @@
     "footer.faqs": "FAQ"
   },
   "en": {
+    "players": "Players",
     "cta.bookNow": "Book\u00A0now",
     "cta.bookNowHere": "Book here",
     "cta.bookGame": "Book\u00A0game",

@@ -2,8 +2,8 @@
 import type {InferGetStaticPropsType} from 'astro';
 import {generateRouteParams} from '../../path';
 import DefaultLayout from '../../../layouts/DefaultLayout.astro';
-import VideoWrapper from '../../../components/video-wrapper.astro';
-import TypewritingHeadline from '../../../components/typewriting-headline.astro';
+// import VideoWrapper from '../../../components/video-wrapper.astro';
+// import TypewritingHeadline from '../../../components/typewriting-headline.astro';
 import CtaLink from '../../../components/ui/cta.astro';
 
 import {getLocaleFromUrl, useTranslations} from '../../../i18n/i18n.ts';
@@ -19,12 +19,21 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 const props = Astro.props as Props;
 
 // Determine which game we're displaying
+// Fix: match with GAME_KEY keys
+type GameKey =
+  | 'zoo-of-death'
+  | 'malvini'
+  | 'phantom-island'
+  | 'wailing-woman'
+  | 'guschi';
+
 const gameKey = Object.keys(GAME_KEY).find(
+  //@ts-expect-error type any
   key => GAME_KEY[key].toLowerCase() === props.game.toLowerCase()
 );
 
 // Create prefix for translation keys based on the game
-let translationPrefix;
+let translationPrefix = '' as GameKey;
 switch (gameKey) {
   case 'Guschi':
     translationPrefix = 'guschi';
@@ -42,7 +51,9 @@ switch (gameKey) {
     translationPrefix = 'zoo-of-death';
     break;
   default:
-    translationPrefix = '';
+    console.error(
+      `Unknown game key: ${gameKey}. Please check the GAME_KEY configuration.`
+    );
 }
 
 // Get game data
@@ -69,73 +80,66 @@ const gameImagePath = `/games/${props.game.toLowerCase().replace(/[\s-]/g, '_')}
 <img
   src={gameImagePath}
   alt={gameData.title}
-  class="max-h-[250px] w-full rounded-lg shadow-lg object-cover"
+  class="max-h-[250px] w-full rounded-b-lg object-cover shadow-lg"
 />
 <DefaultLayout>
   <main class="container mx-auto">
     <!-- Hero Section -->
     <section class="mb-16">
       <div class="flex flex-col items-center gap-8 lg:flex-row">
-        <h1 class="text-primary text-4xl font-bold md:text-5xl m-4 text-center">{gameData.title}</h1>
-        <!-- Game Image -->
-        <!-- Game Details -->
-          <!-- <TypewritingHeadline> -->
-          <!--   <h1 class="text-primary mb-4 text-4xl font-bold md:text-5xl"> -->
-          <!--   </h1> -->
-          <!-- </TypewritingHeadline> -->
+        <h1 class="text-primary m-4 text-center text-4xl font-bold md:text-5xl">
+          {gameData.title}
+        </h1>
 
-          <p class="mb-6 text-lg text-gray-700">{gameData.description}</p>
+        <p class="mb-6 text-lg text-gray-700">{gameData.description}</p>
 
-          <!-- Game Info Cards -->
-          <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
-            <div class="rounded-lg bg-slate-50 p-4 shadow">
-              <h3 class="text-primary mb-1 font-semibold">{t('players')}</h3>
-              <p>{gameData.players}</p>
-            </div>
-
-            <div class="rounded-lg bg-slate-50 p-4 shadow">
-              <h3 class="text-primary mb-1 font-semibold">
-                {t('idealPlayers')}
-              </h3>
-              <p>{gameData.idealPlayers}</p>
-            </div>
-
-            <div class="rounded-lg bg-slate-50 p-4 shadow">
-              <h3 class="text-primary mb-1 font-semibold">{t('minAge')}</h3>
-              <p>{gameData.minAge}</p>
-            </div>
-
-            <div class="rounded-lg bg-slate-50 p-4 shadow">
-              <h3 class="text-primary mb-1 font-semibold">
-                {t('accessibility')}
-              </h3>
-              <p>{gameData.accessibility}</p>
-            </div>
+        <!-- Game Info Cards -->
+        <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div class="rounded-lg bg-slate-50 p-4 shadow">
+            <h3 class="text-primary mb-1 font-semibold">{t('players')}</h3>
+            <p>{gameData.players}</p>
           </div>
 
-          {
-            gameData.warnings && (
-              <div class="rounded border-l-4 border-amber-500 bg-amber-50 p-4">
-                <h3 class="mb-1 font-semibold text-amber-700">
-                  {t('warnings')}
-                </h3>
-                <p class="text-amber-700">{gameData.warnings}</p>
-              </div>
-            )
-          }
-
-          {
-            gameData.note && (
-              <div class="rounded border-l-4 border-blue-500 bg-blue-50 p-4">
-                <h3 class="mb-1 font-semibold text-blue-700">{t('note')}</h3>
-                <p class="text-blue-700">{gameData.note}</p>
-              </div>
-            )
-          }
-
-          <div class="mt-8">
-            <CtaLink href="#contact" text={t('bookNow')} />
+          <div class="rounded-lg bg-slate-50 p-4 shadow">
+            <h3 class="text-primary mb-1 font-semibold">
+              {t('idealPlayers')}
+            </h3>
+            <p>{gameData.idealPlayers}</p>
           </div>
+
+          <div class="rounded-lg bg-slate-50 p-4 shadow">
+            <h3 class="text-primary mb-1 font-semibold">{t('minAge')}</h3>
+            <p>{gameData.minAge}</p>
+          </div>
+
+          <div class="rounded-lg bg-slate-50 p-4 shadow">
+            <h3 class="text-primary mb-1 font-semibold">
+              {t('accessibility')}
+            </h3>
+            <p>{gameData.accessibility}</p>
+          </div>
+        </div>
+
+        {
+          gameData.warnings && (
+            <div class="rounded border-l-4 border-amber-500 bg-amber-50 p-4">
+              <h3 class="mb-1 font-semibold text-amber-700">{t('warnings')}</h3>
+              <p class="text-amber-700">{gameData.warnings}</p>
+            </div>
+          )
+        }
+
+        {
+          gameData.note && (
+            <div class="rounded border-l-4 border-blue-500 bg-blue-50 p-4">
+              <h3 class="mb-1 font-semibold text-blue-700">{t('note')}</h3>
+              <p class="text-blue-700">{gameData.note}</p>
+            </div>
+          )
+        }
+
+        <div class="mt-8">
+          <CtaLink href="#contact" text={t('bookNow')} />
         </div>
       </div>
     </section>

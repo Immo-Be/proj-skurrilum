@@ -15,6 +15,7 @@ export const C = {
   },
 } as const;
 
+
 export const GAME_KEY = {
   Phantominsel: 'phantominsel',
   Frau: 'weinende-frau',
