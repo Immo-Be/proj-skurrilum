@@ -16,14 +16,6 @@ export interface Props {
   metadata?: MetaData;
 }
 
-// const {metadata} = Astro.props;
-
-// const locale = getLocale(Astro.url) as 'en' | 'de';
-// console.log('🚀 ~ locale:', metadata);
-//const locale = getLocaleFromUrl(Astro.url);
-//const t = useTranslations(locale);
-
-// console.log('🚀 ~ metadata:', metadata);
 
 const locale = getLocaleFromUrl(Astro.url);
 const t = useTranslations(locale);

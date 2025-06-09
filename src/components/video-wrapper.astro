@@ -16,7 +16,7 @@ const t = useTranslations(locale);
 
 <section
   transition:persist="video"
-  class="parallax relative mx-[calc(-1*var(--page-margin-inline))] max-h-[1057px]"
+  class="relative mx-[calc(-1*var(--page-margin-inline))] max-h-[1057px]"
 >
   <video
     playsinline
@@ -29,7 +29,8 @@ const t = useTranslations(locale);
     <source src={intro_video} type="video/mp4" />
   </video>
   <div
-    class="absolute-center pointer-events-none z-2 z-3 flex size-full flex-col justify-center"
+    id="video-overlay"
+    class="absolute-center pointer-events-none z-2 z-3 flex size-full flex-col justify-center backdrop-blur-xs transition-all duration-500 ease-in-out"
   >
     <img
       src={intro_text.src}
@@ -66,6 +67,7 @@ const t = useTranslations(locale);
     const playButton = document.getElementById('video-play-button');
     const introImage = document.querySelector('.intro-image') as HTMLImageElement;
     const videoCta = document.querySelector('#cta-element-video') as HTMLElement;
+    const overlay = document.querySelector('#video-overlay') as HTMLElement;
 
     // I update the text here because we use the direcive persists on the video element
     const locale = getLocaleFromUrl(window.location.href);
@@ -94,10 +96,15 @@ const t = useTranslations(locale);
         introImage.style.display = 'none';
         videoCta.style.display = 'none';
         videoElement.controls = true;
+
+        overlay.classList.remove("backdrop-blur-xs")
+
       });
       videoElement.addEventListener('pause', () => {
         videoCta.style.display = 'block';
         introImage.style.display = 'block';
+
+        overlay.classList.add("backdrop-blur-xs")
         // Keep controls visible when paused
         if (!videoElement.ended) {
           playButton.style.display = 'none';

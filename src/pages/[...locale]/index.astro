@@ -13,6 +13,7 @@ import {GAME_KEY} from '../../configuration';
 import {getPermalink} from '../../utils/permalinks';
 import {GamePaths} from '../path';
 import DesktopGrid from '../../components/desktop-grid.astro';
+import TestimonyWrapper from '../../components/testimony-wrapper.astro';
 
 // const locale = getLocale(Astro.url) as 'en' | 'de';
 const locale = getLocaleFromUrl(Astro.url);
@@ -118,6 +119,7 @@ id="bookingShop"
         {t('seo.description3')}
       </p>
     </section>
+    <TestimonyWrapper/>
   </Fragment>
 </DefaultLayout>
 
@@ -130,10 +132,10 @@ id="bookingShop"
     const shopPlaceholder = document.getElementById('shopPlaceholder');
 
     if (shopPlaceholder) {
-      const script = document.createElement('script');
-      script.src = "https://cdn.quinbook.com/shop.js";
-      script.dataset.shopid = '01161aaa0b6d1345dd8fe4e481144d84';
-      shopPlaceholder.appendChild(script);
+      // const script = document.createElement('script');
+      // script.src = "https://cdn.quinbook.com/shop.js";
+      // script.dataset.shopid = '01161aaa0b6d1345dd8fe4e481144d84';
+      // shopPlaceholder.appendChild(script);
     }
   }
 

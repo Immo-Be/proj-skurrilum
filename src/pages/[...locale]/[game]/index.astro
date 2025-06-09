@@ -2,18 +2,167 @@
 import type {InferGetStaticPropsType} from 'astro';
 import {generateRouteParams} from '../../path';
 import DefaultLayout from '../../../layouts/DefaultLayout.astro';
+import VideoWrapper from '../../../components/video-wrapper.astro';
+import TypewritingHeadline from '../../../components/typewriting-headline.astro';
+import CtaLink from '../../../components/ui/cta.astro';
+
+import {getLocaleFromUrl, useTranslations} from '../../../i18n/i18n.ts';
+import {GAME_KEY} from '../../../configuration';
+
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
 
 export const getStaticPaths = generateRouteParams;
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const props = Astro.props as Props;
+
+// Determine which game we're displaying
+const gameKey = Object.keys(GAME_KEY).find(
+  key => GAME_KEY[key].toLowerCase() === props.game.toLowerCase()
+);
+
+// Create prefix for translation keys based on the game
+let translationPrefix;
+switch (gameKey) {
+  case 'Guschi':
+    translationPrefix = 'guschi';
+    break;
+  case 'Phantominsel':
+    translationPrefix = 'phantom-island';
+    break;
+  case 'Malvini':
+    translationPrefix = 'malvini';
+    break;
+  case 'Frau':
+    translationPrefix = 'wailing-woman';
+    break;
+  case 'Zoo':
+    translationPrefix = 'zoo-of-death';
+    break;
+  default:
+    translationPrefix = '';
+}
+
+// Get game data
+const gameData = {
+  title: t(`${translationPrefix}.title`),
+  shortTitle: t(`${translationPrefix}.titleShort`),
+  description: t(`${translationPrefix}.description`),
+  shortDescription: t(`${translationPrefix}.shortDescription`),
+  players: t(`${translationPrefix}.players`),
+  idealPlayers: t(`${translationPrefix}.idealNumberOfPlayers`),
+  minAge: t(`${translationPrefix}.minAge`),
+  accessibility: t(`${translationPrefix}.accessibility`),
+  warnings: t(`${translationPrefix}.warnings`) || null,
+  note: t(`${translationPrefix}.note`) || null,
+  storyOutroTitle1: t(`${translationPrefix}.storyOutro-title-1`),
+  storyOutroDescription1: t(`${translationPrefix}.storyOutro-description-1`),
+  storyOutroTitle2: t(`${translationPrefix}.storyOutro-title-2`),
+  storyOutroDescription2: t(`${translationPrefix}.storyOutro-description-2`),
+};
+
+const gameImagePath = `/games/${props.game.toLowerCase().replace(/[\s-]/g, '_')}.jpg`;
 ---
 
+<img
+  src={gameImagePath}
+  alt={gameData.title}
+  class="max-h-[250px] w-full rounded-lg shadow-lg object-cover"
+/>
 <DefaultLayout>
-  <h1 class="" class="">
-    {props.game}
-    {props.locale}
-  </h1>
+  <main class="container mx-auto">
+    <!-- Hero Section -->
+    <section class="mb-16">
+      <div class="flex flex-col items-center gap-8 lg:flex-row">
+        <h1 class="text-primary text-4xl font-bold md:text-5xl m-4 text-center">{gameData.title}</h1>
+        <!-- Game Image -->
+        <!-- Game Details -->
+          <!-- <TypewritingHeadline> -->
+          <!--   <h1 class="text-primary mb-4 text-4xl font-bold md:text-5xl"> -->
+          <!--   </h1> -->
+          <!-- </TypewritingHeadline> -->
+
+          <p class="mb-6 text-lg text-gray-700">{gameData.description}</p>
+
+          <!-- Game Info Cards -->
+          <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div class="rounded-lg bg-slate-50 p-4 shadow">
+              <h3 class="text-primary mb-1 font-semibold">{t('players')}</h3>
+              <p>{gameData.players}</p>
+            </div>
+
+            <div class="rounded-lg bg-slate-50 p-4 shadow">
+              <h3 class="text-primary mb-1 font-semibold">
+                {t('idealPlayers')}
+              </h3>
+              <p>{gameData.idealPlayers}</p>
+            </div>
+
+            <div class="rounded-lg bg-slate-50 p-4 shadow">
+              <h3 class="text-primary mb-1 font-semibold">{t('minAge')}</h3>
+              <p>{gameData.minAge}</p>
+            </div>
+
+            <div class="rounded-lg bg-slate-50 p-4 shadow">
+              <h3 class="text-primary mb-1 font-semibold">
+                {t('accessibility')}
+              </h3>
+              <p>{gameData.accessibility}</p>
+            </div>
+          </div>
+
+          {
+            gameData.warnings && (
+              <div class="rounded border-l-4 border-amber-500 bg-amber-50 p-4">
+                <h3 class="mb-1 font-semibold text-amber-700">
+                  {t('warnings')}
+                </h3>
+                <p class="text-amber-700">{gameData.warnings}</p>
+              </div>
+            )
+          }
+
+          {
+            gameData.note && (
+              <div class="rounded border-l-4 border-blue-500 bg-blue-50 p-4">
+                <h3 class="mb-1 font-semibold text-blue-700">{t('note')}</h3>
+                <p class="text-blue-700">{gameData.note}</p>
+              </div>
+            )
+          }
+
+          <div class="mt-8">
+            <CtaLink href="#contact" text={t('bookNow')} />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="mb-16">
+      <h2 class="text-primary mb-12 text-center text-3xl font-bold">
+        {t('story')}
+      </h2>
+
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
+        <div class="rounded-lg bg-white p-6 shadow-lg">
+          <h3 class="mb-4 text-2xl font-semibold">
+            {gameData.storyOutroTitle1}
+          </h3>
+          <p class="text-gray-700">{gameData.storyOutroDescription1}</p>
+        </div>
+
+        <div class="rounded-lg bg-white p-6 shadow-lg">
+          <h3 class="mb-4 text-2xl font-semibold">
+            {gameData.storyOutroTitle2}
+          </h3>
+          <p class="text-gray-700">{gameData.storyOutroDescription2}</p>
+        </div>
+      </div>
+    </section>
+  </main>
 </DefaultLayout>
+---
 

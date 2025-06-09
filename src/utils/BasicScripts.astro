@@ -151,21 +151,20 @@ import {GamePaths} from '../pages/path';
   //window.onpageshow = onPageShow;
 
   // Function to handle the parallax effect
-  function parallaxEffect() {
-    console.log('parallaxEffect');
-    //const parallaxElements = document.querySelectorAll('.parallax');
-    //parallaxElements.forEach(element => {
-    //  const speed = element.getAttribute('data-speed') || 0.5;
-    //  const yPos = window.scrollY * speed;
-    //  element.style.transform = `translateY(${yPos}px)`;
-    //});
-  }
+  // function parallaxEffect() {
+  //   //const parallaxElements = document.querySelectorAll('.parallax');
+  //   //parallaxElements.forEach(element => {
+  //   //  const speed = element.getAttribute('data-speed') || 0.5;
+  //   //  const yPos = window.scrollY * speed;
+  //   //  element.style.transform = `translateY(${yPos}px)`;
+  //   //});
+  // }
 
   // Initial call to set the position
   //parallaxEffect();
 onLoad()
   // Add event listener for scroll
-  window.addEventListener('scroll', parallaxEffect);
+  // window.addEventListener('scroll', parallaxEffect);
 
   document.addEventListener('astro:after-swap', () => {
     onLoad();

@@ -82,7 +82,7 @@
   }
 
   :root {
-    font-family: Poppins, sans-serif !important;
+    font-family: Jost, sans-serif !important;
     font-weight: 400;
     --page-margin: calc(clamp(min(var(--x-large), var(--xxx-large)),
           var(--x-large) + var(--ease-out-sine) * (var(--xxx-large) - var(--x-large)),
