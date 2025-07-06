@@ -1,0 +1,39 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-section about-us">
+      <h3>Skurrilum @ Spielbudenplatz</h3>
+      <p>{{ i18n "footer_about_us_text" }}</p>
+    </div>
+
+    <div class="footer-section links">
+      <h3>{{ i18n "footer_links_title" }}</h3>
+      <ul>
+        <li><a href="{{ "/about-us/" | relLangURL }}">{{ i18n "footer_about_us" }}</a></li>
+        <li><a href="{{ "/agb/" | relLangURL }}">{{ i18n "footer_agb" }}</a></li>
+        <li><a href="{{ "/faq/" | relLangURL }}">{{ i18n "footer_faq" }}</a></li>
+        <li><a href="{{ "/contact/" | relLangURL }}">{{ i18n "footer_contact" }}</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section contact">
+      <h3>{{ i18n "footer_contact_title" }}</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Spielbudenplatz 21, 20359 Hamburg</p>
+      <p><i class="fas fa-envelope"></i> info@skurrilum.de</p>
+    </div>
+
+    <div class="footer-section opening-hours">
+      <h3>{{ i18n "footer_opening_hours_title" }}</h3>
+      <p><i class="fas fa-calendar-alt"></i> {{ i18n "footer_monday" }}: {{ i18n "footer_monday_hours" }}</p>
+      <p><i class="fas fa-calendar-alt"></i> {{ i18n "footer_tue_thu" }}: {{ i18n "footer_tue_thu_hours" }}</p>
+      <p><i class="fas fa-calendar-alt"></i> {{ i18n "footer_fri_sun" }}: {{ i18n "footer_fri_sun_hours" }}</p>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ now.Year }} Skurrilum. All rights reserved.</p>
+      <ul>
+        <li><a href="{{ "/imprint/" | relLangURL }}">{{ i18n "footer_imprint" }}</a></li>
+        <li><a href="{{ "/privacy-policy/" | relLangURL }}">{{ i18n "footer_privacy_policy" }}</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

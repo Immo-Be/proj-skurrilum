@@ -1,0 +1,39 @@
+<header class="site-header">
+  <div class="container">
+    <a href="{{ .Site.Home.RelPermalink }}" class="logo">{{ .Site.Title }}</a>
+    <nav class="main-nav">
+      <button class="menu-toggle" aria-controls="main-menu" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <span class="hamburger"></span>
+      </button>
+      <ul id="main-menu" class="main-menu">
+        {{ range .Site.Menus.main }} {{ if eq .Name "Rooms" }}
+        <li class="has-dropdown">
+          <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
+          <ul class="dropdown">
+            {{ range where site.RegularPages "Section" "rooms" }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{ end }}
+          </ul>
+        </li>
+        {{ else }}
+        <li><a href="{{ .URL }}" class="nav-link">{{ .Name }}</a></li>
+        {{ end }} {{ end }}
+      </ul>
+      <div class="lang-switcher">
+        <ul>
+          {{ range .Site.Languages }} {{ if ne .Lang $.Site.Language.Lang }} {{
+          $targetLang := .Lang }} {{ $translatedPage := "" }} {{ range
+          $.Page.AllTranslations }} {{ if eq .Lang $targetLang }} {{
+          $translatedPage = . }} {{ end }} {{ end }} {{ if $translatedPage }}
+          <li>
+            <a href="{{ $translatedPage.RelPermalink }}"><img src="/images/flags/{{ .Lang }}.svg"
+                alt="{{ .LanguageName }} Flag" class="flag-icon" />
+              {{ .LanguageName }}</a>
+          </li>
+          {{ end }} {{ end }} {{ end }}
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>

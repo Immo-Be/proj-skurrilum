@@ -2,3 +2,27 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = ''
+
+defaultContentLanguage = "de"
+defaultContentLanguageInSubdir = false
+
+[languages]
+
+[languages.de]
+languageName = "Deutsch"
+weight = 1
+
+[languages.en]
+languageName = "English"
+weight = 2
+contentDir = "content"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Rooms"
+    url = "/rooms/"
+    weight = 2
