@@ -1,5 +1,6 @@
 # build output
 dist/
+public/
 
 # generated types
 .astro/
@@ -19,8 +20,5 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
-
-# jetbrains setting folder
-.idea/
 
 astro_tmp_pages_*
