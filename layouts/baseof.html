@@ -1,21 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ .Site.Language.Lang }}">
+
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ .Title }}</title>
   {{ $css := resources.Get "css/global.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
+
+  {{ $headerCss := resources.Get "css/partials/header.css" | minify |
+  fingerprint }}
+  <link rel="stylesheet" href="{{ $headerCss.RelPermalink }}" integrity="{{ $headerCss.Data.Integrity }}" />
 </head>
 
 <body>
   {{ partial "header.html" . }}
-  <main>
-    {{ block "main" . }}{{ end }}
-  </main>
-  {{ partial "footer.html" . }}
+  <main>{{ block "main" . }}{{ end }}</main>
+  <!-- {{ partial "footer.html" . }} -->
   {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
   <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
 </body>
+
+</html>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+</head>
+
+<body></body>
 
 </html>

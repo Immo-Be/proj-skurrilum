@@ -2,184 +2,184 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.org/en/about-us/</loc>
+    <loc>http://localhost:1313/en/about-us/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://example.org/about-us/"
+                href="http://localhost:1313/about-us/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/en/about-us/"
+                href="http://localhost:1313/en/about-us/"
                 />
   </url><url>
-    <loc>https://example.org/en/categories/</loc>
+    <loc>http://localhost:1313/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://example.org/categories/"
+                href="http://localhost:1313/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/en/categories/"
+                href="http://localhost:1313/en/categories/"
                 />
   </url><url>
-    <loc>https://example.org/en/contact/</loc>
+    <loc>http://localhost:1313/en/contact/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://example.org/contact/"
+                href="http://localhost:1313/contact/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/en/contact/"
+                href="http://localhost:1313/en/contact/"
                 />
   </url><url>
-    <loc>https://example.org/en/the-wailing-woman/</loc>
+    <loc>http://localhost:1313/en/the-wailing-woman/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://example.org/die-weinende-frau/"
+                href="http://localhost:1313/die-weinende-frau/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/en/the-wailing-woman/"
+                href="http://localhost:1313/en/the-wailing-woman/"
                 />
   </url><url>
-    <loc>https://example.org/zoo-of-death/</loc>
+    <loc>http://localhost:1313/zoo-of-death/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://example.org/der-zoo-des-todes/"
+                href="http://localhost:1313/der-zoo-des-todes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/zoo-of-death/"
+                href="http://localhost:1313/zoo-of-death/"
                 />
   </url><url>
-    <loc>https://example.org/en/faq/</loc>
+    <loc>http://localhost:1313/en/faq/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://example.org/faq/"
+                href="http://localhost:1313/faq/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/en/faq/"
+                href="http://localhost:1313/en/faq/"
                 />
   </url><url>
-    <loc>https://example.org/guschis-seedy-cellar/</loc>
+    <loc>http://localhost:1313/guschis-seedy-cellar/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://example.org/guschis-geile-grotte/"
+                href="http://localhost:1313/guschis-geile-grotte/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/guschis-seedy-cellar/"
+                href="http://localhost:1313/guschis-seedy-cellar/"
                 />
   </url><url>
-    <loc>https://example.org/en/imprint/</loc>
+    <loc>http://localhost:1313/en/imprint/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://example.org/imprint/"
+                href="http://localhost:1313/imprint/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/en/imprint/"
+                href="http://localhost:1313/en/imprint/"
                 />
   </url><url>
-    <loc>https://example.org/malvinis-legacy/</loc>
+    <loc>http://localhost:1313/malvinis-legacy/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://example.org/malivinis-vermaechtnis/"
+                href="http://localhost:1313/malivinis-vermaechtnis/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/malvinis-legacy/"
+                href="http://localhost:1313/malvinis-legacy/"
                 />
   </url><url>
-    <loc>https://example.org/en/</loc>
+    <loc>http://localhost:1313/en/privacy-policy/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://example.org/"
+                href="http://localhost:1313/privacy-policy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/en/"
+                href="http://localhost:1313/en/privacy-policy/"
                 />
   </url><url>
-    <loc>https://example.org/en/privacy-policy/</loc>
+    <loc>http://localhost:1313/en/rooms/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://example.org/privacy-policy/"
+                href="http://localhost:1313/rooms/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/en/privacy-policy/"
+                href="http://localhost:1313/en/rooms/"
                 />
   </url><url>
-    <loc>https://example.org/en/rooms/</loc>
+    <loc>http://localhost:1313/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://example.org/rooms/"
+                href="http://localhost:1313/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/en/rooms/"
+                href="http://localhost:1313/en/"
                 />
   </url><url>
-    <loc>https://example.org/en/tags/</loc>
+    <loc>http://localhost:1313/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://example.org/tags/"
+                href="http://localhost:1313/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/en/tags/"
+                href="http://localhost:1313/en/tags/"
                 />
   </url><url>
-    <loc>https://example.org/en/agb/</loc>
+    <loc>http://localhost:1313/en/agb/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://example.org/agb/"
+                href="http://localhost:1313/agb/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/en/agb/"
+                href="http://localhost:1313/en/agb/"
                 />
   </url><url>
-    <loc>https://example.org/phantom-island/</loc>
+    <loc>http://localhost:1313/phantom-island/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://example.org/die-phantom-insel/"
+                href="http://localhost:1313/die-phantom-insel/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/phantom-island/"
+                href="http://localhost:1313/phantom-island/"
                 />
   </url>
 </urlset>
