@@ -1,21 +1,27 @@
 <header class="site-header">
-  <!-- <div class="container"> -->
   {{ $logo := resources.Get "images/logo.png" }}
-
-  <div>
+  <div class="header-inner">
     <a href="{{ .Site.Home.RelPermalink }}" class="logo">
       <img src="/images/logo.svg" alt="Logo" />
     </a>
+
     <button class="menu-toggle" aria-controls="main-menu" aria-expanded="false">
-      <span class="sr-only">Open main menu</span>
+      <span class="sr-only">Toggle menu</span>
       <span class="hamburger"></span>
     </button>
   </div>
-  <nav class="main-nav">
+
+  <nav class="main-nav" role="navigation">
     <ul id="main-menu" class="main-menu">
       {{ range .Site.Menus.main }} {{ if eq .Name "Rooms" }}
       <li class="has-dropdown">
-        <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
+        <a
+          href="{{ .URL }}"
+          class="nav-link"
+          aria-haspopup="true"
+          aria-expanded="false"
+          >{{ .Name }}</a
+        >
         <ul class="dropdown">
           {{ range where site.RegularPages "Section" "rooms" }}
           <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
@@ -25,21 +31,25 @@
       {{ else }}
       <li><a href="{{ .URL }}" class="nav-link">{{ .Name }}</a></li>
       {{ end }} {{ end }}
-      <div class="lang-switcher">
+      <!-- Language Switcher -->
+      <li class="lang-switcher">
         <ul>
-          {{ range .Site.Languages }} {{ if ne .Lang $.Site.Language.Lang }}
-          {{ $targetLang := .Lang }} {{ $translatedPage := "" }} {{ range
-          $.Page.AllTranslations }} {{ if eq .Lang $targetLang }} {{
-          $translatedPage = . }} {{ end }} {{ end }} {{ if $translatedPage }}
+          {{ range .Site.Languages }} {{ if ne .Lang $.Site.Language.Lang }} {{
+          $targetLang := .Lang }} {{ $translatedPage := "" }} {{ range
+          $.Page.AllTranslations }} {{ if eq .Lang $targetLang }}{{
+          $translatedPage = . }}{{ end }} {{ end }} {{ if $translatedPage }}
           <li>
-            <a href="{{ $translatedPage.RelPermalink }}"><img src="/images/flags/{{ .Lang }}.svg"
-                alt="{{ .LanguageName }} Flag" class="flag-icon" />
+            <a href="{{ $translatedPage.RelPermalink }}">
+              <img
+                src="/images/flags/{{ .Lang }}.svg"
+                alt="{{ .LanguageName }} Flag"
+                class="flag-icon"
+              />
             </a>
           </li>
           {{ end }} {{ end }} {{ end }}
         </ul>
-        <!-- </div> -->
+      </li>
     </ul>
   </nav>
-  </div>
 </header>
