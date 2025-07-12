@@ -1,3 +1,8 @@
+* {
+outline: 1px solid red;
+   } 
+
+
 :root {
   --color-primary-background: #ffffff;
   --color-primary-text: #3c4043;
