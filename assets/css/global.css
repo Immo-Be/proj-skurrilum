@@ -1,8 +1,3 @@
-* {
-outline: 1px solid red;
-   } 
-
-
 :root {
   --color-primary-background: #ffffff;
   --color-primary-text: #3c4043;
@@ -109,7 +104,7 @@ h6 {
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  overflow: hidden;
   font-size: 1rem;
 }
 
@@ -125,7 +120,7 @@ body {
   border: 0;
 }
 
-body:has(.site-header.is-open) {
+body:has(.main-nav.is-open) {
   &:before {
     content: '';
     position: absolute;

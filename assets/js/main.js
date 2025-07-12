@@ -1,25 +1,29 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
   const menuToggle = document.querySelector('.menu-toggle');
-  const mainMenu = document.querySelector('#main-menu');
   const mainNav = document.querySelector('.main-nav');
-  const siteHeader = document.querySelector('header');
   const dropdowns = document.querySelectorAll('.has-dropdown > a');
 
-  if (menuToggle && mainMenu) {
-    menuToggle.addEventListener('click', function () {
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', function() {
       const isExpanded = this.getAttribute('aria-expanded') === 'true';
       this.setAttribute('aria-expanded', !isExpanded);
       this.classList.toggle('is-active'); // Toggle active class on the button
-      mainMenu.classList.toggle('is-open');
       mainNav.classList.toggle('is-open');
-      console.log('Menu toggle clicked', siteHeader); // Log for debugging
-      siteHeader.classList.toggle('is-open'); // Toggle open class on the header
       document.body.classList.toggle('no-scroll'); // Prevent scrolling when menu is open
+    });
+
+    document.addEventListener('click', function(event) {
+      if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.classList.remove('is-active'); // Remove active class from the button
+        mainNav.classList.remove('is-open');
+        document.body.classList.remove('no-scroll'); // Allow scrolling again
+      }
     });
   }
 
   dropdowns.forEach(dropdown => {
-    dropdown.addEventListener('click', function (e) {
+    dropdown.addEventListener('click', function(e) {
       if (window.innerWidth < 768) {
         e.preventDefault();
         const dropdownMenu = this.nextElementSibling;
@@ -28,3 +32,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
