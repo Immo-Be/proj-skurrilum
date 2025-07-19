@@ -6,6 +6,8 @@
   height: var(--header-height);
   background-color: var(--base-color);
   padding: 1.25rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
 
   &.is-open {
     flex-direction: column;

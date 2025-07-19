@@ -1,4 +1,4 @@
-{{ define "main" }} {{ partial "hero.html" . }}
+---
 title: "Skurrilum – Escape Room Hamburg"
 general:
   descriptionShort: "Der Escape Room in Hamburg"
@@ -16,5 +16,4 @@ seo:
   title3: "Der beste Escape Room Hamburgs"
   description3: >
     Ganz egal, ob ihr schon öfter einen Escape Room gespielt hast, oder euch euer erstes Escape Room Erlebnis noch bevorsteht, das Skurrilum Hamburg wird euch sicherlich nicht enttäuschen. Nicht umsonst wurde unser Escape Room in Hamburg in 2019 zu einem der besten gekrönt. Unsere Räume erzählen einzigartige Geschichten, die mit vielen Details geschmückt sind. Das wird euch garantiert auch auffallen, wenn ihr euren gebuchten Escape Room im Skurrilum St. Pauli betretet, denn alle Räume sind aufwendig gestaltet und besitzen neben einer atemberaubenden Kulisse auch realitätsgetreue Technik- und Geräuscheffekte. Auf unserer Website findet ihr eine Übersicht unserer Escape Rooms, die unterschiedlicher nicht sein könnten. Welchen Escape Room in Hamburg findet ihr am besten?
--
-{{ end }}
+---
