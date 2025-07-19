@@ -1,0 +1,35 @@
+:root {
+  --brand-color: #8b90ff;
+  --base-color: #f2f4f8;
+  --surface-color: #fff;
+  --text-color: #191b23;
+  --secondary-text-color: #3c404f;
+  --base-transparent-90: rgba(247, 247, 247, 0.9);
+
+  --shadow-sidebar:
+    0px 4px 8px 3px rgba(60, 64, 67, 0.15),
+    0px 1px 2px 0px rgba(60, 64, 67, 0.3);
+  /* Font sizes */
+  --font-min: 1rem;
+  --font-max: 1.5rem;
+  /* Reduced max font size for better scaling on larger screens */
+  --viewport-width: 100vw;
+  --preferred-font-size: calc(0.5rem + 0.5vw);
+
+  --font-size: clamp(
+    var(--font-min),
+    var(--preferred-font-size),
+    var(--font-max)
+  );
+
+  /* Adjusted formula for better size control */
+  @media (prefers-color-scheme: dark) {
+    --brand-color: #8b90ff;
+    --base-color: #1e1f26;
+    --surface-color: #2c2f38;
+    --text-color: #f0f0f0;
+    --secondary-text-color: #b0b3c0;
+    --base-transparent-90: rgba(30, 31, 38, 0.9);
+    --base-transparent-100: rgba(30, 31, 38, 1);
+  }
+}

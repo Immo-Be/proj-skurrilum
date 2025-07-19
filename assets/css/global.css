@@ -1,18 +1,3 @@
-:root {
-  --color-primary-background: #ffffff;
-  --color-primary-text: #3c4043;
-  --color-primary-heading: #4b4b4b;
-  --color-accent-primary: #1a73e8;
-  --color-divider: #dadce0;
-
-  /* Shadows */
-  --shadow-sidebar:
-    0px 4px 8px 3px rgba(60, 64, 67, 0.15),
-    0px 1px 2px 0px rgba(60, 64, 67, 0.3);
-  background-color: #f5f5f5;
-  font-family: sans-serif;
-}
-
 /* CSS RESET */
 
 /* 1. Use a more-intuitive box-sizing model */
@@ -22,14 +7,10 @@
   box-sizing: border-box;
 }
 
-/* 2. Remove default margin */
+/* 2. Remove default margin and padding*/
 * {
   margin: 0;
   padding: 0;
-}
-
-main {
-  background-color: coral;
 }
 
 /* 3. Enable keyword animations */
@@ -101,11 +82,11 @@ h6 {
   isolation: isolate;
 }
 
+
 html,
 body {
   max-width: 100vw;
   overflow: hidden;
-  font-size: 1rem;
 }
 
 .sr-only {
@@ -120,11 +101,45 @@ body {
   border: 0;
 }
 
-body:has(.main-nav.is-open) {
-  &:before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+@font-face {
+  font-family: 'Noto Sans VF';
+  src: url('/fonts/NotoSans-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  /* Adjust range as needed */
+  font-stretch: 50% 100%;
+  /* Width axis (e.g. 75% is condensed, 100% is normal) */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto VF';
+  src: url('/fonts/Roboto-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-stretch: 50% 100%;
+  font-style: normal;
+}
+
+body {
+  font-size: var(--font-size);
+  line-height: calc(var(--font-size) * 1.5);
+
+  font-family: 'Roboto VF';
+  background: var(--base-color);
+  color: var(--text-color);
+
+  &:has(.main-nav.is-open) {
+    &:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
   }
 }
+
+/* add a backdrop when the main navigation is open */
+
+/* todo: convert fonts to woff2 https://www.fontsquirrel.com/tools/webfont-generator
+ */
+
+/* todo: decide on a font stack */

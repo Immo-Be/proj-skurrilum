@@ -5,12 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ .Title }}</title>
+  {{ $variablesCss := resources.Get "css/variables.css" | minify | fingerprint
+  }}
+  <link rel="stylesheet" href="{{ $variablesCss.RelPermalink }}" integrity="{{ $variablesCss.Data.Integrity }}" />
+
   {{ $css := resources.Get "css/global.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
 
   {{ $headerCss := resources.Get "css/partials/header.css" | minify |
   fingerprint }}
   <link rel="stylesheet" href="{{ $headerCss.RelPermalink }}" integrity="{{ $headerCss.Data.Integrity }}" />
+
+  {{ $heroCss := resources.Get "css/partials/hero.css" | minify |
+  fingerprint }}
+  <link rel="stylesheet" href="{{ $heroCss.RelPermalink }}" integrity="{{ $heroCss.Data.Integrity }}" />
+
 </head>
 
 <body>
@@ -20,16 +29,5 @@
   {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
   <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
 </body>
-
-</html>
-<!doctype html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <title>Document</title>
-</head>
-
-<body></body>
 
 </html>

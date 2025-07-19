@@ -1,4 +1,34 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Video logic
+  const heroVideo = document.getElementById('hero-video');
+
+  if (heroVideo) {
+    const videos = {
+      small: 'webtrailer_lowq.webm',
+      medium: 'webtrailer_midq.webm',
+      large: 'webtrailer.webm',
+    };
+
+    function setVideoSource() {
+      const screenWidth = window.innerWidth;
+      let videoSource;
+
+      if (screenWidth < 768) {
+        videoSource = videos.small;
+      } else if (screenWidth < 1200) {
+        videoSource = videos.medium;
+      } else {
+        videoSource = videos.large;
+      }
+
+      heroVideo.src = `/videos/${videoSource}`;
+    }
+
+    setVideoSource();
+    window.addEventListener('resize', setVideoSource);
+  }
+
+  // Original menu logic
   const menuToggle = document.querySelector('.menu-toggle');
   const mainNav = document.querySelector('.main-nav');
   const dropdowns = document.querySelectorAll('.has-dropdown > a');
@@ -13,7 +43,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.addEventListener('click', function(event) {
-      if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) {
+      if (
+        !mainNav.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
         menuToggle.setAttribute('aria-expanded', 'false');
         menuToggle.classList.remove('is-active'); // Remove active class from the button
         mainNav.classList.remove('is-open');
@@ -32,4 +65,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
-
