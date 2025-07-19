@@ -19,6 +19,8 @@
   {{ $heroCss := resources.Get "css/partials/hero.css" | minify |
   fingerprint }}
   <link rel="stylesheet" href="{{ $heroCss.RelPermalink }}" integrity="{{ $heroCss.Data.Integrity }}" />
+  {{ $scrollingLinkCss := resources.Get "css/partials/scrolling-link.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $scrollingLinkCss.RelPermalink }}" integrity="{{ $scrollingLinkCss.Data.Integrity }}" />
 
 </head>
 
@@ -30,6 +32,8 @@
   <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
   {{ $heroJs := resources.Get "js/hero-video.js" | minify | fingerprint }}
   <script src="{{ $heroJs.RelPermalink }}" integrity="{{ $heroJs.Data.Integrity }}"></script>
+  {{ $scrollingLinkJs := resources.Get "js/scrolling-link.js" | minify | fingerprint }}
+  <script src="{{ $scrollingLinkJs.RelPermalink }}" integrity="{{ $scrollingLinkJs.Data.Integrity }}"></script>
 </body>
 
 </html>
