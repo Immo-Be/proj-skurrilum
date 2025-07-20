@@ -1,7 +1,7 @@
 ---
 title: "The Phantom Island"
 url: "/phantom-island/"
-lang: "en"
+---
 shortTitle: "The Phantom Island"
 players: "2-6 people"
 idealPlayers: "ideal for 3-4 players"

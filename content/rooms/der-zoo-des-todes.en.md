@@ -1,7 +1,7 @@
 ---
 title: "Ernie Hudson & The Zoo of Death"
 url: "/zoo-of-death/"
-lang: "en"
+---
 shortTitle: "The Zoo of Death"
 players: "3-6 people"
 idealPlayers: "ideal for 4 players"

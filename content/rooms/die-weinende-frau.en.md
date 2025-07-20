@@ -2,7 +2,7 @@
 title: "Ernie Hudson & The Wailing Woman"
 shortTitle: "The Wailing Woman"
 url: "the-wailing-woman/"
-lang: "en"
+---
 players: "4-8 people"
 idealPlayers: "ideal for 5-6 players"
 minAge: "from 14 years"

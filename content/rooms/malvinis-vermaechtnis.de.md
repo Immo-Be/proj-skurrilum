@@ -1,7 +1,7 @@
 ---
 title: "Malvinis Vermächtnis"
 url: "/malivinis-vermaechtnis/"
-lang: "de"
+---
 shortTitle: "Malvinis Vermächtnis"
 players: "3-8 SpielerInnen"
 idealPlayers: "ideal für 4-5 SpielerInnen"

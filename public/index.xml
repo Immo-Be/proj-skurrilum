@@ -2,86 +2,93 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Skurrilum – Escape Room Hamburg on Skurrilum</title>
-    <link>http://localhost:1313/</link>
+    <link>https://example.org/</link>
     <description>Recent content in Skurrilum – Escape Room Hamburg on Skurrilum</description>
     <generator>Hugo</generator>
     <language>de</language>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AGB</title>
-      <link>http://localhost:1313/agb/</link>
+      <link>https://example.org/agb/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/agb/</guid>
+      <guid>https://example.org/agb/</guid>
       <description>&lt;p&gt;Dies sind die AGB.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Datenschutz</title>
-      <link>http://localhost:1313/privacy-policy/</link>
+      <link>https://example.org/privacy-policy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/privacy-policy/</guid>
+      <guid>https://example.org/privacy-policy/</guid>
       <description>&lt;p&gt;Dies ist die Datenschutz Seite.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Die Phantominsel</title>
-      <link>http://localhost:1313/die-phantom-insel/</link>
+      <link>https://example.org/die-phantom-insel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/die-phantom-insel/</guid>
-      <description>&lt;p&gt;Knochenjäger und Schatzsucher aufgepasst: Ein geheimnisvolles Rätsel erwartet euch im mystischen Escape Room &amp;lsquo;Die Phantominsel&amp;rsquo; im Skurrilum. Begebt euch auf die Spuren eines verstorbenen Seemanns, der vor mehreren hundert Jahren Schiffbruch auf der gottverlassenen Phantominsel erlitt und ums Überleben kämpfte. Betretet seinen modrigen Unterschlupf und nehmt ihn genauestens unter die Lupe – denn nur mit einer ausgezeichneten Beobachtungsgabe könnt ihr das Geheimnis des rätselhaften Kapitäns lüften. Was ist damals auf der Phantominsel geschehen? Als Team von waghalsigen Abenteurern liegt es an euch, herauszufinden, welche unerklärlichen Phänomene sich auf der Phantominsel abspielen. Aber Vorsicht! Sie ist nicht so schweigsam wie sie scheint…&lt;/p&gt;</description>
+      <guid>https://example.org/die-phantom-insel/</guid>
+      <description>&lt;h2 id=&#34;note-&#34;&gt;shortTitle: &amp;ldquo;Die Phantominsel&amp;rdquo;&#xA;players: &amp;ldquo;2-6 SpielerInnen&amp;rdquo;&#xA;idealPlayers: &amp;ldquo;ideal für 3-4 SpielerInnen&amp;rdquo;&#xA;minAge: &amp;ldquo;ab 14 Jahren&amp;rdquo;&#xA;shortDescription: &amp;ldquo;Erkundet den modrigen Unterschlupf eines Seemanns auf einer rätselhaften Insel.&amp;rdquo;&#xA;accessibility: &amp;ldquo;Dieser Raum ist nicht barrierefrei.&amp;rdquo;&#xA;warnings: &amp;ldquo;Es werden Stroboskop-Effekte verwendet.&amp;rdquo;&#xA;note: &amp;quot;&amp;quot;&lt;/h2&gt;&#xA;&lt;p&gt;Knochenjäger und Schatzsucher aufgepasst: Ein geheimnisvolles Rätsel erwartet euch im mystischen Escape Room &amp;lsquo;Die Phantominsel&amp;rsquo; im Skurrilum. Begebt euch auf die Spuren eines verstorbenen Seemanns, der vor mehreren hundert Jahren Schiffbruch auf der gottverlassenen Phantominsel erlitt und ums Überleben kämpfte. Betretet seinen modrigen Unterschlupf und nehmt ihn genauestens unter die Lupe – denn nur mit einer ausgezeichneten Beobachtungsgabe könnt ihr das Geheimnis des rätselhaften Kapitäns lüften. Was ist damals auf der Phantominsel geschehen? Als Team von waghalsigen Abenteurern liegt es an euch, herauszufinden, welche unerklärlichen Phänomene sich auf der Phantominsel abspielen. Aber Vorsicht! Sie ist nicht so schweigsam wie sie scheint…&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ernie Hudson &amp; Der Zoo des Todes</title>
-      <link>http://localhost:1313/der-zoo-des-todes/</link>
+      <link>https://example.org/der-zoo-des-todes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/der-zoo-des-todes/</guid>
-      <description>&lt;p&gt;Dieser Escape Room im Skurrilum gehört zu unserer beliebten Hörspielserie &amp;ldquo;Geisterjäger Ernie Hudson&amp;rdquo; und führt euch in den mystischen Zoo des Todes. In dieser spannenden Geschichte ist euer Köpfchen gefragt, um Ernie Hudson bei seinen anspruchsvollen Ermittlungen im stillgelegten Zoo der Stadt Sandy Bay tatkräftig zu unterstützen. Man sagt, dass sich im Zoo des Todes nachts seltsame Dinge abspielen und undefinierbare Geräusche von den verlassenen Gattern und Käfigen wahrzunehmen sind. Hierbei handelt es sich demnach offensichtlich um einen Fall für echte Detektiv-Profis. Traut Ihr euch, dem Geisterjäger Ernie Hudson bei diesem Fall unter die Arme zu greifen und das Rätsel des geheimnisvollen Zoos zu lösen? Der Zoo des Todes in Hamburg erwartet euch bereits.&lt;/p&gt;</description>
+      <guid>https://example.org/der-zoo-des-todes/</guid>
+      <description>&lt;h2 id=&#34;note-beide-escape-rooms-der-geisterjäger-ernie-hudson-hörspiele-können-unabhängig-voneinander-gespielt-werden-und-erfordern-keine-vorkenntnisse&#34;&gt;shortTitle: &amp;ldquo;Der Zoo des Todes&amp;rdquo;&#xA;players: &amp;ldquo;3-6 SpielerInnen&amp;rdquo;&#xA;idealPlayers: &amp;ldquo;ideal für 4 SpielerInnen&amp;rdquo;&#xA;minAge: &amp;ldquo;ab 14 Jahren&amp;rdquo;&#xA;shortDescription: &amp;ldquo;Unterstützt Geisterjäger Ernie Hudson bei mysteriösen Ermittlungen im verlassenen Zoo.&amp;rdquo;&#xA;accessibility: &amp;ldquo;Dieser Raum ist nicht barrierefrei und nicht geeignet für körperlich beeinträchtigte SpielerInnen.&amp;rdquo;&#xA;warnings: &amp;ldquo;Nicht geeignet für Personen mit einer Erdnussallergie.&amp;rdquo;&#xA;note: &amp;ldquo;Beide Escape Rooms der Geisterjäger Ernie Hudson Hörspiele können unabhängig voneinander gespielt werden und erfordern keine Vorkenntnisse.&amp;rdquo;&lt;/h2&gt;&#xA;&lt;p&gt;Dieser Escape Room im Skurrilum gehört zu unserer beliebten Hörspielserie &amp;ldquo;Geisterjäger Ernie Hudson&amp;rdquo; und führt euch in den mystischen Zoo des Todes. In dieser spannenden Geschichte ist euer Köpfchen gefragt, um Ernie Hudson bei seinen anspruchsvollen Ermittlungen im stillgelegten Zoo der Stadt Sandy Bay tatkräftig zu unterstützen. Man sagt, dass sich im Zoo des Todes nachts seltsame Dinge abspielen und undefinierbare Geräusche von den verlassenen Gattern und Käfigen wahrzunehmen sind. Hierbei handelt es sich demnach offensichtlich um einen Fall für echte Detektiv-Profis. Traut Ihr euch, dem Geisterjäger Ernie Hudson bei diesem Fall unter die Arme zu greifen und das Rätsel des geheimnisvollen Zoos zu lösen? Der Zoo des Todes in Hamburg erwartet euch bereits.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ernie Hudson &amp; Die weinende Frau</title>
-      <link>http://localhost:1313/die-weinende-frau/</link>
+      <link>https://example.org/die-weinende-frau/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/die-weinende-frau/</guid>
-      <description>&lt;p&gt;Der Escape Room ‘Die weinende Frau’ gehört unserer Reihe „Geisterjäger Ernie Hudson“ an und ist die erste Mischung aus Escape Game und Hörspiel, die auf Platz 1. Top Escape Room 2018 gewählt wurde. Mehr als fünf verschiedene Schauplätze, eine spannende Story und atemberaubende Effekte warten im Escape Room ‘Die weinende Frau’ auf alle, die schon immer davon geträumt haben, selbst die Titelrolle in ihrem Lieblings-Hörspiel einzunehmen. Zusammen mit der Unterstützung des Geisterjägers Ernie Hudson betretet ihr die alte Villa der verängstigten Mrs Bunbury, um euch auf die Suche nach der weinenden Frau zu begeben. Durch das Lösen kniffliger und spannender Rätsel findet ihr heraus, welches Geheimnis sich hinter diesem Escape Room verbirgt. ‘Die weinende Frau’ ist ein einzigartiger Escape Room, der unter Einsatz von Hörspiel-Elementen erzählt wird und bei dem feinste Detektivarbeit gefragt ist. Schafft Ihr es, das Geheimnis der weinenden Frau zu lüften?&lt;/p&gt;</description>
+      <guid>https://example.org/die-weinende-frau/</guid>
+      <description>&lt;h2 id=&#34;note-beide-ernie-hudson-räume-können-unabhängig-voneinander-gespielt-werden-und-erfordern-keine-vorkenntnisse&#34;&gt;shortTitle: &amp;ldquo;Die weinende Frau&amp;rdquo;&#xA;players: &amp;ldquo;4-8 SpielerInnen&amp;rdquo;&#xA;idealPlayers: &amp;ldquo;ideal für 5-6 SpielerInnen&amp;rdquo;&#xA;minAge: &amp;ldquo;ab 14 Jahren&amp;rdquo;&#xA;shortDescription: &amp;ldquo;Preisgekröntes Hörspiel-Abenteuer in Mrs. Bunburys Villa auf der Suche nach einer mysteriösen Frau.&amp;rdquo;&#xA;accessibility: &amp;ldquo;Dieser Raum ist nicht barrierefrei und nicht geeignet für körperlich beeinträchtigte SpielerInnen.&amp;rdquo;&#xA;warnings: &amp;ldquo;Es werden Stroboskop-Effekte verwendet.&amp;rdquo;&#xA;note: &amp;ldquo;Beide Ernie Hudson Räume können unabhängig voneinander gespielt werden und erfordern keine Vorkenntnisse.&amp;rdquo;&lt;/h2&gt;&#xA;&lt;p&gt;Der Escape Room ‘Die weinende Frau’ gehört unserer Reihe „Geisterjäger Ernie Hudson“ an und ist die erste Mischung aus Escape Game und Hörspiel, die auf Platz 1. Top Escape Room 2018 gewählt wurde. Mehr als fünf verschiedene Schauplätze, eine spannende Story und atemberaubende Effekte warten im Escape Room ‘Die weinende Frau’ auf alle, die schon immer davon geträumt haben, selbst die Titelrolle in ihrem Lieblings-Hörspiel einzunehmen. Zusammen mit der Unterstützung des Geisterjägers Ernie Hudson betretet ihr die alte Villa der verängstigten Mrs Bunbury, um euch auf die Suche nach der weinenden Frau zu begeben. Durch das Lösen kniffliger und spannender Rätsel findet ihr heraus, welches Geheimnis sich hinter diesem Escape Room verbirgt. ‘Die weinende Frau’ ist ein einzigartiger Escape Room, der unter Einsatz von Hörspiel-Elementen erzählt wird und bei dem feinste Detektivarbeit gefragt ist. Schafft Ihr es, das Geheimnis der weinenden Frau zu lüften?&lt;/p&gt;</description>
     </item>
     <item>
       <title>FAQ</title>
-      <link>http://localhost:1313/faq/</link>
+      <link>https://example.org/faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/faq/</guid>
+      <guid>https://example.org/faq/</guid>
       <description>&lt;p&gt;Dies ist die FAQ Seite.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Guschis geile Grotte</title>
-      <link>http://localhost:1313/guschis-geile-grotte/</link>
+      <link>https://example.org/guschis-geile-grotte/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/guschis-geile-grotte/</guid>
-      <description>&lt;p&gt;Der spektakuläre Escape Room Guschis geile Grotte gilt eindeutig als unser Klassiker im Skurrilum. Wo auch sonst, wenn nicht auf der Reeperbahn in St. Pauli findet man eine bessere Kulisse vor, um sich schon vor dem Spiel auf das realitätsgetreue Abenteuer in Guschis Grotte einzustimmen. Dieser Escape Room im Skurrilum Hamburg entführt ins Rotlichtmilieu der 80er Jahre. Wir ihr euch vorstellen könnt, dreht sich somit in Guschis Grotte alles um Sex, Drogen und sehr viel Geld. Als gesuchtes Gaunerteam brecht ihr in die berüchtigte Kiezkneipe &amp;lsquo;Guschis geile Grotte&amp;rsquo; ein, um euch zwischen Folterkammern und Pornokabinen auf die Suche nach 30.000 DM zu machen. Da Ihr in diesem Escape Room das Kiez-Leben der 80er Jahre hautnah erleben werdet, ist Guschis Grotte für alle Besucher ab 18 Jahren. Eventuelle Ausnahmen können im Voraus angefragt werden.&lt;/p&gt;</description>
+      <guid>https://example.org/guschis-geile-grotte/</guid>
+      <description>&lt;h2 id=&#34;note-dieses-spiel-ist-nur-auf-deutsch-verfügbar&#34;&gt;shortTitle: &amp;ldquo;Guschis geile Grotte&amp;rdquo;&#xA;players: &amp;ldquo;4-8 SpielerInnen&amp;rdquo;&#xA;idealPlayers: &amp;ldquo;ideal für 5 SpielerInnen&amp;rdquo;&#xA;minAge: &amp;ldquo;ab 18 Jahren&amp;rdquo;&#xA;shortDescription: &amp;ldquo;Brecht Guschis berüchtigte Kiezkneipe ein und findet 30.000 DM im Rotlichtmilieu der 80er.&amp;rdquo;&#xA;accessibility: &amp;ldquo;Dieser Raum ist nicht barrierefrei.&amp;rdquo;&#xA;warnings: &amp;ldquo;Dieser Raum ist nicht barrierefrei&amp;rdquo;&#xA;note: &amp;ldquo;Dieses Spiel ist nur auf Deutsch verfügbar&amp;rdquo;&lt;/h2&gt;&#xA;&lt;p&gt;Der spektakuläre Escape Room Guschis geile Grotte gilt eindeutig als unser Klassiker im Skurrilum. Wo auch sonst, wenn nicht auf der Reeperbahn in St. Pauli findet man eine bessere Kulisse vor, um sich schon vor dem Spiel auf das realitätsgetreue Abenteuer in Guschis Grotte einzustimmen. Dieser Escape Room im Skurrilum Hamburg entführt ins Rotlichtmilieu der 80er Jahre. Wir ihr euch vorstellen könnt, dreht sich somit in Guschis Grotte alles um Sex, Drogen und sehr viel Geld. Als gesuchtes Gaunerteam brecht ihr in die berüchtigte Kiezkneipe &amp;lsquo;Guschis geile Grotte&amp;rsquo; ein, um euch zwischen Folterkammern und Pornokabinen auf die Suche nach 30.000 DM zu machen. Da Ihr in diesem Escape Room das Kiez-Leben der 80er Jahre hautnah erleben werdet, ist Guschis Grotte für alle Besucher ab 18 Jahren. Eventuelle Ausnahmen können im Voraus angefragt werden.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Impressum</title>
-      <link>http://localhost:1313/imprint/</link>
+      <link>https://example.org/imprint/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/imprint/</guid>
+      <guid>https://example.org/imprint/</guid>
       <description>&lt;p&gt;Dies ist das Impressum.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Kontakt</title>
-      <link>http://localhost:1313/contact/</link>
+      <link>https://example.org/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/contact/</guid>
+      <guid>https://example.org/contact/</guid>
       <description>&lt;p&gt;Dies ist die Kontakt Seite.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Malvinis Vermächtnis</title>
-      <link>http://localhost:1313/malivinis-vermaechtnis/</link>
+      <link>https://example.org/malivinis-vermaechtnis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/malivinis-vermaechtnis/</guid>
-      <description>&lt;p&gt;Besucht den wohl magischsten Escape Room &amp;lsquo;Malvinis Vermächtnis&amp;rsquo; in Hamburg und lasst euch vom rätselhaften Bühnenmagier Edgar Malvini verzaubern. Betretet seine verwunschene Zauberkammer und löst die mystischen Rätsel am Rande der Okkulten. Was verbirgt sich hinter Malvinis Vermächtnis – nur ein paar raffinierte Tricks oder doch echte Magie? Begebt euch auf die Suche nach dem sagenumwobenen Buch der Unsterblichkeit, um das Geheimnis um Malvinis Vermächtnis zu lüften. Taucht ein in die Welt des Magiers, durchsucht die Zauberkammer nach Hinweisen und kombiniert eure Schlussfolgerungen, um Licht in das Dunkle zu bringen. Doch passt auf, dass euch die Magie nicht auf falsche Fährten treibt…&lt;/p&gt;</description>
+      <guid>https://example.org/malivinis-vermaechtnis/</guid>
+      <description>&lt;h2 id=&#34;note-&#34;&gt;shortTitle: &amp;ldquo;Malvinis Vermächtnis&amp;rdquo;&#xA;players: &amp;ldquo;3-8 SpielerInnen&amp;rdquo;&#xA;idealPlayers: &amp;ldquo;ideal für 4-5 SpielerInnen&amp;rdquo;&#xA;minAge: &amp;ldquo;ab 14 Jahren&amp;rdquo;&#xA;shortDescription: &amp;ldquo;Sucht nach dem Buch der Unsterblichkeit in der verwunschenen Zauberkammer eines Magiers.&amp;rdquo;&#xA;accessibility: &amp;ldquo;Dieser Raum ist barrierefrei.&amp;rdquo;&#xA;warnings: &amp;quot;&amp;quot;&#xA;note: &amp;quot;&amp;quot;&lt;/h2&gt;&#xA;&lt;p&gt;Besucht den wohl magischsten Escape Room &amp;lsquo;Malvinis Vermächtnis&amp;rsquo; in Hamburg und lasst euch vom rätselhaften Bühnenmagier Edgar Malvini verzaubern. Betretet seine verwunschene Zauberkammer und löst die mystischen Rätsel am Rande der Okkulten. Was verbirgt sich hinter Malvinis Vermächtnis – nur ein paar raffinierte Tricks oder doch echte Magie? Begebt euch auf die Suche nach dem sagenumwobenen Buch der Unsterblichkeit, um das Geheimnis um Malvinis Vermächtnis zu lüften. Taucht ein in die Welt des Magiers, durchsucht die Zauberkammer nach Hinweisen und kombiniert eure Schlussfolgerungen, um Licht in das Dunkle zu bringen. Doch passt auf, dass euch die Magie nicht auf falsche Fährten treibt…&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Shop</title>
+      <link>https://example.org/shop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/shop/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h2 id=&#34;title-shop&#34;&gt;title: &amp;ldquo;Shop&amp;rdquo;&lt;/h2&gt;&#xA;&lt;h1 id=&#34;shop-section-mock&#34;&gt;Shop Section (mock)&lt;/h1&gt;</description>
     </item>
     <item>
       <title>Über uns</title>
-      <link>http://localhost:1313/about-us/</link>
+      <link>https://example.org/about-us/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about-us/</guid>
+      <guid>https://example.org/about-us/</guid>
       <description>&lt;p&gt;Dies ist die Über uns Seite.&lt;/p&gt;</description>
     </item>
   </channel>
