@@ -138,6 +138,10 @@ body {
   }
 }
 
+main {
+  margin-top: var(--header-height);
+}
+
 /* add a backdrop when the main navigation is open */
 
 /* todo: convert fonts to woff2 https://www.fontsquirrel.com/tools/webfont-generator

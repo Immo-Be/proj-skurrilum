@@ -1,7 +1,6 @@
 /* Header */
 .site-header {
   /* ===== Variables ===== */
-  --header-height: 64px;
   z-index: 1;
   height: var(--header-height);
   background-color: var(--base-color);
