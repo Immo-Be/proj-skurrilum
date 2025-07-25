@@ -1,5 +1,12 @@
-{{ define "main" }} {{ partial "hero.html" . }}
-<div>
-content
-</div>
+{{ define "main" }}
+  {{ partial "hero.html" . }}
+  <div class="general-description-container">
+    {{ .Params.general.description }}
+  </div>
+  <div>
+    content
+  </div>
+  <div class="seo-content-container">
+    {{ .Content }}
+  </div>
 {{ end }}
