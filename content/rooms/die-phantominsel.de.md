@@ -1,7 +1,6 @@
 ---
 title: "Die Phantominsel"
 url: "/die-phantom-insel/"
----
 shortTitle: "Die Phantominsel"
 players: "2-6 SpielerInnen"
 idealPlayers: "ideal für 3-4 SpielerInnen"

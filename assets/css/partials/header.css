@@ -108,11 +108,9 @@
       padding: 10px 0;
       margin: 0;
       background-color: var(--base-color);
-      box-shadow: var(--shadow-sidebar);
-      position: absolute;
+      position: relative;
       top: 100%;
       left: 0;
-      min-width: 200px;
       z-index: 1001;
       opacity: 0;
       visibility: hidden;
@@ -121,6 +119,10 @@
         opacity 0.3s ease,
         transform 0.3s ease,
         visibility 0.3s;
+
+      @media (min-width: 769px) {
+        position: absolute;
+      }
 
       li {
         margin: 0;
@@ -137,10 +139,26 @@
       }
     }
 
-    &:hover .dropdown {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
+    @media (max-width: 768px) {
+      .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+
+        >li>a {
+          white-space: wrap;
+        }
+      }
+    }
+
+    @media (min-width: 769px) {
+      &:hover .dropdown {
+        min-width: 200px;
+        box-shadow: var(--shadow-sidebar);
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
     }
   }
 

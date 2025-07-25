@@ -1,8 +1,7 @@
 ---
 title: "Ernie Hudson & Der Zoo des Todes"
-url: "/der-zoo-des-todes/"
----
 shortTitle: "Der Zoo des Todes"
+url: "/der-zoo-des-todes/"
 players: "3-6 SpielerInnen"
 idealPlayers: "ideal für 4 SpielerInnen"
 minAge: "ab 14 Jahren"

@@ -1,7 +1,6 @@
 ---
 title: "Guschis geile Grotte"
 url: "/guschis-geile-grotte/"
----
 shortTitle: "Guschis geile Grotte"
 players: "4-8 SpielerInnen"
 idealPlayers: "ideal für 5 SpielerInnen"

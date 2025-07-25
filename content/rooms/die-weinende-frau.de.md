@@ -1,7 +1,6 @@
 ---
 title: "Ernie Hudson & Die weinende Frau"
 url: "/die-weinende-frau/"
----
 shortTitle: "Die weinende Frau"
 players: "4-8 SpielerInnen"
 idealPlayers: "ideal für 5-6 SpielerInnen"

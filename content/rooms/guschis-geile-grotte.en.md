@@ -1,7 +1,6 @@
 ---
 title: "Guschis seedy Cellar"
 url: "/guschis-seedy-cellar/"
----
 shortTitle: "Guschis seedy Cellar"
 players: "4-8 people"
 idealPlayers: "ideal for 5 players"

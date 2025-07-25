@@ -26,14 +26,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-
-  dropdownToggles.forEach(toggle => {
-    toggle.addEventListener('click', function() {
-      const dropdownMenu = this.nextElementSibling;
-      const isExpanded = this.getAttribute('aria-expanded') === 'true';
-      this.setAttribute('aria-expanded', !isExpanded);
-      dropdownMenu.classList.toggle('is-open');
-    });
-  });
+  // const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+  //
+  // dropdownToggles.forEach(toggle => {
+  //   toggle.addEventListener('click', function() {
+  //     const dropdownMenu = this.nextElementSibling;
+  //     const isExpanded = this.getAttribute('aria-expanded') === 'true';
+  //     this.setAttribute('aria-expanded', !isExpanded);
+  //     dropdownMenu.classList.toggle('is-open');
+  //   });
+  // });
 });

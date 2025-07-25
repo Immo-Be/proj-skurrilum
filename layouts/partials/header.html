@@ -22,10 +22,9 @@
           aria-expanded="false"
           >{{ .Name }}</a
         >
-        <button class="dropdown-toggle" aria-expanded="false"><span class="sr-only">Toggle Dropdown</span></button>
         <ul class="dropdown">
           {{ range where site.RegularPages "Section" "rooms" }}
-          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          <li><a href="{{ .RelPermalink }}">{{ default .Title .Params.shortTitle }}</a></li>
           {{ end }}
         </ul>
       </li>

@@ -1,7 +1,6 @@
 ---
 title: "Malvinis Legacy"
 url: "/malvinis-legacy/"
----
 shortTitle: "Malvinis Legacy"
 players: "3-8 people"
 idealPlayers: "ideal for 4-5 players"
