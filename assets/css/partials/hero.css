@@ -1,12 +1,10 @@
 .hero {
-  z-index: -1;
   position: relative;
   height: 60dvh;
   height: 100;
   overflow: hidden;
 
   .overlay {
-    z-index: 1;
     position: absolute;
     display: flex;
     justify-content: center;

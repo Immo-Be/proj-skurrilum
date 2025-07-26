@@ -5,30 +5,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ .Title }}</title>
-  {{ $variablesCss := resources.Get "css/variables.css" | minify | fingerprint
-  }}
+  {{ $variablesCss := resources.Get "css/variables.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $variablesCss.RelPermalink }}" integrity="{{ $variablesCss.Data.Integrity }}" />
 
   {{ $css := resources.Get "css/global.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
 
-  {{ $headerCss := resources.Get "css/partials/header.css" | minify |
-  fingerprint }}
+  {{ $mainCss := resources.Get "css/partials/main.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $mainCss.RelPermalink }}" integrity="{{ $mainCss.Data.Integrity }}" />
+
+  {{ $headerCss := resources.Get "css/partials/header.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $headerCss.RelPermalink }}" integrity="{{ $headerCss.Data.Integrity }}" />
 
-  {{ $heroCss := resources.Get "css/partials/hero.css" | minify |
-  fingerprint }}
+  {{ $heroCss := resources.Get "css/partials/hero.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $heroCss.RelPermalink }}" integrity="{{ $heroCss.Data.Integrity }}" />
-  {{ $scrollingLinkCss := resources.Get "css/partials/scrolling-link.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $scrollingLinkCss.RelPermalink }}" integrity="{{ $scrollingLinkCss.Data.Integrity }}" />
-
+  {{ $scrollingLinkCss := resources.Get "css/partials/scrolling-link.css" | minify | fingerprint
+  }}
+  <link rel="stylesheet" href="{{ $scrollingLinkCss.RelPermalink }}"
+    integrity="{{ $scrollingLinkCss.Data.Integrity }}" />
 </head>
 
 <body>
   {{ partial "header.html" . }}
   <main>{{ block "main" . }}{{ end }}</main>
-  {{ partial "footer.html" . }}
-  {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
+  {{ partial "footer.html" . }} {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
   <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
   {{ $heroJs := resources.Get "js/hero-video.js" | minify | fingerprint }}
   <script src="{{ $heroJs.RelPermalink }}" integrity="{{ $heroJs.Data.Integrity }}"></script>

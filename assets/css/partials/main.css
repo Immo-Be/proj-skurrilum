@@ -1,3 +1,4 @@
 main {
   background-color: var(--base-color);
+  margin-top: var(--header-height);
 }
