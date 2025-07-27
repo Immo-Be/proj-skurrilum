@@ -32,22 +32,28 @@
       <li><a href="{{ .URL }}" class="nav-link">{{ .Name }}</a></li>
       {{ end }} {{ end }}
       <!-- Language Switcher -->
-      <li class="lang-switcher">
-        <ul>
-          {{ range .Site.Languages }} {{ if ne .Lang $.Site.Language.Lang }} {{
-          $targetLang := .Lang }} {{ $translatedPage := "" }} {{ range
-          $.Page.AllTranslations }} {{ if eq .Lang $targetLang }}{{
-          $translatedPage = . }}{{ end }} {{ end }} {{ if $translatedPage }}
-          <li>
-            <a href="{{ $translatedPage.RelPermalink }}">
-              <img
-                src="/images/flags/{{ .Lang }}.svg"
-                alt="{{ .LanguageName }} Flag"
-                class="flag-icon"
-              />
-            </a>
-          </li>
-          {{ end }} {{ end }} {{ end }}
+      <li class="lang-switcher has-lang-dropdown">
+        <a href="#" class="current-lang-toggle">
+          <img src="/images/flags/{{ .Site.Language.Lang }}.svg" alt="{{ .Site.Language.LanguageName }} Flag" class="flag-icon" />
+          <span class="dropdown-arrow"></span>
+        </a>
+        <ul class="lang-dropdown">
+          {{ range .Site.Languages }}
+            {{ if ne .Lang $.Site.Language.Lang }}
+              {{ $targetLang := .Lang }}
+              {{ $translatedPage := "" }}
+              {{ range $.Page.AllTranslations }}
+                {{ if eq .Lang $targetLang }}{{ $translatedPage = . }}{{ end }}
+              {{ end }}
+              {{ if $translatedPage }}
+                <li>
+                  <a href="{{ $translatedPage.RelPermalink }}">
+                    <img src="/images/flags/{{ .Lang }}.svg" alt="{{ .LanguageName }} Flag" class="flag-icon" />
+                  </a>
+                </li>
+              {{ end }}
+            {{ end }}
+          {{ end }}
         </ul>
       </li>
     </ul>

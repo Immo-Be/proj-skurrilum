@@ -26,6 +26,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // Solid-on-scroll header logic
+  const siteHeader = document.querySelector('.site-header');
+  if (siteHeader) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) { // Adjust this value as needed
+        siteHeader.classList.add('scrolled');
+      } else {
+        siteHeader.classList.remove('scrolled');
+      }
+    });
+  }
+
   // const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
   //
   // dropdownToggles.forEach(toggle => {
