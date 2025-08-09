@@ -13,14 +13,14 @@
 
   <nav class="main-nav" role="navigation">
     <ul id="main-menu" class="main-menu">
-      {{ range .Site.Menus.main }} {{ if eq .Name "Rooms" }}
+      {{ range .Site.Menus.main }} {{ if eq .Identifier "menu_rooms" }}
       <li class="has-dropdown">
         <a
           href="{{ .URL }}"
           class="nav-link"
           aria-haspopup="true"
           aria-expanded="false"
-          >{{ .Name }}</a
+          >{{ T .Identifier }}</a
         >
         <ul class="dropdown">
           {{ range where site.RegularPages "Section" "rooms" }}
@@ -29,7 +29,7 @@
         </ul>
       </li>
       {{ else }}
-      <li><a href="{{ .URL }}" class="nav-link">{{ .Name }}</a></li>
+      <li><a href="{{ .URL }}" class="nav-link">{{ T .Identifier }}</a></li>
       {{ end }} {{ end }}
       <!-- Language Switcher -->
       <li class="lang-switcher has-lang-dropdown">

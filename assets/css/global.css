@@ -129,6 +129,7 @@ body {
   color: var(--text-color);
 
   &:has(.main-nav.is-open) {
+    overflow: hidden;
     &:before {
       content: '';
       position: absolute;

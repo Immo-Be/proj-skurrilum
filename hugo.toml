@@ -11,17 +11,39 @@ defaultContentLanguageInSubdir = false
 [languages.de]
 languageName = "Deutsch"
 weight = 1
+[[languages.de.menu.main]]
+  identifier = "menu_home"
+  url = "/"
+  weight = 1
+[[languages.de.menu.main]]
+  identifier = "menu_rooms"
+  url = "/rooms/"
+  weight = 2
+[[languages.de.menu.main]]
+  identifier = "menu_groups"
+  url = "/firmen/"
+  weight = 4
+[[languages.de.menu.main]]
+  identifier = "menu_contact"
+  url = "/contact/"
+  weight = 5
 
 [languages.en]
 languageName = "English"
 weight = 2
-
-[menu]
-  [[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
-  [[menu.main]]
-    name = "Rooms"
-    url = "/rooms/"
-    weight = 2
+[[languages.en.menu.main]]
+  identifier = "menu_home"
+  url = "/"
+  weight = 1
+[[languages.en.menu.main]]
+  identifier = "menu_rooms"
+  url = "/rooms/"
+  weight = 2
+[[languages.en.menu.main]]
+  identifier = "menu_groups"
+  url = "/groups/"
+  weight = 4
+[[languages.en.menu.main]]
+  identifier = "menu_contact"
+  url = "/contact/"
+  weight = 5

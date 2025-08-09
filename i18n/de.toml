@@ -16,3 +16,100 @@ footer_fri_sun = "Fr - So"
 footer_fri_sun_hours = "11:00 - 23:30 Uhr"
 footer_imprint = "Impressum"
 footer_privacy_policy = "Datenschutz"
+
+
+[rooms_button]
+other = "Alle Räume"
+
+[contact_form_name]
+other = "Name"
+
+[contact_form_email]
+other = "E-Mail"
+
+[contact_form_message]
+other = "Nachricht"
+
+[contact_form_submit]
+other = "Senden"
+
+[contact_form_success]
+other = "Vielen Dank für deine Nachricht! Wir werden uns so schnell wie möglich bei dir melden."
+
+[contact_form_error]
+other = "Es gab einen Fehler beim Senden deiner Nachricht. Bitte versuche es später erneut."
+
+[contact_form_privacy]
+other = "Ich habe die Datenschutzerklärung gelesen und stimme ihr zu."
+
+[faq_title]
+other = "Häufig gestellte Fragen"
+
+[imprint_title]
+other = "Impressum"
+
+[privacy_policy_title]
+other = "Datenschutzerklärung"
+
+[agb_title]
+other = "Allgemeine Geschäftsbedingungen"
+
+[about_us_title]
+other = "Über uns"
+
+[about_us_headline]
+other = "Das sind wir"
+
+[about_us_text]
+other = "Wir sind ein Team von kreativen Köpfen, die es sich zur Aufgabe gemacht haben, die besten Escape Rooms in Hamburg zu entwickeln. Unsere Räume sind mit viel Liebe zum Detail gestaltet und bieten ein unvergessliches Erlebnis für Jung und Alt."
+
+[rooms_title]
+other = "Unsere Räume"
+
+[rooms_headline]
+other = "Wähle dein Abenteuer"
+
+[rooms_text]
+other = "Unsere Escape Rooms sind für 2-6 Personen ausgelegt und dauern 60 Minuten. Wählt euren Raum und bucht jetzt euer Abenteuer!"
+
+[404_title]
+other = "404 - Seite nicht gefunden"
+
+[404_text]
+other = "Die von dir gesuchte Seite konnte nicht gefunden werden."
+
+[404_button]
+other = "Zur Startseite"
+
+[lang_switcher_title]
+other = "Sprache wechseln"
+
+[lang_switcher_de]
+other = "Deutsch"
+
+[lang_switcher_en]
+other = "Englisch"
+
+[scroll_down]
+other = "runter scrollen"
+
+[scroll_up]
+other = "hoch scrollen"
+
+[menu_rooms]
+other = "Unsere Räume"
+
+[menu_groups]
+other = "Gruppen & Firmen"
+
+[menu_about_us]
+other = "Über uns"
+
+[menu_faq]
+other = "FAQ"
+
+[menu_contact]
+other = "Kontakt"
+
+[menu_home]
+other = "Home"

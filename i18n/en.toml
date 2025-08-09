@@ -16,3 +16,21 @@ footer_fri_sun = "Fri - Sun"
 footer_fri_sun_hours = "11:00 AM - 11:30 PM"
 footer_imprint = "Imprint"
 footer_privacy_policy = "Privacy Policy"
+
+[menu_home]
+other = "Home"
+
+[menu_rooms]
+other = "Rooms"
+
+[menu_about_us]
+other = "About Us"
+
+[menu_faq]
+other = "FAQ"
+
+[menu_contact]
+other = "Contact"
+
+[menu_groups]
+other = "Groups"
