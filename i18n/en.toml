@@ -1,36 +1,78 @@
-header_headline="Welcome to the Skurrilum"
-header_cta_to_rooms = "To the Rooms"
-footer_about_us_text = "Experience our interactive Escape Room adventures in Hamburg - full of puzzles, excitement and surprises for friends, families and team events directly on the Reeperbahn at Spielbudenplatz"
-footer_links_title = "Links"
-footer_about_us = "About Us"
-footer_agb = "Terms and Conditions"
-footer_faq = "FAQ"
-footer_contact = "Contact"
-footer_contact_title = "Contact"
-footer_opening_hours_title = "Opening Hours"
-footer_monday = "Mon"
-footer_monday_hours = "closed"
-footer_tue_thu = "Tue - Thu"
-footer_tue_thu_hours = "3:30 PM - 11:30 PM"
-footer_fri_sun = "Fri - Sun"
-footer_fri_sun_hours = "11:00 AM - 11:30 PM"
-footer_imprint = "Imprint"
-footer_privacy_policy = "Privacy Policy"
+[header]
+headline = "Welcome to the Skurrilum"
+cta_to_rooms = "To the Rooms"
 
-[menu_home]
-other = "Home"
+[footer]
+about_us_text = "Experience our interactive Escape Room adventures in Hamburg - full of puzzles, excitement and surprises for friends, families and team events directly on the Reeperbahn at Spielbudenplatz"
+links_title = "Links"
+about_us = "About Us"
+agb = "Terms and Conditions"
+faq = "FAQ"
+contact = "Contact"
+contact_title = "Contact"
+opening_hours_title = "Opening Hours"
+monday = "Mon"
+monday_hours = "closed"
+tue_thu = "Tue - Thu"
+tue_thu_hours = "3:30 PM - 11:30 PM"
+fri_sun = "Fri - Sun"
+fri_sun_hours = "11:00 AM - 11:30 PM"
+imprint = "Imprint"
+privacy_policy = "Privacy Policy"
 
-[menu_rooms]
-other = "Rooms"
+[rooms]
+button = "All Rooms"
+title = "Our Rooms"
+headline = "Choose your adventure"
+text = "Our Escape Rooms are designed for 2-6 people and last 60 minutes. Choose your room and book your adventure now!"
 
-[menu_about_us]
-other = "About Us"
+[contact_form]
+name = "Name"
+email = "Email"
+message = "Message"
+submit = "Send"
+success = "Thank you for your message! We will get back to you as soon as possible."
+error = "There was an error sending your message. Please try again later."
+privacy = "I have read and agree to the privacy policy."
 
-[menu_faq]
-other = "FAQ"
+[pages]
 
-[menu_contact]
-other = "Contact"
+  [pages.faq]
+  title = "Frequently Asked Questions"
 
-[menu_groups]
-other = "Groups"
+  [pages.imprint]
+  title = "Imprint"
+
+  [pages.privacy_policy]
+  title = "Privacy Policy"
+
+  [pages.agb]
+  title = "Terms and Conditions"
+
+  [pages.about_us]
+  title = "About Us"
+  headline = "This is us"
+  text = "We are a team of creative minds who have made it our mission to develop the best Escape Rooms in Hamburg. Our rooms are designed with great attention to detail and offer an unforgettable experience for young and old."
+
+  [pages.404]
+  title = "404 - Page not found"
+  text = "The page you were looking for could not be found."
+  button = "To the homepage"
+
+[lang_switcher]
+title = "Switch language"
+de = "German"
+en = "English"
+
+[scroll]
+down = "scroll down"
+up = "scroll up"
+
+[menu]
+home = "Home"
+rooms = "Rooms"
+about_us = "About Us"
+faq = "FAQ"
+contact = "Contact"
+groups = "Groups & Events"
+makers = "The Makers"

@@ -1,5 +1,4 @@
 main {
   background-color: var(--base-color);
-  margin-top: var(--header-height);
   margin-inline: var(--page-margin-inline);
 }

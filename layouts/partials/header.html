@@ -2,7 +2,7 @@
   {{ $logo := resources.Get "images/logo.png" }}
   <div class="header-inner">
     <a href="{{ .Site.Home.RelPermalink }}" class="logo">
-      <img src="/images/logo.svg" alt="Logo" />
+      <img src="/images/logo.svg" alt="Logo" style="width: 51px; height: 24px" />
     </a>
 
     <button class="menu-toggle" aria-controls="main-menu" aria-expanded="false">
@@ -15,12 +15,8 @@
     <ul id="main-menu" class="main-menu">
       {{ range .Site.Menus.main }} {{ if eq .Identifier "menu_rooms" }}
       <li class="has-dropdown">
-        <a
-          href="{{ .URL }}"
-          class="nav-link"
-          aria-haspopup="true"
-          aria-expanded="false"
-          >{{ T .Identifier }}</a
+        <a href="{{ .URL }}" class="nav-link" aria-haspopup="true" aria-expanded="false"
+          >{{ T (printf "menu.%s" (replace .Identifier "menu_" "")) }}</a
         >
         <ul class="dropdown">
           {{ range where site.RegularPages "Section" "rooms" }}
@@ -29,31 +25,36 @@
         </ul>
       </li>
       {{ else }}
-      <li><a href="{{ .URL }}" class="nav-link">{{ T .Identifier }}</a></li>
+      <li>
+        <a href="{{ .URL }}" class="nav-link"
+          >{{ T (printf "menu.%s" (replace .Identifier "menu_" "")) }}</a
+        >
+      </li>
       {{ end }} {{ end }}
       <!-- Language Switcher -->
       <li class="lang-switcher has-lang-dropdown">
         <a href="#" class="current-lang-toggle">
-          <img src="/images/flags/{{ .Site.Language.Lang }}.svg" alt="{{ .Site.Language.LanguageName }} Flag" class="flag-icon" />
+          <img
+            src="/images/flags/{{ .Site.Language.Lang }}.svg"
+            alt="{{ .Site.Language.LanguageName }} Flag"
+            class="flag-icon"
+          />
           <span class="dropdown-arrow"></span>
         </a>
         <ul class="lang-dropdown">
-          {{ range .Site.Languages }}
-            {{ if ne .Lang $.Site.Language.Lang }}
-              {{ $targetLang := .Lang }}
-              {{ $translatedPage := "" }}
-              {{ range $.Page.AllTranslations }}
-                {{ if eq .Lang $targetLang }}{{ $translatedPage = . }}{{ end }}
-              {{ end }}
-              {{ if $translatedPage }}
-                <li>
-                  <a href="{{ $translatedPage.RelPermalink }}">
-                    <img src="/images/flags/{{ .Lang }}.svg" alt="{{ .LanguageName }} Flag" class="flag-icon" />
-                  </a>
-                </li>
-              {{ end }}
-            {{ end }}
-          {{ end }}
+          {{ range .Site.Languages }} {{ if ne .Lang $.Site.Language.Lang }} {{ $targetLang := .Lang
+          }} {{ $translatedPage := "" }} {{ range $.Page.AllTranslations }} {{ if eq .Lang
+          $targetLang }}{{ $translatedPage = . }}{{ end }} {{ end }} {{ if $translatedPage }}
+          <li>
+            <a href="{{ $translatedPage.RelPermalink }}">
+              <img
+                src="/images/flags/{{ .Lang }}.svg"
+                alt="{{ .LanguageName }} Flag"
+                class="flag-icon"
+              />
+            </a>
+          </li>
+          {{ end }} {{ end }} {{ end }}
         </ul>
       </li>
     </ul>
