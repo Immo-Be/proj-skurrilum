@@ -1,0 +1,16 @@
+---
+title: 'The Makers'
+slug: the-makers
+---
+
+{{< maker name="HEIKO WOHLGEMUTH" image="heiko-wohlgemuth.jpg" >}}
+In addition to his work as an actor, the native East Frisian works as an author, lyricist, and translator. Together with composer Martin Lingnau, he is responsible for productions such as "Swinging St. Pauli" (awarded the Inthega Prize for best German tour production), "Villa Sonnenschein," "Heiße Ecke," "Die Königs vom Kiez," "Cindy Reller," and many episodes of the legendary "Pension Schmidt." Their musical "The 13 ½ Lives of Captain Bluebear," based on Walter Moers, was awarded the Live Entertainment Award in 2007. Heiko is currently working on the German version of the musical "Amélie." He also celebrated great successes in Hamburg with the first authorized musical adaptation of "The Robber Hotzenplotz," "Once Upon a Time – 7 Fairy Tales at Once," and the one-man comedy show "CAVEQUEEN." The most recent children's musical, "The Little Störtebeker," and the holiday revue "Tschüssikowski!" also come from his pen. Heiko Wohlgemuth lives in Hamburg and Klagenfurt.
+{{< /maker >}}
+
+{{< maker name="LUKAS NIMSCHECK" image="lukas-habermann.jpg" >}}
+Lukas Nimscheck is a host, musician, and director. His band "Deine Freunde" has just released its fifth studio album and plays to sold-out venues throughout Germany. He currently shares the double chair with his bandmate Florian Sump as a coach on "The Voice Kids" on Sat1. From 2013 to 2015, he hosted the ARD children's show "Tigerentenclub," as well as the CREATORS competition at the Schmidt Theater and several times the award ceremony for the Hamburg music prize "Hans," which he himself won in 2014. For the Schmidt Theater in Hamburg, Lukas composed and directed the musicals "Gabi Mut – Schlagered by Life," "Jana and Janis," and "WIR." In 2018, he received the "German Musical Theater Prize" in the "Best Lyrics" category. He also runs "Skurrilum," a live escape game on Hamburg's Reeperbahn. Lukas is married and lives in Hamburg St. Pauli.
+{{< /maker >}}
+
+{{< maker name="CORNY LITTMANN" image="corny-littmann-neu.jpg" >}}
+On 8/8/88, Corny Littmann opened the Schmidt Theater on the Reeperbahn, and in 1991, Schmidts Tivoli was added. He became known to a nationwide audience as Herr Schmidt in the "Schmidt Mitternachtsshow" on NDR television. Corny Littmann is active both on and off stage: he acts in plays, for example in "The Mystery of Irma Vep," "A Midsummer Night's Dream – The Musical," "Fifty Fifty," "Sixty Sixty," "Pension Schmidt," "Villa Sonnenschein," and "Die Schmidtparade." He currently plays the "Käpt'n" in "Die Königs vom Kiez" alongside Götz Fuhrmann and Edelbert von Grotfru Senior in "Cindy Reller." Since 1993, he has also been a successful director: for the Tivoli in-house productions "Cabaret," "Fifty Fifty," "Karamba!," "VOLLES PROGRAMM!," "Oh Alpenglühn!," "CAVEQUEEN," "Der Opa" with Karl Dall, for "Heiße Ecke" – The St. Pauli Musical, "Die Königs vom Kiez," and the first Schmidtchen production "Entführung aus dem Paradies."
+{{< /maker >}}

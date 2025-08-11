@@ -24,8 +24,15 @@
     align-items: flex-start;
   }
 
+  &:has(+ .not-home) {
+    color: var(--text-color);
+    position: sticky;
+    top: 0;
+  }
+
   @media (min-width: 769px) {
     color: white;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -179,6 +186,7 @@
     flex-shrink: 0;
     position: relative;
     margin-top: 1rem;
+    align-self: right;
 
     .current-lang-toggle {
       display: flex;

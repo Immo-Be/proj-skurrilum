@@ -28,11 +28,18 @@
   {{ $faqCss := resources.Get "css/faq.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $faqCss.RelPermalink }}" integrity="{{ $faqCss.Data.Integrity }}" />
   {{ end }}
+
+  {{ if .File }}
+    {{ if or (eq .File.BaseFileName "the-makers") (eq .File.BaseFileName "die-macher") }}
+    {{ $makersCss := resources.Get "css/the-makers.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $makersCss.RelPermalink }}" integrity="{{ $makersCss.Data.Integrity }}" />
+    {{ end }}
+  {{ end }}
 </head>
 
 <body>
   {{ partial "header.html" . }}
-  <main>{{ block "main" . }}{{ end }}</main>
+  <main class="{{ if not .IsHome }}not-home{{ end }}">{{ block "main" . }}{{ end }}</main>
   {{ partial "footer.html" . }} {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
   <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
   {{ $heroJs := resources.Get "js/hero-video.js" | minify | fingerprint }}
