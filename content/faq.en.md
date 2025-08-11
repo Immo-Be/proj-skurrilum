@@ -2,43 +2,70 @@
 title: 'FAQ'
 ---
 
-_The Visit_
-Each participant should arrive at the venue at least 15 minutes before the booked time, so that our game masters can do a quick briefing with all the players. The Skurrilum is a live event in which the rooms are prepared for each booking and are only reserved for the booked period. Delays and shifts of the game start are therefore not possible. Each participant accepts the terms and conditions of Skurrilum. All games commence at the booked time. If the participants are unwilling to accept the game rules, the games cannot begin. A claim for reimbursement of the participation fee will be waived. Each participant is required to fully comply with the Laws of the Game. A breach of the rules leads to the immediate expulsion of the participant, or the game may be aborted. A claim for reimbursement of the participation fee does not exist in this case either. It is not permitted to bring food and drinks into the escape rooms or to consume food and drinks in the venue. Smoking is prohibited in all areas of the venue.
+### About Your Booking
 
-_Useful Information_
-The Skurrilum is suitable for players from 8-99 years ) Children and adolescents under the age of 14 must be accompanied by an adult. The prerequisite for participation in the Skurrilum is a booking via the online booking system or in some cases e-mail confirmation with info@skurrilum.de . The person booking the game must be at least 18 years old at the time of booking. Bookings are accepted on the condition that all participants are able to meet the physical and psychological requirements of the attraction. If visitors have medical problems, they should notify our staff before the game starts. The Skurrilum reserves the right to prohibit access to the premises without further explanation e.g. if visitors are under the influence of alcohol or drugs.
+{{< qa question="Can I bring more people than stated online?" >}}
+No, the maximum number of players per room (6 or 8 people) is fixed to ensure everyone has a great experience. If your group is larger, please book a second room.
+- **Guschi's Seedy Cellar:** max. 8 people
+- **Malvini's Legacy:** max. 8 people
+- **The Phantom Island:** max. 6 people
+- **The Wailing Woman:** max. 8 people
+- **The Zoo of Death:** max. 6 people
+{{< /qa >}}
 
-_The online booking is restricted to 6 players (8 players). Can we play with more players?_
-Unfortunately we cannot make exceptions to the maximum number of players for each game. If your group consists of more people than a game can accomodate, you will have to book a second game.
-Guschis Seedy Cellar: max 8 Persons
+{{< qa question="Can I add players to my booking later?" >}}
+Yes, as long as you don't exceed the maximum number of players. Additional players can pay on-site by card (preferred) or cash. Alternatively, email us at info@skurrilum.de, and we'll send you a payment link.
+{{< /qa >}}
 
-Malvinis Legacy: max 8 Persons
+{{< qa question="Can I cancel or reschedule my booking?" >}}
+No, all confirmed bookings are final and cannot be canceled or rescheduled. This also applies to bookings confirmed via email. Refunds for no-shows are not possible.
+{{< /qa >}}
 
-Phantom-island: max 6 Persons
+{{< qa question="Will strangers play with my group?" >}}
+No, the room you book is exclusively for your group.
+{{< /qa >}}
 
-Ernie Hudson Wailing Women: max 8 Persons
+### Before the Game
 
-Ernie Hudson Zoo of Death: max 6 Persons
-_I wish to add another player to my booking. Is this possible?_
-Yes, as long as the maximum number of players per room is not exceeded. We accept cash payment, but we prefer card payment. Alternatively, contact us at info@skurrilum.de and we will book it for you and you will receive a payment link.
+{{< qa question="What do I need to know before I arrive?" >}}
+Please be on time for your booked slot so we can give you a short briefing. As we are a live event and prepare the rooms for each group, delays or rescheduling are not possible.
+{{< /qa >}}
 
-_Is it possible to cancel my booking?_
-Cancellations or exchanges for already confirmed bookings are not possible. This also appliesfor bookings confirmed via e-mail. Should you play the game with less players than you booked, we can not offer refunds, Please make sure the minimum player count is reached before making a booking for a game.
+{{< qa question="Is there an age restriction?" >}}
+Our games are suitable for ages 14 to 99. The only exception is "Guschi's Seedy Cellar," which is for adults aged 18 and over.
+{{< /qa >}}
 
-_I want to take my kids with me. What should I take into account?_
-Judging from experience we recommend the escape rooms in the Skurrilum for families with children from 14 years onwards. Groups of children from 14 years onwards can even play our games without adult accompaniment. If your children are younger than 14 years of age, we recommend bringing at least one adult per game. Parents know their children best, and we trust your judgment on whether a scenario may be too scary for your children. We give our recommendation for a reason.
+{{< qa question="Can children play?" >}}
+We recommend our games for families with children aged 14 and up. From this age, teenagers can also play without adult supervision. Younger children should be accompanied by at least one adult. You know your children best and can judge if a theme might be too scary.
+{{< /qa >}}
 
-_Are the rooms suitable for all players?_
-The game “Malvinis Legacy” can be accessed free of restrictions. However, if you have any questions or concerns, please discuss them before the game with our staff so that we can make any necessary preparations. “The Phantom Island” & “Ghost Hunter Ernie Hudson” do have some restrictions and are not suitable for physically disabled persons. Most of our games are at least partially dark and athmospheric.
+{{< qa question="Are there any on-site rules?" >}}
+Yes. By booking, you accept our terms and conditions. Violating the rules may lead to exclusion from the game or its termination without a refund. Bringing food and drinks, as well as smoking, is not allowed anywhere on the premises.
+{{< /qa >}}
 
-_I am claustrophobic. Should I forget about wanting to play a game?_
-No. The Skurrilum venues have been created with usual space dimensions. Our guests are never really “locked up”. The front door to the game can also be used as an exit at any time, should a player feel uncomfortable.
+### During the Game
 
-_Is it scary in The Skurrilum?_
-Depending on the theme, it can get scary in the rooms. We work with light and sound effects, aswell as fog and as other state of the art stage props. In our pursuit of a rollercoaster experience we have included strobe effects to heighten the atmosphere in some of the rooms. Call us or send an email to info@skurrilum.de for more details.
+{{< qa question="How long does a game last?" >}}
+A game lasts about 60 minutes. Please plan around 80 minutes for your entire visit.
+{{< /qa >}}
 
-_What does it look like in The Skurrilum?_
-Each oft he rooms is carefully designed with an eye for detail and fun: whether you visit the Zoo of Death, Malvini’s magic chamber or the mystical Phantom Island – all the escape rooms are individually furnished and offers something for everyone
+{{< qa question="Is it scary inside the rooms?" >}}
+Depending on the theme, it can get spooky. We use light and sound effects, fog, and sometimes strobe lights to create an immersive atmosphere.
+{{< /qa >}}
 
-_How long does a game take?_
-A game at the Skurrilum lasts about 60 minutes. Groups should schedule about 80 minutes for their visit. This includes a briefing with your game master before the game. Please arrive no later than 15 minutes before the start time of your game.
+{{< qa question="I'm claustrophobic. Is that a problem?" >}}
+No. Our rooms are of normal size, and no one is ever truly locked in. The entrance door can be used as an exit at any time if someone feels uncomfortable.
+{{< /qa >}}
+
+{{< qa question="What do the rooms look like?" >}}
+Each room is an elaborately designed set with great attention to detail—from a jungle cave and a magic chamber to a neighborhood pub, there's something for everyone.
+{{< /qa >}}
+
+### Other Information
+
+{{< qa question="Are the rooms accessible?" >}}
+- **Limited accessibility:** "Malvini's Legacy" and "Guschi's Seedy Cellar."
+- **Not accessible:** "The Phantom Island" and the "Ghost Hunter Ernie Hudson" series. These are not suitable for individuals with physical disabilities.
+
+Please inform your game master of any medical conditions before the game begins. We reserve the right to refuse entry to anyone (e.g., under the influence of alcohol).
+{{< /qa >}}

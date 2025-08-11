@@ -1,4 +1,7 @@
 :root {
+  /* allows transition to auto state. this is a progressive enhancements */
+  interpolate-size: allow-keywords;
+
   --brand-color: #8b90ff;
   --base-color: #f2f4f8;
 
@@ -22,7 +25,6 @@
   --viewport-width: 100vw;
   --px-to-rem: 0.0625;
   --preferred-font-size: calc(0.5rem + 0.5vw);
-
 
   --medium: round(pow(var(--scale), 0), var(--px-to-rem));
   --xxx-large: round(pow(var(--scale), 4), var(--px-to-rem));

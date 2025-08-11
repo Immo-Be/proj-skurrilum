@@ -23,6 +23,11 @@
   }}
   <link rel="stylesheet" href="{{ $scrollingLinkCss.RelPermalink }}"
     integrity="{{ $scrollingLinkCss.Data.Integrity }}" />
+
+  {{ if eq .Title "FAQ" }}
+  {{ $faqCss := resources.Get "css/faq.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $faqCss.RelPermalink }}" integrity="{{ $faqCss.Data.Integrity }}" />
+  {{ end }}
 </head>
 
 <body>
