@@ -1,5 +1,6 @@
 ---
 title: 'FAQ'
+siteCSS: "faq.css"
 ---
 
 ### About Your Booking

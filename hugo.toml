@@ -17,7 +17,7 @@ weight = 1
   weight = 1
 [[languages.de.menu.main]]
   identifier = "menu_rooms"
-  url = "/rooms/"
+  url = "/raeume/"
   weight = 2
 [[languages.de.menu.main]]
   identifier = "menu_groups"
@@ -41,25 +41,25 @@ languageName = "English"
 weight = 2
 [[languages.en.menu.main]]
   identifier = "menu_home"
-  url = "/"
+  url = "/en/"
   weight = 1
 [[languages.en.menu.main]]
   identifier = "menu_rooms"
-  url = "/rooms/"
+  url = "/en/rooms/"
   weight = 2
 [[languages.en.menu.main]]
   identifier = "menu_groups"
-  url = "/groups-companies/"
+  url = "/en/groups-companies/"
   weight = 4
 [[languages.en.menu.main]]
   identifier = "menu_contact"
-  url = "/contact/"
+  url = "/en/contact/"
   weight = 5
 [[languages.en.menu.main]]
   identifier = "menu_faq"
-  url = "/fqa/"
+  url = "/en/faq/"
   weight = 5
 [[languages.en.menu.main]]
   identifier = "menu_makers"
-  url = "/the-makers/"
+  url = "/en/the-makers/"
   weight = 5

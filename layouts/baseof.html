@@ -5,36 +5,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ .Title }}</title>
-  {{ $variablesCss := resources.Get "css/variables.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $variablesCss.RelPermalink }}" integrity="{{ $variablesCss.Data.Integrity }}" />
-
-  {{ $css := resources.Get "css/global.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
-
-  {{ $mainCss := resources.Get "css/partials/main.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $mainCss.RelPermalink }}" integrity="{{ $mainCss.Data.Integrity }}" />
-
-  {{ $headerCss := resources.Get "css/partials/header.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $headerCss.RelPermalink }}" integrity="{{ $headerCss.Data.Integrity }}" />
-
-  {{ $heroCss := resources.Get "css/partials/hero.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $heroCss.RelPermalink }}" integrity="{{ $heroCss.Data.Integrity }}" />
-  {{ $scrollingLinkCss := resources.Get "css/partials/scrolling-link.css" | minify | fingerprint
+  {{ $styles := slice
+    (resources.Get "css/variables.css")
+    (resources.Get "css/global.css")
+    (resources.Get "css/partials/main.css")
+    (resources.Get "css/partials/header.css")
+    (resources.Get "css/partials/hero.css")
+    (resources.Get "css/partials/scrolling-link.css")
   }}
-  <link rel="stylesheet" href="{{ $scrollingLinkCss.RelPermalink }}"
-    integrity="{{ $scrollingLinkCss.Data.Integrity }}" />
 
-  {{ if eq .Title "FAQ" }}
-  {{ $faqCss := resources.Get "css/faq.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $faqCss.RelPermalink }}" integrity="{{ $faqCss.Data.Integrity }}" />
-  {{ end }}
+{{ with .Params.siteCSS }}
+  {{ $path := printf "css/%s" . }}
+  {{ $res := resources.Get $path | resources.Minify }}
+  <link rel="stylesheet" href="{{ $res.RelPermalink }}">
+{{ end }}
 
   {{ if .File }}
     {{ if or (eq .File.BaseFileName "the-makers") (eq .File.BaseFileName "die-macher") }}
-    {{ $makersCss := resources.Get "css/the-makers.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $makersCss.RelPermalink }}" integrity="{{ $makersCss.Data.Integrity }}" />
+      {{ $styles = $styles | append (resources.Get "css/the-makers.css") }}
     {{ end }}
   {{ end }}
+
+  {{ if eq .Page.Params.layout "contact" }}
+      {{ $styles = $styles | append (resources.Get "css/contact.css") }}
+  {{ end }}
+
+  {{ $css := $styles | resources.Concat "css/bundle.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
 </head>
 
 <body>

@@ -1,0 +1,57 @@
+.contact-container {
+  display: flex;
+  flex-wrap: wrap; /* allow wrapping to a new line */
+  gap: 2rem; /* optional spacing */
+
+  > * {
+    flex: 1 1 300px; /* grow, shrink, but don’t go smaller than 300px */
+    min-width: 300px; /* safeguard */
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  form[name='contact'] {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        margin-bottom: 0.5rem;
+      }
+
+      input,
+      textarea {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      button {
+        padding: 0.5rem 1rem;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 ---
 title: 'FAQ'
+siteCSS: "faq.css"
 ---
 
 ### Rund um die Buchung

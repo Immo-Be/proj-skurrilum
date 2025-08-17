@@ -27,6 +27,8 @@ headline = "Wähle dein Abenteuer"
 text = "Unsere Escape Rooms sind für 2-6 Personen ausgelegt und dauern 60 Minuten. Wählt euren Raum und bucht jetzt euer Abenteuer!"
 
 [contact_form]
+headline = "Schreib uns eine Nachricht"
+info = "Wir versuchen, dir so schnell wie möglich auf deine Anfrage zu Antworten. Bitte hab Verständnis, dass wir hier ggf. insbesondere am Wochenende einen kleinen Moment länger brauchen."
 name = "Name"
 email = "E-Mail"
 message = "Nachricht"
@@ -70,9 +72,28 @@ up = "hoch scrollen"
 
 [menu]
 rooms = "Unsere Räume"
-groups = "Gruppen & Firmen"
+groups = "Firmen"
 about_us = "Über uns"
 faq = "FAQ"
 contact = "Kontakt"
 home = "Startseite"
 makers = "Die Macher"
+
+[form_company]
+other = "Firmenname"
+[form_name]
+other = "Ansprechpartner"
+[form_email]
+other = "E-Mail-Adresse"
+[form_phone]
+other = "Telefonnummer"
+[form_period]
+other = "Spielzeitraum"
+[form_period-example]
+other = "z.B. 'KW 25' oder '28.05'"
+[form_persons]
+other = "Geschätzte Personenanzahl"
+[form_message]
+other = "Deine Nachricht"
+[form_submit]
+other = "Senden"
