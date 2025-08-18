@@ -1,8 +1,8 @@
 ---
 title: "Contact"
-layout: contact
+layout: general-contact
 siteCss: "contact.css"
-url: "/contact"
+url: "/en/contact"
 ---
 
 ## How can we help you?

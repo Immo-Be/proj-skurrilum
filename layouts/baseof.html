@@ -27,8 +27,9 @@
   {{ end }}
 
   {{ if eq .Page.Params.layout "contact" }}
-      {{ $styles = $styles | append (resources.Get "css/contact.css") }}
-  {{ end }}
+  {{ $contactCss := resources.Get "css/contact.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $contactCss.RelPermalink }}" integrity="{{ $contactCss.Data.Integrity }}">
+{{ end }}
 
   {{ $css := $styles | resources.Concat "css/bundle.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />

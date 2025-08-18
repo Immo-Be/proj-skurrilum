@@ -1,6 +1,6 @@
 ---
 title: "Kontakt"
-layout: contact
+layout: general-contact
 siteCss: "contact.css"
 url: "/kontakt"
 ---
