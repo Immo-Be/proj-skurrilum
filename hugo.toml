@@ -1,7 +1,6 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'Skurrilum'
-theme = ''
 
 defaultContentLanguage = "de"
 defaultContentLanguageInSubdir = false
