@@ -48,4 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
   //     dropdownMenu.classList.toggle('is-open');
   //   });
   // });
+
+  // initShop();
 });

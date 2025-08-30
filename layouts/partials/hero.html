@@ -1,9 +1,14 @@
 <section class="hero">
   <div class="overlay">
-    <h2>{{ i18n "header.headline" }}</h2>
+    <img src="/images/file(1).svg" alt="Skurrilum logo" /  >
+    {{ if eq .Site.Language.Lang "de" }}
+    <img src="/images/willkommen.svg" alt="Skurrilum logo" class="logo"/>
+    {{ else if eq .Site.Language.Lang "en" }}
+    <img src="/images/welcome.svg" alt="Skurrilum logo" class="logo"/>
+    {{ end }}
     <a href="shop" class="cta-link">{{ i18n "header.cta_to_rooms" }}</a>
   </div>
-  <video id="hero-video" autoplay loop muted playsinline controls>
+  <video id="hero-video" autoplay loop muted playsinline controls onended="this.play()">
     <!-- The video source will be set by JavaScript -->
   </video>
 </section>

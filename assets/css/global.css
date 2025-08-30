@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 200 900;
+  src: url('/fonts/nunito/Nunito-VariableFont_wght.ttf') format('truetype-variations');
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-style: italic;
+  font-weight: 200 900;
+  src: url('/fonts/nunito/Nunito-Italic-VariableFont_wght.ttf') format('truetype-variations');
+}
+
 /* CSS RESET */
 
 /* 1. Use a more-intuitive box-sizing model */
@@ -95,36 +109,11 @@ h6 {
   border: 0;
 }
 
-@font-face {
-  font-family: 'Bebas Neue';
-  src: url('/fonts/BebasNeue-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Noto Sans VF';
-  src: url('/fonts/NotoSans-VariableFont_wdth,wght.ttf') format('truetype');
-  font-weight: 100 900;
-  /* Adjust range as needed */
-  font-stretch: 50% 100%;
-  /* Width axis (e.g. 75% is condensed, 100% is normal) */
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Roboto VF';
-  src: url('/fonts/Roboto-VariableFont_wdth,wght.ttf') format('truetype');
-  font-weight: 100 900;
-  font-stretch: 50% 100%;
-  font-style: normal;
-}
-
 body {
+  font-family: var(--font-family);
   font-size: var(--font-size);
-  line-height: calc(var(--font-size) * 1.5);
+  line-height: 1.5;
 
-  font-family: 'Roboto VF';
   background: var(--base-color);
   color: var(--text-color);
 

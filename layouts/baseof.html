@@ -20,17 +20,6 @@
   <link rel="stylesheet" href="{{ $res.RelPermalink }}">
 {{ end }}
 
-  {{ if .File }}
-    {{ if or (eq .File.BaseFileName "the-makers") (eq .File.BaseFileName "die-macher") }}
-      {{ $styles = $styles | append (resources.Get "css/the-makers.css") }}
-    {{ end }}
-  {{ end }}
-
-  {{ if eq .Page.Params.layout "contact" }}
-  {{ $contactCss := resources.Get "css/contact.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $contactCss.RelPermalink }}" integrity="{{ $contactCss.Data.Integrity }}">
-{{ end }}
-
   {{ $css := $styles | resources.Concat "css/bundle.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
 </head>
@@ -44,6 +33,8 @@
   <script src="{{ $heroJs.RelPermalink }}" integrity="{{ $heroJs.Data.Integrity }}"></script>
   {{ $scrollingLinkJs := resources.Get "js/scrolling-link.js" | minify | fingerprint }}
   <script src="{{ $scrollingLinkJs.RelPermalink }}" integrity="{{ $scrollingLinkJs.Data.Integrity }}"></script>
+  {{ $initShopJs := resources.Get "js/init-shop.js" | minify | fingerprint }}
+  <script src="{{ $initShopJs.RelPermalink }}" integrity="{{ $initShopJs.Data.Integrity }}"></script>
 </body>
 
 </html>

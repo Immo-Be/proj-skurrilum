@@ -6,7 +6,7 @@
   --base-color: #f2f4f8;
 
   --surface-color: #fff;
-  --text-color: #191b23;
+  --text-color: #2a2d36;
 
   --secondary-text-color: #3c404f;
   --base-transparent-90: rgba(247, 247, 247, 0.9);
@@ -20,33 +20,12 @@
   /* Font sizes */
   --font-min: 1rem;
   --font-max: 1.5rem;
-  /* Reduced max font size for better scaling on larger screens */
-  --scale: calc((sqrt(5) + 1) / 2);
-  --viewport-width: 100vw;
-  --px-to-rem: 0.0625;
-  --preferred-font-size: calc(0.5rem + 0.5vw);
+  --page-margin-inline: clamp(1rem, calc(-2.299375rem + 10vw), 10rem);
 
-  --medium: round(pow(var(--scale), 0), var(--px-to-rem));
-  --xxx-large: round(pow(var(--scale), 4), var(--px-to-rem));
-  --font-size: clamp(var(--font-min), var(--preferred-font-size), var(--font-max));
+  --header-height: fit-content;
 
-  --cur-width: tan(atan2(100dvw, 1px));
-  --min-width: tan(atan2(25rem, 1px));
-  --max-width: tan(atan2(80rem, 1px));
-
-  --x: clamp(0, (var(--cur-width) - var(--min-width)) / (var(--max-width) - var(--min-width)), 1);
-
-  --ease-out-sine: sin((var(--x) * pi)/2);
-
-  --page-margin-inline: calc(
-    clamp(
-        min(var(--medium), var(--xxx-large)),
-        var(--medium) + var(--ease-out-sine) * (var(--xxx-large) - var(--medium)),
-        max(var(--medium), var(--xxx-large))
-      ) *
-      1rem
-  );
-  --header-height: 56px;
+  --font-family: "Nunito", sans-serif;
+  --color-accent-primary: #ff6f61;
 
   /* Adjusted formula for better size control */
   @media (prefers-color-scheme: dark) {

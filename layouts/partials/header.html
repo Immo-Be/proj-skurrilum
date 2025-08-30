@@ -13,26 +13,20 @@
 
   <nav class="main-nav" role="navigation">
     <ul id="main-menu" class="main-menu">
-      {{ range .Site.Menus.main }} {{ if eq .Identifier "menu_rooms" }}
-      <li class="has-dropdown">
-        <a href="{{ .URL }}" class="nav-link" aria-haspopup="true" aria-expanded="false"
-          >{{ T (printf "menu.%s" (replace .Identifier "menu_" "")) }}</a
-        >
-        <ul class="dropdown">
-          {{ range where site.RegularPages "Section" "rooms" }}
-          <li><a href="{{ .RelPermalink }}">{{ default .Title .Params.shortTitle }}</a></li>
-          {{ end }}
-        </ul>
-      </li>
-      {{ else }}
+      {{ range .Site.Menus.main }}
       <li>
-        <a href="{{ .URL }}" class="nav-link"
-          >{{ T (printf "menu.%s" (replace .Identifier "menu_" "")) }}</a
+        {{ $isActive := "" }}
+        {{ if eq $.Page.RelPermalink .URL }}
+          {{ $isActive = " active" }}
+        {{ end }}
+        <a href="{{ .URL }}" class="nav-link{{ $isActive }}"
+          >{{ .Name }}</a
         >
       </li>
-      {{ end }} {{ end }}
+      {{ end }}
       <!-- Language Switcher -->
-      <li class="lang-switcher has-lang-dropdown">
+    </ul>
+      <div class="lang-switcher has-lang-dropdown">
         <a href="#" class="current-lang-toggle">
           <img
             src="/images/flags/{{ .Site.Language.Lang }}.svg"
@@ -56,7 +50,6 @@
           </li>
           {{ end }} {{ end }} {{ end }}
         </ul>
-      </li>
-    </ul>
+      </div>
   </nav>
 </header>
