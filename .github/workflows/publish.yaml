@@ -1,4 +1,4 @@
-name: Build and Deploy Astro Project
+name: Build and Deploy Hugo Project
 
 on:
   push:
@@ -12,17 +12,18 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
         with:
-          node-version: '20'
+          submodules: true  # Fetch Hugo themes (true by default in actions/checkout@v2)
+          fetch-depth: 0    # Fetch all history for .GitInfo and lastmod
 
-      - name: Install dependencies
-        run: npm install
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.127.0' # Specify your Hugo version
+          extended: true
 
-      - name: Build the project
-        run: npm run build
+      - name: Build Hugo site
+        run: hugo --minify
 
       - name: Deploy to VPS
         env:
@@ -33,5 +34,5 @@ jobs:
         run: |
           echo "$SSH_PRIVATE_KEY" > private_key
           chmod 600 private_key
-          rsync -avz -e "ssh -i private_key -o StrictHostKeyChecking=no" ./dist/ $VPS_USER@$VPS_HOST:$VPS_DEPLOY_PATH
+          rsync -avz -e "ssh -i private_key -o StrictHostKeyChecking=no" ./public/ $VPS_USER@$VPS_HOST:$VPS_DEPLOY_PATH
           rm private_key
