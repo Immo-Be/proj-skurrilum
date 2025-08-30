@@ -1,0 +1,5 @@
+---
+title: "Privacy Policy"
+---
+
+This is the Privacy Policy page.

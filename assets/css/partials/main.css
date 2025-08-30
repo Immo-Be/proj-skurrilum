@@ -1,0 +1,6 @@
+main {
+  background-color: var(--base-color);
+  margin-inline: var(--page-margin-inline);
+
+  &.not-home {}
+}

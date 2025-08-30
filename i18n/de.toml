@@ -1,0 +1,99 @@
+[header]
+headline = "Willkommen im Skurrilum"
+cta_to_rooms = "Zu den Räumen"
+
+[footer]
+about_us_text = "Erlebe unsere interaktiven Escape Room Abenteuer in Hamburg - voller Rätsel, Spannung und Überraschungen für Freunde, Familien und Teamevents direkt auf der Reeperbahn am Spielbudenplatz"
+links_title = "Links"
+about_us = "Über uns"
+agb = "AGB"
+faq = "FAQ"
+contact = "Kontakt"
+contact_title = "Kontakt"
+opening_hours_title = "Öffnungszeiten"
+monday = "Mo"
+monday_hours = "geschlossen"
+tue_thu = "Di - Do"
+tue_thu_hours = "15:30 - 23:30 Uhr"
+fri_sun = "Fr - So"
+fri_sun_hours = "11:00 - 23:30 Uhr"
+imprint = "Impressum"
+privacy_policy = "Datenschutz"
+
+[rooms]
+button = "Alle Räume"
+title = "Unsere Räume"
+headline = "Wähle dein Abenteuer"
+text = "Unsere Escape Rooms sind für 2-6 Personen ausgelegt und dauern 60 Minuten. Wählt euren Raum und bucht jetzt euer Abenteuer!"
+
+[contact_form]
+headline = "Schreib uns eine Nachricht"
+info = "Wir versuchen, dir so schnell wie möglich auf deine Anfrage zu Antworten. Bitte hab Verständnis, dass wir hier ggf. insbesondere am Wochenende einen kleinen Moment länger brauchen."
+name = "Name"
+email = "E-Mail"
+message = "Nachricht"
+submit = "Senden"
+success = "Vielen Dank für deine Nachricht! Wir werden uns so schnell wie möglich bei dir melden."
+error = "Es gab einen Fehler beim Senden deiner Nachricht. Bitte versuche es später erneut."
+privacy = "Ich habe die Datenschutzerklärung gelesen und stimme ihr zu."
+
+[pages]
+
+  [pages.faq]
+  title = "Häufig gestellte Fragen"
+
+  [pages.imprint]
+  title = "Impressum"
+
+  [pages.privacy_policy]
+  title = "Datenschutzerklärung"
+
+  [pages.agb]
+  title = "Allgemeine Geschäftsbedingungen"
+
+  [pages.about_us]
+  title = "Über uns"
+  headline = "Das sind wir"
+  text = "Wir sind ein Team von kreativen Köpfen, die es sich zur Aufgabe gemacht haben, die besten Escape Rooms in Hamburg zu entwickeln. Unsere Räume sind mit viel Liebe zum Detail gestaltet und bieten ein unvergessliches Erlebnis für Jung und Alt."
+
+  [pages.404]
+  title = "404 - Seite nicht gefunden"
+  text = "Die von dir gesuchte Seite konnte nicht gefunden werden."
+  button = "Zur Startseite"
+
+[lang_switcher]
+title = "Sprache wechseln"
+de = "Deutsch"
+en = "Englisch"
+
+[scroll]
+down = "runter scrollen"
+up = "hoch scrollen"
+
+[menu]
+rooms = "Unsere Räume"
+groups = "Gruppen & Firmen"
+about_us = "Über uns"
+faq = "FAQ"
+contact = "Kontakt"
+home = "Startseite"
+makers = "Die Macher"
+
+[form_company]
+other = "Firmenname"
+[form_name]
+other = "Ansprechpartner"
+[form_email]
+other = "E-Mail-Adresse"
+[form_phone]
+other = "Telefonnummer"
+[form_period]
+other = "Spielzeitraum"
+[form_period-example]
+other = "z.B. 'KW 25' oder '28.05'"
+[form_persons]
+other = "Geschätzte Personenanzahl"
+[form_message]
+other = "Deine Nachricht"
+[form_submit]
+other = "Senden"

@@ -1,0 +1,77 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Skurrilum'
+theme = ''
+
+defaultContentLanguage = "de"
+defaultContentLanguageInSubdir = false
+
+[languages]
+
+[languages.de]
+languageName = "Deutsch"
+weight = 1
+[[languages.de.menu.main]]
+  identifier = "menu_home"
+  name = "Home"
+  url = "/"
+  weight = 1
+[[languages.de.menu.main]]
+  identifier = "menu_rooms"
+  name = "Räume"
+  url = "/raeume/"
+  weight = 2
+[[languages.de.menu.main]]
+  identifier = "menu_groups"
+  name = "Firmen"
+  url = "/firmen/"
+  weight = 3
+[[languages.de.menu.main]]
+  identifier = "menu_contact"
+  name = "Kontakt"
+  url = "/kontakt/"
+  weight = 4
+[[languages.de.menu.main]]
+  identifier = "menu_faq"
+  name = "FAQ"
+  url = "/faq/"
+  weight = 5
+[[languages.de.menu.main]]
+  identifier = "menu_makers"
+  name = "Die Macher"
+  url = "/die-macher/"
+  weight = 6
+
+[languages.en]
+languageName = "English"
+weight = 2
+[[languages.en.menu.main]]
+  identifier = "menu_home"
+  name = "Home"
+  url = "/en/"
+  weight = 1
+[[languages.en.menu.main]]
+  identifier = "menu_rooms"
+  name = "Rooms"
+  url = "/en/rooms/"
+  weight = 2
+[[languages.en.menu.main]]
+  identifier = "menu_groups"
+  name = "Companies"
+  url = "/en/groups-companies/"
+  weight = 3
+[[languages.en.menu.main]]
+  identifier = "menu_contact"
+  name = "Contact"
+  url = "/en/contact/"
+  weight = 4
+[[languages.en.menu.main]]
+  identifier = "menu_faq"
+  name = "FAQ"
+  url = "/en/faq/"
+  weight = 5
+[[languages.en.menu.main]]
+  identifier = "menu_makers"
+  name = "The Makers"
+  url = "/en/the-makers/"
+  weight = 6

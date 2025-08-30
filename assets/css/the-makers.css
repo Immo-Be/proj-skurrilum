@@ -1,0 +1,20 @@
+.maker {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.maker img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+  .maker {
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+  }
+}

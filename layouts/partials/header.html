@@ -1,0 +1,55 @@
+<header class="site-header">
+  {{ $logo := resources.Get "images/logo.png" }}
+  <div class="header-inner">
+    <a href="{{ .Site.Home.RelPermalink }}" class="logo">
+      <img src="/images/logo.svg" alt="Logo" style="width: 51px; height: 24px" />
+    </a>
+
+    <button class="menu-toggle" aria-controls="main-menu" aria-expanded="false">
+      <span class="sr-only">Toggle menu</span>
+      <span class="hamburger"></span>
+    </button>
+  </div>
+
+  <nav class="main-nav" role="navigation">
+    <ul id="main-menu" class="main-menu">
+      {{ range .Site.Menus.main }}
+      <li>
+        {{ $isActive := "" }}
+        {{ if eq $.Page.RelPermalink .URL }}
+          {{ $isActive = " active" }}
+        {{ end }}
+        <a href="{{ .URL }}" class="nav-link{{ $isActive }}"
+          >{{ .Name }}</a
+        >
+      </li>
+      {{ end }}
+      <!-- Language Switcher -->
+    </ul>
+      <div class="lang-switcher has-lang-dropdown">
+        <a href="#" class="current-lang-toggle">
+          <img
+            src="/images/flags/{{ .Site.Language.Lang }}.svg"
+            alt="{{ .Site.Language.LanguageName }} Flag"
+            class="flag-icon"
+          />
+          <span class="dropdown-arrow"></span>
+        </a>
+        <ul class="lang-dropdown">
+          {{ range .Site.Languages }} {{ if ne .Lang $.Site.Language.Lang }} {{ $targetLang := .Lang
+          }} {{ $translatedPage := "" }} {{ range $.Page.AllTranslations }} {{ if eq .Lang
+          $targetLang }}{{ $translatedPage = . }}{{ end }} {{ end }} {{ if $translatedPage }}
+          <li>
+            <a href="{{ $translatedPage.RelPermalink }}">
+              <img
+                src="/images/flags/{{ .Lang }}.svg"
+                alt="{{ .LanguageName }} Flag"
+                class="flag-icon"
+              />
+            </a>
+          </li>
+          {{ end }} {{ end }} {{ end }}
+        </ul>
+      </div>
+  </nav>
+</header>
