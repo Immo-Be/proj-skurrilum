@@ -14,7 +14,7 @@
   <nav class="main-nav" role="navigation">
     <ul id="main-menu" class="main-menu">
       {{ range .Site.Menus.main }}
-      <li>
+      <li{{ if .HasChildren }} class="has-dropdown"{{ end }}>
         {{ $isActive := "" }}
         {{ if eq $.Page.RelPermalink .URL }}
           {{ $isActive = " active" }}
@@ -22,6 +22,21 @@
         <a href="{{ .URL }}" class="nav-link{{ $isActive }}"
           >{{ .Name }}</a
         >
+        {{ if .HasChildren }}
+        <ul class="dropdown">
+          {{ range .Children }}
+          <li>
+            {{ $childIsActive := "" }}
+            {{ if eq $.Page.RelPermalink .URL }}
+              {{ $childIsActive = " active" }}
+            {{ end }}
+            <a href="{{ .URL }}" class="nav-link{{ $childIsActive }}"
+              >{{ .Name }}</a
+            >
+          </li>
+          {{ end }}
+        </ul>
+        {{ end }}
       </li>
       {{ end }}
       <!-- Language Switcher -->

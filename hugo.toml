@@ -18,8 +18,37 @@ weight = 1
 [[languages.de.menu.main]]
   identifier = "menu_rooms"
   name = "Räume"
-  url = "/raeume/"
   weight = 2
+[[languages.de.menu.main]]
+  identifier = "der-zoo-des-todes-de"
+  name = "Der Zoo Des Todes"
+  url = "/raeume/der-zoo-des-todes/"
+  parent = "menu_rooms"
+  weight = 1
+[[languages.de.menu.main]]
+  identifier = "die-phantominsel-de"
+  name = "Die Phantominsel"
+  url = "/raeume/die-phantominsel/"
+  parent = "menu_rooms"
+  weight = 2
+[[languages.de.menu.main]]
+  identifier = "die-weinende-frau-de"
+  name = "Die Weinende Frau"
+  url = "/raeume/die-weinende-frau/"
+  parent = "menu_rooms"
+  weight = 3
+[[languages.de.menu.main]]
+  identifier = "guschis-geile-grotte-de"
+  name = "Guschis Geile Grotte"
+  url = "/raeume/guschis-geile-grotte/"
+  parent = "menu_rooms"
+  weight = 4
+[[languages.de.menu.main]]
+  identifier = "malvinis-vermaechtnis-de"
+  name = "Malvinis Vermaechtnis"
+  url = "/raeume/malvinis-vermaechtnis/"
+  parent = "menu_rooms"
+  weight = 5
 [[languages.de.menu.main]]
   identifier = "menu_groups"
   name = "Firmen"
@@ -52,8 +81,37 @@ weight = 2
 [[languages.en.menu.main]]
   identifier = "menu_rooms"
   name = "Rooms"
-  url = "/en/rooms/"
   weight = 2
+[[languages.en.menu.main]]
+  identifier = "der-zoo-des-todes-en"
+  name = "The Zoo Of Death"
+  url = "/en/rooms/der-zoo-des-todes/"
+  parent = "menu_rooms"
+  weight = 1
+[[languages.en.menu.main]]
+  identifier = "die-phantominsel-en"
+  name = "The Phantom Island"
+  url = "/en/rooms/die-phantominsel/"
+  parent = "menu_rooms"
+  weight = 2
+[[languages.en.menu.main]]
+  identifier = "die-weinende-frau-en"
+  name = "The Weeping Woman"
+  url = "/en/rooms/die-weinende-frau/"
+  parent = "menu_rooms"
+  weight = 3
+[[languages.en.menu.main]]
+  identifier = "guschis-geile-grotte-en"
+  name = "Guschi's Seedy Cellar"
+  url = "/en/rooms/guschis-geile-grotte/"
+  parent = "menu_rooms"
+  weight = 4
+[[languages.en.menu.main]]
+  identifier = "malvinis-vermaechtnis-en"
+  name = "Malvini's Legacy"
+  url = "/en/rooms/malvinis-vermaechtnis/"
+  parent = "menu_rooms"
+  weight = 5
 [[languages.en.menu.main]]
   identifier = "menu_groups"
   name = "Companies"

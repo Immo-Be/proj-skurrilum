@@ -1,6 +1,6 @@
 .cta-link {
   background-color: #fff;
-  color: #000;
+  color: var(--text-color);
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;

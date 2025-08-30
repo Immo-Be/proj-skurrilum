@@ -25,7 +25,7 @@
   --header-height: fit-content;
 
   --font-family: "Nunito", sans-serif;
-  --color-accent-primary: #ff6f61;
+  --color-accent-primary: rgb(166, 200, 182);
 
   /* Adjusted formula for better size control */
   @media (prefers-color-scheme: dark) {
