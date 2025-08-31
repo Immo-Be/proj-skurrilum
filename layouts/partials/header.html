@@ -16,14 +16,28 @@
       {{ $currentPage := . }}
       {{ range .Site.Menus.main }}
         <li{{ if .HasChildren }} class="has-dropdown"{{ end }}>
-          <a href="{{ if .Page }}{{ .Page.RelPermalink }}{{ else }}{{ .URL | default "#" }}{{ end }}" class="nav-link{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">
+          {{ $isActive := "" }}
+          {{ if .Page }}
+            {{ if eq $currentPage.RelPermalink .Page.RelPermalink }}
+              {{ $isActive = " active" }}
+            {{ end }}
+          {{ else if eq $currentPage.RelPermalink .URL }}
+            {{ $isActive = " active" }}
+          {{ end }}
+          <a href="{{ if .Page }}{{ .Page.RelPermalink }}{{ else }}{{ .URL | default "#" }}{{ end }}" class="nav-link{{ $isActive }}">
             {{ .Name }}
           </a>
           {{ if .HasChildren }}
             <ul class="dropdown">
               {{ range .Children }}
                 <li>
-                  <a href="{{ if .Page }}{{ .Page.RelPermalink }}{{ else }}{{ .URL | default "#" }}{{ end }}" class="nav-link{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">
+                  {{ $isChildActive := "" }}
+                  {{ if .Page }}
+                    {{ if eq $currentPage.RelPermalink .Page.RelPermalink }}
+                      {{ $isChildActive = " active" }}
+                    {{ end }}
+                  {{ end }}
+                  <a href="{{ if .Page }}{{ .Page.RelPermalink }}{{ else }}{{ .URL | default "#" }}{{ end }}" class="nav-link{{ $isChildActive }}">
                     {{ .Name }}
                   </a>
                 </li>
