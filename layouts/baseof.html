@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ .Title }}</title>
+    <meta name="view-transition" content="same-origin" />
     <link rel="icon" href="/images/favicon.png" sizes="any" />
     <!-- add favicon for all sizes -->
     <!-- <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" /> -->
@@ -17,11 +18,17 @@
     <link rel="stylesheet" href="{{ $res.RelPermalink }}" />
     {{ end }} {{ $css := $styles | resources.Concat "css/bundle.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
+    {{ $viewTransitionEventsJs := resources.Get "js/view-transition-events.js" | minify | fingerprint }}
+    <script
+      src="{{ $viewTransitionEventsJs.RelPermalink }}"
+      integrity="{{ $viewTransitionEventsJs.Data.Integrity }}"
+      blocking="render"
+    ></script>
   </head>
 
   <body>
     {{ partial "header.html" . }}
-    <main class="{{ if not .IsHome }}not-home{{ end }}">{{ block "main" . }}{{ end }}</main>
+    <main class="{{ if not .IsHome }}not-home{{ end }}" style="view-transition-name: content;">{{ block "main" . }}{{ end }}</main>
     {{ partial "footer.html" . }} {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
     <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
     {{ $heroJs := resources.Get "js/hero-video.js" | minify | fingerprint }}
@@ -36,5 +43,5 @@
       src="{{ $initShopJs.RelPermalink }}"
       integrity="{{ $initShopJs.Data.Integrity }}"
     ></script>
-  </body>
+    </body>
 </html>

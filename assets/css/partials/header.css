@@ -1,5 +1,6 @@
 /* Header */
 .site-header {
+  view-transition-name: header;
   z-index: 1001;
   padding-block: 1rem;
   padding-inline: var(--page-margin-inline);

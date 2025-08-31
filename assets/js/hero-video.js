@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+function initHeroVideo() {
   const heroVideo = document.getElementById('hero-video');
 
   if (heroVideo) {
@@ -21,9 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       heroVideo.src = `/videos/${videoSource}`;
+      heroVideo.load(); // Ensure the new source is loaded
+      heroVideo.play(); // Start playing the video
     }
 
     setVideoSource();
     window.addEventListener('resize', setVideoSource);
   }
-});
+}
+
+document.addEventListener('DOMContentLoaded', initHeroVideo);
