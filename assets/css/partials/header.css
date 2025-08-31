@@ -7,8 +7,8 @@
   height: var(--header-height);
   background-color: transparent;
   font-size: 1.15rem;
-  letter-spacing: 0.05em;
-  font-weight: 700;
+  letter-spacing: var(--header-letter-spacing);
+  font-weight: var(--header-font-weight);
   line-height: 1.5;
   position: fixed;
   width: 100%;
@@ -66,12 +66,13 @@
 
   /* Navigation */
   .main-nav {
-    --main-nav-width: 66vw;
+    --main-nav-width: min(300px, 80vw);
     white-space: nowrap;
     width: var(--main-nav-width);
     display: none;
     align-items: center;
     height: 100dvh;
+    margin-top: -40px;
     /* height: calc(100vh - var(--header-height)); */
     /* height: calc(100dvh - var(--header-height)); */
     background-color: var(--base-color);
@@ -82,7 +83,6 @@
     justify-content: end;
 
     &.is-open {
-      margin-top: -40px;
       display: block;
       translate: calc(100vw - var(--main-nav-width)) 0;
 
@@ -116,16 +116,16 @@
       }
 
       @media (max-width: 768px) {
+        text-align: center;
         margin-top: calc(var(--header-height) * -1);
-        padding-top: 2rem;
-        padding-block: 40px;
+        padding-top: 40px;
         display: block;
         flex-direction: row;
         background: none;
+        color: var(--text-color);
 
-        li {
-          text-align: center;
-          margin: 0;
+        > li {
+          margin: 1.5rem 0;
         }
       }
       a {
@@ -166,7 +166,6 @@
     .dropdown {
       list-style: none;
       margin: 0;
-      background-color: var(--base-color);
       position: relative;
       top: 100%;
       left: 0;
@@ -181,18 +180,22 @@
 
       @media (min-width: 769px) {
         position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        background-color: var(--base-transparent-90);
+        padding: 1rem;
       }
 
       li {
         margin: 0;
 
-        &:hover {
-          background-color: var(--secondary-text-color);
-        }
+        /* &:hover { */
+        /*   background-color: var(--secondary-text-color); */
+        /* } */
       }
 
       a {
-        padding: 8px 20px;
         display: block;
         white-space: nowrap;
         color: var(--text-color);
@@ -205,6 +208,7 @@
 
     @media (max-width: 768px) {
       .dropdown {
+        margin-top: 0.5rem;
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
@@ -230,6 +234,8 @@
     position: relative;
     margin-top: 1rem;
     align-self: right;
+    width: fit-content;
+    margin-inline: auto;
 
     .current-lang-toggle {
       display: flex;
@@ -286,9 +292,9 @@
           clip-path: circle(10px);
         }
 
-        &:hover {
-          background-color: var(--Google-Light-Grey-100);
-        }
+        /* &:hover { */
+        /*   background-color: var(--Google-Light-Grey-100); */
+        /* } */
       }
     }
 

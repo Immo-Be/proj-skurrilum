@@ -1,4 +1,6 @@
 .cta-link {
+  letter-spacing: var(--header-letter-spacing);
+  font-weight: var(--header-font-weight);
   background-color: #fff;
   color: var(--text-color);
   padding: 10px 20px;

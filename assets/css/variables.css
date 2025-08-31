@@ -1,4 +1,8 @@
 :root {
+  /* header / hero */
+  --header-letter-spacing: 0.05em;
+  --header-font-weight: 700;
+
   /* allows transition to auto state. this is a progressive enhancements */
   interpolate-size: allow-keywords;
 
@@ -24,7 +28,7 @@
 
   --header-height: fit-content;
 
-  --font-family: "Nunito", sans-serif;
+  --font-family: 'Nunito', sans-serif;
   --color-accent-primary: rgb(166, 200, 182);
 
   /* Adjusted formula for better size control */

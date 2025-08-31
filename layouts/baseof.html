@@ -1,40 +1,40 @@
 <!doctype html>
 <html lang="{{ .Site.Language.Lang }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ .Title }}</title>
+    <link rel="icon" href="/images/favicon.png" sizes="any" />
+    <!-- add favicon for all sizes -->
+    <!-- <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" /> -->
+    <!-- <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" /> -->
+    <!-- <link rel="manifest" href="/images/site.webmanifest" /> -->
+    {{ $styles := slice (resources.Get "css/variables.css") (resources.Get "css/global.css")
+    (resources.Get "css/partials/main.css") (resources.Get "css/partials/header.css") (resources.Get
+    "css/partials/hero.css") (resources.Get "css/partials/scrolling-link.css") }} {{ with
+    .Params.siteCSS }} {{ $path := printf "css/%s" . }} {{ $res := resources.Get $path |
+    resources.Minify }}
+    <link rel="stylesheet" href="{{ $res.RelPermalink }}" />
+    {{ end }} {{ $css := $styles | resources.Concat "css/bundle.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ .Title }}</title>
-  {{ $styles := slice
-    (resources.Get "css/variables.css")
-    (resources.Get "css/global.css")
-    (resources.Get "css/partials/main.css")
-    (resources.Get "css/partials/header.css")
-    (resources.Get "css/partials/hero.css")
-    (resources.Get "css/partials/scrolling-link.css")
-  }}
-
-{{ with .Params.siteCSS }}
-  {{ $path := printf "css/%s" . }}
-  {{ $res := resources.Get $path | resources.Minify }}
-  <link rel="stylesheet" href="{{ $res.RelPermalink }}">
-{{ end }}
-
-  {{ $css := $styles | resources.Concat "css/bundle.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
-</head>
-
-<body>
-  {{ partial "header.html" . }}
-  <main class="{{ if not .IsHome }}not-home{{ end }}">{{ block "main" . }}{{ end }}</main>
-  {{ partial "footer.html" . }} {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
-  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
-  {{ $heroJs := resources.Get "js/hero-video.js" | minify | fingerprint }}
-  <script src="{{ $heroJs.RelPermalink }}" integrity="{{ $heroJs.Data.Integrity }}"></script>
-  {{ $scrollingLinkJs := resources.Get "js/scrolling-link.js" | minify | fingerprint }}
-  <script src="{{ $scrollingLinkJs.RelPermalink }}" integrity="{{ $scrollingLinkJs.Data.Integrity }}"></script>
-  {{ $initShopJs := resources.Get "js/init-shop.js" | minify | fingerprint }}
-  <script src="{{ $initShopJs.RelPermalink }}" integrity="{{ $initShopJs.Data.Integrity }}"></script>
-</body>
-
+  <body>
+    {{ partial "header.html" . }}
+    <main class="{{ if not .IsHome }}not-home{{ end }}">{{ block "main" . }}{{ end }}</main>
+    {{ partial "footer.html" . }} {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
+    <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+    {{ $heroJs := resources.Get "js/hero-video.js" | minify | fingerprint }}
+    <script src="{{ $heroJs.RelPermalink }}" integrity="{{ $heroJs.Data.Integrity }}"></script>
+    {{ $scrollingLinkJs := resources.Get "js/scrolling-link.js" | minify | fingerprint }}
+    <script
+      src="{{ $scrollingLinkJs.RelPermalink }}"
+      integrity="{{ $scrollingLinkJs.Data.Integrity }}"
+    ></script>
+    {{ $initShopJs := resources.Get "js/init-shop.js" | minify | fingerprint }}
+    <script
+      src="{{ $initShopJs.RelPermalink }}"
+      integrity="{{ $initShopJs.Data.Integrity }}"
+    ></script>
+  </body>
 </html>
