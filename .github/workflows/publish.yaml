@@ -39,7 +39,7 @@ jobs:
       - name: Build the site
         env:
           HUGO_ENV: production
-        run: hugo --minify --gc
+        run: hugo --minify --gc --cleanDestinationDir
 
       # Deploy to VPS with rsync
       - name: Deploy to VPS
