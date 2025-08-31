@@ -13,33 +13,25 @@
 
   <nav class="main-nav" role="navigation">
     <ul id="main-menu" class="main-menu">
+      {{ $currentPage := . }}
       {{ range .Site.Menus.main }}
-      <li{{ if .HasChildren }} class="has-dropdown"{{ end }}>
-        {{ $isActive := "" }}
-        {{ if eq $.Page.RelPermalink .URL }}
-          {{ $isActive = " active" }}
-        {{ end }}
-        <a href="{{ .URL }}" class="nav-link{{ $isActive }}"
-          >{{ .Name }}</a
-        >
-        {{ if .HasChildren }}
-        <ul class="dropdown">
-          {{ range .Children }}
-          <li>
-            {{ $childIsActive := "" }}
-            {{ if eq $.Page.RelPermalink .URL }}
-              {{ $childIsActive = " active" }}
-            {{ end }}
-            <a href="{{ .URL }}" class="nav-link{{ $childIsActive }}"
-              >{{ .Name }}</a
-            >
-          </li>
+        <li{{ if .HasChildren }} class="has-dropdown"{{ end }}>
+          <a href="{{ if .Page }}{{ .Page.RelPermalink }}{{ else }}{{ .URL | default "#" }}{{ end }}" class="nav-link{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">
+            {{ .Name }}
+          </a>
+          {{ if .HasChildren }}
+            <ul class="dropdown">
+              {{ range .Children }}
+                <li>
+                  <a href="{{ if .Page }}{{ .Page.RelPermalink }}{{ else }}{{ .URL | default "#" }}{{ end }}" class="nav-link{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">
+                    {{ .Name }}
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
           {{ end }}
-        </ul>
-        {{ end }}
-      </li>
+        </li>
       {{ end }}
-      <!-- Language Switcher -->
     </ul>
       <div class="lang-switcher has-lang-dropdown">
         <a href="#" class="current-lang-toggle">
