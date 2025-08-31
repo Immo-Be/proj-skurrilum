@@ -1,3 +1,4 @@
+
 name: Build and Deploy Hugo Project
 
 on:
@@ -5,34 +6,50 @@ on:
     branches:
       - main
 
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
-          submodules: true  # Fetch Hugo themes (true by default in actions/checkout@v2)
-          fetch-depth: 0    # Fetch all history for .GitInfo and lastmod
+          submodules: recursive   # for theme submodules
+          fetch-depth: 0
 
-      - name: Setup Hugo
+      # Install Hugo (extended) — latest stable
+      - name: Set up Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.127.0' # Specify your Hugo version
+          hugo-version: 'latest'
           extended: true
 
-      - name: Build Hugo site
-        run: hugo --minify
+      # If using Hugo Modules, ensure Go is available
+      - name: Set up Go (for Hugo Modules)
+        if: hashFiles('**/go.mod') != ''
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
 
+      # Build Hugo site -> ./public
+      - name: Build the site
+        env:
+          HUGO_ENV: production
+        run: hugo --minify --gc
+
+      # Deploy to VPS with rsync
       - name: Deploy to VPS
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          VPS_USER: ${{ secrets.SSH_USER }} # Change this to your VPS username
-          VPS_HOST: ${{ secrets.SSH_HOST }} # Change this to your VPS IP or domain
-          VPS_DEPLOY_PATH: ${{ secrets.WORK_DIR }} # Change this to the path where you want to deploy on your VPS
+          VPS_USER: ${{ secrets.SSH_USER }}
+          VPS_HOST: ${{ secrets.SSH_HOST }}
+          VPS_DEPLOY_PATH: ${{ secrets.WORK_DIR }}
         run: |
           echo "$SSH_PRIVATE_KEY" > private_key
           chmod 600 private_key
-          rsync -avz --delete --checksum -e "ssh -i private_key -o StrictHostKeyChecking=no" ./public/ $VPS_USER@$VPS_HOST:$VPS_DEPLOY_PATH
-          rm private_key
+          rsync -az --delete -e "ssh -i private_key -o StrictHostKeyChecking=no" ./public/ "$VPS_USER@$VPS_HOST:$VPS_DEPLOY_PATH"
+          rm -f private_key
