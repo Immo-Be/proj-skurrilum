@@ -34,5 +34,5 @@ jobs:
         run: |
           echo "$SSH_PRIVATE_KEY" > private_key
           chmod 600 private_key
-          rsync -avz -e "ssh -i private_key -o StrictHostKeyChecking=no" ./public/ $VPS_USER@$VPS_HOST:$VPS_DEPLOY_PATH
+          rsync -avz --delete -e "ssh -i private_key -o StrictHostKeyChecking=no" ./public/ $VPS_USER@$VPS_HOST:$VPS_DEPLOY_PATH
           rm private_key
