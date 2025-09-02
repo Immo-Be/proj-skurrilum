@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Original menu logic
   const menuToggle = document.querySelector('.menu-toggle');
   const mainNav = document.querySelector('.main-nav');
-  const dropdowns = document.querySelectorAll('.has-dropdown > a');
+  const langSwitcher = document.querySelector('.lang-switcher.has-lang-dropdown');
 
   if (menuToggle && mainNav) {
     menuToggle.addEventListener('click', function() {
@@ -12,19 +12,32 @@ document.addEventListener('DOMContentLoaded', function() {
       mainNav.classList.toggle('is-open');
       document.body.classList.toggle('no-scroll'); // Prevent scrolling when menu is open
     });
+  }
 
-    document.addEventListener('click', function(event) {
-      if (
-        !mainNav.contains(event.target) &&
-        !menuToggle.contains(event.target)
-      ) {
-        menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.classList.remove('is-active'); // Remove active class from the button
-        mainNav.classList.remove('is-open');
-        document.body.classList.remove('no-scroll'); // Allow scrolling again
-      }
+  // Language switcher logic for touch devices
+  if (langSwitcher) {
+    const langToggle = langSwitcher.querySelector('.current-lang-toggle');
+    langToggle.addEventListener('click', function(event) {
+      event.preventDefault();
+      langSwitcher.classList.toggle('is-open');
     });
   }
+
+  // Close menus when clicking outside
+  document.addEventListener('click', function(event) {
+    // Close main nav
+    if (mainNav && menuToggle && mainNav.classList.contains('is-open') && !mainNav.contains(event.target) && !menuToggle.contains(event.target)) {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.classList.remove('is-active');
+      mainNav.classList.remove('is-open');
+      document.body.classList.remove('no-scroll');
+    }
+
+    // Close lang switcher
+    if (langSwitcher && langSwitcher.classList.contains('is-open') && !langSwitcher.contains(event.target)) {
+      langSwitcher.classList.remove('is-open');
+    }
+  });
 
   // Solid-on-scroll header logic
   const siteHeader = document.querySelector('.site-header');
