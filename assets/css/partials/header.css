@@ -19,6 +19,7 @@
     color: var(--text-color);
     background-color: var(--base-transparent-90);
     backdrop-filter: blur(16px);
+    will-change: transform;
 
     .hamburger,
     .hamburger::before,
@@ -74,7 +75,7 @@
     height: 100dvh;
     background-color: var(--base-color);
     transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-out;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,7 +115,7 @@
 
       @media (max-width: 768px) {
         padding: 0;
-        text-align: center;
+        text-align: left;
         margin-top: calc(var(--header-height) * -1);
         display: block;
         flex-direction: row;
@@ -188,6 +189,12 @@
         opacity 0.3s ease,
         transform 0.3s ease,
         visibility 0.3s;
+
+      @media (max-width: 769px) {
+        padding-left: 1rem;
+        border-left: 2px solid var(--color-accent-primary-20);
+        border-radius: 0;
+      }
 
       @media (min-width: 769px) {
         position: absolute;

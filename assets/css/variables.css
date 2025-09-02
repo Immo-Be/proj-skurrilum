@@ -2,7 +2,6 @@
   /* header / hero */
   --header-letter-spacing: 0.05em;
   --header-font-weight: 700;
-
   /* allows transition to auto state. this is a progressive enhancements */
   interpolate-size: allow-keywords;
 
@@ -30,6 +29,7 @@
 
   --font-family: 'Nunito', sans-serif;
   --color-accent-primary: rgb(166, 200, 182);
+  --color-accent-primary-20: rgb(166, 200, 182, 0.2);
 
   /* Adjusted formula for better size control */
   @media (prefers-color-scheme: dark) {

@@ -17,7 +17,7 @@ weight = 1
   weight = 1
 [[languages.de.menu.main]]
   identifier = "menu_rooms"
-  name = "Räume"
+  name = "Unsere Räume"
   weight = 2
 [[languages.de.menu.main]]
   identifier = "der-zoo-des-todes-de"
@@ -80,7 +80,7 @@ weight = 2
   weight = 1
 [[languages.en.menu.main]]
   identifier = "menu_rooms"
-  name = "Rooms"
+  name = "Our rooms"
   weight = 2
 [[languages.en.menu.main]]
   identifier = "der-zoo-des-todes-en"

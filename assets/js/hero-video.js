@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
   const heroVideo = document.getElementById('hero-video');
 
+  // Fix safari compression later 
   if (heroVideo) {
     const videos = {
-      small: 'webtrailer_lowq.webm',
+      small: 'webtrailer_midq.webm',
       medium: 'webtrailer_midq.webm',
       large: 'webtrailer.webm',
     };
