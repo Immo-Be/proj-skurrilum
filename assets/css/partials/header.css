@@ -1,7 +1,7 @@
 /* Header */
 .site-header {
   z-index: 1001;
-  padding-block: 1rem;
+  padding-block: 1.25rem;
   padding-inline: var(--page-margin-inline);
   /* padding-inline: var(--spacing-regular); */
   height: var(--header-height);
@@ -19,7 +19,7 @@
   &.scrolled {
     color: var(--text-color);
     background-color: var(--base-transparent-90);
-    backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: blur(16px);
 
     .hamburger,
     .hamburger::before,

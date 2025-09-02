@@ -6,7 +6,10 @@
     {{ else if eq .Site.Language.Lang "en" }}
     <img src="/images/welcome.svg" alt="Skurrilum logo" class="logo"/>
     {{ end }}
-    <a href="shop" class="cta-link">{{ i18n "header.cta_to_rooms" }}</a>
+    <div class="cta-buttons">
+      <a href="shop" class="cta-link">{{ i18n "header.cta_book" }}</a>
+      <a href="shop" >{{ i18n "header.cta_learn_more" }}</a>
+    </div>
   </div>
   <video id="hero-video" autoplay loop muted >
     <!-- The video source will be set by JavaScript -->

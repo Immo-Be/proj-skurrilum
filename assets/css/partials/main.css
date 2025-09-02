@@ -2,5 +2,8 @@ main {
   background-color: var(--base-color);
   margin-inline: var(--page-margin-inline);
 
+  .general-description-container {
+    margin-block: 4rem;
+  }
   &.not-home {}
 }
