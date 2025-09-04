@@ -1,30 +1,41 @@
 document.addEventListener('DOMContentLoaded', function() {
   const heroVideo = document.getElementById('hero-video');
 
-  // Fix safari compression later 
   if (heroVideo) {
     const videos = {
-      small: 'webtrailer_midq.webm',
+      small: 'video_portrait_864x1536_hevc_480k_2pass.mp4',
       medium: 'webtrailer_midq.webm',
       large: 'webtrailer.webm',
     };
 
+    let lastWidth = 0;
+
     function setVideoSource() {
       const screenWidth = window.innerWidth;
-      let videoSource;
+      if (screenWidth === lastWidth) {
+        return; // Do nothing if width hasn't changed
+      }
+      lastWidth = screenWidth;
 
+      let newSource;
       if (screenWidth < 768) {
-        videoSource = videos.small;
+        newSource = videos.small;
       } else if (screenWidth < 1200) {
-        videoSource = videos.medium;
+        newSource = videos.medium;
       } else {
-        videoSource = videos.large;
+        newSource = videos.large;
       }
 
-      heroVideo.src = `/videos/${videoSource}`;
+      const currentSource = heroVideo.src.split('/').pop();
+      if (newSource !== currentSource) {
+        heroVideo.src = `/videos/${newSource}`;
+      }
     }
 
+    // Set the initial video source
     setVideoSource();
+
+    // Add the event listener for resize
     window.addEventListener('resize', setVideoSource);
   }
 });

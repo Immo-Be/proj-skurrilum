@@ -21,10 +21,8 @@
     backdrop-filter: blur(16px);
     will-change: transform;
 
-    .hamburger,
-    .hamburger::before,
-    .hamburger::after {
-      background-color: var(--text-color) !important;
+    .hamburger-icon {
+      stroke: var(--text-color) !important;
     }
 
     :is(.dropdown-arrow) {
@@ -57,10 +55,8 @@
     align-items: center;
     height: 100%;
 
-    &:has(~ .is-open) .hamburger,
-    &:has(~ .is-open) .hamburger::before,
-    &:has(~ .is-open) .hamburger::after {
-      background-color: var(--text-color) !important;
+    &:has(~ .is-open) .hamburger-icon {
+      stroke: var(--text-color) !important;
     }
   }
 
@@ -348,44 +344,31 @@
     cursor: pointer;
     position: relative;
 
-    .hamburger,
-    .hamburger::before,
-    .hamburger::after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 2px;
-      background-color: white;
+    .hamburger-icon,
+    .close-icon {
+      width: 2rem;
+      height: 1.5rem;
+      stroke: white;
       position: absolute;
-      transition: all 0.3s ease-in-out;
+      top: 0;
+      left: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
-    .hamburger {
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .hamburger::before {
-      top: -8px;
-    }
-
-    .hamburger::after {
-      top: 8px;
+    .close-icon {
+      opacity: 0;
+      transform: rotate(-90deg);
     }
 
     &.is-active {
-      .hamburger {
-        transform: rotate(45deg);
+      .hamburger-icon {
+        opacity: 0;
+        transform: rotate(90deg);
+      }
 
-        &::before {
-          top: 0;
-          opacity: 0;
-        }
-
-        &::after {
-          top: 0;
-          transform: rotate(90deg);
-        }
+      .close-icon {
+        opacity: 1;
+        transform: rotate(0);
       }
     }
 

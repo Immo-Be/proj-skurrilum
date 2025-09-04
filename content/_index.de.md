@@ -1,11 +1,19 @@
 ---
-title: "Skurrilum – Escape Room Hamburg"
+title: 'Skurrilum – Escape Room Hamburg'
 general:
-  descriptionShort: "Der Escape Room in Hamburg"
+  adventure: 'Dein nächstes Abenteuer wartet schon'
+  descriptionShort: 'Der Escape Room in Hamburg'
   description: >
-    Das Skurrilum ist ein preisgekrönter Escape Room in Hamburg, der von den kreativen Köpfen des Hamburger Schmidt Theaters betrieben wird. Mitten auf der Reeperbahn warten fünf einzigartige und spannende Escape Rooms auf Detektive, Schnitzeljäger und Denksportler jeden Alters. Im Gegensatz zu anderen Escape Rooms in Hamburg gibt es bei uns keinen Countdown, keine Uhr – und somit auch keine Verlierer. Unsere Philosophie sind gute Geschichten verpackt in magische Räume und knifflige Rätsel. Und dabei soll der Spaß natürlich an erster Stelle stehen. Nur mit guter Intuition, Kommunikation und Köpfchen werden eure Teams die spannenden Escape Room im Skurrilum Hamburg lösen. Stellt ihr euch dieser Herausforderung? Dann erwartet euch im Skurrilum, dem Escape Room in Hamburg, ein unvergessliches Abenteuer voll Spannung, Spaß und Rätseln.
-bookingCalender: "Buchungskalender"
-coupon: "Gutschein"
+    Auf der **Reeperbahn in St. Pauli** erwartet euch ein preisgekrönter Escape Room in Hamburg, betrieben von den kreativen Köpfen des **Hamburger Schmidt Theaters**.  
+    Im Herzen der Reeperbahn mittem auf dem Kiez warten **fünf einzigartige und spannende Escape Rooms** auf Detektive, Schnitzeljäger und Rätselknacker jeden Alters.  
+
+    Im Gegensatz zu anderen Escape Rooms in Hamburg gibt es bei uns **keinen Countdown, keine Uhr – und somit auch keine Verlierer**.  
+    Unsere Philosophie: gute Geschichten, verpackt in magische Räume und knifflige Rätsel. Und dabei steht der Spaß natürlich an erster Stelle.  
+
+    Nur mit Intuition, Teamgeist und Köpfchen werdet ihr die spannenden Escape Rooms im Skurrilum Hamburg meistern.  
+    **Stellt ihr euch dieser Herausforderung?** Dann erwartet euch im Skurrilum ein unvergessliches Abenteuer voller Spannung, Spaß und Rätsel.
+  bookingCalender: 'Buchungskalender'
+  coupon: 'Gutschein'
 ---
 
 ## Escape Room – Was ist das?

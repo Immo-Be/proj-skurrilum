@@ -1,11 +1,12 @@
 ---
-title: "Skurrilum – Escape Room Hamburg"
+title: 'Skurrilum – Escape Room Hamburg'
 general:
-  descriptionShort: "The Escape Room in Hamburg"
+  descriptionShort: 'The Escape Room in Hamburg'
+  adventure: 'Your next adventure awaits'
   description: >
-    Skurrilum is a Live Escape Game developed by the creative heads at Hamburg’s “Schmidt Theater”. In the middle of the Reeperbahn, five elaborately designed adventure rooms await explorers, thinkers and dreamers of all ages! There are no countdowns, no clocks and no losers! Our philosophy is good stories and lots of fun. Only with intuition and brains teams will become true heroes in Hamburg’s Top Escape Game. This is Escape Adventure at its best!
-bookingCalender: "Booking Calendar"
-coupon: "Voucher"
+    **The Skurrilum at Reeperbahn, St. Pauli** is an award-winning Live Escape Game developed by the creative heads at Hamburg’s “Schmidt Theater”. In the middle of the Reeperbahn, five elaborately designed adventure rooms await explorers, thinkers and dreamers of all ages! There are no countdowns, no clocks and no losers! Our philosophy is good stories and lots of fun. Only with intuition and brains teams will become true heroes in **Hamburg’s Top Escape Game**. This is Escape Adventure at its best!
+bookingCalender: 'Booking Calendar'
+coupon: 'Voucher'
 ---
 
 ## Escape Room – What is it?

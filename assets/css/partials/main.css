@@ -4,6 +4,48 @@ main {
 
   .general-description-container {
     margin-block: 4rem;
+
+    strong:is(:first-of-type, :last-of-type) {
+      color: var(--color-accent-primary);
+      border: 0 solid rgb(229, 231, 235);
+      box-sizing: border-box;
+      color-scheme: light dark;
+      font-family:
+        Bebas Neue,
+        sans-serif;
+      font-feature-settings: normal;
+      font-size: 42px;
+      font-variation-settings: normal;
+      font-weight: 700;
+      letter-spacing: 2.1px;
+      line-height: 52.5px;
+      margin: 0 0 21px 0;
+      tab-size: 4;
+      text-align: center;
+    }
+
+    h1,
+    span {
+      border: 0 solid rgb(229, 231, 235);
+      box-sizing: border-box;
+      color: rgb(255, 255, 255);
+      color-scheme: light dark;
+      font-family:
+        Bebas Neue,
+        sans-serif;
+      font-feature-settings: normal;
+      font-size: 42px;
+      font-variation-settings: normal;
+      font-weight: 700;
+      letter-spacing: 2.1px;
+      line-height: 52.5px;
+      margin: 0 0 21px 0;
+      tab-size: 4;
+      text-align: center;
+
+      > span {
+        display: block;
+      }
+    }
   }
-  &.not-home {}
 }
