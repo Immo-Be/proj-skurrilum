@@ -1,65 +1,54 @@
-
-/* Footer */
 .site-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 40px 0 20px;
-  font-size: 0.9em;
+  background-color: var(--surface-color);
+  color: var(--secondary-text-color);
+  padding: 2rem var(--page-margin-inline);
+  font-family: var(--font-family);
 }
 
 .site-footer .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
-.footer-section {
-  flex: 1;
-  min-width: 250px;
-  margin-bottom: 20px;
+.site-footer .footer-section h3 {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
-.footer-section h3 {
-  color: #fff;
-  margin-bottom: 15px;
-  font-size: 1.1em;
+.site-footer .footer-section p,
+.site-footer .footer-section li {
+  margin-bottom: 0.5rem;
 }
 
-.footer-section p,
-.footer-section li {
-  margin-bottom: 10px;
-  line-height: 1.6;
+.site-footer .footer-section a {
+  color: var(--secondary-text-color);
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
-.footer-section ul {
+.site-footer .footer-section a:hover {
+  color: var(--brand-color);
+}
+
+.site-footer .footer-section ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
-.footer-section a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.footer-section a:hover {
-  text-decoration: underline;
-}
-
-.footer-section .fas {
-  margin-right: 8px;
-  color: #f8f9fa;
+.site-footer .footer-section .fas {
+  margin-right: 0.5rem;
 }
 
 .footer-bottom {
-  width: 100%;
-  border-top: 1px solid #555;
-  padding-top: 20px;
-  margin-top: 20px;
+  border-top: 1px solid var(--base-color-solid);
+  padding-top: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  font-size: 0.9rem;
 }
 
 .footer-bottom ul {
@@ -69,15 +58,31 @@
   display: flex;
 }
 
-.footer-bottom li {
-  margin-left: 20px;
+.footer-bottom li:not(:last-child) {
+  margin-right: 1rem;
 }
 
 .footer-bottom a {
-  color: #fff;
+  color: var(--secondary-text-color);
   text-decoration: none;
+  transition: color 0.3s;
 }
 
 .footer-bottom a:hover {
-  text-decoration: underline;
+  color: var(--brand-color);
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons li {
+  margin-bottom: 0;
+}
+
+.site-footer a svg,
+.footer-bottom a svg {
+  vertical-align: middle;
+  margin-right: 0.5rem;
 }

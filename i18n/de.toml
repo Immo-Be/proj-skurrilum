@@ -22,6 +22,9 @@ fri_sun = "Fr - So"
 fri_sun_hours = "11:00 - 23:30 Uhr"
 imprint = "Impressum"
 privacy_policy = "Datenschutz"
+social_title = "Folge uns"
+facebook_url = "https://www.facebook.com/skurrilum"
+instagram_url = "https://www.instagram.com/skurrilum"
 
 [rooms]
 button = "Alle Räume"

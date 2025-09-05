@@ -22,6 +22,9 @@ fri_sun = "Fri - Sun"
 fri_sun_hours = "11:00 AM - 11:30 PM"
 imprint = "Imprint"
 privacy_policy = "Privacy Policy"
+social_title = "Follow us"
+facebook_url = "https://www.facebook.com/skurrilum"
+instagram_url = "https://www.instagram.com/skurrilum"
 
 [rooms]
 button = "All Rooms"

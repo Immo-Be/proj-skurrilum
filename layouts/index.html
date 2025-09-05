@@ -2,11 +2,8 @@
 <div class="general-description-container">
   <h1>{{ i18n "header.the_skurrilum" }} <span>{{ .Params.general.descriptionShort }}</span></h1>
   <!-- <span> {{ .Params.general.adventure }}. </span> -->
-  {{ .Params.general.description | markdownify }}
+  <p>{{ .Params.general.description | markdownify }}</p>
 </div>
-<div>content</div>
-<div class="seo-content-container">
-  {{ .Content }}
-  <div id="shop-anchor"></div>
-</div>
+<div id="shop-anchor"></div>
+<div class="seo-content-container">{{ .Content }}</div>
 {{ end }}

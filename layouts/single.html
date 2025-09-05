@@ -1,16 +1,16 @@
 {{ define "main" }}
   <article>
     {{ if eq .Params.layout "contact" }}
-    <div class="contact-container">
-    {{ end }}
-
-    <section class="content">
-      {{ .Content }}
-    </section>
-
-    {{ if eq .Params.layout "contact" }}
-      {{ partial "contact-form.html" . }}
-    </div>
+      <div class="contact-container">
+        <section class="content">
+          {{ .Content }}
+        </section>
+        {{ partial "contact-form.html" . }}
+      </div>
+    {{ else }}
+      <section class="content">
+        {{ .Content }}
+      </section>
     {{ end }}
   </article>
 {{ end }}

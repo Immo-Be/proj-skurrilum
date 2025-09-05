@@ -10,9 +10,9 @@
     <!-- <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" /> -->
     <!-- <link rel="manifest" href="/images/site.webmanifest" /> -->
     {{ $styles := slice (resources.Get "css/variables.css") (resources.Get "css/global.css")
-    (resources.Get "css/partials/main.css") (resources.Get "css/partials/header.css") (resources.Get
+    (resources.Get "css/partials/main.css") (resources.Get "css/partials/footer.css") (resources.Get "css/partials/header.css") (resources.Get
     "css/partials/hero.css") (resources.Get "css/partials/scrolling-link.css") }} {{ with
-    .Params.siteCSS }} {{ $path := printf "css/%s" . }} {{ $res := resources.Get $path |
+    .Params.siteCss }} {{ $path := printf "css/%s" . }} {{ $res := resources.Get $path |
     resources.Minify }}
     <link rel="stylesheet" href="{{ $res.RelPermalink }}" />
     {{ end }} {{ $css := $styles | resources.Concat "css/bundle.css" | minify | fingerprint }}

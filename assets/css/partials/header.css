@@ -3,7 +3,6 @@
   z-index: 1001;
   padding-block: 1.25rem;
   padding-inline: var(--page-margin-inline);
-  height: var(--header-height);
   background-color: transparent;
   font-size: 1.15rem;
   letter-spacing: var(--header-letter-spacing);
@@ -352,7 +351,9 @@
       position: absolute;
       top: 0;
       left: 0;
-      transition: opacity 0.3s ease, transform 0.3s ease;
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
     }
 
     .close-icon {

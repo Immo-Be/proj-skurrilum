@@ -4,6 +4,7 @@ main {
 
   .general-description-container {
     margin-block: 4rem;
+    text-align: center;
 
     strong:is(:first-of-type, :last-of-type) {
       color: var(--color-accent-primary);
@@ -47,5 +48,9 @@ main {
         display: block;
       }
     }
+  }
+
+  .seo-content-container {
+    text-align: center;
   }
 }
