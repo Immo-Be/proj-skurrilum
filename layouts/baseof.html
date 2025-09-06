@@ -17,6 +17,57 @@
     <link rel="stylesheet" href="{{ $res.RelPermalink }}" />
     {{ end }} {{ $css := $styles | resources.Concat "css/bundle.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
+    <style>
+      #ghost-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 9999;
+        overflow: hidden;
+      }
+
+      #ghost-container.animate .ghost {
+        animation: ghost-fly 12s ease-out forwards;
+      }
+
+      .ghost {
+        position: absolute;
+        opacity: 0;
+        will-change: transform;
+      }
+
+      @keyframes ghost-fly {
+        0% {
+          opacity: 0;
+          transform: translate(100vw, 80vh) scale(0.5) rotate(0deg);
+        }
+        10% {
+          opacity: 1;
+        }
+        20% {
+          transform: translate(80vw, 60vh) scale(0.7) rotate(-20deg);
+        }
+        40% {
+          transform: translate(50vw, 30vh) scale(1) rotate(20deg);
+        }
+        60% {
+          transform: translate(20vw, 40vh) scale(1.2) rotate(-20deg);
+        }
+        80% {
+          transform: translate(-10vw, 20vh) scale(1.3) rotate(20deg);
+        }
+        99% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          transform: translate(-150px, 10vh) scale(1.4);
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -35,6 +86,11 @@
     <script
       src="{{ $initShopJs.RelPermalink }}"
       integrity="{{ $initShopJs.Data.Integrity }}"
+    ></script>
+    {{ $easterEggJs := resources.Get "js/easter-egg.js" | minify | fingerprint }}
+    <script
+      src="{{ $easterEggJs.RelPermalink }}"
+      integrity="{{ $easterEggJs.Data.Integrity }}"
     ></script>
   </body>
 </html>
