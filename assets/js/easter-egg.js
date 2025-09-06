@@ -112,21 +112,19 @@ document.addEventListener('DOMContentLoaded', function () {
     mainGhost.style.filter = 'drop-shadow(0 0 5px rgba(255,255,255,0.2))';
     container.appendChild(mainGhost);
 
-    container.classList.add('animate');
+    requestAnimationFrame(() => {
+      container.classList.add('animate');
+    });
 
-    mainGhost.addEventListener('animationend', () => {
-      container.classList.remove('animate');
+    const cleanup = () => {
+      if (!isAnimating) return;
       container.innerHTML = '';
       isAnimating = false;
-    }, { once: true });
+    };
+
+    mainGhost.addEventListener('animationend', cleanup, { once: true });
 
     // Fallback timer
-    setTimeout(() => {
-      if (isAnimating) {
-        container.classList.remove('animate');
-        container.innerHTML = '';
-        isAnimating = false;
-      }
-    }, 13000); // animation is 12s, plus some buffer
+    setTimeout(cleanup, 13000); // animation is 12s, plus some buffer
   });
 });

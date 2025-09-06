@@ -29,21 +29,18 @@
         overflow: hidden;
       }
 
-      #ghost-container.animate .ghost {
-        animation: ghost-fly 12s ease-out forwards;
-      }
-
       .ghost {
         position: absolute;
         opacity: 0;
         will-change: transform;
+        transform: translate(100vw, 80vh) scale(0.5) rotate(0deg); /* Initial position */
+      }
+
+      #ghost-container.animate .ghost {
+        animation: ghost-fly 12s ease-out forwards;
       }
 
       @keyframes ghost-fly {
-        0% {
-          opacity: 0;
-          transform: translate(100vw, 80vh) scale(0.5) rotate(0deg);
-        }
         10% {
           opacity: 1;
         }
