@@ -12,8 +12,8 @@ main {
         content: '';
         position: absolute;
         top: -4rem;
-        left: -4rem;
-        right: -4rem;
+        left: calc(-1 * var(--page-margin-inline));
+        right: calc(-1 * var(--page-margin-inline));
         height: 10rem;
         background-image: linear-gradient(to bottom, #1e1f26, transparent);
       }
