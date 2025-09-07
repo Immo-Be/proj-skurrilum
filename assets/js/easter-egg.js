@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
   const trigger = document.getElementById('easter-egg-trigger');
-  const container = document.getElementById('ghost-container');
 
-  if (!trigger || !container) {
+  if (!trigger) {
     return;
   }
+
+  trigger.setAttribute('aria-hidden', 'true');
 
   let isAnimating = false;
 
@@ -30,6 +31,11 @@ document.addEventListener('DOMContentLoaded', function () {
   trigger.addEventListener('click', () => {
     if (isAnimating) return;
     isAnimating = true;
+
+    const container = document.createElement('div');
+    container.id = 'ghost-container';
+    container.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(container);
 
     const lang = document.body.dataset.lang || 'en';
     const textLine1 = lang === 'de' ? 'JETZT' : 'BOOK';
@@ -95,8 +101,6 @@ document.addEventListener('DOMContentLoaded', function () {
   </g>
 </svg>`;
 
-    container.innerHTML = ''; // Clear previous ghosts
-
     const trailCount = 4;
     for (let i = 0; i < trailCount; i++) {
       const trailGhost = document.createElement('div');
@@ -122,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const cleanup = () => {
       if (!isAnimating) return;
-      container.innerHTML = '';
+      container.remove();
       isAnimating = false;
     };
 

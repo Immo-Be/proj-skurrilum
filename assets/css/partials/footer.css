@@ -86,6 +86,10 @@
     margin: 0;
     display: flex;
 
+    li {
+      display: flex;
+    }
+
     li:not(:last-child) {
       margin-right: 1rem;
     }
@@ -104,6 +108,7 @@
     }
 
     svg {
+      flex-shrink: 0;
       vertical-align: middle;
       margin-right: 0.5rem;
     }

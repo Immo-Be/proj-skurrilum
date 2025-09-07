@@ -29,8 +29,6 @@ main {
     span {
       border: 0 solid rgb(229, 231, 235);
       box-sizing: border-box;
-      color: rgb(255, 255, 255);
-      color-scheme: light dark;
       font-family:
         Bebas Neue,
         sans-serif;
@@ -40,7 +38,7 @@ main {
       font-weight: 700;
       letter-spacing: 2.1px;
       line-height: 52.5px;
-      margin: 0 0 21px 0;
+      margin: 0 0 4rem 0;
       tab-size: 4;
       text-align: center;
 
