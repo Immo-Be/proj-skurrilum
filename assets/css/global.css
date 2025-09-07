@@ -53,8 +53,6 @@ body {
   height: 100vh;
   height: 100dvh;
   overflow: scroll;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
 }
 
 /* 6. Improve media defaults */
