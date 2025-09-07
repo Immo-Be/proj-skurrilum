@@ -5,6 +5,19 @@ main {
   .general-description-container {
     margin-block: 4rem;
     text-align: center;
+    position: relative;
+
+    @media (prefers-color-scheme: dark) {
+      &::before {
+        content: '';
+        position: absolute;
+        top: -4rem;
+        left: -4rem;
+        right: -4rem;
+        height: 10rem;
+        background-image: linear-gradient(to bottom, #1e1f26, transparent);
+      }
+    }
 
     strong:is(:first-of-type, :last-of-type) {
       color: var(--color-accent-primary);
