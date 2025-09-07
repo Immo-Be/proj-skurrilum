@@ -1,0 +1,45 @@
+{{ $rooms := where .Site.RegularPages "Section" "rooms" }} {{ $lang_rooms := where $rooms "Lang"
+.Site.Language.Lang }}
+
+<div class="gallery-container">
+  <div class="gallery-slider">
+    {{ range $lang_rooms }} {{ $image_name := .File.BaseFileName | strings.TrimSuffix (printf ".%s"
+    .Lang) }} {{ $image_path := printf "/images/gallery-rooms/%s.jpg" $image_name }}
+
+    <div class="gallery-item">
+      <img src="{{ $image_path }}" alt="{{ .Title }}" />
+      <div class="gallery-item-caption">
+        <h3>{{ .Title }}</h3>
+        <a href="{{ .Permalink }}" class="cta-link">{{ i18n "cta_book" }}</a>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  <button class="gallery-nav prev" aria-label="Previous image">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M15 19l-7-7 7-7"
+      ></path>
+    </svg>
+  </button>
+  <button class="gallery-nav next" aria-label="Next image">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+    </svg>
+  </button>
+</div>

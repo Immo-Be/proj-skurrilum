@@ -76,6 +76,8 @@
   border-top: 1px solid var(--base-color-solid);
   padding-top: 1rem;
   display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   justify-content: space-between;
   align-items: center;
   font-size: 0.8rem;

@@ -2,6 +2,9 @@
   <article>
     {{ if eq .Params.layout "contact" }}
       <div class="contact-container">
+        <section class="room-slider-container">
+          {{ .RoomSlider }}
+        </section>
         <section class="content">
           {{ .Content }}
         </section>

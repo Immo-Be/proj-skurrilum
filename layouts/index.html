@@ -1,5 +1,6 @@
 {{ define "main" }} {{ partial "hero.html" . }}
 <div class="general-description-container">
+  {{ partial "gallery.html" . }}
   <h1>{{ i18n "header.the_skurrilum" }} <span>{{ .Params.general.descriptionShort }}</span></h1>
   <!-- <span> {{ .Params.general.adventure }}. </span> -->
   <p>{{ .Params.general.description | markdownify }}</p>
