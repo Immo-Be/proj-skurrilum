@@ -5,6 +5,7 @@ cta_to_rooms = "To the Rooms"
 cta_book = "Book now"
 cta_learn_more = "Check our rooms"
 the_skurrilum = "Das Skurrilum"
+view_details = "View Details"
 
 [footer]
 about_us_text = "Experience our interactive Escape Room adventures in Hamburg - full of puzzles, excitement and surprises for friends, families and team events directly on the Reeperbahn at Spielbudenplatz"

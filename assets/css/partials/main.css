@@ -59,6 +59,11 @@ main {
         display: block;
       }
     }
+
+    p {
+      margin: 0 auto;
+      max-width: 85ch;
+    }
   }
 
   .seo-content-container {

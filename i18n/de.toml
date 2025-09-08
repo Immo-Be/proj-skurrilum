@@ -5,6 +5,7 @@ cta_to_rooms = "Zu den Räumen"
 cta_book = "Jetzt buchen"
 cta_learn_more = "Zu den Räumen"
 the_skurrilum = "Das Skurrilum"
+view_details = "Details ansehen"
 
 [footer]
 about_us_text = "Erlebe unsere interaktiven Escape Rooms auf der Reeperbahn - voller Rätsel und Spannung"

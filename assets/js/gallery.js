@@ -14,26 +14,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const clientWidth = slider.clientWidth;
 
     prevButton.disabled = scrollLeft <= 0;
-    // Add a small tolerance for floating point inaccuracies
     nextButton.disabled = scrollLeft >= scrollWidth - clientWidth - 1;
   };
 
   slider.addEventListener('scroll', updateArrowStates, { passive: true });
 
   nextButton.addEventListener('click', () => {
-    const itemWidth = slider.querySelector('.gallery-item').clientWidth;
-    slider.scrollLeft += itemWidth;
+    const first = slider.querySelector('.gallery-item');
+    if (!first) return;
+    slider.scrollLeft += first.clientWidth;
   });
 
   prevButton.addEventListener('click', () => {
-    const itemWidth = slider.querySelector('.gallery-item').clientWidth;
-    slider.scrollLeft -= itemWidth;
+    const first = slider.querySelector('.gallery-item');
+    if (!first) return;
+    slider.scrollLeft -= first.clientWidth;
   });
 
-  // Initial check in case the gallery starts in a scrolled state
+  // Initial check
   updateArrowStates();
 
-  // A resize observer is more reliable for tracking size changes
-  const resizeObserver = new ResizeObserver(updateArrowStates);
-  resizeObserver.observe(slider);
+  // ✅ Update only when the window resizes
+  window.addEventListener('resize', updateArrowStates, { passive: true });
 });
