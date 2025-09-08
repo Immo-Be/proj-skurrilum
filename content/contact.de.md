@@ -1,5 +1,6 @@
 ---
 title: "Kontakt"
+description: "Entdecke Kontakt - ein einzigartiges Escape Game Erlebnis in Hamburg St. Pauli. Buche jetzt dein Abenteuer im Skurrilum!"
 layout: general-contact
 siteCss: "contact.css"
 url: "/kontakt"

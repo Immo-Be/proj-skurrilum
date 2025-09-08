@@ -1,5 +1,6 @@
 ---
 title: "Die Phantominsel"
+description: "Entdecke Die Phantominsel - ein einzigartiges Escape Game Erlebnis in Hamburg St. Pauli. Buche jetzt dein Abenteuer im Skurrilum!"
 url: "/die-phantom-insel/"
 shortTitle: "Die Phantominsel"
 players: "2-6 SpielerInnen"

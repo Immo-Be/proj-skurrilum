@@ -1,5 +1,6 @@
 ---
 title: "Ernie Hudson & Die weinende Frau"
+description: "Entdecke Ernie Hudson & Die weinende Frau - ein einzigartiges Escape Game Erlebnis in Hamburg St. Pauli. Buche jetzt dein Abenteuer im Skurrilum!"
 url: "/die-weinende-frau/"
 shortTitle: "Die weinende Frau"
 players: "4-8 SpielerInnen"

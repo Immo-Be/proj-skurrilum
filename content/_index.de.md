@@ -1,5 +1,6 @@
 ---
 title: 'Skurrilum – Escape Room Hamburg'
+description: 'Entdecke Skurrilum – Escape Room Hamburg - ein einzigartiges Escape Game Erlebnis in Hamburg St. Pauli. Buche jetzt dein Abenteuer im Skurrilum!'
 general:
   adventure: 'Dein nächstes Abenteuer wartet schon'
   descriptionShort: 'Der Escape Room in Hamburg'

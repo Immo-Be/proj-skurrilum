@@ -1,5 +1,6 @@
 ---
 title: "The Phantom Island"
+description: "Discover The Phantom Island - a unique escape game experience in Hamburg St. Pauli. Book your adventure at Skurrilum now!"
 url: "/phantom-island/"
 shortTitle: "The Phantom Island"
 players: "2-6 people"

@@ -1,9 +1,10 @@
 ---
 title: "Guschis seedy Cellar"
+description: "Discover Guschis seedy Cellar - a unique escape game experience in Hamburg St. Pauli. Book your adventure at Skurrilum now!"
 url: "/guschis-seedy-cellar/"
 shortTitle: "Guschis seedy Cellar"
 players: "4-8 people"
-idealPlayers: "ideal for 5 players"
+idealPlayers: "ideal für 5 players"
 minAge: "from 18 years"
 shortDescription: "Break into an 80s Kiez bar to find 30,000 Marks in this adults-only adventure."
 accessibility: "This room is not accessible."

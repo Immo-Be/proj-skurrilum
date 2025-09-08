@@ -1,5 +1,6 @@
 ---
 title: "Ernie Hudson & Der Zoo des Todes"
+description: "Entdecke Ernie Hudson & Der Zoo des Todes - ein einzigartiges Escape Game Erlebnis in Hamburg St. Pauli. Buche jetzt dein Abenteuer im Skurrilum!"
 shortTitle: "Der Zoo des Todes"
 url: "/der-zoo-des-todes/"
 players: "3-6 SpielerInnen"

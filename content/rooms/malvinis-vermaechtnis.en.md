@@ -1,5 +1,6 @@
 ---
 title: "Malvinis Legacy"
+description: "Discover Malvinis Legacy - a unique escape game experience in Hamburg St. Pauli. Book your adventure at Skurrilum now!"
 url: "/malvinis-legacy/"
 shortTitle: "Malvinis Legacy"
 players: "3-8 people"

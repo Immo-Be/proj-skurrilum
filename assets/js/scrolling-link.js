@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Condition 1: Show after hero
       if (heroSection) {
-        if (heroSection.getBoundingClientRect().bottom <= 250) {
+        if (heroSection.getBoundingClientRect().bottom <= 800) {
           show = true;
         }
       } else {

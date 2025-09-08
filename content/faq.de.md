@@ -1,5 +1,6 @@
 ---
 title: 'FAQ'
+description: "Entdecke FAQ - ein einzigartiges Escape Game Erlebnis in Hamburg St. Pauli. Buche jetzt dein Abenteuer im Skurrilum!"
 siteCSS: "faq.css"
 ---
 

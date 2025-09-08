@@ -1,5 +1,6 @@
 ---
 title: "Malvinis Vermächtnis"
+description: "Entdecke Malvinis Vermächtnis - ein einzigartiges Escape Game Erlebnis in Hamburg St. Pauli. Buche jetzt dein Abenteuer im Skurrilum!"
 url: "/malivinis-vermaechtnis/"
 shortTitle: "Malvinis Vermächtnis"
 players: "3-8 SpielerInnen"

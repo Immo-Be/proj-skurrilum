@@ -1,5 +1,6 @@
 ---
 title: "Guschis geile Grotte"
+description: "Entdecke Guschis geile Grotte - ein einzigartiges Escape Game Erlebnis in Hamburg St. Pauli. Buche jetzt dein Abenteuer im Skurrilum!"
 url: "/guschis-geile-grotte/"
 shortTitle: "Guschis geile Grotte"
 players: "4-8 SpielerInnen"

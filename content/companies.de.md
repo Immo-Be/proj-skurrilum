@@ -1,5 +1,6 @@
 ---
 title: "Firmen"
+description: "Entdecke Firmen - ein einzigartiges Escape Game Erlebnis in Hamburg St. Pauli. Buche jetzt dein Abenteuer im Skurrilum!"
 url: "/firmen/"
 layout: contact
 siteCss: "contact.css"

@@ -1,5 +1,6 @@
 ---
 title: 'The Makers'
+description: "Discover The Makers - a unique escape game experience in Hamburg St. Pauli. Book your adventure at Skurrilum now!"
 slug: the-makers
 ---
 
