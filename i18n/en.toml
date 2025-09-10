@@ -8,6 +8,12 @@ the_skurrilum = "Das Skurrilum"
 view_details = "View Details"
 players = "Players"
 
+
+voucher_headline = "Give excitement and adventure"
+voucher_description = "Give an unforgettable experience at Skurrilum! Our vouchers are the perfect gift for friends, family, or colleagues."
+voucher_title = "Gift vouchers"
+voucher_cta = "Buy voucher"
+
 [footer]
 about_us_text = "Experience our interactive Escape Room adventures in Hamburg - full of puzzles, excitement and surprises for friends, families and team events directly on the Reeperbahn at Spielbudenplatz"
 links_title = "Links"

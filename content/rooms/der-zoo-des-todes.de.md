@@ -3,11 +3,12 @@ title: "Ernie Hudson & Der Zoo des Todes"
 description: "Entdecke Ernie Hudson & Der Zoo des Todes - ein einzigartiges Escape Game Erlebnis in Hamburg St. Pauli. Buche jetzt dein Abenteuer im Skurrilum!"
 shortTitle: "Der Zoo des Todes"
 url: "/der-zoo-des-todes/"
-players: "3-6 SpielerInnen"
-idealPlayers: "ideal für 4 SpielerInnen"
+players: "3-6 Personen"
+idealPlayers: "ideal für 4 Personen"
 minAge: "ab 14 Jahren"
+age_num: "14+"
 shortDescription: "Unterstützt Geisterjäger Ernie Hudson bei mysteriösen Ermittlungen im verlassenen Zoo."
-accessibility: "Dieser Raum ist nicht barrierefrei und nicht geeignet für körperlich beeinträchtigte SpielerInnen."
+accessibility: "Dieser Raum ist nicht barrierefrei und nicht geeignet für körperlich beeinträchtigte Personen."
 warnings: "Nicht geeignet für Personen mit einer Erdnussallergie."
 note: "Beide Escape Rooms der Geisterjäger Ernie Hudson Hörspiele können unabhängig voneinander gespielt werden und erfordern keine Vorkenntnisse."
 ---
@@ -21,4 +22,4 @@ Im Zoo des Todes im Skurrilum erwarten euch eine spektakuläre Geschichte, atemb
 
 ## Der Zoo des Todes – Escape Room Hamburg für 2 Personen oder mehr
 
-Wenn Ihr schon immer mal einen Escape Room spielen wolltet, in dem sich alles um einen geheimnisumwobenen Zoo dreht, seid ihr im Zoo des Todes im Skurrilum genau richtig. Dieses fesselnde Abenteuer mit Ernie Hudson eignet sich für drei bis sechs SpielerInnen, wobei wir eine ideale Spieleranzahl von vier SpielerInnenn vorschlagen. Wenn ihr also auf der Suche nach einem Escape Room in Hamburg für 2 Personen oder mehr seid, ist der Zoo des Todes garantiert eine gute Wahl. Wie auch bei allen anderen Escape Rooms im Skurrilum, ist euer Erlebnis nach 60 Minuten Spielzeit nicht sofort vorbei, falls ihr den Fall noch nicht gelöst haben solltet. Denn einen ungelösten Fall hat es bei Geisterjäger Ernie Hudson noch nie gegeben.
+Wenn Ihr schon immer mal einen Escape Room spielen wolltet, in dem sich alles um einen geheimnisumwobenen Zoo dreht, seid ihr im Zoo des Todes im Skurrilum genau richtig. Dieses fesselnde Abenteuer mit Ernie Hudson eignet sich für drei bis sechs Personen, wobei wir eine ideale Spieleranzahl von vier Personenn vorschlagen. Wenn ihr also auf der Suche nach einem Escape Room in Hamburg für 2 Personen oder mehr seid, ist der Zoo des Todes garantiert eine gute Wahl. Wie auch bei allen anderen Escape Rooms im Skurrilum, ist euer Erlebnis nach 60 Minuten Spielzeit nicht sofort vorbei, falls ihr den Fall noch nicht gelöst haben solltet. Denn einen ungelösten Fall hat es bei Geisterjäger Ernie Hudson noch nie gegeben.

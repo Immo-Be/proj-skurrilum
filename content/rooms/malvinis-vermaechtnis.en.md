@@ -4,6 +4,7 @@ description: "Discover Malvinis Legacy - a unique escape game experience in Hamb
 url: "/malvinis-legacy/"
 shortTitle: "Malvinis Legacy"
 players: "3-8 people"
+age_num: "14+"
 idealPlayers: "ideal for 4-5 players"
 minAge: "from 14 years"
 shortDescription: "Search for the Book of Immortality in a magician's enchanted chamber."

@@ -1,5 +1,4 @@
 gallery_learn_more = "Mehr Erfahren"
-
 headline = "Willkommen im Skurrilum"
 cta_to_rooms = "Zu den Räumen"
 cta_book = "Jetzt buchen"
@@ -7,6 +6,11 @@ cta_learn_more = "Zu den Räumen"
 the_skurrilum = "Das Skurrilum"
 view_details = "Details ansehen"
 players = "Personen"
+
+voucher_headline = "Verschenke Spannung und Abenteuer"
+voucher_description = "Schenke ein unvergessliches Erlebnis im Skurrilum! Unsere Gutscheine sind das perfekte Geschenk für Freunde, Familie oder Kollegen."
+voucher_title = "Geschenkgutscheine"
+voucher_cta = "Gutschein kaufen"
 
 [footer]
 about_us_text = "Erlebe unsere interaktiven Escape Rooms auf der Reeperbahn - voller Rätsel und Spannung"

@@ -3,11 +3,12 @@ title: "Ernie Hudson & Die weinende Frau"
 description: "Entdecke Ernie Hudson & Die weinende Frau - ein einzigartiges Escape Game Erlebnis in Hamburg St. Pauli. Buche jetzt dein Abenteuer im Skurrilum!"
 url: "/die-weinende-frau/"
 shortTitle: "Die weinende Frau"
-players: "4-8 SpielerInnen"
-idealPlayers: "ideal für 5-6 SpielerInnen"
+players: "4-8 Personen"
+idealPlayers: "ideal für 5-6 Personen"
+age_num: "14+"
 minAge: "ab 14 Jahren"
 shortDescription: "Preisgekröntes Hörspiel-Abenteuer in Mrs. Bunburys Villa auf der Suche nach einer mysteriösen Frau."
-accessibility: "Dieser Raum ist nicht barrierefrei und nicht geeignet für körperlich beeinträchtigte SpielerInnen."
+accessibility: "Dieser Raum ist nicht barrierefrei und nicht geeignet für körperlich beeinträchtigte Personen."
 warnings: "Es werden Stroboskop-Effekte verwendet."
 note: "Beide Ernie Hudson Räume können unabhängig voneinander gespielt werden und erfordern keine Vorkenntnisse."
 ---
@@ -21,4 +22,4 @@ In diesem Escape Room wird der wohlbekannte Geisterjäger Ernie Hudson dazu beau
 
 ## Die weinende Frau im Skurrilum
 
-Die weinende Frau ist einer von fünf einzigartigen Escape Rooms im Skurrilum und eignet sich für eine Anzahl von vier bis acht SpielerInnen. Um ein unverwechselbares Spielerlebnis zu erfahren, raten wir dazu, den Escape Room ‘Geisterjäger Ernie Hudson und die weinende Frau’ im Skurrilum mit fünf bis sechs Personen zu spielen. Somit könnt ihr sichergehen, dass alle Spielende während der 60 Minuten Spielzeit eine herausfordernde Aufgabe hat. Wenn ihr jedoch in einer größeren Gruppe ins Skurrilum kommen wollt und auf der Suche nach einem Escape Room in Hamburg für 8 Personen in Hamburg seid, ist das natürlich kein Problem. Ernie Hudson freut sich über jede Unterstützung in seinem Fall ‘Die weinende Frau’.
+Die weinende Frau ist einer von fünf einzigartigen Escape Rooms im Skurrilum und eignet sich für eine Anzahl von vier bis acht Personen. Um ein unverwechselbares Spielerlebnis zu erfahren, raten wir dazu, den Escape Room ‘Geisterjäger Ernie Hudson und die weinende Frau’ im Skurrilum mit fünf bis sechs Personen zu spielen. Somit könnt ihr sichergehen, dass alle Spielende während der 60 Minuten Spielzeit eine herausfordernde Aufgabe hat. Wenn ihr jedoch in einer größeren Gruppe ins Skurrilum kommen wollt und auf der Suche nach einem Escape Room in Hamburg für 8 Personen in Hamburg seid, ist das natürlich kein Problem. Ernie Hudson freut sich über jede Unterstützung in seinem Fall ‘Die weinende Frau’.
