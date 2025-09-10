@@ -36,4 +36,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ✅ Update only when the window resizes
   window.addEventListener('resize', updateArrowStates, { passive: true });
+
+  const indicator = gallery.querySelector('.gallery-indicator');
+  if (indicator) {
+    const dots = indicator.querySelectorAll('.indicator-dot');
+    const items = slider.querySelectorAll('.gallery-item');
+
+    const updateIndicator = () => {
+      const sliderCenter = slider.scrollLeft + slider.clientWidth / 2;
+      let closestIndex = -1;
+      let minDistance = Infinity;
+
+      items.forEach((item, index) => {
+        const itemCenter = item.offsetLeft + item.clientWidth / 2;
+        const distance = Math.abs(sliderCenter - itemCenter);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      dots.forEach((dot, index) => {
+        if (index === closestIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    };
+
+    slider.addEventListener('scroll', updateIndicator, { passive: true });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        items[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+      });
+    });
+
+    // Initial check
+    updateIndicator();
+    // Also update on resize
+    window.addEventListener('resize', updateIndicator, { passive: true });
+  }
 });

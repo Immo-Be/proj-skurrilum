@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
       trailGhost.style.animationDelay = `${i * 100}ms`;
       trailGhost.style.color = 'gray';
       trailGhost.style.filter = 'drop-shadow(0 0 5px rgba(255,255,255,0.2))';
-      trailGhost.style.opacity = 0.4 - i * 0.1;
+      trailGhost.style.opacity = 0.2 - i * 0.1;
       container.appendChild(trailGhost);
     }
 

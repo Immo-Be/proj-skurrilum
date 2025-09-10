@@ -38,8 +38,8 @@ main {
       text-align: center;
     }
 
-    h1,
-    span {
+    p h1,
+    p span {
       border: 0 solid rgb(229, 231, 235);
       box-sizing: border-box;
       font-family:
@@ -68,5 +68,17 @@ main {
 
   .seo-content-container {
     text-align: center;
+  }
+
+  /* QUINBOOK OVERRIDES */
+  #vd-maincontent {
+    min-height: auto !important;
+  }
+  div:has(~ .vd-voucher-cards) {
+    display: none !important;
+  }
+
+  .vd-voucher-cards {
+    display: none !important;
   }
 }
