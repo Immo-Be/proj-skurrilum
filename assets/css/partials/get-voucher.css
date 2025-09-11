@@ -1,22 +1,48 @@
+
 .get-voucher {
   margin: 4rem auto;
   padding: 2rem;
   backdrop-filter: blur(8px);
   border-radius: 0.75rem;
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
   background-color: var(--color-accent-primary-20);
-
   border: 1px dashed var(--color-accent-primary);
   /* 2 columns while each can be at least 320px wide; otherwise 1 column */
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus-within {
+    box-shadow:
+      rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+      rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+      rgba(166, 200, 182, 1) 0px 25px 50px -12px;
+    transform: translateY(-7px);
+
+    @media (prefers-color-scheme: dark) {
+      box-shadow:
+        rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        rgba(166, 200, 182, 0.25) 0px 25px 50px -12px;
+    }
+
+    .voucher-header {
+      color: var(--color-accent-primary);
+    }
+  }
 
   .voucher-content {
     padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     /* border-left: 1px solid var(--color-accent-primary); */
     /* border-top: 1px solid var(--color-accent-primary); */
     /* border-bottom: 1px solid var(--color-accent-primary); */
     .voucher-header-container {
+      color: var(--text-color);
       display: flex;
       flex-wrap: nowrap;
       flex-direction: row;
@@ -34,8 +60,11 @@
     font-size: 31.5px;
     font-variation-settings: normal;
     font-weight: 700;
+    text-align: center;
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   p {
+    text-align: center;
     border: 0 solid rgb(229, 231, 235);
     box-sizing: border-box;
     font-feature-settings: normal;
@@ -47,6 +76,7 @@
     tab-size: 4;
   }
   .cta {
+    width: fit-content;
     background-color: var(--color-accent-primary);
     border-radius: 5.25px;
     box-sizing: border-box;
@@ -60,8 +90,15 @@
     text-align: center;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      filter: brightness(0.9);
+    }
   }
   img {
+    margin: 0 auto;
     height: 280px;
   }
 }
+

@@ -81,6 +81,28 @@
     }
   }
 
+  .scroll-down {
+    position: absolute;
+    bottom: 2.5rem; /* bottom-10 */
+    left: 50%; /* left-1/2 */
+    transform: translateX(-50%); /* -translate-x-1/2 */
+    z-index: 30; /* z-30 */
+  }
+
+  .scroll-down a {
+    color: rgb(160,160,160); /* text-text-secondary/80 (adjust to your theme) */
+    transition: color 0.3s ease;
+  }
+
+  .scroll-down a:hover {
+    color: #ff0033; /* your primary color */
+  }
+
+  .scroll-down .icon {
+    width: 2rem; /* w-8 */
+    height: 2rem; /* h-8 */
+    animation: bounce-slow 2s infinite;
+  }
   #hero-video {
     pointer-events: none;
     position: absolute;
@@ -90,5 +112,15 @@
     height: 100%;
     object-fit: cover;
     transform: translate(-50%, -50%) translateZ(0);
+  }
+}
+
+@keyframes bounce-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }

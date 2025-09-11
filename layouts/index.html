@@ -1,5 +1,4 @@
 {{ define "main" }} {{ partial "hero.html" . }}
-{{ partial "get-voucher.html" . }}
 <div class="general-description-container">
   {{ partial "gallery.html" . }}
   <h1>{{ i18n "header.the_skurrilum" }} <span>{{ .Params.general.descriptionShort }}</span></h1>
@@ -7,5 +6,6 @@
   <p>{{ .Params.general.description | markdownify }}</p>
 </div>
 <div id="shop-anchor"></div>
+{{ partial "get-voucher.html" . }}
 <div class="seo-content-container">{{ .Content }}</div>
 {{ end }}
