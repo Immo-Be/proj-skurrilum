@@ -90,7 +90,7 @@
   }
 
   .scroll-down a {
-    color: rgb(160,160,160); /* text-text-secondary/80 (adjust to your theme) */
+    color: gray; /* text-text-secondary/80 (adjust to your theme) */
     transition: color 0.3s ease;
   }
 

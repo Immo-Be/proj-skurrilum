@@ -2,14 +2,16 @@
 .get-voucher {
   margin: 4rem auto;
   padding: 2rem;
+  max-width: 800px;
   backdrop-filter: blur(8px);
   border-radius: 0.75rem;
   display: grid;
+  place-items: center;
   gap: 2rem;
   background-color: var(--color-accent-primary-20);
   border: 1px dashed var(--color-accent-primary);
   /* 2 columns while each can be at least 320px wide; otherwise 1 column */
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
@@ -33,7 +35,6 @@
   }
 
   .voucher-content {
-    padding-left: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -44,9 +45,9 @@
     .voucher-header-container {
       color: var(--text-color);
       display: flex;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       flex-direction: row;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
       gap: 1rem;
     }
@@ -98,7 +99,7 @@
   }
   img {
     margin: 0 auto;
-    height: 280px;
+    max-width: 260px;
   }
 }
 
