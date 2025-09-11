@@ -40,73 +40,14 @@
 
     <meta name="theme-color" content="#121212" />
 
-        {{ $mainStyles := slice
-      (resources.Get "css/variables.css")
-      (resources.Get "css/global.css")
-      (resources.Get "css/partials/main.css")
-      (resources.Get "css/partials/footer.css")
-      (resources.Get "css/partials/header.css")
-      (resources.Get "css/partials/hero.css")
-      (resources.Get "css/partials/scrolling-link.css")
-      (resources.Get "css/partials/gallery.css")
-      (resources.Get "css/partials/get-voucher.css")
-    }}
-
-    {{ with .Params.siteCss }}
-      {{ $path := printf "css/%s" . }}
-      {{ $mainStyles = $mainStyles | append (resources.Get $path) }}
-    {{ end }}
-
-    {{ $css := $mainStyles | resources.Concat "css/bundle.css" | minify | fingerprint }}
+    {{ $styles := slice (resources.Get "css/variables.css") (resources.Get "css/global.css")
+    (resources.Get "css/partials/main.css") (resources.Get "css/partials/footer.css") (resources.Get
+    "css/partials/header.css") (resources.Get "css/partials/hero.css") (resources.Get "css/partials/gallery.css") (resources.Get "css/partials/get-voucher.css") (resources.Get
+    "css/partials/scrolling-link.css") }} {{ with .Params.siteCss }} {{ $path := printf "css/%s" .
+    }} {{ $res := resources.Get $path | resources.Minify }}
+    <link rel="stylesheet" href="{{ $res.RelPermalink }}" />
+    {{ end }} {{ $css := $styles | resources.Concat "css/bundle.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
-    <style>
-      #ghost-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        pointer-events: none;
-        z-index: 9999;
-        overflow: hidden;
-      }
-
-      .ghost {
-        position: absolute;
-        opacity: 0;
-        will-change: transform;
-        transform: translate(100vw, 80vh) scale(0.5) rotate(0deg); /* Initial position */
-      }
-
-      #ghost-container.animate .ghost {
-        animation: ghost-fly 12s ease-out forwards;
-      }
-
-      @keyframes ghost-fly {
-        10% {
-          opacity: 1;
-        }
-        20% {
-          transform: translate(80vw, 60vh) scale(0.7) rotate(-20deg);
-        }
-        40% {
-          transform: translate(50vw, 30vh) scale(1) rotate(20deg);
-        }
-        60% {
-          transform: translate(20vw, 40vh) scale(1.2) rotate(-20deg);
-        }
-        80% {
-          transform: translate(-10vw, 20vh) scale(1.3) rotate(20deg);
-        }
-        99% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0;
-          transform: translate(-150px, 10vh) scale(1.4);
-        }
-      }
-    </style>
   </head>
 
   <body data-lang="{{ .Site.Language.Lang }}">
