@@ -1,6 +1,6 @@
 ---
 title: 'Die Macher'
-description: "Entdecke Die Macher - ein einzigartiges Escape Game Erlebnis in Hamburg St. Pauli. Buche jetzt dein Abenteuer im Skurrilum!"
+description: 'Entdecke Die Macher - ein einzigartiges Escape Game Erlebnis in Hamburg St. Pauli. Buche jetzt dein Abenteuer im Skurrilum!'
 slug: die-macher
 ---
 

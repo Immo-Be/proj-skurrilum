@@ -1,5 +1,5 @@
 function initShop() {
-  return
+  return;
   const shopPlaceholder = document.getElementById('shop-anchor');
 
   if (shopPlaceholder) {

@@ -1,5 +1,7 @@
 .cta-link {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .cta-link:not(.scrolling) {
@@ -10,7 +12,6 @@
 }
 
 .cta-link.scrolling {
-
   position: fixed;
   bottom: 2rem;
   right: 2rem;
@@ -22,12 +23,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-decoration: none;
   font-family: 'Bebas Neue';
   letter-spacing: var(--header-letter-spacing);
   font-weight: var(--header-font-weight);
-  
+
   opacity: 1;
   visibility: visible;
   transform: translateY(0);

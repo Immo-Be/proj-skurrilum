@@ -1,19 +1,20 @@
 ---
 title: 'FAQ'
-description: "Discover FAQ - a unique escape game experience in Hamburg St. Pauli. Book your adventure at Skurrilum now!"
-siteCSS: "faq.css"
+description: 'Discover FAQ - a unique escape game experience in Hamburg St. Pauli. Book your adventure at Skurrilum now!'
+siteCSS: 'faq.css'
 ---
 
 ### About Your Booking
 
 {{< qa question="Can I bring more people than stated online?" >}}
 No, the maximum number of players per room (6 or 8 people) is fixed to ensure everyone has a great experience. If your group is larger, please book a second room.
+
 - **Guschi's Seedy Cellar:** max. 8 people
 - **Malvini's Legacy:** max. 8 people
 - **The Phantom Island:** max. 6 people
 - **The Wailing Woman:** max. 8 people
 - **The Zoo of Death:** max. 6 people
-{{< /qa >}}
+  {{< /qa >}}
 
 {{< qa question="Can I add players to my booking later?" >}}
 Yes, as long as you don't exceed the maximum number of players. Additional players can pay on-site by card (preferred) or cash. Alternatively, email us at info@skurrilum.de, and we'll send you a payment link.
@@ -66,6 +67,7 @@ Each room is an elaborately designed set with great attention to detail—from a
 ### Other Information
 
 {{< qa question="Are the rooms accessible?" >}}
+
 - **Limited accessibility:** "Malvini's Legacy" and "Guschi's Seedy Cellar."
 - **Not accessible:** "The Phantom Island" and the "Ghost Hunter Ernie Hudson" series. These are not suitable for individuals with physical disabilities.
 

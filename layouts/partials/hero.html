@@ -2,9 +2,9 @@
   <div class="overlay">
     <img src="/images/file(1).svg" alt="Skurrilum logo" />
     {{ if eq .Site.Language.Lang "de" }}
-    <img src="/images/willkommen.svg" alt="Willkommen logo" class="logo" />
+      <img src="/images/willkommen.svg" alt="Willkommen logo" class="logo" />
     {{ else if eq .Site.Language.Lang "en" }}
-    <img src="/images/welcome.svg" alt="Welcome logo" class="logo" />
+      <img src="/images/welcome.svg" alt="Welcome logo" class="logo" />
     {{ end }}
     <div class="cta-buttons">
       <a href="#shop-anchor" class="cta-link">{{ i18n "cta_book" }}</a>

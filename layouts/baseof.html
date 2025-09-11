@@ -6,29 +6,35 @@
     <title>
       {{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}
     </title>
-
     {{ hugo.Generator }}
-
     <meta
       name="description"
-      content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}"
+      content="{{ with .Description }}
+        {{ . }}
+      {{ else }}
+        {{ with .Site.Params.description }}{{ . }}{{ end }}
+      {{ end }}"
     />
     {{ with .Site.Params.author }}
-    <meta name="author" content="{{ . }}" />
+      <meta name="author" content="{{ . }}" />
     {{ end }}
-
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
     <meta property="og:url" content="{{ .Permalink }}" />
     <meta property="og:title" content="{{ .Title }}" />
     <meta
       property="og:description"
-      content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}"
+      content="{{ with .Description }}
+        {{ . }}
+      {{ else }}
+        {{ with .Site.Params.description }}{{ . }}{{ end }}
+      {{ end }}"
     />
-    {{ with .Params.images }}{{ range first 6 . }}
-    <meta property="og:image" content="{{ . | absURL }}" />
-    {{ end }}{{ end }}
-
+    {{ with .Params.images }}
+      {{ range first 6 . }}
+        <meta property="og:image" content="{{ . | absURL }}" />
+      {{ end }}
+    {{ end }}
     <link rel="icon" href="/images/favicon.png" type="image/png" sizes="any" />
     <link rel="icon" href="/images/logo.svg" type="image/svg+xml" />
 
@@ -40,20 +46,31 @@
 
     <meta name="theme-color" content="#121212" />
 
-    {{ $styles := slice (resources.Get "css/variables.css") (resources.Get "css/global.css")
-    (resources.Get "css/partials/main.css") (resources.Get "css/partials/footer.css") (resources.Get
-    "css/partials/header.css") (resources.Get "css/partials/hero.css") (resources.Get "css/partials/gallery.css") (resources.Get "css/partials/get-voucher.css") (resources.Get
-    "css/partials/scrolling-link.css") }} {{ with .Params.siteCss }} {{ $path := printf "css/%s" .
-    }} {{ $res := resources.Get $path | resources.Minify }}
-    <link rel="stylesheet" href="{{ $res.RelPermalink }}" />
-    {{ end }} {{ $css := $styles | resources.Concat "css/bundle.css" | minify | fingerprint }}
+    {{ $styles := slice
+      (resources.Get "css/variables.css")
+      (resources.Get "css/global.css")
+      (resources.Get "css/partials/main.css")
+      (resources.Get "css/partials/footer.css")
+      (resources.Get "css/partials/header.css")
+      (resources.Get "css/partials/hero.css")
+      (resources.Get "css/partials/gallery.css")
+      (resources.Get "css/partials/get-voucher.css")
+      (resources.Get "css/partials/scrolling-link.css")
+    }}
+    {{ with .Params.siteCss }}
+      {{ $path := printf "css/%s" . }}
+      {{ $res := resources.Get $path | resources.Minify }}
+      <link rel="stylesheet" href="{{ $res.RelPermalink }}" />
+    {{ end }}
+    {{ $css := $styles | resources.Concat "css/bundle.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
   </head>
 
   <body data-lang="{{ .Site.Language.Lang }}">
     {{ partial "header.html" . }}
     <main class="{{ if not .IsHome }}not-home{{ end }}">{{ block "main" . }}{{ end }}</main>
-    {{ partial "footer.html" . }} {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
+    {{ partial "footer.html" . }}
+    {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
     <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
     {{ $heroJs := resources.Get "js/hero-video.js" | minify | fingerprint }}
     <script src="{{ $heroJs.RelPermalink }}" integrity="{{ $heroJs.Data.Integrity }}"></script>

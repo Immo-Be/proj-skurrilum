@@ -1,16 +1,16 @@
 ---
-title: "Ernie Hudson & The Wailing Woman"
-description: "Discover Ernie Hudson & The Wailing Woman - a unique escape game experience in Hamburg St. Pauli. Book your adventure at Skurrilum now!"
-shortTitle: "The Wailing Woman"
-url: "the-wailing-woman/"
-players: "4-8 people"
-idealPlayers: "ideal for 5-6 players"
-age_num: "14+"
-minAge: "from 14 years"
+title: 'Ernie Hudson & The Wailing Woman'
+description: 'Discover Ernie Hudson & The Wailing Woman - a unique escape game experience in Hamburg St. Pauli. Book your adventure at Skurrilum now!'
+shortTitle: 'The Wailing Woman'
+url: 'the-wailing-woman/'
+players: '4-8 people'
+idealPlayers: 'ideal for 5-6 players'
+age_num: '14+'
+minAge: 'from 14 years'
 shortDescription: "Award-winning radio play adventure in Mrs. Bunbury's villa, searching for a mysterious woman."
-accessibility: "This room is not accessible and not suitable for physically impaired players."
-warnings: "Stroboscope effects are used."
-note: "Both Ernie Hudson rooms can be played independently of each other and do not require any prior knowledge."
+accessibility: 'This room is not accessible and not suitable for physically impaired players.'
+warnings: 'Stroboscope effects are used.'
+note: 'Both Ernie Hudson rooms can be played independently of each other and do not require any prior knowledge.'
 ---
 
 The Escape Room ‘The Wailing Woman’ is part of our series “Ghost Hunter Ernie Hudson” and is the first mix of escape game and radio play, which was voted 1st Top Escape Room 2018. More than five different locations, an exciting story, and breathtaking effects await in the Escape Room ‘The Wailing Woman’ for all those who have always dreamed of taking the title role in their favorite radio play. Together with the support of ghost hunter Ernie Hudson, you enter the old villa of the frightened Mrs. Bunbury to search for the wailing woman. By solving tricky and exciting puzzles, you will find out what secret lies behind this escape room. ‘The Wailing Woman’ is a unique escape room that is told using radio play elements and requires the finest detective work. Can you uncover the secret of the wailing woman?
@@ -18,7 +18,6 @@ The Escape Room ‘The Wailing Woman’ is part of our series “Ghost Hunter Er
 ## Ernie Hudson and the Wailing Woman
 
 In this escape room, the well-known ghost hunter Ernie Hudson is tasked with finding the wailing woman and uncovering her secret. Since Ernie Hudson is unfortunately unavailable, he needs your help. Do you dare to enter the old and abandoned villa of Mrs. Bunbury to search for the wailing woman? In this escape room, you'll find an elaborately designed setting that looks deceptively real and is equipped with numerous matching props. Thus, upon entering the escape room 'Ghost Hunter Ernie Hudson and the Wailing Woman,' you immediately feel like you're in another world.
-
 
 ## The Wailing Woman at Skurrilum
 

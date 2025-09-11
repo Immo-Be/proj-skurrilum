@@ -1,19 +1,20 @@
 ---
 title: 'FAQ'
-description: "Entdecke FAQ - ein einzigartiges Escape Game Erlebnis in Hamburg St. Pauli. Buche jetzt dein Abenteuer im Skurrilum!"
-siteCSS: "faq.css"
+description: 'Entdecke FAQ - ein einzigartiges Escape Game Erlebnis in Hamburg St. Pauli. Buche jetzt dein Abenteuer im Skurrilum!'
+siteCSS: 'faq.css'
 ---
 
 ### Rund um die Buchung
 
 {{< qa question="Kann ich mehr Personen mitbringen, als online angegeben?" >}}
 Nein, die maximale Spielerzahl pro Raum (6 oder 8 Personen) ist verbindlich und sorgt dafür, dass alle Spaß haben. Wenn eure Gruppe größer ist, bucht bitte einen weiteren Raum hinzu.
+
 - **Guschis Geile Grotte:** max. 8 Personen
 - **Malvinis Vermächtnis:** max. 8 Personen
 - **Die Phantominsel:** max. 6 Personen
 - **Die weinende Frau:** max. 8 Personen
 - **Der Zoo des Todes:** max. 6 Personen
-{{< /qa >}}
+  {{< /qa >}}
 
 {{< qa question="Kann ich nachträglich Personen zu meiner Buchung hinzufügen?" >}}
 Ja, solange die maximale Spielerzahl nicht überschritten wird. Zusätzliche Personen können vor Ort mit Karte (bevorzugt) oder in bar bezahlen. Alternativ schreibt uns eine E-Mail an info@skurrilum.de, und wir senden euch einen Zahlungslink.
@@ -66,6 +67,7 @@ Jeder Raum ist ein aufwendig gestaltetes Bühnenbild mit viel Liebe zum Detail �
 ### Sonstiges
 
 {{< qa question="Sind die Räume barrierefrei?" >}}
+
 - **Eingeschränkt barrierefrei:** „Malvinis Vermächtnis“ und „Guschis geile Grotte“.
 - **Nicht barrierefrei:** „Die Phantominsel“ und die „Geisterjäger Ernie Hudson“-Reihe. Diese sind für Personen mit körperlichen Einschränkungen nicht geeignet.
 

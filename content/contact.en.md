@@ -1,9 +1,9 @@
 ---
-title: "Contact"
-description: "Discover Contact - a unique escape game experience in Hamburg St. Pauli. Book your adventure at Skurrilum now!"
+title: 'Contact'
+description: 'Discover Contact - a unique escape game experience in Hamburg St. Pauli. Book your adventure at Skurrilum now!'
 layout: general-contact
-siteCss: "contact.css"
-url: "/en/contact"
+siteCss: 'contact.css'
+url: '/en/contact'
 ---
 
 ## How can we help you?

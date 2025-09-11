@@ -1,16 +1,16 @@
 ---
-title: "Ernie Hudson & Der Zoo des Todes"
-description: "Entdecke Ernie Hudson & Der Zoo des Todes - ein einzigartiges Escape Game Erlebnis in Hamburg St. Pauli. Buche jetzt dein Abenteuer im Skurrilum!"
-shortTitle: "Der Zoo des Todes"
-url: "/der-zoo-des-todes/"
-players: "3-6 Personen"
-idealPlayers: "ideal für 4 Personen"
-minAge: "ab 14 Jahren"
-age_num: "14+"
-shortDescription: "Unterstützt Geisterjäger Ernie Hudson bei mysteriösen Ermittlungen im verlassenen Zoo."
-accessibility: "Dieser Raum ist nicht barrierefrei und nicht geeignet für körperlich beeinträchtigte Personen."
-warnings: "Nicht geeignet für Personen mit einer Erdnussallergie."
-note: "Beide Escape Rooms der Geisterjäger Ernie Hudson Hörspiele können unabhängig voneinander gespielt werden und erfordern keine Vorkenntnisse."
+title: 'Ernie Hudson & Der Zoo des Todes'
+description: 'Entdecke Ernie Hudson & Der Zoo des Todes - ein einzigartiges Escape Game Erlebnis in Hamburg St. Pauli. Buche jetzt dein Abenteuer im Skurrilum!'
+shortTitle: 'Der Zoo des Todes'
+url: '/der-zoo-des-todes/'
+players: '3-6 Personen'
+idealPlayers: 'ideal für 4 Personen'
+minAge: 'ab 14 Jahren'
+age_num: '14+'
+shortDescription: 'Unterstützt Geisterjäger Ernie Hudson bei mysteriösen Ermittlungen im verlassenen Zoo.'
+accessibility: 'Dieser Raum ist nicht barrierefrei und nicht geeignet für körperlich beeinträchtigte Personen.'
+warnings: 'Nicht geeignet für Personen mit einer Erdnussallergie.'
+note: 'Beide Escape Rooms der Geisterjäger Ernie Hudson Hörspiele können unabhängig voneinander gespielt werden und erfordern keine Vorkenntnisse.'
 ---
 
 Dieser Escape Room im Skurrilum gehört zu unserer beliebten Hörspielserie "Geisterjäger Ernie Hudson" und führt euch in den mystischen Zoo des Todes. In dieser spannenden Geschichte ist euer Köpfchen gefragt, um Ernie Hudson bei seinen anspruchsvollen Ermittlungen im stillgelegten Zoo der Stadt Sandy Bay tatkräftig zu unterstützen. Man sagt, dass sich im Zoo des Todes nachts seltsame Dinge abspielen und undefinierbare Geräusche von den verlassenen Gattern und Käfigen wahrzunehmen sind. Hierbei handelt es sich demnach offensichtlich um einen Fall für echte Detektiv-Profis. Traut Ihr euch, dem Geisterjäger Ernie Hudson bei diesem Fall unter die Arme zu greifen und das Rätsel des geheimnisvollen Zoos zu lösen? Der Zoo des Todes in Hamburg erwartet euch bereits.
@@ -18,7 +18,6 @@ Dieser Escape Room im Skurrilum gehört zu unserer beliebten Hörspielserie "Gei
 ## Skurrilum Zoo des Todes
 
 Im Zoo des Todes im Skurrilum erwarten euch eine spektakuläre Geschichte, atemberaubende Schauplätze und jede Menge Überraschungen. Der Zoo des Todes zeichnet sich zudem insbesondere durch seine spannenden Hörspiel-Effekte aus. Lasst euch von Ernie Hudson für einen kniffligen Fall beauftragen, den ihr nur mit guter Teamarbeit und ausgezeichneten Denkfähigkeiten lösen könnt. Dieser Escape Room ist Teil unserer Hörspielserie 'Geisterjäger Ernie Hudson', zu dem auch unser Escape Room die weinende Frau gehört. Wenn Ihr also nicht genug von den mitreißenden Fällen von Ernie Hudson kriegen könnt, könnt ihr euch im Zoo des Todes im Skurrilum so richtig austoben. Geht ihr dem Geheimnis des Zoo des Todes in Hamburg auf den Grund?
-
 
 ## Der Zoo des Todes – Escape Room Hamburg für 2 Personen oder mehr
 

@@ -22,31 +22,31 @@ weight = 1
 [[languages.de.menu.main]]
   identifier = "der-zoo-des-todes-de"
   name = "Der Zoo Des Todes"
-  url = "/raeume/der-zoo-des-todes/"
+  url = "/der-zoo-des-todes/"
   parent = "menu_rooms"
   weight = 1
 [[languages.de.menu.main]]
   identifier = "die-phantominsel-de"
   name = "Die Phantominsel"
-  url = "/raeume/die-phantominsel/"
+  url = "/die-phantominsel/"
   parent = "menu_rooms"
   weight = 2
 [[languages.de.menu.main]]
   identifier = "die-weinende-frau-de"
   name = "Die Weinende Frau"
-  url = "/raeume/die-weinende-frau/"
+  url = "/die-weinende-frau/"
   parent = "menu_rooms"
   weight = 3
 [[languages.de.menu.main]]
   identifier = "guschis-geile-grotte-de"
   name = "Guschis Geile Grotte"
-  url = "/raeume/guschis-geile-grotte/"
+  url = "/guschis-geile-grotte/"
   parent = "menu_rooms"
   weight = 4
 [[languages.de.menu.main]]
   identifier = "malvinis-vermaechtnis-de"
   name = "Malvinis Vermaechtnis"
-  url = "/raeume/malvinis-vermaechtnis/"
+  url = "/malvinis-vermaechtnis/"
   parent = "menu_rooms"
   weight = 5
 [[languages.de.menu.main]]

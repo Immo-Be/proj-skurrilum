@@ -1,4 +1,3 @@
-
 name: Build and Deploy Hugo Project
 
 on:
@@ -18,7 +17,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          submodules: recursive   # for theme submodules
+          submodules: recursive # for theme submodules
           fetch-depth: 0
 
       # Install Hugo (extended) — latest stable

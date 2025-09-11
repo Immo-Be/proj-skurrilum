@@ -1,6 +1,7 @@
 <section class="maker">
-    <img class="maker-image" src="/images/the-makers/{{ .Get "image" }}" alt="{{ .Get "name" }}">
+  <img class="maker-image" src="/images/the-makers/{{ .Get "image" }}" alt="{{ .Get "name" }}" />
   <div class="maker-description">
-    <h2>{{ .Get "name" }}</h2> {{ .Inner | markdownify }}
+    <h2>{{ .Get "name" }}</h2>
+    {{ .Inner | markdownify }}
   </div>
 </section>
