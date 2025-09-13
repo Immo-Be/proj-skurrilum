@@ -64,6 +64,8 @@
     {{ end }}
     {{ $css := $styles | resources.Concat "css/bundle.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
+    {{ $ghost := resources.Get "css/ghost.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $ghost.RelPermalink }}" integrity="{{ $ghost.Data.Integrity }}" />
   </head>
 
   <body data-lang="{{ .Site.Language.Lang }}">
