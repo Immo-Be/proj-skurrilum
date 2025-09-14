@@ -12,9 +12,9 @@ shortDescription: 'Investigate mysterious sounds in an abandoned zoo with ghost 
 accessibility: 'This room is not accessible and not suitable for physically impaired players.'
 warnings: 'Not suitable for people with a peanut allergy.'
 note: "Both 'Ernie Hudson' games can be played independently and do not require any prior knowledge."
+longDescription: "A new case for ghost hunter Ernie Hudson and his team. The investigation will take you to the abandoned Sandy Bay zoo. It is said that strange noises can be heard between the cages and gates at night. A case for real professionals! Do you have the courage to take on the case? The story is also told using radio play elements. Look forward to various locations, countless effects and lots of surprises."
 ---
 
-A new case for ghost hunter Ernie Hudson and his team. The investigation will take you to the abandoned Sandy Bay zoo. It is said that strange noises can be heard between the cages and gates at night. A case for real professionals! Do you have the courage to take on the case? The story is also told using radio play elements. Look forward to various locations, countless effects and lots of surprises.
 
 ## Skurrilum Zoo of Death
 

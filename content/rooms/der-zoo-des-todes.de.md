@@ -1,6 +1,7 @@
 ---
 title: 'Ernie Hudson & Der Zoo des Todes'
 description: 'Entdecke Ernie Hudson & Der Zoo des Todes - ein einzigartiges Escape Game Erlebnis in Hamburg St. Pauli. Buche jetzt dein Abenteuer im Skurrilum!'
+longDescription: Dieser Escape Room im Skurrilum gehört zu unserer beliebten Hörspielserie "Geisterjäger Ernie Hudson" und führt euch in den mystischen Zoo des Todes. In dieser spannenden Geschichte ist euer Köpfchen gefragt, um Ernie Hudson bei seinen anspruchsvollen Ermittlungen im stillgelegten Zoo der Stadt Sandy Bay tatkräftig zu unterstützen. Man sagt, dass sich im Zoo des Todes nachts seltsame Dinge abspielen und undefinierbare Geräusche von den verlassenen Gattern und Käfigen wahrzunehmen sind. Hierbei handelt es sich demnach offensichtlich um einen Fall für echte Detektiv-Profis. Traut Ihr euch, dem Geisterjäger Ernie Hudson bei diesem Fall unter die Arme zu greifen und das Rätsel des geheimnisvollen Zoos zu lösen? Der Zoo des Todes in Hamburg erwartet euch bereits.
 shortTitle: 'Der Zoo des Todes'
 url: '/der-zoo-des-todes/'
 players: '3-6 Personen'
@@ -13,8 +14,6 @@ accessibility: 'Dieser Raum ist nicht barrierefrei und nicht geeignet für körp
 warnings: 'Nicht geeignet für Personen mit einer Erdnussallergie.'
 note: 'Beide Escape Rooms der Geisterjäger Ernie Hudson Hörspiele können unabhängig voneinander gespielt werden und erfordern keine Vorkenntnisse.'
 ---
-
-Dieser Escape Room im Skurrilum gehört zu unserer beliebten Hörspielserie "Geisterjäger Ernie Hudson" und führt euch in den mystischen Zoo des Todes. In dieser spannenden Geschichte ist euer Köpfchen gefragt, um Ernie Hudson bei seinen anspruchsvollen Ermittlungen im stillgelegten Zoo der Stadt Sandy Bay tatkräftig zu unterstützen. Man sagt, dass sich im Zoo des Todes nachts seltsame Dinge abspielen und undefinierbare Geräusche von den verlassenen Gattern und Käfigen wahrzunehmen sind. Hierbei handelt es sich demnach offensichtlich um einen Fall für echte Detektiv-Profis. Traut Ihr euch, dem Geisterjäger Ernie Hudson bei diesem Fall unter die Arme zu greifen und das Rätsel des geheimnisvollen Zoos zu lösen? Der Zoo des Todes in Hamburg erwartet euch bereits.
 
 ## Skurrilum Zoo des Todes
 

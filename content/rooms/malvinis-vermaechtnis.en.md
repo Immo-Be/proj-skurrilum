@@ -12,10 +12,8 @@ shortDescription: "Search for the Book of Immortality in a magician's enchanted 
 accessibility: 'This room is accessible.'
 warnings: ''
 note: ''
+longDescription: Visit the most magical escape room 'Malvinis Legacy' in Hamburg and be enchanted by the mysterious stage magician Edgar Malvini. Enter his enchanted chamber and solve the mystical puzzles on the edge of the occult. What lies behind Malvini's legacy – just a few clever tricks or real magic? Embark on the search for the legendary Book of Immortality to uncover the secret of Malvini's legacy. Immerse yourself in the world of the magician, search the chamber for clues, and combine your conclusions to shed light on the darkness. But be careful not to be led astray by the magic...
 ---
-
-Visit the most magical escape room 'Malvinis Legacy' in Hamburg and be enchanted by the mysterious stage magician Edgar Malvini. Enter his enchanted chamber and solve the mystical puzzles on the edge of the occult. What lies behind Malvini's legacy – just a few clever tricks or real magic? Embark on the search for the legendary Book of Immortality to uncover the secret of Malvini's legacy. Immerse yourself in the world of the magician, search the chamber for clues, and combine your conclusions to shed light on the darkness. But be careful not to be led astray by the magic...
-
 ## What awaits you in Malvini's Legacy?
 
 The live escape game 'Malvini's Legacy' is without question a challenging game for true escape room enthusiasts. Upon entering the mystical magic chamber of the magician Edgar Malvini, you will find yourself in another world. A world full of fantasy, magic, and above all: secrets. Here you'll find an elaborately designed setting with original props and antique treasures. Look at the venerable display cabinets with their precious possessions and pay attention to clues that lead to solving the puzzle. Look forward to realistic audiovisual effects and a captivating story that couldn't be more exciting. Will you uncover Malvini's Legacy at Skurrilum?

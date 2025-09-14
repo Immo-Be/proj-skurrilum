@@ -3,6 +3,22 @@
   position: relative;
   height: 60vh;
 
+  .divider {
+    position: absolute;
+    bottom: 0rem;
+    margin: 0 auto;
+    right: 50%;
+    transform: translateX(50%);
+
+    .icon {
+      color: rgba(166, 200, 182, 1);
+    }
+
+    .line {
+      background-color: white;
+    }
+  }
+
   video {
     height: 100%;
     width: 100%;
@@ -44,23 +60,29 @@
   text-align: center;
   margin-block: 2rem;
 }
+
+.section-title {
+  text-transform: uppercase;
+  text-align: center;
+  font-family:
+    Bebas Neue,
+    sans-serif;
+  font-feature-settings: normal;
+  font-size: 1.4rem;
+  font-variation-settings: normal;
+  font-weight: 700;
+
+  &.under-overlay {
+    display: block;
+    margin: 2rem auto;
+    margin-top: 1rem;
+  }
+}
 .divider {
   display: flex;
   position: relative;
   flex-direction: column;
   margin-block: 2rem;
-
-  span {
-    text-transform: uppercase;
-    text-align: center;
-    font-family:
-      Bebas Neue,
-      sans-serif;
-    font-feature-settings: normal;
-    font-size: 1.4rem;
-    font-variation-settings: normal;
-    font-weight: 700;
-  }
 }
 
 .separator {
@@ -72,7 +94,7 @@
 
 @media (min-width: 768px) {
   .divider {
-    margin: 3rem 0; /* ~md:my-12 */
+    margin: 1.5rem 0; /* ~md:my-12 */
   }
 }
 
@@ -96,24 +118,30 @@
 
 .room__short-description {
   font-size: 1.2rem;
-  color: #666;
 }
 
 .room__meta {
   margin-block: 2rem;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid rgb(160, 160, 160);
+  border-bottom: 1px solid rgb(160, 160, 160);
   padding: 1rem 0;
 }
 
 .room__meta dl {
   display: flex;
-  gap: 2rem;
-  justify-content: center;
   flex-wrap: wrap;
+  /* gap: 2rem; */
+  justify-content: center;
+  /* flex-wrap: wrap; */
+
+  @media (max-width: 600px) {
+    justify-content: start;
+  }
 }
 
 .room__meta-item {
+  text-wrap: nowrap;
+  margin-right: 2rem;
   display: flex;
   gap: 0.5rem;
   align-items: baseline;
@@ -124,10 +152,11 @@
 }
 
 .room__content {
+  text-align: center;
   line-height: 1.6;
 }
 
-.room__footer {
+.room__info {
   margin-top: 3rem;
   border-top: 1px solid #eee;
   padding-top: 2rem;

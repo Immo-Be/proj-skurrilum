@@ -12,10 +12,8 @@ shortDescription: "Explore a shipwrecked sailor's shelter on a mysterious, not-s
 accessibility: 'This room is not barrier-free'
 warnings: 'Stroboscope effects are used.'
 note: ''
+longDescription: For bone collectors and treasure hunters! This escape game has been extensively renewed in 2019 and takes you to the mysterious Phantom Island – into the moldy shelter of a long-dead sailor. The poor soul was shipwrecked several hundred years ago on the godforsaken Phantom island and struggled to survive. You are now the first team of intrepid specialists to observe this weird and spooky island. But beware! The island is not as idyllic as it appears.
 ---
-
-For bone collectors and treasure hunters! This escape game has been extensively renewed in 2019 and takes you to the mysterious Phantom Island – into the moldy shelter of a long-dead sailor. The poor soul was shipwrecked several hundred years ago on the godforsaken Phantom island and struggled to survive. You are now the first team of intrepid specialists to observe this weird and spooky island. But beware! The island is not as idyllic as it appears.
-
 ## Hamburg Escape Room Ship
 
 Are you looking for an escape room in Hamburg that revolves around an abandoned ship and a mysterious sailor? Then you're in exactly the right place at the 'The Phantom Island' escape room at Skurrilum. Embark on a journey through time and investigate the ship on the mysterious Phantom Island. What's the story behind the ship and why did the old sailor get shipwrecked exactly there? Was it all just a coincidence or is there more behind the mystical events taking place on the island? Look for clues in the stranded shipwreck and collect evidence in the jungle of the Phantom Island. End your search for a "Hamburg Escape Room Ship" and travel to the Phantom Island at Skurrilum.
