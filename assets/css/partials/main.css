@@ -75,7 +75,7 @@ main {
     min-height: auto !important;
   }
   div:has(~ .vd-voucher-cards) {
-    display: none !important;
+    /* display: none !important; */
   }
 
   .vd-voucher-cards {

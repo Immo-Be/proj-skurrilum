@@ -10,7 +10,9 @@
   }
 
   img {
-    display: none;
+    width: min(100%, 65ch);
+    margin-top: auto;
+    margin-inline: auto;
     position: absolute;
     inset: 0;
   }
@@ -44,8 +46,10 @@
 }
 .divider {
   display: flex;
+  position: relative;
   flex-direction: column;
   margin-block: 2rem;
+
   span {
     text-transform: uppercase;
     text-align: center;
