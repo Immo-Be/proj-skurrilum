@@ -96,5 +96,9 @@
       src="{{ $galleryJs.RelPermalink }}"
       integrity="{{ $galleryJs.Data.Integrity }}"
     ></script>
+    {{ if eq .Type "rooms" }}
+      {{ $roomJs := resources.Get "js/room-video.js" | minify | fingerprint }}
+      <script src="{{ $roomJs.RelPermalink }}" integrity="{{ $roomJs.Data.Integrity }}"></script>
+    {{ end }}
   </body>
 </html>

@@ -1,10 +1,11 @@
 ---
 title: 'Malvinis Vermächtnis'
 description: 'Entdecke Malvinis Vermächtnis - ein einzigartiges Escape Game Erlebnis in Hamburg St. Pauli. Buche jetzt dein Abenteuer im Skurrilum!'
-url: '/malivinis-vermaechtnis/'
+url: '/malvinis-vermaechtnis/'
 shortTitle: 'Malvinis Vermächtnis'
 players: '3-8 Personen'
 idealPlayers: 'ideal für 4-5 Personen'
+siteCss: 'rooms.css'
 age_num: '14+'
 minAge: 'ab 14 Jahren'
 shortDescription: 'Sucht nach dem Buch der Unsterblichkeit in der verwunschenen Zauberkammer eines Magiers.'

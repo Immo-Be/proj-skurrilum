@@ -4,6 +4,7 @@ description: 'Entdecke Ernie Hudson & Die weinende Frau - ein einzigartiges Esca
 url: '/die-weinende-frau/'
 shortTitle: 'Die weinende Frau'
 players: '4-8 Personen'
+siteCss: 'rooms.css'
 idealPlayers: 'ideal für 5-6 Personen'
 age_num: '14+'
 minAge: 'ab 14 Jahren'

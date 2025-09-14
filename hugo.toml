@@ -85,31 +85,31 @@ weight = 2
 [[languages.en.menu.main]]
   identifier = "der-zoo-des-todes-en"
   name = "The Zoo Of Death"
-  url = "/en/rooms/der-zoo-des-todes/"
+  url = "/the-zoo-of-death/"
   parent = "menu_rooms"
   weight = 1
 [[languages.en.menu.main]]
   identifier = "die-phantominsel-en"
   name = "The Phantom Island"
-  url = "/en/rooms/die-phantominsel/"
+  url = "/the-phantom-island/"
   parent = "menu_rooms"
   weight = 2
 [[languages.en.menu.main]]
   identifier = "die-weinende-frau-en"
   name = "The Weeping Woman"
-  url = "/en/rooms/die-weinende-frau/"
+  url = "/the-wailing-woman/"
   parent = "menu_rooms"
   weight = 3
 [[languages.en.menu.main]]
   identifier = "guschis-geile-grotte-en"
   name = "Guschi's Seedy Cellar"
-  url = "/en/rooms/guschis-geile-grotte/"
+  url = "/guschis-seedy-cellar/"
   parent = "menu_rooms"
   weight = 4
 [[languages.en.menu.main]]
   identifier = "malvinis-vermaechtnis-en"
   name = "Malvini's Legacy"
-  url = "/en/rooms/malvinis-vermaechtnis/"
+  url = "/malvinis-legacy/"
   parent = "menu_rooms"
   weight = 5
 [[languages.en.menu.main]]

@@ -2,9 +2,10 @@
 title: 'Ernie Hudson & The Wailing Woman'
 description: 'Discover Ernie Hudson & The Wailing Woman - a unique escape game experience in Hamburg St. Pauli. Book your adventure at Skurrilum now!'
 shortTitle: 'The Wailing Woman'
-url: 'the-wailing-woman/'
+url: '/the-wailing-woman/'
 players: '4-8 people'
 idealPlayers: 'ideal for 5-6 players'
+siteCss: 'rooms.css'
 age_num: '14+'
 minAge: 'from 14 years'
 shortDescription: "Award-winning radio play adventure in Mrs. Bunbury's villa, searching for a mysterious woman."

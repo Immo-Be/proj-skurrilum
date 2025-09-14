@@ -1,0 +1,28 @@
+{{ define "main" }}
+  <article class="room">
+  <div class="overlay">
+    <video id="room-video" class="hero-room" autoplay muted loop playsinline
+             data-video="{{ .File.TranslationBaseName }}_1080p"
+             data-mobile-path="mobile/"
+             data-hd-path="hd/">
+    </video>
+
+  </div>
+
+  </div>
+    <!-- <header class="room__header"> -->
+
+    <!-- <div class="room__meta"> -->
+    <!---->
+    <!---->
+  </article>
+{{ end }}
+
+
+{{ define "css" }}
+  <link rel="stylesheet" href="/css/rooms.css">
+{{ end }}
+
+{{ define "js" }}
+  <script src="/js/room-video.js"></script>
+{{ end }}

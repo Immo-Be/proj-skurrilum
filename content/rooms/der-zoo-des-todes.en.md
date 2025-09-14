@@ -1,10 +1,11 @@
 ---
 title: 'Ernie Hudson & The Zoo of Death'
 description: 'Discover Ernie Hudson & The Zoo of Death - a unique escape game experience in Hamburg St. Pauli. Book your adventure at Skurrilum now!'
-url: '/zoo-of-death/'
+url: '/the-zoo-of-death/'
 shortTitle: 'The Zoo of Death'
 players: '3-6 people'
 idealPlayers: 'ideal for 4 players'
+siteCss: 'rooms.css'
 minAge: 'from 14 years'
 age_num: '14+'
 shortDescription: 'Investigate mysterious sounds in an abandoned zoo with ghost hunter Ernie Hudson.'
