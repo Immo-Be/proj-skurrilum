@@ -70,7 +70,7 @@
 
   <body data-lang="{{ .Site.Language.Lang }}">
     {{ partial "header.html" . }}
-    <main class="{{ if not .IsHome }}not-home{{ end }}">{{ block "main" . }}{{ end }}</main>
+    <main class="">{{ block "main" . }}{{ end }}</main>
     {{ partial "footer.html" . }}
     {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
     <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>

@@ -41,9 +41,9 @@
   }
 
   &:has(+ .not-home) {
-    color: var(--text-color);
-    position: sticky;
-    top: 0;
+    /* color: var(--text-color); */
+    /* position: sticky; */
+    /* top: 0; */
   }
 
   @media (min-width: 769px) {
