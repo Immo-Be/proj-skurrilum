@@ -52,14 +52,6 @@
       </div>
     </div>
 
-    <span class="section-title under-overlay">In Kurze</span>
-    <header class="room__header">
-      <h1 class="room__title">{{ .Title }}</h1>
-      {{ with .Params.shortDescription }}
-        <p class="room__short-description">{{ . }}</p>
-      {{ end }}
-    </header>
-
     <div class="room__meta">
       <dl>
         {{ with .Params.players }}
@@ -83,21 +75,64 @@
       </dl>
     </div>
 
+    <header class="room__header">
+      <h1 class="room__title">{{ .Title }}</h1>
+      {{ with .Params.shortDescription }}
+        <p class="room__short-description">{{ . }}</p>
+      {{ end }}
+    </header>
     <div class="room__info">
       {{ with .Params.accessibility }}
         <div class="room__footer-section">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-primary shrink-0"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            width="24px"
+            height="24px"
+          >
+            <path
+              d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"
+            ></path>
+          </svg>
           <h3 class="room__footer-title">Accessibility</h3>
           <p>{{ . }}</p>
         </div>
       {{ end }}
       {{ with .Params.warnings }}
         <div class="room__footer-section">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24px"
+            height="24px"
+            viewBox="0 -960 960 960"
+            fill="currentColor"
+          >
+            <path
+              d="m40-120 440-760 440 760H40Zm138-80h604L480-720 178-200Zm302-40q17 0 28.5-11.5T520-280q0-17-11.5-28.5T480-320q-17 0-28.5 11.5T440-280q0 17 11.5 28.5T480-240Zm-40-120h80v-200h-80v200Zm40-100Z"
+            />
+          </svg>
           <h3 class="room__footer-title">Warnings</h3>
           <p>{{ . }}</p>
         </div>
       {{ end }}
       {{ with .Params.note }}
         <div class="room__footer-section">
+          <svg
+            width="24px"
+            height="24px"
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-primary shrink-0"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
           <h3 class="room__footer-title">Note</h3>
           <p>{{ . }}</p>
         </div>
@@ -168,4 +203,10 @@
 
 {{ define "js" }}
   <script src="/js/room-video.js"></script>
+  <script src="/js/init-shop.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initShop();
+    });
+  </script>
 {{ end }}

@@ -26,13 +26,12 @@
   scroll-snap-align: center;
   position: relative;
   overflow: hidden;
-
+  height: max(75vh, 600px);
   transition-duration: 300ms;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 0.75rem;
   transform: matrix(1, 0, 0, 1, 0, 0);
-  height: 100%;
   cursor: pointer; /* ensures :active works on iOS */
 
   .gallery-video {
@@ -117,6 +116,13 @@
       tab-size: 4;
       filter: drop-shadow(rgba(0, 0, 0, 0.04) 0px 10px 8px)
         drop-shadow(rgba(0, 0, 0, 0.1) 0px 4px 3px);
+    }
+
+    .gallery-item-description {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
     }
 
     .gallery-item-info {

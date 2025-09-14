@@ -12,7 +12,7 @@ shortDescription: "Explore a shipwrecked sailor's shelter on a mysterious, not-s
 accessibility: 'This room is not barrier-free'
 warnings: 'Stroboscope effects are used.'
 note: ''
-longDescription: For bone collectors and treasure hunters! This escape game has been extensively renewed in 2019 and takes you to the mysterious Phantom Island – into the moldy shelter of a long-dead sailor. The poor soul was shipwrecked several hundred years ago on the godforsaken Phantom island and struggled to survive. You are now the first team of intrepid specialists to observe this weird and spooky island. But beware! The island is not as idyllic as it appears.
+longDescription: 'For bone collectors and treasure hunters! This escape game has been extensively renewed in 2019 and takes you to the mysterious Phantom Island – into the moldy shelter of a long-dead sailor. The poor soul was shipwrecked several hundred years ago on the godforsaken Phantom island and struggled to survive. You are now the first team of intrepid specialists to observe this weird and spooky island. But beware! The island is not as idyllic as it appears.'
 ---
 ## Hamburg Escape Room Ship
 
