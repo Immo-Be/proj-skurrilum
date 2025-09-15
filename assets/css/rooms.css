@@ -5,7 +5,7 @@
 
   .divider {
     position: absolute;
-    bottom: 0rem;
+    bottom: 15rem;
     margin: 0 auto;
     right: 50%;
     transform: translateX(50%);
@@ -39,6 +39,7 @@
     inset: 0;
     background-image: linear-gradient(
       to top,
+      rgba(0, 0, 0, 0.8),
       rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 0.2)
@@ -83,14 +84,14 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  margin-block: 2rem;
 }
 
 .separator {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-block: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 @media (min-width: 768px) {
@@ -125,19 +126,24 @@
   margin-block: 2rem;
   border-top: 1px solid rgb(160, 160, 160);
   border-bottom: 1px solid rgb(160, 160, 160);
-  padding: 1rem 0;
+  padding: 1rem;
+
+  @media (max-width: 600px) {
+    margin-block: 0;
+    border: none;
+    padding: 0;
+    padding-top: 1rem;
+  }
 }
 
 .room__meta dl {
-  display: flex;
-  flex-wrap: wrap;
-  /* gap: 2rem; */
-  justify-content: center;
-  /* flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
 
-  @media (max-width: 600px) {
-    justify-content: start;
-  }
+  place-items: center;
+  /* @media (max-width: 600px) { */
+  /*   place-items: start; */
+  /* } */
 }
 
 .room__meta-item {
@@ -159,30 +165,33 @@
 }
 
 .room__info {
-  display: flex;
-  margin-top: 3rem;
-  padding-top: 2rem;
-  justify-content: center;
+  margin-top: 1rem;
+  background-color: var(--color-accent-primary-20);
+  border-radius: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+  place-items: center;
+  padding-block: 1rem;
+  padding-inline: 1.5rem;
   gap: 1rem;
-  flex-wrap: wrap;
 
   svg {
     flex-shrink: 0;
   }
-}
 
-.room__footer-section {
-  flex: 1;
-  margin-bottom: 1.5rem;
-  display: flex;
-  min-width: 40ch;
-  max-width: 65ch;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
+  .room__footer-section {
+    margin-bottom: 1.5rem;
+    display: flex;
+    /* min-width: 40ch; */
+    /* max-width: 65ch; */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 
-.room__footer-title {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+    .room__footer-title {
+      font-size: 24px;
+      line-height: 38.4px;
+      margin-bottom: 0.5rem;
+    }
+  }
 }
