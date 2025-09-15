@@ -29,7 +29,7 @@
       {{ $video_path_webm := printf "/videos/portrait/%s_portrait_450x800_av1.webm" $video_name }}
       {{ $video_path_hevc := printf "/videos/portrait/%s_portrait_450x800_h264.mp4" $video_name }}
       {{ $video_path_h264 := printf "/videos/portrait/%s_portrait_450x800_hevc.mp4" $video_name }}
-      <div class="gallery-item">
+      <a class="gallery-item" href="{{ .Permalink }}">
         <video class="gallery-video" autoplay loop muted playsinline>
           <source src="{{ $video_path_webm }}" type="video/webm" />
           <source src="{{ $video_path_hevc }}" type='video/mp4; codecs="hvc1"' />
@@ -68,9 +68,9 @@
           </div>
           <h3>{{ .Title }}</h3>
           <p class="gallery-item-description">{{ .Description }}</p>
-          <a href="{{ .Permalink }}" class="cta-link">{{ i18n "view_details" }}</a>
+          <span class="cta-link">{{ i18n "view_details" }}</span>
         </div>
-      </div>
+      </a>
     {{ end }}
   </div>
   <div class="gallery-indicator">

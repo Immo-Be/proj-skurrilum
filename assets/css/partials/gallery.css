@@ -77,9 +77,11 @@
     inset: 0;
     background-image: linear-gradient(
       to top,
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.2)
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.1)
     );
   }
   /* @media (min-width: 768px) { */
@@ -123,7 +125,7 @@
       color: rgba(255, 255, 255, 0.8);
       font-size: 0.9rem;
       line-height: 1.4;
-      margin-bottom: 0.75rem;
+      margin-bottom: 1.75rem;
     }
 
     .gallery-item-info {

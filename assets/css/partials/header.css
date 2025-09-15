@@ -14,12 +14,6 @@
   align-items: center;
   color: var(--color-accent-primary);
 
-  &:not(.scrolled) {
-    .nav-link {
-      color: rgb(160, 160, 160) !important;
-    }
-  }
-
   &.scrolled {
     color: var(--text-color);
     background-color: var(--base-transparent-90);
@@ -52,6 +46,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    &:not(.scrolled) {
+      .nav-link {
+        color: rgb(160, 160, 160) !important;
+      }
+    }
   }
 
   .header-inner {
