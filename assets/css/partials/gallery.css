@@ -45,9 +45,9 @@
     transition-duration: 300ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
-    &:hover {
-      transform: matrix(1.05, 0, 0, 1.05, 0, 0);
-    }
+    /* &:hover { */
+    /*   transform: matrix(1.05, 0, 0, 1.05, 0, 0); */
+    /* } */
   }
 
   &:hover,
