@@ -25,7 +25,7 @@
   --font-max: 1.5rem;
   --page-margin-inline: clamp(1rem, calc(-2.299375rem + 10vw), 10rem);
 
-  --header-height: fit-content;
+  --header-height: 68px;
 
   --font-family: 'Nunito', sans-serif;
   --color-accent-primary: rgb(166, 200, 182);

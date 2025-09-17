@@ -1,20 +1,77 @@
 .maker {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: calc(var(--spacing-regular) * 1.5);
+  margin-bottom: calc(var(--spacing-regular) * 2);
+  padding: calc(var(--spacing-regular) * 2);
+  background-color: var(--surface-color);
+  border-radius: 16px;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.05),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.maker:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 8px 12px rgba(0, 0, 0, 0.07),
+    0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .maker img {
   width: 100%;
   height: auto;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 8px;
+  object-position: top;
+  border-radius: 12px;
+}
+
+.maker-description {
+  font-family: var(--font-family);
+  color: var(--secondary-text-color);
+  line-height: 1.7;
+}
+
+.maker-description h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: var(--spacing-regular);
+  color: var(--text-color);
+  letter-spacing: 1px;
 }
 
 @media (min-width: 768px) {
   .maker {
     grid-template-columns: 1fr 2fr;
-    gap: 2rem;
+    gap: calc(var(--spacing-regular) * 3);
+    align-items: center;
   }
+
+  .maker:nth-child(even) {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  /* For every second maker, place the image on the right */
+  .maker:nth-child(even) img {
+    order: 2;
+  }
+
+  .maker:nth-child(even) .maker-description {
+    order: 1;
+  }
+}
+
+/* This is ugly but will keep it for now */
+main {
+  margin-top: var(--header-height);
+}
+
+header {
+  margin-top: calc(-1 * var(--header-height));
+  color: var(--text-color) !important;
 }

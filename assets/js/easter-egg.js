@@ -16,15 +16,17 @@ document.addEventListener('DOMContentLoaded', function () {
     viewBox="0 0 40 32"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <g fill="currentColor">
-      <path d="M16 2c-6.627 0-12 5.373-12 12v11c0 2.052 2.238 3.327 3.625 2.457l1.013-.633c.835-.522 1.861-.318 2.48.435l1.83 2.196c.67.804 1.948.804 2.618 0l1.83-2.196c.619-.753 1.645-.957 2.48-.435l1.013.633c1.387.87 3.625-.405 3.625-2.457V14c0-6.627-5.373-12-12-12zm-5 14c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2zm10 0c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2z" />
-      <path
-        d="M24,19 C25,18 26,18 27,19"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-      />
+    <g transform="translate(40,0) scale(-1,1)">
+      <g fill="currentColor">
+        <path d="M16 2c-6.627 0-12 5.373-12 12v11c0 2.052 2.238 3.327 3.625 2.457l1.013-.633c.835-.522 1.861-.318 2.48.435l1.83 2.196c.67.804 1.948.804 2.618 0l1.83-2.196c.619-.753 1.645-.957 2.48-.435l1.013.633c1.387.87 3.625-.405 3.625-2.457V14c0-6.627-5.373-12-12-12zm-5 14c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2zm10 0c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2z" />
+        <path
+          d="M24,19 C25,18 26,18 27,19"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </g>
     </g>
   </svg>`;
 
@@ -101,15 +103,15 @@ document.addEventListener('DOMContentLoaded', function () {
   </g>
 </svg>`;
 
-    const trailCount = 4;
+    const trailCount = 2;
     for (let i = 0; i < trailCount; i++) {
       const trailGhost = document.createElement('div');
       trailGhost.className = 'ghost';
       trailGhost.innerHTML = trailGhostSvg;
-      trailGhost.style.animationDelay = `${i * 100}ms`;
+      trailGhost.style.animationDelay = `${(i + 1) * 100}ms`;
       trailGhost.style.color = 'gray';
       trailGhost.style.filter = 'drop-shadow(0 0 5px rgba(255,255,255,0.2))';
-      trailGhost.style.opacity = 0.2 - i * 0.1;
+      trailGhost.style.opacity = 0.4 - i * 0.1;
       container.appendChild(trailGhost);
     }
 

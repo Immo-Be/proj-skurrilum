@@ -14,6 +14,9 @@
   opacity: 0;
   will-change: transform;
   transform: translate(100vw, 80vh) scale(0.5) rotate(0deg); /* Initial position */
+
+  &:not(:first-child) {
+  }
 }
 
 #ghost-container.animate .ghost {

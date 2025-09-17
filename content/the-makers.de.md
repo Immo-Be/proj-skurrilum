@@ -2,6 +2,7 @@
 title: 'Die Macher'
 description: 'Entdecke Die Macher - ein einzigartiges Escape Game Erlebnis in Hamburg St. Pauli. Buche jetzt dein Abenteuer im Skurrilum!'
 slug: die-macher
+siteCSS: 'the-makers.css'
 ---
 
 {{< maker name="HEIKO WOHLGEMUTH" image="heiko-wohlgemuth.jpg" >}}

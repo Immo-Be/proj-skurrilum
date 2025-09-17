@@ -48,8 +48,10 @@
     align-items: center;
 
     &:not(.scrolled) {
-      .nav-link {
-        color: rgb(160, 160, 160) !important;
+      &:not(> .dropdown) {
+        .nav-link {
+          color: rgb(160, 160, 160) !important;
+        }
       }
     }
   }
